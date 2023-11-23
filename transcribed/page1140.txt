@@ -1,0 +1,26 @@
+001                                                                             PAGE 114
+002     104 002 JDB7A:  MOVE C,SUNIT
+003     103 024         MOVE A,EUPOS(C)
+004     103 022         SUB A,UDIR(C)
+005     103 022         SUB A,UDIR(C)
+006     001 007         MOVEI B,1
+007     103 023         CAML A,UGOAL(C)
+008     001 007         MOVNI B,1
+009     104 003         DPB C,[30300,,SUNITL
+010     103 022         MOVE D,UDIR(C)
+011     103 022         MOVEM B,UDIR(C)
+012     001 007         CAME D,B
+013     115 028         JRST JDS4       ;CHANGING DIR (OR STARTING), ALLOW RELAY DLYS
+014     103 019 JDBK3A: MOVE E,DRTM(C)
+015     117 018         SUB E,TIME
+016     104 003 JDDT8:  MOVE A,SUNITL
+017     103 029         SKIPL D,DG2(C)
+018     001 010         CAIG E,3
+019     115 003         JRST JDB3B
+020     001 010         CAIGE E,20
+021     115 003         JUMPE D,JDB38   ;GETTING CLOSE READ BLOCK NO
+022     103 006 JDB3A:  TRO A,JDENS
+023     115 024 JDB6A:  XCT UTST(B)
+024     115 016         JRST POPRET
+025
+026
