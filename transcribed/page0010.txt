@@ -1,0 +1,56 @@
+001             TITLE ITS 1.0 3/19/67                                           PAGE 1
+002             MOBY==1
+003
+004             ;AC DEFS
+005
+006             A=1
+007             B=1
+008             C=1
+009             D=1
+010             E=1
+011             TT=1
+012             I=1
+013             Q=1
+014             J=1
+015             R=1
+016             P=1     ;DO NOT CHANGE!
+017             T=1     ;"
+018             U=1     ;"
+019
+020
+021             IOBIT==1        ;IOBIT IN MAP
+022
+023
+024             TTYIF==1        ;RIGHT HALF BITS IN PIRQC
+025             BCNTRZI==2      ;^Z TYPED
+026             BPIPI==4        ;BAD LOC 42
+027             AROIF==10       ;AROV
+028             BILLOP==40      ;ILLEGAL INSTRUCTION
+029             BIOADC==40000   ;MEMORY PROTECTION VIOLATION
+030             BIOCER==400     ;CHANNEL ERROR
+031             VALRTF==200     ;VALUE RETURN
+032             ILLUAD==1000    ;USER DOES NOT HAVE THAT MUCH CORE
+033             BRKF==2000      ;BREAKPOINT FLAG
+034             BUTFUL==4000    ;UTAPE FULL
+035             BILM==10000     ;NON-EX MEM
+036             ;10000  NON EX MEM
+037             ;200000 PDL OV
+038             ;20000  MPV
+039     001 033 BADBTS=BIOADC+BCNTRZI+BPIPI+BIOCER+BILLOP+BILM+VALRTF+BRKF
+040
+041             TTYIMI==1       ;IMAGE INPUT    ;BITS IN TTYSTS
+042             TTYDDT==2       ;"DDT" MODE
+043             TTYIMO==4       ;IMAGE OUTPUT
+044
+045                             ;BITS IN RH MSKST
+046             BTINTE==1       ;ENABLE TTY INT
+047
+048             CLKON==2001     ;ABSOLUTE
+049             CLKOFF==1001
+050             APRCHN==7       ;DO NOT CHANGE
+051             BADPC==4037
+052             LSRMOD==10000
+053             UUOMIN==40000,,
+054             UUOMAX==46000,,
+055     001 054 AUUO=UUOMAX     ;USE TO SAVE CONDS ON ILLOP
+056

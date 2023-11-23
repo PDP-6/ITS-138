@@ -1,0 +1,45 @@
+IIIIIIIII         TTTTTTTTTTTTTTT         SSSSSSSSS
+IIIIIIIII         TTTTTTTTTTTTTTT         SSSSSSSSS
+IIIIIIIII         TTTTTTTTTTTTTTT         SSSSSSSSS
+   III                  TTT            SSS         SSS
+   III                  TTT            SSS         SSS
+   III                  TTT            SSS         SSS
+   III                  TTT            SSS
+   III                  TTT            SSS
+   III                  TTT            SSS
+   III                  TTT               SSSSSSSSS
+   III                  TTT               SSSSSSSSS
+   III                  TTT               SSSSSSSSS
+   III                  TTT                        SSS
+   III                  TTT                        SSS
+   III                  TTT                        SSS
+   III                  TTT            SSS         SSS
+   III                  TTT            SSS         SSS
+   III                  TTT            SSS         SSS
+IIIIIIIII               TTT               SSSSSSSSS
+IIIIIIIII               TTT               SSSSSSSSS
+IIIIIIIII               TTT               SSSSSSSSS
+
+
+
+   111               333333333            888888888
+   111               333333333            888888888
+   111               333333333            888888888
+111111            333         333      888         888
+111111            333         333      888         888
+111111            333         333      888         888
+   111                        333         888888888
+   111                        333         888888888
+   111                        333         888888888
+   111                  333333         888         888
+   111                  333333         888         888
+   111                  333333         888         888
+   111                        333      888         888
+   111                        333      888         888
+   111                        333      888         888
+   111            333         333      888         888
+   111            333         333      888         888
+   111            333         333      888         888
+111111111            333333333            888888888
+111111111            333333333            888888888
+111111111            333333333            888888888
