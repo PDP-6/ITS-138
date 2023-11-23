@@ -1,0 +1,29 @@
+001                                                                             PAGE 4
+002     003 004 SUBTTL TSS INITIALIZATION
+003
+004                     CONO 633550
+005                     CONO PI,120000+11577
+006     117 013         SETOM DISUSR
+007     047 035         SETOM DISOFF
+008                     CONO DIS,100
+009     001 006         MOVEI A,4
+010     070 021 BAR:    CONO TTY,@TTYLT(A)
+011                     DATAI TTY,
+012     002 017         CONO TTY,3600+TTYCHN
+013     004 010         SOJGE A,BAR
+014     117 014         CLEARM USRHI
+015     117 011         CLEARB U,USER
+016     118 056         MOVE P,USRPDL(U)
+017     080 002         PUSHJ P,GEKI    ;INITIALIZE GE CONSOLES
+018     001 017         MOVNI T,1
+019     012 018         PUSHJ P,USTRA
+020                     JRST .-1
+021     117 034         MOVEI B,SYSB-1
+022     034 004         PUSHJ P,ACORE
+023                     JFCL
+024     118 027         CLEARM USTP
+025     002 021         CONO PI,UTCON+200
+026     001 050         CONO 3000+APRCHN
+027     116 003         JRST SCOR
+028
+029             PAT:    BLOCK 200

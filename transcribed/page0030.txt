@@ -1,0 +1,28 @@
+001                                                                             PAGE 3
+002             DEFINE CONC A,B
+003             A!B!TERMIN
+004             DEFINE SUBTTL A/
+005             TERMIN
+006
+007             GO:
+008             LOC 41
+009     020 017         JSR UUOH
+010     001 050 LOC 40+2*APRCHN
+011     005 003         JSR CLKBRK
+012
+013     002 017 LOC 40+2*TTYCHN
+014     056 002         JSR TTYBRK
+015
+016     002 014 LOC 40+2*UTCCHN
+017     109 002         JSR UTCBRK
+018
+019     002 016 LOC 40+2*DISCHN
+020     045 038         BLKO DIS,DBLKOP
+021     047 022         JSR DRECYC
+022
+023     002 015 LOC 40+2*GETYOC
+024     074 014         JSR GTYOBK
+025     074 014         JSR GTYOBK
+026
+027     003 007 LOC GO
+028

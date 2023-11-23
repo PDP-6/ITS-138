@@ -1,0 +1,52 @@
+001                                                                             PAGE 6
+002     117 025 CLKB5A: SKIPE SCRFG1
+003     005 032         JRST CLKSC1
+004     118 009         MOVE T,UPC(U)
+005     001 018         SKIPL U
+006     005 003         MOVEM T,CLKBRK
+007     001 018 CLKB5:  POP P,U
+008     001 017         POP P,T
+009     117 021 CLKB3:  EXCH P,CPDLP
+010     005 003         JRST 12,@CLKBRK ;EXIT WHEN NO SWAP OCCURS
+011
+012             CLKB1:  CONSZ PI,100000
+013     006 030         JRST PARBRK
+014     117 021         EXCH P,CPDLP    ;NOT A CLOCK BREAK
+015     001 017         PUSH P,T
+016     001 016         PUSH P,U
+017     117 011         MOVE U,USER
+018     005 003         MOVE T,CLKBRK
+019                     CONSZ 20
+020                     CONSO 10
+021     006 038         JRST CLB1A      ;NOT AROV
+022     001 017         TLZ T,400000
+023     005 003         MOVEM T,CLKBRK
+024     118 035         SKIPN PICLR(U)
+025     006 007         JRST CLKB5
+026     001 027         MOVEI T,AROIF
+027     118 033         IORM T,PIRQC(U) ;SET USER AROV INT
+028     005 025         JRST CLKSR
+029
+030             PARBRK: CONO PI,120000
+031     006 034         AOS PARERR
+032     005 003         JRST 12,@CLKBRK
+033
+034             BARERR: 0
+035
+036
+037
+038             CLB1A:  CONSO 230000
+039     006 007         JRST CLKB5      ;NOT PROCESSOR INT
+040     001 052         TLNN T,LSRMOD
+041                     JRST 4,.        ;ERROR IN EXEC MODE-SYSTEM DEAD!
+042     118 009         MOVEM T,UPC(U)
+043                     CONI 1(P)
+044     001 017         MOVEI T,230000
+045     001 017         ANDM T,1(P)
+046     001 050         CONO 430000+APRCHN
+047     001 039         MOVEI T,BADBTS
+048     118 036         OIR T,MSKST(U)
+049     001 017         AND T,1(P)
+050     006 007         JUMPE T,CLKB5
+051     118 033         IORM T,PIRQC(I) ;BLAME IT ON THE USER
+052     005 024         JSRT CLKSR1
