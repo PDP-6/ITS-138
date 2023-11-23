@@ -4,18 +4,18 @@
 004             ;AC DEFS
 005
 006             A=1
-007             B=1
-008             C=1
-009             D=1
-010             E=1
-011             TT=1
-012             I=1
-013             Q=1
-014             J=1
-015             R=1
-016             P=1     ;DO NOT CHANGE!
-017             T=1     ;"
-018             U=1     ;"
+007             B=2
+008             C=3
+009             D=4
+010             E=5
+011             TT=6
+012             I=7
+013             Q=10
+014             J=11
+015             R=12
+016             P=15    ;DO NOT CHANGE!
+017             T=16    ;"
+018             U=17    ;"
 019
 020
 021             IOBIT==1        ;IOBIT IN MAP
@@ -26,7 +26,7 @@
 026             BPIPI==4        ;BAD LOC 42
 027             AROIF==10       ;AROV
 028             BILLOP==40      ;ILLEGAL INSTRUCTION
-029             BIOADC==40000   ;MEMORY PROTECTION VIOLATION
+029             BIOADC==20000   ;MEMORY PROTECTION VIOLATION
 030             BIOCER==400     ;CHANNEL ERROR
 031             VALRTF==200     ;VALUE RETURN
 032             ILLUAD==1000    ;USER DOES NOT HAVE THAT MUCH CORE
@@ -48,7 +48,7 @@
 048             CLKON==2001     ;ABSOLUTE
 049             CLKOFF==1001
 050             APRCHN==7       ;DO NOT CHANGE
-051             BADPC==4037
+051             BADPC==5037
 052             LSRMOD==10000
 053             UUOMIN==40000,,
 054             UUOMAX==46000,,
