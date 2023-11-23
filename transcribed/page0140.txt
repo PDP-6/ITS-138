@@ -2,7 +2,7 @@
 002     019 015         CORE 2(TT)
 003                     JRST .-1
 004     001 011         LSH TT,10.
-005     002 029         MOVEI J,200-METOF-2(TT)
+005     002 029         MOVEI J,2000-METOF-2(TT)
 006                     JRST (P)
 007
 008     001 006 UADRS2: LSH A,10.
@@ -29,6 +29,6 @@
 029     046 037         ADDM A,DISPTR
 030     046 035         ADDM A,DRELOC
 031     001 006         POP P,A
-032     001 016         POPJ P,A
+032     001 016         POPJ P,
 033
 034
