@@ -1,0 +1,34 @@
+001     001 011 COREX:  LSH TT,-10.                                             PAGE 14
+002     019 015         CORE 2(TT)
+003                     JRST .-1
+004     001 011         LSH TT,10.
+005     002 029         MOVEI J,200-METOF-2(TT)
+006                     JRST (P)
+007
+008     001 006 UADRS2: LSH A,10.
+009     118 024 UADRS1: HRRM A,UPR(U)
+010     001 007 UADRS:  MOVEI B,14(A)   ;SET PNTRS FOR USER U USER MEM STARTING AT C(A)
+011     118 019         MOVEM B,AC14P(U)
+012     001 007         AOS B
+013     118 020         MOVEM B,AC15P(U)
+014     001 007         AOS B
+015     118 021         MOVEM B,AC16P(U)
+016     001 007         AOS B
+017     117 011         CAMN U,USER
+018     020 018         HRRM B,AC17P
+019     118 018         HRRM B,SAC17P(U)
+020     001 007         ADDI B,21
+021     118 022         MOVEM B,40P(U)
+022     001 007         AOS B
+023     118 023         MOVEM B,41P(U)
+024     117 013         CAME U,DISUSR
+025     001 016         POPJ P,
+026     001 006         PUSH P,A
+027     046 035         SUB A,DRELOC
+028     046 038         ADDM A,DBLKOP
+029     046 037         ADDM A,DISPTR
+030     046 035         ADDM A,DRELOC
+031     001 006         POP P,A
+032     001 016         POPJ P,A
+033
+034

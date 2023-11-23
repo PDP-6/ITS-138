@@ -1,0 +1,29 @@
+001                                                                             PAGE 13
+002     118 027 USTR4:  SETOM USTP(U)   ;TTY NO IN T
+003     118 044         SETOM UNAME (U)
+004     118 046         MOVEM T,TTYTBL(U)
+005     001 017         SKIPL T
+006     070 028         HRRZM U,TTYSTS(T)
+007     118 030         MOVSI T,BUSRC
+008     118 027         MOVEM T,USTP(U)
+009     001 052         MOVSI T,LSRMOD(U)
+010     118 009         MOVEM T,UPC(U)
+011     002 010         HRLI T,-LUPDL
+012     118 057         HRRI T,UPDL-1(U)
+013     118 056         MOVEM T,USRPDL(U)
+014     118 024         CLEARM UPR(U)
+015     118 036         CLEARM MSKST(U)
+016     020 017         MOVE T,[JRST 2,@UUOH
+017     118 015         MOVEM T,SUEXIT(U)
+018     001 050         MOVEI T,APRCHN+40
+019     118 025         MOVEM T,APRC(U)
+020     118 033         CLEARM PIRQC(U)
+021     118 034         SETOM SUPPRO(U)
+022     118 035         SETOM PICLR(U)
+023     118 037         CLEARM FLSINS(U)
+024     118 041         CLEARM MEMTOP(U)
+025     118 042         CLEARM RMEMT(U)
+026     001 018         MOVSI T,(MOVEM U,)
+027     118 018         MOVEM T,SAC17P(U)
+028     001 016         POPJ P,
+029
