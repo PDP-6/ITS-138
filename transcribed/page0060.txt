@@ -13,7 +13,7 @@
 013     006 030         JRST PARBRK
 014     117 021         EXCH P,CPDLP    ;NOT A CLOCK BREAK
 015     001 017         PUSH P,T
-016     001 016         PUSH P,U
+016     001 018         PUSH P,U
 017     117 011         MOVE U,USER
 018     005 003         MOVE T,CLKBRK
 019                     CONSZ 20
@@ -31,7 +31,7 @@
 031     006 034         AOS PARERR
 032     005 003         JRST 12,@CLKBRK
 033
-034             BARERR: 0
+034             PARERR: 0
 035
 036
 037
@@ -45,8 +45,8 @@
 045     001 017         ANDM T,1(P)
 046     001 050         CONO 430000+APRCHN
 047     001 039         MOVEI T,BADBTS
-048     118 036         OIR T,MSKST(U)
+048     118 036         IOR T,MSKST(U)
 049     001 017         AND T,1(P)
-050     006 007         JUMPE T,CLKB5
-051     118 033         IORM T,PIRQC(I) ;BLAME IT ON THE USER
-052     005 024         JSRT CLKSR1
+050     006 017         JUMPE T,CLKB5
+051     118 033         IORM T,PIRQC(U) ;BLAME IT ON THE USER
+052     005 024         JRST CLKSR1
