@@ -6,7 +6,7 @@
 006     070 028         HRRZM U,TTYSTS(T)
 007     118 030         MOVSI T,BUSRC
 008     118 027         MOVEM T,USTP(U)
-009     001 052         MOVSI T,LSRMOD(U)
+009     001 052         MOVSI T,LSRMOD
 010     118 009         MOVEM T,UPC(U)
 011     002 010         HRLI T,-LUPDL
 012     118 057         HRRI T,UPDL-1(U)
