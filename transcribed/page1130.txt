@@ -1,5 +1,5 @@
 001                                                                             PAGE 113
-002     104 010 JDB5:   HRRZC,UTTM1
+002     104 010 JDB5:   HRRZ C,UTTM1
 003     104 002 JDB7:   EXCH C,SUNIT    ;SELECT UNIT IN C
 004     114 002         JUMPE C,JDB7A   ;NO UNIT SELECTED
 005     104 002         CAMN C,SUNIT
@@ -29,6 +29,6 @@
 029     001 006         CONI UTC,A
 030     001 006         TRZ A,200070
 031     001 006         TRO A,5000
-032
+032                     CONO UTC,(A)
 033     115 016         JRST POPRET
 034
