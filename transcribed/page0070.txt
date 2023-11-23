@@ -1,0 +1,17 @@
+001             ;SLOW CLOCK SERVICE ROUTINE                                     PAGE 7
+002
+003     002 024 SSLCK:  ADDI T,SCLKI
+004     117 029         MOVEM T,SLCLK
+005                     CONSO UTC,400   ;TIME FLG ENB
+006     104 017         SKIPGE UIDLE
+007     007 014         JRST SSLCK1
+008     117 018         MOVE T,TIME
+009     104 023         SUB T,LUTOTM
+010     002 024         CAIGE T,MXOPT*SCLKI
+011     007 014         JRST SSLCK1
+012     104 024         SETOM UTHERR
+013     002 023         CONO UTC,CUINT
+014     104 017 SSLCK1: AOSN UIDLE
+015     005 023         SONO UTC,CUINT
+016     005 024         JRST CLKSR1
+017

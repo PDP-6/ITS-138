@@ -1,0 +1,32 @@
+001                                                                             PAGE 11
+002     117 011 SUBTTL USER SWAP
+003
+004
+005             SWITCH: 0
+006     011 014         JUMPL U,SWT1
+007     118 010         MOVEI T,ACOS(U)
+008     118 011         BLT T,AC15S(U)
+009     020 014         MOVSI T,UEXIT
+010     118 014         HRRI T,UUO(U)
+011     118 014         BLT T,AC17P-UEXIT+UUO(U)
+012     001 017         MOVE T,40
+013     118 043         MOVEM T,SV40(U)
+014     117 011 SWT1:   SKIPGE U,USER
+015     011 031         JRST SWT2
+016     118 043         MOVE T,SV40(U)
+017     001 017         MOVEM T,40
+018     118 014         MOVSI T,UUO(U)
+019     020 014         HRRI T,UEXIT
+020     020 018         BLT T,AC17P
+021     118 024         DATAO UPR(U)
+022     118 025         CONO @APRC(U)
+023     118 026         MOVE T,UQUAN(U)
+024     117 020         MOVEM T,CUQUAN
+025     118 010         MOVSI T,ACOS(U)
+026     001 017         BLT T,T-1
+027     118 009         MOVE T,UPC(U)
+028     011 005         JRST @SWITCH
+029
+030
+031     017 038 SWT2:   MOVEI T,NULJOB
+032     011 005         JRST @SWITCH
