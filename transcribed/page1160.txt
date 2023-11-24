@@ -1,0 +1,23 @@
+001             ;*SYSTEM* JOBS                                                  PAGE 116
+002
+003     117 016 SCORE:   SKIPL SUPCOR
+004     017 002          PUSHJ P,UPL3
+005     116 017          PUSHJ P,SCORE4
+006     117 013          CLEARM @SYSL
+007     117 013          HRLX A,SYSL
+008     117 013          HRM A,SYSL
+009     001 006          AOS A
+010     001 007          MOVE I A,2000
+011     117 013          ADD S,SYSL
+012     068 004          BLT A,(S)
+013     117 015          MOVEM B,SYSL
+014     117 016 NMCU:    CLEARM SUPCOR
+015     118 003          JRST SCOR
+016
+017     117 015 SCORES:  MOVE S,SYSL
+018     001 014          MOVEI U,0
+019     001 007          LS= S,-10.
+020     001 007          AOS B
+021     034 004          PUSHJ P,ACORE
+022     116 014          JRST NMCU
+023     001 016          POPJ P,
