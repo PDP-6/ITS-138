@@ -1,0 +1,60 @@
+001                                                                             PAGE 118
+002
+003             USRSTG==.
+004             IOCHNM: REPEAT 20,0     ;IO CHANNEL ASSIGN
+005                                     ;RH INDEX INTO IOTTB AND CLSTB
+006                                     ;LH DEV CHNL AND/OR OTHER
+007             SIOCHN: BLOCK 21
+008     118 007 SIOCP:  SIOCHN
+009             UPC:    0       ;USER PC STORAGE
+010             ACOS:   BLOCK 15        ;SWAP OUT AC S
+011             AC15S:  0
+012             AC16S:  0
+013             AC17S:  0
+014             UUO:
+015     020 017 SUEXIT: JRST 2,@UUOH    ;USER UUO EXIT INS
+016             SURSTR: 0       ;LOC FOR NEW USER PC STORAGE AFTER UFLS
+017             SUUOH:  0       ;C(@41)
+018     001 018 SAC17P: MOVEM U,0       ;AC17 IN SHAD MEM
+019             AC14P:  0       ;PNTS TO AC 14 IN SHAD MEM
+020             AC15P:  0       ;"   ""    15
+021             AC16P:  0       ;  "   "   "" 16
+022             40P:    0       
+023             41P:    0       
+024             UPR:    0       ;USER PROTECTIONA AND RELOCATION REGISTERS
+025     001 050 APRC:   APRCHN  ;CONO TO APR
+026             UQUAN:  0       ;USER QUANTUM
+027             USTP:   0       ;0 RUNNABLE
+028             BCSTOP=400000   ;BIT IN USTP FOR CORE MOVAGE
+029             BUCSTP=200000   ;CORE STOPPING LOSER TO GIVE MORE CORE RQSTED BY ANOTHER LOSER
+030             BUSRC=100000    ;USER CONTROL INTERUPT TO SUPERIOR PROCEDURE
+031             BEXC=40000      ;SET BY UBO AND FRIENDS INHIBITS RELOCATION BY CORE ALLOCATOR
+032                     ;MUST BE SET WITH CLKOFF  MUST NOT BE SET IF CSTOP IS SET
+033             PIRQC:  0       ; PI REQ AWAITING SERVICE
+034             SUPPRO: 0       ;SUPERIOR PROCEDURE RH,INT BIT LH
+035             PICLR:  1       ;PI IN PROGRESS FLAG
+036             MSKST:  0       ;PI MASK REGISTER FOR USER
+037             FLSINS: 0       ;USER I-O WAIT INS
+038             ; STATES=> 0 => RUNABLE
+039             ;= JRST =EXEC FLUSH
+040             ; OTHERWISE IN IO WAIT IF NOT SKIP SAFE TO RESTART AT "UUO"
+041             MEMTOP: 0       ;TOP OF USER MEM (UNREL) (-METOV)
+042             RMEMT:  0       ;AFIRST USER LOC NOT AVAILABLE 2000 IF LOSER HAS 1 BLOCK
+043             SV40:   0       ;C(40) WHEN USER SWAPPED
+044             UNAME:  0       ;USER NAME
+045             JNAME:  0       ;JOB NAME
+046             TTYTBL: 0       ;TTY ASSIGNED THIS USER
+047                                     ;4.9 DOES NOT HAVE TTY NOW
+048                                     ;4.8 NEVER HAD IT
+049                                     ;4.7 TAKEN AWAY
+050                                     ;3.4 3.1 SAVED TTYSTS IF TAKEN AWAY OR GIVEN AWAY
+051                                     ;RH USER NO GAVE TTY AWAY TO OR TTY NO IF HAS IT OR
+052                                     ;TTY TAKEN FROM ME IF 400000
+053             UILOOK: 0       ;POINTER TO USER CORE FROM SUPERIOR PROCEDURE
+054             UOLOOK: 0       ;" (OUTPUT)
+055             VALUE:  0       ;PROCEDURE "VALUE" RETURN
+056     118 057 USRPDL: -LUPDL,,UPDL-1  ;USER PDL
+057     002 010 UPDL:   BLOCK LUPDL-3
+058             EPDL:   0
+059             EPDL1:  0
+060             EPDL2:  0
