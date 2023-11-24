@@ -19,8 +19,8 @@
 019             AC14P:  0       ;PNTS TO AC 14 IN SHAD MEM
 020             AC15P:  0       ;"   ""    15
 021             AC16P:  0       ;  "   "   "" 16
-022             40P:    0       
-023             41P:    0       
+022             40P:    0
+023             41P:    0
 024             UPR:    0       ;USER PROTECTION AND RELOCATION REGISTERS
 025     001 050 APRC:   APRCHN  ;CONO TO APR
 026             UQUAN:  0       ;USER QUANTUM
@@ -37,7 +37,7 @@
 037             FLSINS: 0       ;USER I-O WAIT INS
 038             ; STATES => 0 => RUNABLE
 039             ;= JRST =EXEC FLUSH
-040             ; OTHERWISE IN IO WAIT IF NOT SKIP SAFE TO RESTART AT "UUO"
+040             ; OTHERWISE IN IO WAIT IF NO SKIP SAFE TO RESTART AT "UUO"
 041             MEMTOP: 0       ;TOP OF USER MEM (UNREL) (-METOV)
 042             RMEMT:  0       ;AFIRST USER LOC NOT AVAILABLE 2000 IF LOSER HAS 1 BLOCK
 043             SV40:   0       ;C(40) WHEN USER SWAPPED
@@ -50,7 +50,7 @@
 050                                     ;3.4 3.1 SAVED TTYSTS IF TAKEN AWAY OR GIVEN AWAY
 051                                     ;RH USER NO GAVE TTY AWAY TO OR TTY NO IF HAS IT OR
 052                                     ;TTY TAKEN FROM ME IF 400000
-053             UILOOK: 0       ;POINTER TO USER CORE FROM SUPERIOR PROCEDURE
+053             UILOOK: 0       ;POINTER TO USER CORE FROM SUPERIOR PROCEDURE (INPUT)
 054             UOLOOK: 0       ;" (OUTPUT)
 055             VALUE:  0       ;PROCEDURE "VALUE" RETURN
 056     118 057 USRPDL: -LUPDL,,UPDL-1  ;USER PDL
