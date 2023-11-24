@@ -1,0 +1,35 @@
+001                                                                             PAGE 117
+002
+003     003 004 SUBTTL RANDOM STORAGE
+004
+005             RADIX 10.
+006     002 007 REPEAT SIOML,[CONC TRAN,\.RRPCNT+1,:    BLOCK SIOMT
+007             ]       RADIX 8
+008
+009             UO:     0       ;TEMP STORAGE FOR FIRST LOW PRIORITY LOSER
+010             PSAVE:  0
+011             USER:   -1      ;USER # OF CURRENT LOSER
+012             CUSER:  0       ;USER OF CORE ALLOCATOR
+013             DISUSR: -1      ;340 USER
+014             USRHI:  0       ;HIGHEST LOC USED OF USER VARIABLE STORAGE
+015     117 034 SYSL:   SYSB*2000
+016             SUPCOR: 0
+017             SEAT1:  0
+018             TIME:   0
+019             CLKFL1: 0
+020             CUQUAN: 0       ;CURRENT USER QUANTUM
+021     117 022 CPDLP:  -CPDLL,,LCPDL-1 ;CLOCK PDL POINTER
+022     002 011 LCPDL:  BLOCK CPDLL
+023             ECPDL==.-5
+024             SCRFLG: 0       ;CURRENT USER MUST BE INTERRUPTED, SAVE VARIABLES, MUNG AND RESTORE
+025             SCRFG1: 0       ;LOSE LOSE LOSE LOSE LOSE LOSE LOSE LOSE LOSE LOSE LOSE LOSE
+026             UTTYST: -1      ;-1 OF TTY THAT WANTS TO BE STARTED
+027             CRACF:  -1      ;CORE ALLOCATOR FLAG (ONLY 1 AT A TIME)
+028     002 007 SIOMTU: SIOMT   ;AMOUNT USED OF I-O MAPPING TABLE
+029             SLCLK:  0       ;SLOW CLOCK
+030             SRCS:   0       ;RECYCLE FLAG FOR SEARCH
+031
+032             CONSTANTS
+033             VARIABLES
+034             SYSB==1+._-10.+IFN .&1777,1
+035     117 034 MXC==MX1KB-SYSB
