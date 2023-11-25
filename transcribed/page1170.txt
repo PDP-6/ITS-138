@@ -6,7 +6,7 @@
 006     002 007 REPEAT SIOML,[CONC TRAN,\.RRPCNT+1,:    BLOCK SIOMT
 007             ]       RADIX 8
 008
-009             UO:     0       ;TEMP STORAGE FOR FIRST LOW PRIORITY LOSER
+009             U0:     0       ;TEMP STORAGE FOR FIRST LOW PRIORITY LOSER
 010             PSAVE:  0
 011             USER:   -1      ;USER # OF CURRENT LOSER
 012             CUSER:  0       ;USER OF CORE ALLOCATOR
