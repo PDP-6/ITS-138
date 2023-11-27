@@ -20,7 +20,7 @@
 020     118 017         SOS T,SUUOH(U)
 021     118 009         MOVEM T,UPC(U)
 022     118 037         CLEARM FLSINS(U)
-023     118 010         MOVEI T,ACOS(U)
+023     118 010         MOVEI T,AC0S(U)
 024     118 024         HRL T,UPR(U)
 025     118 013 PCLSR3: BLT T,AC17S(U)
 026     117 025         SETOM SCRFG1
