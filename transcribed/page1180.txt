@@ -7,7 +7,7 @@
 007             SIOCHN: BLOCK 21
 008     118 007 SIOCP:  SIOCHN
 009             UPC:    0       ;USER PC STORAGE
-010             ACOS:   BLOCK 15        ;SWAP OUT AC S
+010             AC0S:   BLOCK 15        ;SWAP OUT AC S
 011             AC15S:  0
 012             AC16S:  0
 013             AC17S:  0
