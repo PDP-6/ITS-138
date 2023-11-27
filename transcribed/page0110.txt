@@ -4,7 +4,7 @@
 004
 005             SWITCH: 0
 006     011 014         JUMPL U,SWT1
-007     118 010         MOVEI T,ACOS(U)
+007     118 010         MOVEI T,AC0S(U)
 008     118 011         BLT T,AC15S(U)
 009     020 014         MOVSI T,UEXIT
 010     118 014         HRRI T,UUO(U)
@@ -22,7 +22,7 @@
 022     118 025         CONO @APRC(U)
 023     118 026         MOVE T,UQUAN(U)
 024     117 020         MOVEM T,CUQUAN
-025     118 010         MOVSI T,ACOS(U)
+025     118 010         MOVSI T,AC0S(U)
 026     001 017         BLT T,T-1
 027     118 009         MOVE T,UPC(U)
 028     011 005         JRST @SWITCH
