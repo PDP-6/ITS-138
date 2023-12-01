@@ -1,0 +1,38 @@
+The screenshot is from MIT AI Film #42, "Minsky Arm"
+https://www.csail.mit.edu/node/6647
+http://projects.csail.mit.edu/video/history/aifilms/43-arm.mp4
+
+Transcribed text below.  It's likely from a very old version of ITS.
+
+----------------------------------------------------------------------
+
+	LDB B,[MLU,,MEMBLT(A)
+	DPB B,[MLO,,MEMBLT(E)
+	LDB E,[MLU,,MEMBLT(A)
+	CAIE B,1777
+	DPB E,[MLU,,MEMBLT(B)
+	SOS MEMFR
+	JRST POPJ1
+
+IMEMR:	MOVE B,MEMFP
+	DPB B,[MLO,,MEMBLT(A)
+	DPB A,[MLU,,MEMBLT(B)
+	MOVEI B,1777
+	DPB B,[MLU,,MEMBLT(A)
+	MOVEI B,75
+	DPB B,[MUR,,MEMBLT(A)
+	MOVEM A,MEMFP
+	AOS MEMFR
+	POPJ P,
+↓₁₄TIBL=20
+TOBL=20
+NTTYS=4
+	TYICLS
+TYI:	SKIPG TICC (A)
+	PUSHJ P,UFLS
+	MOVEI B,TIOP(A)
+	CAMN B,TIBEP(A)
+	SUBI B,TIBL
+	HRRM B,TIOP(A)
+	ILDB B,TIOP(A)
+	MOVEM B,(C)
