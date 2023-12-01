@@ -1,0 +1,59 @@
+Quote from the book "The Tomorrow Makers - A Brave New World of
+Living-Brain Machines", by Grant Fjermedal.  Macmillan, 1986.
+
+----------------------------------------------------------------------
+
+    I mentioned the XOR hack that Gumby had liked.
+
+    "Two XORs in a row?" Sussman said.  "Sounds like a Gosper program.
+I can tell you who it was.  Bill Gosper.  That's the kind of thing
+Gosper would write.  It's very brilliant, very clever, and it's also
+at a very low level of detail.  And then there are people who are more
+architectural.
+
+    "When I see a program written by Gosper, I can recognize it.  I
+can read programs written by Winston [Patrick Henry Winston, a former
+Minsky student who now heads the department] and tell you that's a
+Winston program.  It's got its own flavor.
+
+    Then Sussman opened the file drawer, saying, "A long, long time
+ago, what did LISP look like?"  He laughed, pulled out a half-inch
+thick computer printout, laughed again, and said, "It was only this
+big.  That's the amazing thing.  It was written by many people.  A
+listing of LISP systems now is about five or six times as think.
+
+    "Yet I can look through this and read various pieces of the code and
+say, 'This part was written by [Richard] Greenblatt.'  I can tell."
+
+    The[n] he pulled out a printout that he handled as if it were an
+original Gutenberg bible.  It was the original code for the ITS
+operating system—the Incompatible Timesharing system.  It even seemed
+awesome to me.  Today we just accept the fact that a mainframe
+computer can be in the basement of a building and desktop terminals
+can be spread throughout a building, or throughout the world,
+providing anyone with a terminal, access to the computer.  It is hard
+to realize that as late as the 1960s this wasn't the case.  If you
+wanted computer time, you wrote your program, took it to the computer
+room, and had it run oftentimes by someone else, even if you wanted to
+do it yourself.
+
+    It is a tribute to the modesty and especially to the irreverence
+of the early hackers that when they created the world's first
+timesharing system at MIT, they provided it with a name that was
+completely opposite from what it really was: the Incompatible
+Timesharing System.
+
+    There was Gerry Sussman holding that half-inch printout, a blessed
+relic from 1967.  The machine has a Moby memory, and as if reciting
+from the opening words of the Great American novel, Sussman held the
+printout in his hands and said, "The first line of it is, Moby is
+One." It was written as Moby = 1, but the way Sussman read it, there
+was the sound of poetry and philosophy, as existential a piece of
+haiku as I have ever heard: Moby is One.  "These days such an
+operating system would have maybe one hundred times as much code.  But
+this is what it was like then, filled with some very beautiful code —
+and some very ugly code.  Some of it is humorous, and some of it is
+sad.  Some of it had ideas in it that have been lost.  Some historian
+could go through it someday and read it the way people read the Dead
+Sea Scrolls and say, 'Aha, The guys who wrote this were real smart
+guys.  And some of the things they knew, we don't even know now.'"
