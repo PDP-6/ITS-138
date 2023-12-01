@@ -1,0 +1,959 @@
+This is the contents of a file called RG;FD 4/1/68 from ToTS tape
+3100151, timestamped 1970-07-24 11:59:55.
+
+----------------------------------------------------------------------
+
+FREE FILES 18	FREE BLOCKS 465
+ LISP   N86    80
+ MOBY   ADDRES 3
+ MOBY   AD1    4
+ MBY    BIN    3
+ MOBY   AD2    4
+RG2
+FREE FILES 13	FREE BLOCKS 114
+ LISP   REL10  56
+ LISP   NEW18  81
+ DDT    SYMS   12
+ TECO   EXP18  51
+ LISP   REL17  58
+ MIDAS  NEW76  109
+ TAPE   LOAD10 4
+ MOOG   ENG2   35
+ RULES  FEB22  39
+RG3
+FREE FILES 14	FREE BLOCKS 125
+ MIDAS  F22V   128
+ LISP   NEW19  81
+ LISP   NEW20  81
+ SORT   FOO    1
+ TECO   BLURB  6
+ DDT    PROG8  45
+ MIDAS  F22D   92
+RG4
+FREE FILES 16	FREE BLOCKS 273
+ HACKTP BIN2   10
+ LISP   DUMBIN 1
+ LISP   REL27  59
+ LISP   REL29  59
+ MIDAS  F23V1  129
+ HACK   HACK   28
+RG5
+FREE FILES 10	FREE BLOCKS 267
+ MIDAS  F16V   124
+ TTY    7      4
+ DIS    1      4
+ TTY    8      4
+ LISP   A2     58
+ TTY    6      4
+ GRINDE N12    4
+ DDT    16     44
+ LISP   TIMER  1
+ GRINDE HACK   5
+ GRINDE TIMER  1
+ DDT    OPBIN  39
+RG6
+FREE FILES 9	FREE BLOCKS 172
+ LISP   N13    64
+ LOOK   53     14
+ TECO   NEW11  54
+ MIDAS  F24V1  129
+ LOOK   50     13
+ DDT    17     44
+ TTY    BIN    4
+ MATH   17-22  5
+ TTY    BIN1   5
+ LOOK   51     14
+ LOOK   52     14
+ ARM    HACK   27
+RG7
+FREE FILES 1	FREE BLOCKS 119
+ LPT    11     4
+ MIDAS  REL42  120
+ MIDAS  F23V   128
+ TUTONE 5N     4
+ VIOLA  4      2
+ TUTONE 5NA    4
+ TUTONE 5EXP   4
+ VIOLIN ENG1   2
+ TUTONE 6      4
+ VILIN  5      3
+ LPT    6      3
+ PLTR   0      14
+ SUB    PROG3  9
+ TUTONE 7      4
+ TUTONE 8      4
+ PLOT   2      11
+ ANA    VIO    50
+ VILIN  H      21
+ VILIN  WIN    21
+ @      HACK   28
+RG8
+FREE FILES 5	FREE BLOCKS 59
+ DDT    23L    45
+ AIO    17     19
+ DDT    19H    44
+ AIO    15     18
+ AIO    16     18
+ MIDDPY 3      4
+ AIO    REL10  31
+ C      19     29
+ H      38     41
+ AIO    ?      32
+ MOBY   2A     39
+ C      16     26
+ C      17     28
+ C      18     28
+ PLOT   0      6
+ C      15     25
+ HP     2      67
+RG9
+FREE FILES 11	FREE BLOCKS 32
+ LISP   REL12  56
+ AIO    ?1     32
+ TECO   NEW24  63
+ MIDAS  F19V   124
+ LISP   REL32  58
+ COMP   11     20
+ LISP   REL34  59
+ SLAW   TEST   14
+ HP     3      70
+ AIO    REL8   31
+R10
+FREE FILES 6	FREE BLOCKS 82
+ DDT    3/15   46
+ TECO   T1     49
+ CONST  TEST   1
+ DEF    LIS    1
+ MIDAS  F18V   124
+ MANNS  FUNCT  1
+ MIDAS  16K2   143
+ UTAPE  DUM1   1
+ LISP   COMPTE 1
+ AIO    RLBIN8 28
+ UTAPE  42TST2 16
+ TRACE  2      6
+ GRIN   DEF    4
+ AIO    16K2   19
+ DDTYPE DMP    37
+R11
+FREE FILES 15	FREE BLOCKS 165
+ MIDAS  REL43  121
+ HP     9      84
+ TJ6    N35    32
+ DDT    29H    44
+ DP     6      9
+ DDT    30H    45
+ LISP   A4     59
+R12
+FREE FILES 3	FREE BLOCKS 198
+ STARS  8      20
+ ARM    BIN    5
+ LOOK   BIN    9
+ MATH   BIN    12
+ WAR    45P    29
+ MIDDPY 2      4
+ AIO    REL9   31
+ AIODPY 10     33
+ FPL    PREL2  7
+ WAR    22     17
+ WAR    23     17
+ WAR    46BIN  20
+ FPL    TEST2  3
+ FPL    PREL3  8
+ FPL    PREL4  10
+ FPL    TEST3  3
+ MIDAS  F17V   124
+ DDTYPE ENG    9
+R13
+FREE FILES 10	FREE BLOCKS 91
+ FORTRN E10/22 58
+ FORTRN LIBENG 71
+ FORTRN RULES  41
+ FORTRN LIBRAR 45
+ TV     10     3
+ MACTAP 51     17
+ TV     10A    3
+ TV     BIN    8
+ TV     NEWHK  36
+ @      FORTRN 94
+ HACK   WIN    36
+ HACK   LOSE   29
+ TV     D      27
+R14
+FREE FILES 7	FREE BLOCKS 14
+ TECO   NEW11H 54
+ DSKD   0      11
+ PLT    54     126
+ LISP   A3     59
+ LISP   N11    63
+ DDT    29BIN  22
+ STARS  BIN8   7
+ WAR    46P    29
+ PLT    SYS    2
+ B      M      7
+ P      T2     1
+ PLT    55     120
+ SYSTEM GENBIN 2
+ WAR    PBIN   42
+R15
+FREE FILES 15	FREE BLOCKS 155
+ MACTAP 60     20
+ AIO    T11    19
+ AIO    13     18
+ MIDAS  F3A    123
+ MACTAP F64    21
+ MACTAP 58     20
+R16
+FREE FILES 19	FREE BLOCKS 45
+ @      LISP   63
+ @      LISPC  92
+ LISPC  ?(?)   94
+ LISP   L      82
+R17
+FREE FILES 14	FREE BLOCKS 142
+ C      BIN    159
+ I      4      18
+ I      12     21
+ LISP   N54    74
+ LISP   C92    72
+ LISP   C92A   73
+R18
+FREE FILES 15	FREE BLOCKS 67
+ MIDAS  TST23  147
+ PLT    56     121
+ MIDAS  TST21  146
+ LISP   N68    78
+R19
+FREE FILES 13	FREE BLOCKS 58
+ LISP   N64    78
+ LISP   N65    78
+ LISP   EDIT   1
+ LISP   NDMYB  1
+ LISP   N66    78
+ LISP   N67    78
+ LISPC  85     94
+ @      LISPC  93
+R20
+FREE FILES 2	FREE BLOCKS 81
+ COMPT  6      4
+ VIDI   4      5
+ VIDI   5      5
+ LISP   C110   74
+ MACTAP F65A   21
+ PLT    37     114
+ LISP   CDNEW  4
+ LISP   C113   74
+ VIDI   6      5
+ FOO    FOO    4
+ LOSS   LOSS   4
+ MUNG   MOBY   5
+ COMPT  7      4
+ GRIND  TAPE1  7
+ LISP   C112   74
+ COMPT  5      4
+ ROBOT  1      61
+ FOLO   7      9
+R21
+FREE FILES 15	FREE BLOCKS 117
+ LISP   N90    81
+ LISP   C67    68
+ TYO    DEF    1
+ LISP   N91    81
+ MIDAS  F21V   128
+ LISP   TYH91  83
+R22
+FREE FILES 0	FREE BLOCKS 17
+ LISP   N85    80
+ LISP   C49    72
+ LISP   C47    72
+ FOLOW  6      8
+ LISP   C51    73
+ LISP   NDMY1  1
+ LISP   NDMYB  1
+ V      HACK   2
+ HACK   TEST   3
+ LISP   N91M   81
+ MACDMP 64K    9
+ V      NH1    7
+ V      H6     4
+ V      H8     5
+ V      H7     4
+ V      H16    6
+ V      BIN    3
+ LISP   C52    73
+ V      NH2    8
+ V      NH3    9
+ @      @      21
+R23
+FREE FILES 15	FREE BLOCKS 86
+ MIDAS  F10V   123
+ LISP   N89    81
+ TECO   DRM10  48
+ TECO   DR10   48
+ LISP   39T4   90
+ MIDAS  D18    83
+R24
+FREE FILES 8	FREE BLOCKS 120
+ TECO   BIN    31
+ LPT    BIN    3
+ MACTAP BIN66  25
+ LISP   C25    67
+ LISP   C22    74
+ LAP    6      9
+ GRIND  TAPE   6
+ LAP    4      8
+ LAP    5      9
+ LISP   C24    75
+ MID    T      84
+ TECO   T      48
+R25
+FREE FILES 3	FREE BLOCKS 71
+ LISP   C20    74
+ MACTAP F66    21
+ LPT    5      3
+ M      0      19
+ MACTAP F67    21
+ M      1      19
+ LAP    LISTER 1
+ TECO   M14    57
+ LISP   COMP7  67
+ @      LAP    8
+ MACTAP F67A   21
+ M      2      22
+ MACTAP F68    21
+ PLT    53     126
+ B      M      7
+ P      T2     1
+R26
+FREE FILES 3	FREE BLOCKS 68
+ PLT    28     97
+ LISP   SYS    12
+ SCOPE  TRACE  5
+ SCOPE  7      5
+ LISP   C48    72
+ LISP   SYS1   12
+ SCOPE  8      5
+ SCOPE  11     5
+ M      0      19
+ C      5      14
+ HACTRN 16     31
+ C      6      18
+ C      3      11
+ C      4      13
+ C      44     71
+ PLT    30     101
+RT3
+FREE FILES 4	FREE BLOCKS 7
+ LISP   C116   74
+ COMPT  10     4
+ @      TRANS  2
+ LISP   C1     73
+ @      MINI   2
+ LISP   C86L   72
+ LISP   C117   74
+ @      MINIB  29
+ MINI   HACK   2
+ @      @      1
+ HF     BIN    20
+ LISPC  C88    96
+ LISPC  C114   103
+RT4
+FREE FILES 6	FREE BLOCKS 40
+ LISP   C13    74
+ LISP   C14    74
+ LISP   C10    73
+ GRIND  T      7
+ @      OPDDT  13
+ @      LISP   67
+ @      STINK  9
+ @      MIDAS  84
+ MIDAS  NEW    84
+ @      TECO   21
+ @      DDT    13
+RT5
+FREE FILES 18	FREE BLOCKS 332
+ DDT    41HM   49
+ NSBRQ  8      46
+ FILE   OLD    14
+ FILE   DIR    15
+ LISPC  C10    103
+MSY
+FREE FILES 12	FREE BLOCKS 101
+ LISPC  C40    103
+ LISP   L      84
+ LISP   NEW    73
+ @      LISP   42
+ @      2GETS1 2
+ @      MARK   1
+ @      OPDDT  13
+ @      STINK  9
+ @      DDT    13
+ @      MIDAS  92
+ @      TECO   26
+RLS
+FREE FILES 13	FREE BLOCKS 404
+ LISP   SYS1   12
+ LAP    LISTER 1
+ @      REMLAP 1
+ LAP    INT    9
+ LAP    TC     6
+ GRIND  TAPE   6
+ SCOPE  12     5
+ LISP   SYS2   11
+ @      LOSS   1
+ LISPC  C40    103
+RCH
+FREE FILES 17	FREE BLOCKS 199
+ C      300    344
+ COLOR  HACK?  4
+ PS     GAME   3
+ RODDS  PS     2
+ CHESS  BLURB  7
+RC2
+FREE FILES 16	FREE BLOCKS 95
+ C      298    333
+ CHESS  P7     58
+ BOOK   BIN18N 12
+ MOBY   GAME   3
+ CHESS  P9     58
+
+FREE FILES 7	FREE BLOCKS 97
+ C      GAMES  90
+ STAN   USSR2  2
+ ELIPSE PLOT   7
+ DISPL  HACK   4
+ STAN   USSR3  2
+ TIME   2      6
+ TIME   3      6
+ T      BIN    4
+ PAGE   PROP   10
+ C      293    315
+ FISCAL PREDIC 2
+ AND    GAME   2
+ BOOK   18BIN  11
+ BLOOM  GAME   1
+RC4
+FREE FILES 8	FREE BLOCKS 239
+ BOOK   MOVES  9
+ B      M      9
+ B      1      13
+ FOO    BAR    1
+ RL     LOSS   1
+ G      FOO    1
+ MOBY   MOSES  2
+ C      264    256
+ .TECO. OUTPUT 0
+ TALK   3      18
+ PLAUS  LOSS   2
+ MOBY   GAME   4
+ FU     GAME   2
+ MOBY   PS1    2
+RC5
+FREE FILES 14	FREE BLOCKS 45
+ C      301NTS 344
+ K      QNOD1  1
+ K      QNOD2  2
+ 7TO6   2      2
+ K      QNOD3  2
+ TECO   7TO6   45
+ C      D238   118
+RC6
+FREE FILES 13	FREE BLOCKS 226
+ C      266    258
+ TALK   SLID1  4
+ BOOK   14BIN  10
+ PT4    G4     1
+ L      5      5
+ L      4      3
+ TALK   2      20
+ TALK   SLIDES 5
+ BOOK   7.5    27
+RC7
+FREE FILES 14	FREE BLOCKS 27
+ C      288    314
+ BOOK   17     39
+ BOOK   12     33
+ BOOK   13T    34
+ BOOK   14     35
+ BOOK   16     38
+ BOOK   18     39
+
+FREE FILES 17	FREE BLOCKS 127
+ C      274P   286
+ BOOK   7      29
+ HP     17     86
+ TREE   SLIDE  1
+ BOOK   EXP11  30
+C9 
+FREE FILES 17	FREE BLOCKS 20
+ C      302NTS 345
+ NODDS  LOSS   1
+ QVN    LOSS   1
+ QODDS  LOSS   2
+ TOUR   VER    190
+C10
+FREE FILES 7	FREE BLOCKS 129
+ T      G      1
+ KAUF   GAME   3
+ BOOK   18     39
+ BOOK   BIN18N 11
+ C      BIN    159
+ GAME   1      2
+ GAME   2      3
+ GAME   3      3
+ GAME   4P     1
+ GAME   5      1
+ GAME   HACK   2
+ BAISL  GAME   2
+ VRODDS GAME   4
+ @      FOO    10
+ @      @      189
+C11
+FREE FILES 22	FREE BLOCKS 368
+ TOUR   VER1   191
+C12
+FREE FILES 19	FREE BLOCKS 208
+ C      303    348
+ AGB    GMLOSS 1
+ GAME   LOST   2
+
+FREE FILES 15	FREE BLOCKS 151
+ C      BIN    109
+ LPT    11B    4
+ III    GAME   1
+ TIC    TACTOE 4
+ MACTAP F67B   25
+ BS     G      1
+ C      D226   144
+ @      @      120
+
+FREE FILES 14	FREE BLOCKS 68
+ LPT    11B    4
+ C      BIN    83
+ C      LODE   1
+ R      1      2
+ C      D215NB 147
+ C      D226B7 145
+ C      D224   109
+
+FREE FILES 19	FREE BLOCKS 142
+ C      299    337
+ C      D167   80
+
+FREE FILES 9	FREE BLOCKS 66
+ LISP   N91    81
+ MIDAS  F21V   128
+ LISP   C40    70
+ LAP    LISTER 1
+ LAP    TC     6
+ LAP    INT    9
+ LISP   SYS1   12
+ TECO   RM30   63
+ TECO   DUM1   1
+ AIO    R21    18
+ MACTAP F67    21
+ SYS1   60     83
+NJP
+FREE FILES 20	FREE BLOCKS 248
+ ITS    BIN    144
+ @      MDDT   17
+ @      @      150
+
+FREE FILES 16	FREE BLOCKS 228
+ ITS    BIN    132
+ LISP   DDT7   5
+ CHESS  GAMES  6
+ DSKDIR 754000 21
+ @      MDDT   17
+ @      @      150
+TSS
+FREE FILES 20	FREE BLOCKS 398
+ ITS    BIN    144
+ @      MDDT   17
+TC4
+FREE FILES 19	FREE BLOCKS 249
+ ITS    BIN    143
+ DEC    MACROS 1
+ @      @      149
+ @      MDDT   17
+TS1
+FREE FILES 20	FREE BLOCKS 241
+ ITS    331    316
+ MAR    TEST1  2
+
+FREE FILES 21	FREE BLOCKS 236
+ ITS    342    323
+TS3
+FREE FILES 19	FREE BLOCKS 231
+ ITS    343    325
+ DUP    3      2
+ O      T      1
+TS4
+FREE FILES 21	FREE BLOCKS 233
+ ITS    344    326
+TS5
+FREE FILES 20	FREE BLOCKS 237
+ ITS    336    322
+TS6
+FREE FILES 20	FREE BLOCKS 231
+ ITS    346    326
+ PLT    SYS    2
+MID
+FREE FILES 23	FREE BLOCKS 559
+TM1
+FREE FILES 11	FREE BLOCKS 104
+ MIDAS  TST18  143
+ PEEK   70     35
+ INT    8D     16
+ MIDAS  TST26  144
+ TJ6    N33    31
+ DP     3      9
+ VID    7      3
+ DP     (MEMO) 4
+ PEEK   72     35
+TM2
+FREE FILES 11	FREE BLOCKS 78
+ MAIZE  FOO    25
+ MIDAS  TST27  144
+ CHESS  P20    64
+ SYSTST 4      2
+ SYSTST 5      2
+ PEEK   71C    35
+ .TECO. OUTPUT 0
+ TJ6    N39    33
+ TJ6    N41    33
+ MIDAS  TST24  143
+TDT
+FREE FILES 16	FREE BLOCKS 93
+ DDT    138    93
+ DDT    126    93
+ DDT    134    94
+ DDT    131    93
+ DDT    137    93
+TD2
+FREE FILES 19	FREE BLOCKS 194
+ DDT    128    94
+ DDT    132    93
+ DDT    134    94
+ DDT    109    84
+TD3
+FREE FILES 20	FREE BLOCKS 281
+ DDT    129.5  93
+ DDT    130    93
+ DDT    135    92
+TSS
+FREE FILES 7	FREE BLOCKS 164
+ TS     PICPAC 16
+ @      BANANA 11
+ TS     MIDAS  62
+ @      MACDMP 4
+ TS     TJ6    18
+ @      HACTRN 41
+ TS     LISP   89
+ TS     TTPEEK 14
+ TS     STINK  13
+ TS     LOCK   5
+ TIMER  1      11
+ HACTRN 132    41
+ TS     TECO   38
+ TS     PEEK   15
+ @      MDDT   17
+TAX
+FREE FILES 18	FREE BLOCKS 202
+ TS     CHESS  172
+ C      D298   130
+ .TECO. FLAP   1
+ TS     STRING 54
+TSB
+FREE FILES 18	FREE BLOCKS 105
+ TECO   TS59   92
+ TSDDT  64     74
+ ITS    265A   286
+ BBN    HACK5  2
+YX1
+FREE FILES 15	FREE BLOCKS 314
+ TJ6    N41    33
+ TJ6    BIN    19
+ PEEK   76     36
+ SPY    1      2
+ TJ6    N42    34
+ PEEK   82     37
+ PEEK   87     41
+ PEEK   94     43
+YX2
+FREE FILES 12	FREE BLOCKS 226
+ PART1  1      71
+ PART2  1      65
+ BLTTST 2      12
+ TAPE   4      2
+ DEC    MACRO  1
+ PART3  10     82
+ LOCK   27     8
+ LOCK   28     8
+ LOCK   29     8
+ PEEK   80     34
+ PEEK   89     42
+YX3
+FREE FILES 17	FREE BLOCKS 386
+ LOCK   25     7
+ LOCK   26     8
+ PEEK   78     34
+ PEEK   84     38
+ PEEK   91     43
+ PEEK   92     43
+LPE
+FREE FILES 17	FREE BLOCKS 75
+ LISP   73     161
+ LISP   72     161
+ LISP   75     162
+TDT
+FREE FILES 17	FREE BLOCKS 78
+ LISP   74     162
+ LISP   60TS1B 159
+ LISP   62TS1  160
+SN1
+FREE FILES 2	FREE BLOCKS 451
+ SORT   OOF    1
+ SORT   BIN    1
+ @      FOO    3
+ 7-1    ASC    15
+ INT    3      12
+ MARK   BIN    2
+ SYSTEM GEN    5
+ SYSTEM GENBIN 3
+ @      FOOB   2
+ @      FOU    4
+ MARK   ENG    2
+ PENT   FAP    4
+ @      FOUB   8
+ NOISE  7      2
+ T      T      2
+ SHIFTY 6      4
+ SHIFTY BIN    3
+ PRE4   MAR6   3
+ @      INCR   3
+ HACK   5      5
+ @      LISTEN 24
+
+FREE FILES 16	FREE BLOCKS 525
+ GRAY'S HACK   3
+ PARA   BOLA   1
+ PARA   B      1
+ PARA   C      1
+ HACK   5      5
+ HACK   B      5
+ @      @      18
+N3 
+FREE FILES 3	FREE BLOCKS 401
+ LISP   CD     3
+ LISP   TRACE  3
+ LISP   SYS    6
+ LISP   C39A   56
+ @      MACTAP 25
+ LISP   NDMYB  1
+ LISP   LAP6   8
+ LISP   NGRIND 5
+ LISP   LAP5   8
+ GRIND  TAPE1  6
+ CMP1   DEF    1
+ LISP   LAP4   8
+ GRINDE N31    5
+ TIC    3      3
+ LISP   DUMBIN 1
+ LISP   LAP7   8
+ TECO   MACROS 2
+ GRIND  TAPE   5
+ TRACE  EXPR   3
+ FOO    FOO    1
+N4 
+FREE FILES 17	FREE BLOCKS 510
+ @      LOSS   3
+ @      READER 4
+ INT    0      4
+ INT    2      5
+ INT    8      16
+ GE     CROX   17
+
+FREE FILES 15	FREE BLOCKS 502
+ BEYER  6      8
+ B      BIN    7
+ BEYER  6A     7
+ BYER   1      5
+ BEYER  4      3
+ BEYER  5      6
+ BEYER  7      7
+ TTY    TEST   14
+TEC
+FREE FILES 9	FREE BLOCKS 10
+ TECO   116TS  106
+ TECO   DUM1B  1
+ LPT    6B     3
+ MACTAP F67B.1 25
+ TECO   DUMMBY 1
+ TECO   DUM1A  1
+ MACTAP F67A.1 21
+ TECO   MA28   73
+ TECO   MBYDMB 1
+ TECO   105    104
+ TECO   111    106
+ TECO   113    107
+TE2
+FREE FILES 16	FREE BLOCKS 33
+ TECO   103    103
+ TECO   108TS  105
+ TECO   109TS  106
+ TECO   110TS  106
+ TECO   114TS  106
+TE3
+FREE FILES 23	FREE BLOCKS 559
+H2 
+FREE FILES 5	FREE BLOCKS 380
+ STINK  105    34
+ STINK  DIS105 34
+ UTAPE  DUMMY  1
+ STINK  103    34
+ LISTEN 1      4
+ FOO1   2      5
+ RANDOM BARF   1
+ LESS   11     4
+ CALIB  DIS2   6
+ GRINDE 12     4
+ TRACE  2      6
+ TIME   1      4
+ LISTEN 17     5
+ LISTEN 18     5
+ LISTEN BIN    3
+ LISTEN 19     5
+ LISTEN 16     5
+ @      @      18
+H3 
+FREE FILES 13	FREE BLOCKS 324
+ STINK  102    34
+ STINK  BIN    17
+ TECO   MOD1   5
+ SYSTEM GEN    4
+ MARK   ENG    2
+ STINK  104    34
+ TECO   MACROS 1
+ TECO   RM33B  69
+ TECO   RM33A  68
+ TECO   DUM2   1
+H4 
+FREE FILES 14	FREE BLOCKS 417
+ DDTYP4 HACK   9
+ MACDMP NEW7   9
+ STINK  93     33
+ CALIB  DIS6   6
+ FOO    DUM2   1
+ FOO1   10     5
+ FOO1   11     5
+ DDTYPE DMP    37
+ DDTYPE MOD    37
+H5 
+FREE FILES 11	FREE BLOCKS 498
+ TTY    10     4
+ SINCOS 4      2
+ FLOUT  4      3
+ UTAPE  49     17
+ DIS    9      4
+ PTR    5      3
+ LIBRAR MEMO   4
+ PUNCH  6      2
+ EXPF   2      2
+ UTAPE  48     17
+ SQRT   2      1
+ ATAN   2      2
+H6 
+FREE FILES 17	FREE BLOCKS 522
+ MODULE PRICE2 1
+ MODULE PRICE3 1
+ IO     TEST25 15
+ MTTL   PRICE  1
+ NOISE  11     11
+ CALIB  DIS15  8
+H7 
+FREE FILES 4	FREE BLOCKS 321
+ MACDMP FOO    11
+ MACDMP CORE1  12
+ VID    SETL6  5
+ MACDMP FOO1   12
+ ARM    13     5
+ VID    SETL5  5
+ SWEEP  5      3
+ MACDMP SHAD16 12
+ VIVI   12     2
+ VID    BIN    3
+ P      1      4
+ SYMS   1      10
+ P      2      26
+ DATA   9      6
+ CLOB   FILE   2
+ VID    TST3   2
+ MACDMP 64KDDT 11
+ VIVI   5      71
+ @      @      36
+H8 
+FREE FILES 9	FREE BLOCKS 363
+ LISP   SYS    6
+ GROSS  ELI    18
+ IWIDJ  5      6
+ LISP   LAP6   8
+ GROSS  DOC3   10
+ WIDJ   TEST1  2
+ WIDJ   25     12
+ TECO   LISPM  1
+ GRUEN  SCRIP4 21
+ TECO   M20    62
+ WIDJ   FOO    10
+ WIDJ   26     12
+ WIDJ   OUT    4
+ MAIZE  FOO    24
+H9 
+FREE FILES 10	FREE BLOCKS 269
+ D      M      1
+ PLT    SYS    2
+ WORSE  1      3
+ P      T2     6
+ TAPE   9      3
+ PLT    51     124
+ PLT    55     120
+ TAPE   10     3
+ MFASCI 3      5
+ BLUE   MOD27  7
+ VIDSTL 6      8
+ DEC    MACRO  1
+ BLUE   MOD26  7
+H10
+FREE FILES 12	FREE BLOCKS 200
+ TECO   105    104
+ MACTAP 10-3   20
+ STINK  10-2   34
+ FIL    DIR    5
+ TECO   DUM2   1
+ DDT10  30H    45
+ MACTAP 10-5   21
+ VID    TST8   3
+ TECO   106    104
+ 10DMP  5      22
+TK3
+FREE FILES 3	FREE BLOCKS 373
+ FE     BIN    3
+ @      VILIN  3
+ VISION HACK35 12
+ FIND   EDGE11 5
+ TUTONE 10     4
+ FOOTS  10     7
+ FIND   EDGE10 5
+ VISION HACK45 16
+ ROB    8      4
+ VISION HACK46 16
+ FB9    BIN    7
+ DHACK  3      1
+ FOO    BAR9   8
+ TDR    4      2
+ V      BIN    10
+ VISION HACK47 17
+ USER   LIST   3
+ @      V      21
+ @      @      21
+ @      FE     21
