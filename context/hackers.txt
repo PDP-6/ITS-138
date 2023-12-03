@@ -1,0 +1,258 @@
+It underlined something that Greenblatt, Gosper, and the rest
+considered essential the magic that could come only from programs
+using all of the computer.  The hackers worked on the PDP-6, one by
+one, as if it were their own personal computer.  They would often run
+display programs which ran in "real time" and required the computer to
+constantly refresh the screen; timesharing would make the display
+hacks run slower.  And the hackers had gotten used to little frills
+that came from complete control of the PDP-6, like being able to track
+a program by the flshing lights (ndicating which registers in the
+machine were firing).  Those perks would be gone with time-sharing.
+
+At heart, though, the time-sharing issue was an esthetic question.
+The very idea that you could not control the entire machine was
+disturbing.  Even if the time-sharing system allowed the machine to
+respond to you in exactly the same way as it did in single-user mode,
+you would just know that it wasn't all yours.  It would be like trying
+to make love to your wife, knowing she was simultaneously making love
+to six other people!
+
+The hackers' stubbornness on this issue illustrated their commitment
+to the quality of computing; they were not prepared to compromise by
+using an inferior system that would serve more people and perhaps
+spread the gospel of hacking.  In their view, hacking would be better
+served by using the best system possible.  Not a time-shared system.
+
+Fredkin was faced with an uphill political struggle.  His strategy was
+to turn around the most vehement of the anti-time-sharing camp
+Greenblatt.  There was a certain affection between them.  Fredkin was
+the only person on the-ninth floor who called Greenblatt "Ricky."  So
+he courted.  He cajoled.  He told Greenblatt how the power of the
+PDP-6 would be improved by a new piece of hardware which would expand
+its memory to a size bigger than any computer in the world.  He
+promised that the time-sharing system would be better than any to date
+and the hackers would control it.  He worked on Greenblatt for weeks,
+and finally Ricky Greenblatt agreed that time-sharing should be
+implemented on the PDP-6.
+
+Soon after that, Fredkin was in his office when Bill Gosper marched in,
+leading several hackers.  They lined up before Fredkin's desk and gave
+him a collective icy stare.
+
+"What's up?"  Fredkin asked.
+
+They kept staring him for a while longer.  Finally they spoke.
+
+"We'd like to know what you've done to Greenblatt," they said.  "We
+have reason to believe you've hypnotized him."
+
+Gosper in particular had difficulty accepting joint control of the
+PDP-6.  His behavior reminded Fredkin of Rourke, the architect in Ayn
+Rand's The Fountainhead who designed a beautiful building; when
+Rourke's superiors took control of the design and compromised its
+beauty, Rourke blew up the building.  Fredkin later recalled Gosper
+telling him that if time-sharing were implemented on the PDP-6, Gosper
+would be compelled to physically demolish the machine.  "Just like
+Rourke," Fredkin later recalled.  "He felt if this terrible thing was
+to be done, you would have to destroy it.  And I understood this
+feeling.  So I worked out a compromise." The compromise allowed the
+machine to be run late at night in single-user mode, so the hackers
+could run giant display programs and have the PDP-6 at their total
+command.
+
+The entire experiment in time-sharing did not work out badly at
+all.  The reason was that a special, new time-sharing system was
+created, a system that had the Hacker Ethic in its very soul.
+
+The core of the system was written by Greenblatt and Nelson, in weeks
+of hard-core hacking.  After some of the software was done, Tom Knight
+and others began the necessary adjustments to the PDP-6 and the
+brand-new memory addition a large cabinet with the girth of two
+Laundromat-size washing machines, nicknamed Moby Memory.  Although the
+administration approved of the hackers' working on the system,
+Greenblatt and the rest exercised full authority on how the system
+would turn out.  An indication of how this system differed from the
+others (like the Compatible Time-sharing System) was the name that Tom
+Knight gave the hacker program: the Incompatible Time-sharing System
+(ITS).
+
+The title was particularly ironic because, in terms of friendliness to
+other systems and programs, ITS was much more compatible than CTSS.
+True to the Hacker Ethic, ITS could easily be linked to other things
+that way it could be infinitely extended so users could probe the
+world more effectively.  As in any time-sharing system, several users
+would be able to run programs on ITS at the same time.  But on ITS,
+one user could also run several programs at once.  ITS also allowed
+considerable use of the displays, and had what was for the time a very
+advanced system of editing that used the full screen ("years before
+the rest of the world," Greenblatt later boasted).  Because the
+hackers wanted the machine to run as swiftly as it would have done had
+it not been time-shared, Greenblatt and Nelson wrote machine language
+code which allowed for unprecedented control in a time-sharing system.
+
+There was an even more striking embodiment of the Hacker Ethic within
+ITS.  Unlike almost any other time-sharing system, ITS did not use
+passwords.  It was designed, in fact, to allow hackers maximum access
+to any user's ﬁle.  The old practice of having paper tapes in a
+drawer, a collective program library where you'd have people use and
+improve your programs, was embedded in ITS; each user could open a set
+of personal files, stored on a disk.  The open architecture of ITS
+encouraged users to look through these ﬁles, see what neat hacks other
+people were working on, look for bugs in the programs, and fix them.
+If you wanted a routine to calculate sine functions, for instance, you
+might look in Gosper's files and find his ten-instruction sine hack.
+You could go through the programs of the master hackers, looking for
+ideas, admiring the code.  The idea was that computer programs
+belonged not to individuals, but to the world of users.
+
+ITS also preserved the feeling of community that the hackers had when
+there was only one user on the machine, and people could crowd around
+him to watch him code.  Through clever cross-bar switching, not only
+could any user on ITS type a command to find out who else was on the
+system, but he could actually switch himself to the terminal of any
+user he wanted to monitor.  You could even hack in conjunction with
+another user for instance, Knight could log in, find out that Gosper
+was on one of the other ports, and call up his program then he could
+write lines of code in the program Gosper was hacking.
+
+This feature could be used in all sorts of ways.  Later on, after
+Knight had built some sophisticated graphics terminals, a user might
+be wailing away on a program and suddenly on screen there would appear
+this six-legged ... bug.  It would crawl up your screen and maybe
+start munching on your code, spreading little phosphorous crumbs all
+over.  On another terminal, hysterical with high- pitched laughter,
+would be the hacker who was telling you, in this inscrutable way, that
+your program was buggy.  But though any user had the power not only to
+do that sort of thing, but to go in your files and delete ("reap," as
+they called it) your hard-hacked programs and valuable notes, that
+sort of thing wasn't done.  There was honor among hackers on ITS.
+
+The faith that the ITS had in users was best shown in its handling of
+the problem of intentional system crashes.  Formerly, a hacker rite of
+passage would be breaking into a time-sharing system and causing such
+digital mayhem maybe by overwhelming the registers with looping
+calculations that the system would "crash."  Go completely dead.
+After a while a hacker would grow out of that destructive mode, but it
+happened often enough to be a considerable problem for people who had
+to work on the system.  The more safeguards the system had against
+this, the bigger the challenge would be for some random hacker to
+bring the thing to its knees.  Multics, for instance, required a truly
+non-trivial hack before it bombed.  So there'd always be macho
+programmers proving themselves by crashing Multics.
+
+ITS, in contrast, had a command whose specific function was crashing
+the system.  All you had to do was type KILL SYSTEM, and the PDP-6
+would grind to a halt.  The idea was to take all the fun away from
+crashing the system by making it trivial to do that.  On rare
+occasions, some loser would look at the available commands and say,
+"Wonder what KILL does?" and bring the system down, but by and large
+ITS proved that the best security was no security at all.
+
+Of course, as soon as ITS was put up on the PDP-6 there was a flurry
+of debugging, which, in a sense, was to go on for well over a decade.
+Greenblatt was the most prominent of those who spent full days
+"hacking ITS" seeking bugs, adding new features, making sections of it
+run faster ... working on it so much that the ITS environment became,
+in effect, a home for systems hackers.
+
+In the world that was the AI lab, the role of the systems hacker was
+central.  The Hacker Ethic allowed anyone to work on ITS, but the
+public consequences of systems hacking threw a harsh spotlight on the
+quality of your work if you were trying to improve the MIDAS assembler
+or the ITS-DDT debugger, and you made a hideous error, everyone's
+programs were going to crash, and people were going to find out what
+loser was responsible.  On the other hand, there was no higher calling
+in hackerism than quality systems hacking.
+
+The planners did not regard systems hacking with similar esteem.  The
+planners were concerned with applications using computers to go beyond
+computing, to create useful concepts and tools to benefit humanity.
+To the hackers, the system was an end in itself.  Most hackers, after
+all, had been fascinated by systems since early childhood.  They had
+set aside almost everything else in life once they recognized that the
+ultimate tool in creating systems was the computer: not only could you
+use it to set up a fantastically complicated system, at once byzantine
+and elegantly efficient, but then, with a "Moby" operating system like
+ITS, that same computer could actually be the system.  And the beauty
+of ITS was that it opened itself up, made it easy for you to write
+programs to fit within it, begged for new features and bells and
+whistles.  ITS was the hacker living room, and everyone was welcome to
+do what he could to make himself comfortable, to find and decorate his
+own little niche.  ITS was the perfect system for building ... systems!
+
+It was an endlessly spiraling logical loop.  As people used ITS, they
+might admire this feature or that, but most likely they would think of
+ways to improve it.  This was only natural, because an important
+corollary of hackerism states that no system or program is ever
+completed.  You can always make it better.  Systems are organic,
+living creations: if people stop working on them and improving them,
+they die.
+
+When you completed a systems program, be it a major effort like an
+assembler or debugger or something quick and (you hoped) elegant, like
+an interface output multiplexor, you were simultaneously creating a
+tool, unveiling a creation, and fashioning something to advance the
+level of your own future hacking.  It was a particularly circular
+process, almost a spiritual one, in which the systems programmer was a
+habitual user of the system he was improving.  Many virtuoso systems
+programs came out of remedies to annoying obstacles which hackers felt
+prevented them from optimum programming.  (Real optimum programming,
+of course, could only be accomplished when every obstacle between you
+and the pure computer was eliminated an ideal that probably won't be
+fulfilled until hackers are somehow biologically merged with
+computers.)  The programs ITS hackers wrote helped them to pro gram
+more easily, made programs run faster, and allowed programs to gain
+from the power that comes from using more of the machine.  So not only
+would a hacker get huge satisfaction from writing a brilliant systems
+program a tool which everyone would use and admire but from then on he
+would be that much further along in making the next systems program.
+
+To quote a progress report written by hacker Don Eastlake five years
+after ITS was first running:
+
+The ITS system is not the result of a human wave or crash effort.  The
+system has been incrementally developed almost continuously since its
+inception.  It is indeed true that large systems are never
+"finished"...  In general, the ITS system can be said to have been
+designer implemented and user designed.  The problem of unrealistic
+software design is greatly diminished when the designer is the
+implementor.  The implementor's ease in programming and pride in the
+result is increased when he, in an essential sense, is the designer.
+Features are less likely to turn out to be of low utility if users are
+their designers and they are less likely to be difficult to use if
+their designers are their users.
+
+The prose was dense, but the point was clear ITS was the strongest
+expression yet of the Hacker Ethic.  Many thought that it should be a
+national standard for time- sharing systems everywhere.  Let every
+computer system in the land spread the gospel, eliminating the odious
+concept of passwords, urging the unrestricted hands- on practice of
+system debugging, and demonstrating the synergistic power that comes
+from shared software, where programs belong not to the author but to
+all users of the machine.
+
+In 1968, major computer institutions held a meeting at the University
+of Utah to come up with a standard time-sharing system to be used on
+DEC'S latest machine, the PDP-10.  The Ten would be very similar to
+the PDP-6, and one of the two operating systems under consideration
+was the hackers' Incompatible Time-sharing System.  The other was
+TENEX, a system written by Bolt Beranek and Newman that had not yet
+been implemented.  Greenblatt and Knight represented MIT at the
+conference, and they presented an odd picture two hackers trying to
+persuade the assembled bureaucracies of a dozen large institutions to
+commit millions of dollars of their equipment to a system that, for
+starters, had no built-in security.
+
+They failed.
+
+Knight would later say that it was political naivete which lost it for
+the MIT hackers.  He guessed that the fix was in even before the
+conference was called to order a system based on the Hacker Ethic was
+too drastic a step for those institutions to take.  But Greenblatt
+later insisted that "we could have carried the day if [we'd] really
+wanted to."  But "charging forward," as he put it, was more important.
+It was simply not a priority for Greenblatt to spread the Hacker Ethic
+much beyond the boundaries of Cambridge.  He considered it much more
+important to focus on the society at Tech Square, the hacker Utopia
+which would stun the world by applying the Hacker Ethic to create ever
+more perfect systems.
