@@ -1,0 +1,104 @@
+Excerpt from Bob Sproull's notes of the 19 December 1969 Utah meeting.
+
+----------------------------------------------------------------------
+
+    VII. Consider the alternatives ..........
+
+    Now that we have loosely discussed a collection of requisites for
+the AU's system, we move on to discuss the various possibilities
+described in II above.
+
+    1. The DEC system falls far short of our description.  It is not a
+page-oriented system, and the inefficiencies of running large jobs are
+felt acutely.  The only other really major lack is the absence of a
+reasonable process structure and user interrupts.  Carl Ellison at
+Utah is very seriously considering adding such features to the 10/50
+system.  He is willing to accept the overhead implicit in the existing
+portions of the DEC system (command interpreter, swapper, etc).
+    Most AU's probably consider the effort required to really spruce
+up the DEC system to be great enough to warrant starting from scratch.
+
+    2. The MAC system is small, reasonably fully debugged, and in a
+sense, ready to go.  The executive is probably insufficient for most
+users -- it is a doctored version of DDT which allows you to make
+system calls.  The system is not at all DEC compatible, but conversion
+of reasonably large DEC cusps has been reported to be a "one night
+job," for an efficient hacker.  They are in the process of
+implementing a TTY crossbar arrangement to route characters to the end
+of the earth.  They have a good implementation of processes and user
+interrupts.  The interprocess communication is just like I/O -- you
+give an IOWD pointer into the process's core.  Several system
+functions are implemented with processes -- a statistics gatherer and
+general system-consistency checker.  File operations do not differ
+markedly from the DEC system.  The MAC system does now enjoy paging,
+so any page-type files, or address space management are not available.
+MAC fill soon include paging software in their system.  The system is
+not prepared to swap, and insists that all executable code and windows
+on open files are kept in core.  They estimate about 2 months wizard
+work would be required to install any swapping -- it would be a big
+job.  There is very little protection in the system as a while -- it
+is meant for a group of real friends.  The scheduler is of course,
+designed for a non-swapping system.  It records the percentage of time
+granted to requested within the last 5 seconds, and uses this
+statistic to allocate CPU time.
+
+    3. The BBN system is almost fully coded, and is expected (by BBN)
+to be distributable by summer 1970.  It implements most of the items
+discussed in VI.  There is as yet no specification of their executive.
+In general, documentation on the proposed system is a little spotty.
+The exact set of system calls has not yet been specified.
+    Terminal service will be handled mostly by a system "process",
+scheduled like any other.  Only interrupt-level echoing will be
+handled by the system directly.  Hopefully, this will allow tailoring
+the teletype service to the user with somewhat less pain.  The
+features such as TTY-TTY links, selective activation, special echoing,
+etc, are all being implemented.
+    The process functions have not been completely specified.  They
+are expanding their user interrupt system to include some of the
+things mentioned in VI.3.a.  The proposal for interprocess
+communication is a buffer with a "full" flag.  The buffer can transfer
+data only one way.  The status of the full flag is a possible user
+interrupt.  There are grumblings that the system may implement
+repeated pokings of the buffer (block transfers), merely by iterating
+the single word transfer.
+    The file system is nearly complete.  Subroutine files, in a
+slightly more general form than those of the 940, are planned.  The
+file system will not be able to bubble files by itself.  File names
+will be huge, and the file-name recognizer will require only as many
+characters of the name as are necessary to avoid ambiguity.  The exact
+format of protection has not been disclosed.  Use is made of some
+special features of the Bryant disc to help with error-checking the
+file system.  The file system will remember date last written, date
+last accessed, and date last dumped.  Temporary files will be
+implemented, they will disappear at logoff.
+    The scheduler is a fairly complicated device.  It attempts to take
+account of memory usage, service request, past history, etc.  They are
+particularly concerned with minimizing the number of activations of
+programs.  It will be heavily tuneable, in part because BBN cannot
+accurately estimate what the important time-consumers will be in their
+system.  They intend to provide real-time service.
+
+    4. The fourth alternative is to fashion the sketchy items in VI
+into a system design and to build it.  The would require about 12 man
+years minimum, and would certainly require that ll the participants in
+the project managed to get physically together.
+
+    The working committee has made the following judgements.  Even
+extensive modifications of the DEC system would not yield a system as
+useful as either the MAC or the BBN system.  Any effort here would be
+large in comparison to the gain.
+    It strikes us that we would need some pressing requirements beyond
+those provided by BBN or MAC in order to justify writing a system from
+scratch.  Certainly there are techniques which we would enjoy seeing
+in the system implementation (e.g. Lampson's object and capabilities),
+but their existence is not absolutely crucial to the usefulness of the
+system.
+
+    So we suggest that either the BBN or MAC System be adopted for
+distribution.  The BBN system would present far fewer difficulties in
+preparing it for communal use: documentation of the system is
+proceeding with the writing of the system; minimum modifications to
+the real guts are needed (unlike the MAC system which will need the
+pager, the swapper, and probably some protection mechanism).  There is
+evidence that the BBN system will submit to understanding and
+alterations more easily than the MAC system.
