@@ -1,0 +1,19 @@
+Former Fabri-Tek engineer Gary Andersen told this story:
+
+It was one of the first 1 MB add on memories, if not the first, built
+by a third party vendor.  I gave a paper on the design at the Spring
+Joint Computer show in Manhattan in May of 1965.  Dr. Marvin Minsky,
+from his artificial intelligence lab, [was in the audience].
+Unshaven, in a white dress shirt hanging out in back, and in sock-less
+sandal shoes he came up to me and said, "I want one."  I said, all we
+have is a prototype.  His response was, "I don't care.  Thanks.  When
+you be in Boston again?" Two weeks later our sales guy and I
+negotiated a 1 MB add on for his DEC PDP6 computers, one of only 26
+PDP6 computers made, for about $230,000 for a 5 microsecond cycle time
+memory that used 80m ferrite cores, plus another $5000 for every 1/2
+microsecond better cycle time, I believe.  He wrote the order number
+on the back of an envelope.  We didn't believe it, but a week later a
+hard copy purchase order came from MIT.  It was a real chore.  Not
+only the memory, but also the interface.  As I remember DEC wasn't
+real cooperative.  It was a long haul, but we finished and got paid
+$240,000, I believe.
