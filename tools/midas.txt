@@ -1,0 +1,107 @@
+Syntax as per AI memo 90.
+
+syllable = number | symbol | character | bracketed
+
+number = integer | float
+integer = [0-9]+[.']?(^integer)?
+float = [0-9]+.[0-9]+(^integer)?
+
+name = [A-Z0-9$%.]+
+symbol = name | name' | name"
+macro = name
+pseudo = name
+
+character = 'X | "X | ^X
+
+bracketed = <word> | (word) | [word]
+
+word =
+   syllable |
+   syllable,,syllable
+   syllable syllable
+   syllable syllable,
+   syllable syllable,syllable
+
+body = text<cr> | [text]
+
+<spaces>name:
+<spaces>name=<spaces>word
+<spaces>name==<spaces>word
+<spaces>word<spaces><cr>
+<spaces>word<spaces>?
+<spaces>word<spaces>;text<cr>
+
+<spaces>LOC<spaces>word
+<spaces>BLOCK<spaces>word
+<spaces>END<spaces>word
+<spaces>XWORD<spaces>word1<space>word2
+<spaces>EXP<spaces>word
+<spaces>.OP<spaces>word1<spaces>word2<spaces>word3
+<spaces>OCTAL
+<spaces>DECIMAL
+<spaces>RADIX<spaces>word
+<spaces>CONSTA
+<spaces>VARIAB
+<spaces>NULL
+<spaces>EQUALS<spaces>name1<space>name2
+<spaces>TITLE<spaces>text
+<spaces>OFFSET<spaces>word
+<spaces>SQUOZE<spaces>word1<spaces>,<spaces>word2
+<spaces>ASCII<spaces>XtextX
+<spaces>ASCIZ<spaces>XtextX
+<spaces>.ASCII<spaces>XtextX
+<spaces>SIXBIT<spaces>XtextX
+<spaces>.FNAM1
+<spaces>.FNAM2
+<spaces>PRINTC<spaces>XtextX
+<spaces>PRINTX<spaces>XtextX
+<spaces>EXPUNG<spaces>name1<spaces>name2<...>
+<spaces>.BEGIN
+<spaces>.END
+<spaces>.FORMAT<spaces>word1<spaces>,<spaces>word2
+<spaces>.LENGT<spaces>XtextX
+<spaces>.TYPE<spaces>word
+<spaces>REPEAT<spaces>word1<spaces>body
+<spaces>.RPCNT
+<spaces>IF1<spaces>body
+<spaces>IF2<spaces>body
+<spaces>IFE<spaces>body
+<spaces>IFG<spaces>body
+<spaces>IFGE<spaces>body
+<spaces>IFN<spaces>body
+<spaces>IFL<spaces>body
+<spaces>IFLE<spaces>body
+<spaces>IFSE<spaces>body
+<spaces>IFSN<spaces>body
+IRP
+TERMIN
+IRPC
+IRPS
+DEFINE
+.QUOTE
+.TAG
+.GO
+.GSSET
+RIM
+RIM1
+SBLK
+RELOCA
+1PASS
+.SLDR
+WORD
+NOSYMS
+.NSTGW
+.YSTGW
+.LIBRA
+.LIFS
+.ELDC
+.LIFE
+.LIFLE
+.LIFL
+.LIFG
+.LIFGE
+.LIFN
+.LNKOT
+.LOP
+.GLOBA
+.LIBRQ
