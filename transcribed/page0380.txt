@@ -1,14 +1,14 @@
-001                                                               PAGE 38
+001                                                                             PAGE 38
 002     001 010 ACMS4F: CAIN E,75
-003     039 007         JRST ACMS8    ;FREE NOW
+003     039 007         JRST ACMS8      ;FREE NOW
 004     118 062         IMULI E,LUBLK
 005     001 018         CAME E,U
 006     039 006         JRST ACMS5
-007     001 012         XOPI I,1
+007     001 012         XORI I,1
 008     039 010         MOVE D,ACMDT1(I)
 009     037 019         JRST ACMS2
-010    
-011    
+010
+011
 012     002 021 ACR9B:  CONO PI,UTCON
 013             ACR9A:  SOS -4(P)
 014     117 013 ACORE9: CAMN U,DISUSR
@@ -23,21 +23,20 @@
 023     001 008         POP P,C
 024     001 006         POP P,A
 025     100 023         JRST POPJ1
-026    
+026
 027     001 048 ACMS4A: CONO PI,CLKON
 028     041 003 ACS4A:  PUSHJ P,UDELAY
 029     118 062 ACMS4:  MOVEI U,LUBLK
 030     001 010         IMUL U,E
 031     117 011         CAMN U,USER
 032     039 002         JRST ACMS4D
-033     118 027         LDB Q,[400100,,USTP()    ;BEXC
+033     118 027         LDB Q,[400100,,USTP(U)  ;BEXC
 034     038 028         JUMPN Q,ACS4A
 035     001 049         CONO PI,CLKOFF
-036     010 003         PUSHJ P,PCLSER
+036     010 003         PUSHJ P,PCLSR
 037     038 027         JRST ACMS4A
 038     118 028         MOVSI Q,BCSTOP
 039     118 027         IORM Q,USTP(U)
 040     117 013         CAMN U,DISUSR
-041     035 002         PUSHJ P,DCRSTP
+041     036 002         PUSHJ P,DCRSTP
 042     001 048         CONO PI,CLKON
-0

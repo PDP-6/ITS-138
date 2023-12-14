@@ -1,7 +1,7 @@
-001     019 015 SUBTTL CORE ALLOCATOR                                       PAGE 34
-002    
+001     019 015 SUBTTL CORE ALLOCATOR                                           PAGE 34
+002
 003             UACORE:
-004     117 035 ACORE:  CAILE B,MXC     ;U HAS USER THAT WANTS CODE
+004     117 035 ACORE:  CAILE B,MXC     ;U HAS USER THAT WANTS CORE
 005     001 016         POPJ P,         ;IF U=USER,THIS GUY IS IN CORE
 006     117 011         CAMN U,USER
 007     035 022         JUMPE B,ACRF
@@ -20,7 +20,7 @@
 020     117 027         CRACF
 021     117 013         CAMN U,DISUSR
 022     036 002         PUSHJ P,DCRSTP
-023     117 012         MOVEM U,DUSER
+023     117 012         MOVEM U,CUSER
 024     051 054         SETOM MEMFRZ
 025     034 028         JUMPN B,ACR1B
 026     118 041         SKIPN MEMTOP(U)

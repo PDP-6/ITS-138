@@ -1,10 +1,10 @@
-001                                                                   PAGE 35
+001                                                                             PAGE 35
 002     001 008 ACORE2: MOVEI C,1(A)
 003     001 008         SUBM B,C
 004     051 051         CAMLE C,MEMFR
 005     036 017         JRST ACORE4     ;SCROUNGING REQD
 006     118 041         SKIPN MEMTOP(U)
-007     035 014         JRST ACORE5     ;NO MEM NOW
+007     035 013         JRST ACORE5     ;NO MEM NOW
 008     118 024         LDB D,[121000,,UPR(U)
 009     001 009         ADDI D,1(A)
 010     051 039         LDB E,[MUR,,MEMBLT(D)
@@ -13,12 +13,12 @@
 013     043 002 ACORE5: PUSHJ P,MXCCA   ;GET MAX CORE AVAIL IN BLOCK
 014     001 009         CAMG B,D        ;RETURN RESULT IN D
 015     044 003         JUMPN U,ACORE7  ;BLT GUY IN -- DONT BLT SYS IN HA HA
-016     118 041         SKIPN MEMTIOP(U)
-017     044 003         JUMPE U,ACORE7  ;EXPECT SOMETIMES HA HA
-018     002 002         MOVSI D,-MX1KN  ;INITITIATE MOBY SHUFFLE
+016     118 041         SKIPN MEMTOP(U)
+017     044 003         JUMPE U,ACORE7  ;EXECPT SOMETIMES HA HA
+018     002 002         MOVSI D,-MX1KB  ;INITITIATE MOBY SHUFFLE
 019     001 012         MOVEI I,0
 020     037 019         JRST ACMS2
-021    
+021
 022     016 002 ACRF:   PUSHJ P,IODCL
 023     001 007         MOVEI B,0
 024     034 008         PUSHJ P,ACRF1
@@ -36,10 +36,10 @@
 036     118 027         SETOM USTP(U)
 037     001 049         CONO PI,CLKOFF
 038     041 003         JRST UDELAY
-039    
-040     070 027 ACRF3:  SETOM TTYSTS(C)
+039
+040     070 028 ACRF3:  SETOM TTYSTS(C)
 041     035 034         JRST ACRF4
-042     
+042
 043     001 008 ACRF5:  CAMN C,[-1
 044     035 035         JRST ACRF2
 045     118 034         SKIPL D,SUPPRO(U)
