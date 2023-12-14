@@ -1,0 +1,19 @@
++3
+; 4.9 user device
+; 4.8 UTAPE WRITE DEVICE
+
++9
+MOVE
+
++11
+MOVE
+
++13
+MOVE
+
++14
+LPTCLS
+
++ 52
+LPT BN= .- IOTTB
+       LPTBO

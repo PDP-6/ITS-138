@@ -1,0 +1,51 @@
+001                                                                             PAGE 23
+002     118 009 USETL:  MOVE D,UPC(A)
+003     118 055         MOVE D,VALUE(A)
+004     118 053         MOVE D,UILOOK(A)
+005     118 054         MOVE D,UOLOOK(A)
+006     118 044         MOVE D,UNAME(A)
+007     118 045         MOVE D,JNAME(A)
+008     118 036         MOVE D,MSKST(A)
+009     118 027         MOVE D,USTP(A)
+010     118 033         MOVE D,PIRQC(A)
+011     118 034         HLLZ D,SUPPRO(A)
+012     118 042         MOVE D,RMEMT(A)
+013     118 043         MOVE D,SV40(A)
+014     023 002 MXVAL==.-USETL
+015
+016     023 014 OUTLOC: CAIL Q,MXVAL
+017     021 031         JRST ILUUO
+018     001 009         MOVE D,(B)
+019     023 022         XCT USETL1(Q)
+020     001 016         POPJ P,
+021
+022     023 044 USETL1: PUSHJ P,UPCSET
+023     118 055         MOVEM D,VALUE(A)
+024     118 053         MOVEM D,UILOOK(A)
+025     118 054         MOVEM D,UOLOOK(A)
+026     021 031         JRST ILUUO
+027     021 031         JRST ILUUO
+028     118 036         MOVEM D,MSKST(A)
+029     023 035         PUSHJ P,USTOP
+030     118 033         MOVEM D,PIRQC(A)
+031     021 031         JRST ILUUO
+032     021 031         JRST ILUUO
+033     021 031         JRST ILUUO
+034
+035     001 006 USTOP:  EXCH U,A
+036     001 049         CONO PI,CLKOFF
+037     118 027         SKIPN USTP(U)
+038     029 039         PUSHJ P,PCCK
+039     118 027         DPB D,[410100,,USTP(U)  ;BUSRC
+040     001 048         CONO PI,CLKON
+041     001 006         EXCH U,A
+042     001 016         POPJ P,
+043
+044     001 006 UPCSET: EXCH U,A
+045     029 039         PUSHJ P,PCCK
+046     001 052         TLO D,LSRMOD
+047     001 051         TLZ D,BADPC
+048     118 009         MOVEM D,UPC(U)
+049     001 048         CONO PI,CLKON
+050     001 006         EXCH U,A
+051     001 016         POPJ P,
