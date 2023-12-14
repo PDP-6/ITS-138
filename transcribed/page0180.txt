@@ -1,0 +1,26 @@
+001                                                                             PAGE 18
+002     117 025 UFL1:   SKIPE SCRFG1
+003     018 009         JRST UFL6
+004     118 009         MOVE T,UPC(U)
+005     020 016         MOVEM T,URSTR
+006     118 060         MOVE T,EPDL2(U)
+007     017 034         JRST UFL4A
+008
+009     001 018 UFL6:   MOVNI U,1
+010     017 025         JRST UFL2
+011
+012     002 021 LWAIT1: CONO PI,UTCON   ;WAIT FOR INSN W UTCCHN OFF
+013             LWAIT:  XCT @(P)
+014     017 002         PUSHJ P,UFLS
+015     002 022         CONO PI,UTCOFF
+016                     XCT @(P)
+017     018 012         JRST LWAIT1
+018     100 023         JRST POPJ1
+019
+020     001 017 SWAIT:  MOVEI T,(@)     ;WAIT FOR @ NEXT LOC TO BE NEG
+021     001 017         HRLM T,(P)
+022                     SKIPL @(P)
+023     017 002         PUSHJ P,UFLS
+024                     AOSE @(P)
+025     018 020         JRST SWAIT 2
+026     100 023         JRST POPJ1

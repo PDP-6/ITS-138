@@ -1,0 +1,38 @@
+001                                                                             PAGE 16
+002     048 008 IODCL:  PUSHJ P,ADFLUSH
+003     118 004         MOVEI R,IOCHNM(U)
+004     001 015 IODCL1: PUSH P,R
+005     029 001         PUSHJ P,ACLOSE
+006     001 015         POP P,R
+007     118 004         CAIGE R,IOCHNM+17(U)
+008     016 004         AOJA R,IODCL1
+009     118 004 IODCL2: MOVEI R,IOCHNM+1(U)
+010     029 001         PUSHJ P,ACLOSE
+011     118 008         MOVE T,SIOCP(U)
+012     001 017         TLNN T,-1
+013     001 016         POPJ P,
+014     001 017         POP T,(R)
+015     118 008         MOVEM T,SCIOCP(U)
+016     016 009         JRST IODCL2
+017
+018     001 018 URSTRT: POP P,U
+019     118 058         POP P,EPDL(U)
+020     118 046         MOVE T,TTYTBL(U)
+021     118 024         PUSH P,UPR(U)
+022     118 041         PUSH P,MEMTOP(U)
+023     118 018         PUSH P,SAC17P(U)
+024     118 042         PUSH P,RMEMT(U)
+025     013 002         PUSHJ P,USTR4
+026     118 042         POP P,RMEMT(U)
+027     118 018         POP P,SAC17P(U)
+028     118 041         POP P,MEMTOP(U)
+029     118 024         POP P,UPR(U)
+030     001 017         MOVE T,[1,,(SIXBIT /HTN/)
+031     118 045         MOVEM T,JNAME(U)
+032     015 040         MOVEI T,USTCDR
+033     118 009         MOVEM T,UPC(U)
+034     118 027         CLEARM USTP(U)
+035     009 003         JRST URUN
+036
+037     019 026 USTCD2: CLOSE 2,
+038                     JRST 1,(B)

@@ -1,0 +1,60 @@
+001                                                                             PAGE 24
+002     118 041 AFDELE: CAML B,MEMTOP(U)
+003     021 039         JRST IOADC
+004     001 016         PUSH P,(C)
+005     001 017         MOVSI T,(SETZ)
+006     001 017         IORM T,(P)
+007     024 031         JRST AFDEL1
+008
+009             ;SUBTTL OPEN SET UP AND DISPATCH
+010
+011             ;3.1 = 0 => INPUT  =1 OUTPUT
+012             ;3.2=0  => UNITS   =1  BLOCK
+013             ;3.3=0  => ASCII   =1 IMAGE
+014             ;4.9 = DELETE OR RENAME
+015
+016     001 014 AOPEN:  LDB R,[240400,,40       ;OPEN UUO
+017     001 008         HRRZ C,40
+018     118 041         CAML C,MEMTOP(U)
+019     021 039         JRST IOADC
+020     118 024         ADDI C,@UPR(U)
+021     118 004         ADDI R,IOCHNM(U)        ;C E(40)  T AC(40)
+022     001 006         HLRZ A,(R)      ;OPEN FORMAT RH = DEV NAME
+023     001 007         HRRZ B,(R)      ;2ND IN 3RD WDS FILE NAME
+024     001 015         PUSH P,R
+025     001 008         PUSH P,C
+026     025 002         PUSHJ P,@CLSTB(B)       ;CLOSE PREV
+027     001 008         POP P,C
+028     001 015         POP P,R
+029                     CLEARM (R)
+030     001 016         PUSH P,(C)      ;GET DEV AND FILE NAMES
+031     001 016 AFDEL1: PUSH P,1(C)
+032     001 016         PUSH P,2(C)
+033     026 011         PUSHJ P,TRAN    ;IO MAP
+034     020 033         JRST URET
+035     001 006         MOVE A,-2(P)
+036     027 008         MOVSI B,-NDEVS
+037     027 002         HRRZ C,DEVTAB(B)
+038     001 008         CAIE C,(A)
+039     001 007         AOBJN B,.-2
+040     024 058         JUMPG B,OPEN1
+041     001 008         MOVSI C,400000
+042     001 006         TLNE A,1
+043     001 008         MOVSI C,200000
+044     027 002         TDNN C,DEVTAB(B)
+045     021 047         JRST LCDIY      ;IO DEVICE DOSN'T GO THAT WAY
+046     027 002         HLRZ C,DEVTAB(B)
+047     001 008 OPEN2:  ANDI C,177777
+048     001 007         POP P,B
+049     001 006         POP P,A
+050     001 008         EXCH C,(P)
+051     001 008         HLRZ D,C
+052     001 009         ROT D,-1        ;A,B FILE NAME C MAPPED DEV +OPTION SEL
+053     001 009         TRNE D,200000
+054     001 009         TDZ D,[400000,,7]       ;MAKE DELETE OR RENAME LOOK LIKE OPEN FOR READ
+055     001 016         POPJ P, ;IF DELE OR RENAME, 4.8 OF D =1
+056
+057
+058     001 006 OPEN1:  LDB E,[61400,,A ;CHECK FOR NUMBERED DEV
+059     001 006         LDB I,[600,,A
+060     001 012         CAIL I,'0
