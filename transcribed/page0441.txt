@@ -1,0 +1,9 @@
+061     117 011 ACORER: CAMN U,USER                                             PAGE 44.1
+062     118 024         DATAO UPR(U)
+063     117 013         CAMN U,DISUSR
+064     036 008         PUSHJ P,DCRRST
+065     117 027 ACORR2: SETOM CRACF
+066     118 058         MOVE B,EPDL(U)
+067     051 054         CLEARM MEMFRZ
+068     034 019         JRST ACORE1
+069

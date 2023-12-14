@@ -1,0 +1,60 @@
+001                                                                             PAGE 44
+002
+003     001 007 ACORE7: MOVE TT,B,
+004     001 010         HRRZ A,E
+005     001 009         MOVEI D,377
+006     045 026 ACR7L:  PUSHJ P,CCFRE
+007     051 039         DPB D,[MLU,,MEMBLT(A)
+008     001 006         AOS A
+009     051 039         DPB A,[MLO,,MEMBLT-1(A)
+010     001 009         MOVEI D,-1(A)
+011     044 006         SOJG TT,ACR7L
+012     001 009         MOVEI D,377
+013     051 039         DPB D,[MLO,,MEMBLT-1(A)
+014     118 041         SKIPN MEMTOP(U)
+015     044 030         JRST ACORE8     ;NO MEM NOW
+016     001 010         HRRZ I,E        ;E HAS LOWEST BLOCK NEW CORE
+017     001 012         LSH I,10.
+018     001 012         MOVE A,I
+019     118 024         HRL I,UPR(U)
+020     001 012         HRRZ D,I
+021     118 041         ADD D,MEMTOP(U)
+022     002 029         BLT I,METOF-1(D)
+023     118 024         HRRZ A,UPR(U)
+024     001 006         LSH A,-10.
+025     118 024         HLRZ I,UPR(U)
+026     001 012         LSH I,-10.
+027     050 037         PUSHJ P,MEMR
+028     001 006         AOS A
+029     001 012         SOJGE I,.-2
+030     001 010 ACORE8: HRRZ A,E        ;INSERT CODE TO ZERO NEW CORE
+031     014 008         PUSHJ P,UADRS2
+032     118 041         SKIPN MEMTOP(U)
+033     044 051         JUMPE U,ACR8A
+034     118 058         MOVE A,EPDL(U)
+035     001 006         SOS A
+036     118 024         HLRZ B,UPR(U)
+037     001 007         LSH B,-10.
+038     118 041         SKIPN MEMTOP(U)
+039     001 007         SOS B
+040     001 007         MOVE C,B
+041     001 006         SUB B,A
+042     001 007         HRLZ A,B
+043     118 024         HRRZ B,UPR(U)
+044     001 007         LSH B,-10.
+045     001 007         ADDI B,1(C)
+046     001 007         HRR A,B
+047     001 006 ACRZR:  PUSH P,A
+048     045 034         PUSHJ P,CZRR
+049     001 006         POP P,A
+050     044 047         AOBJN A,ACRZR
+051             ACR8A:
+052     118 058 ACORR1: MOVE B,EPDL(U)
+053     001 006         MOVEI A,-1(B)
+054     001 006         LSH A,10.
+055     118 024 ACORT1: HRLM A,UPR(U)
+056     002 029         ADDI A,2000-METOF
+057     118 041         HRRZM A,MEMTOP(U)
+058     002 029         ADDI A,METOF
+059     118 042         HRRZM A,RMEMT(U)
+060
