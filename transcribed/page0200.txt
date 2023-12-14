@@ -1,0 +1,36 @@
+001                                                                             PAGE 20
+002     118 022 USRUUO: MOVEM T,@40P(U) ;USER INTERPRETED UUO
+003     118 023         HRRZ T,@41P(U)
+004     001 017         CAIL T,20
+005     118 041         CAML T,MEMTOP(U)
+006     022 012         JRST ILLOP
+007     001 018         HRLI U,1(T)
+008     118 024         ADD T,UPR(U)
+009     020 017         HRLI T,UUOH
+010     001 017         BLT T,0
+011     020 017         HLRM U,UUOH
+012     118 021 UUOEX:  MOVE T,@AC16P(U)
+013     020 018         MOVE U,@AC17P
+014     020 017 UEXIT:  JRST 2,@UUOH
+015
+016             URSTR:  0
+017             UUOH:   0
+018     001 018 AC17P:  MOVEM U,.
+019     117 011         MOVE U,USER
+020     118 021         MOVEM T,@AC16P(U)
+021     001 017         SKIPL T,40
+022     001 017         CAML T,[100000,,
+023     022 012         JRST ILLOP
+024     001 053         CAML T,[UUOMIN
+025     001 054         CAML T,[UUOMAX
+026     020 002         JRST USRUUO
+027     118 020 ILLOP1: MOVEM P,@AC15P(U)
+028     118 024         HRRZ P,UPR(U)
+029     118 019         BLT P,@AC14P(U)
+030     118 056         MOVE P,USRPDL(U)
+031     001 017         LSH T,-27.
+032     001 053         XCT UUODSP-UUOMIN_-27.(T)
+033     118 024 URET:   HRLZ U,UPR(U)
+034     001 018         BLT U,U
+035     020 014         JRST UEXIT
+036

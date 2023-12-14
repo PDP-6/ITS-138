@@ -1,0 +1,11 @@
+061     001 012         CAILE I,'9                                              PAGE 24.1
+062     021 046         JRST NSD        ;NO SUCH DEVICE
+063     001 012         SUBI I,'0
+064     027 013         MOVSI C,-NDV1
+065     027 010         HRRZ B,DVT1(C)
+066     001 007         CAIE B,(E)
+067     001 008         AOBJN C,.-2
+068     021 046         JUMPG C,NSD
+069     027 010         HLRZ C,DVT1(C)
+070     024 047         JRST OPEN2
+071

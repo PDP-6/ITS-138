@@ -1,0 +1,44 @@
+001                                                                             PAGE 15
+002                     0       ;MAKE FLS INS ZERO
+003     017 002 USTCD3: PUSHJ P,UFLS
+004
+005     117 011 USTCD:  MOVE U,USER     ;CODE TO LOAD USER HACKTRN
+006     118 056         MOVE P,USRPDL(U)
+007     001 007         MOVEI B,1
+008     034 004         PUSHJ P,ACORE
+009     015 003         JRST USTCD3
+010     002 029         MOVEI J,2000-METOF-2
+011     001 006         MOVE A,[(6+SIXBIT /UT2/
+012     001 007         MOVSI B,(SIXBIT /@/
+013     001 008         MOVE C,[SIXBIT /HACTRN/
+014     001 006         OPEN 2,A
+015                     JRST 4,.
+016     001 007 USTCD1: CAMN B,[JRST 1
+017     001 008         TLZ C,400000    ;BIT SET FROM SIXBIT HACTRN
+018     001 007         HRROI A,B
+019     001 006         IOT 2,A
+020     015 016         JUMPL C,USTCD1
+021     016 037         JUMPGE B,USTCD2
+022     001 007         MOVE D,B
+023     001 007         HRRZ TT,B
+024     001 007         HLRO I,B
+025     001 012         SUB TT,I
+026     001 014         CAML TT,J
+027     014 001         JSP P,COREX     ;PDL CLOBBERED BY UUO
+028     001 007         IOT 2,B
+029     118 024         HRRZ B,UPR(U)
+030     001 009         ADD B,D
+031     001 009         ROT D,1
+032     001 009         ADD D,(B)
+033     001 007         AOBJN B,.-2
+034     001 007         HRROI A,B
+035     001 006         IOT 2,A
+036     001 009         CAME B,D
+037     015 005         JRST USTCD
+038     015 016         JRST USTCD1
+039
+040     117 011 USTCDR: MOVE U,USER
+041     118 056         MOVE P,USRPDL(U)
+042     016 002         PUSHJ P,IODCL
+043     015 005         JRST USTCD
+044
