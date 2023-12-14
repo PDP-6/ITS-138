@@ -1,0 +1,57 @@
+001                                                                             PAGE 74
+002
+003             MXML==100.
+004             GRLF==67
+005             GLR==71
+006             GFS==166
+007             GRS==173
+008             GPR==165
+009             GLF==172
+010             GETX==76
+011             GFF==171
+012             IGCK==2 ;GE CKSM FOR SOM AND STX
+013
+014             GTYOBK: 0
+015     079 003         MOVEM I,GTYOI
+016     079 004         MOVEM A,GTYOA
+017     079 005         MOVEM B,GTYOB
+018     079 006         AOS I,CTYOCN    ;CONSOLE SERVICE ROUND ROBIN
+019     060 031         CAIL I,NGEC
+020     079 006         CLEARB I,GTYOCN
+021     078 038 GTYOBR: AOSE B,GFFF(I)
+022     078 026         SKIPE GDFRSC(I)
+023     074 038         JRST GTYO1
+024     001 012         AOS I
+025     060 031         CAIL I,NGEC
+026     001 012         AOS I
+027     079 006         CAME I,GTYOCN
+028     074 021         JRST GTYOBR
+029     002 032         CONO GTYO,200   ;ALL CONSOLES CURRENT
+030     002 015         MOVE A,40+2*GETYOC+1
+031     002 015         MOVEM A,40+2*GETYOC
+032     079 006 GTYOR1: MOVEM I,GTYOCN
+033     079 005         MOVE B,GTYOB
+034     079 004         MOVE A,GTYOA
+035     079 003         MOVE I,GTYOI
+036     074 014         JRST 12,@GTYOBK
+037
+038     075 007 GTYO1:  JUMPE B,GTYO3A  ;FF
+039     060 030         MOVE A,TTYSTS+NTTYS(I)
+040     001 043         TLNE A,TTYIMO
+041     074 048         JRST GTYO4A     ;NOT IN COMMAND MODE NO PRIORITY TO CAMMAND LINES
+042     078 010         MOVE B,GECBL(I)
+043     071 006         SKIPN NNCML*<GSTGL+1>(B)
+044     071 006         SKIPE <NNCML+1>*<GSTGL+1>(B)
+045     075 048         JRST GTYO2
+046     071 006         SKIPE <NNCML+2>*<GSTGL+1>(B)
+047     075 048         JRST GTYO2
+048     078 029 GTYO4A: MOVE B,CPLNO(I) ;NO COMMAND LINES DIFFER CHECK REG LINES
+049             GTYO4:  SKIPE(B)
+050     075 003         JRST GTYO3
+051     071 006         ADDI B,GSTGL+1
+052     078 010         CAMN B,GECBL+1(I)
+053     078 010         MOVE B,GECBL(I)
+054     078 029         CAME B,CPLNO(I)
+055     074 049         JRST GTYO4
+056     078 026         CLEARM GDFRSC(I)
+057     074 021         JRST GTYOBR     ;UNABLE TO FIND CHRS WHICH DIFFER
