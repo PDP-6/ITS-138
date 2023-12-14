@@ -1,0 +1,40 @@
+001                                                                             PAGE 30
+002     001 007 AUFLUSH:        HRRZ B,(R)      ;OPER 10
+003     001 006         HLRZ A,(R)
+004     025 002         SKIPL CLSTB(B)
+005     021 049         JRST IOCERR
+006     001 009         MOVNI D,1
+007     023 035         PUSHJ P,USTOP
+008                     CLEARM (R)
+009     118 004         MOVEI R,IOCHNM(U)
+010     001 007 AUFLS1: HRRZ B,(R)
+011     001 008         HLRZ C,(R)
+012     025 002         SKIPL CLSTB(B)
+013     030 016         JRST AUFLS2
+014     001 006         CAMN C,A
+015                     CLEARM (R)
+016     118 004 AUFLS2: CAIG R,IOCHNM+16(U)
+017     030 010         AOJA R,AUFLS1
+018     118 008         MOVE T,SIOCP(U)
+019     001 017 AUFLS3: TLNN T,-1
+020     030 029         JRST AUFLS4
+021     001 015         POP T,R
+022     001 008         HRRZ C,(R)
+023     001 009         HLRZ D,(R)
+024     025 002         SKIPL CLSTB(C)
+025     030 019         JRST AUFLS3
+026     001 006         CAMN C,A
+027                     CLEARM (T)
+028     030 019         JRST AUFLS3
+029     001 006 AUFLS4: EXCH U,A
+030     001 006         PUSH P,A
+031     016 002         PUSHJ P,IODCL
+032     001 007         MOVEI B,0
+033     034 004         PUSHJ P,ACORE
+034                     JRST .-2
+035
+036     001 006 AUFLS5: POP P,A
+037     001 006         EXCH U,A
+038     118 044         CLEARM UNAME(A)
+039     041 003         JRST UDELAY
+040

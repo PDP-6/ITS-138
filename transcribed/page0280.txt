@@ -1,0 +1,22 @@
+001                                                                             PAGE 28
+002             ;SUBTTL CALL DISPATCH
+003
+004     001 017 ACALL:  LDB T,[270400,40
+005     001 007         HRRZ B,40
+006     001 007         MOVE C,B
+007     118 024         ADDI C,@UPR(U)
+008     028 011         PUSHJ P,@CALDIS(T)
+009     001 016         POPJ P,
+010     087 008         JRST RSKP
+011     021 031 CALDIS: ILUUO
+012     031 001         ADISMIS
+013     032 002         ATRAND
+014     032 014         ATRANAD
+015     029 009         AVALRET
+016     029 017         AUTRAN
+017     023 003         UACORE
+018     032 041         ATRNDL
+019     046 002         ADSTART
+020     024 002         AFDELE
+021     021 031 REPEAT 20-.+CALDIS,ILUUO
+022

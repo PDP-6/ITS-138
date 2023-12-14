@@ -1,0 +1,45 @@
+001     001 006 ACLOSE: HLRZ A,(R)      ;OPER 7                                 PAGE 29
+002     001 007         HRRZ B,(R)
+003     001 015         PUSH P,R
+004     025 002         PUSHJ P, @CLSTB(B)
+005     001 015         POP P,R
+006                     CLEARM (R)
+007     001 016         POPJ P,
+008
+009     001 008 AVALRET:        MOVE C,(C)
+010     118 055         MOVEM C,VALUE(U)
+011     001 031         MOVEI T,VALRTF
+012     022 019         JRST ILLOP4
+013
+014     001 033 ABREAK: MOVEI T,BRKF
+015     022 019         JRST ILLOP4
+016
+017     118 042 AUTRAN: CAML C,RMEMT(U)
+018     021 049         JRST IOCERR
+019     001 006         MOVEI A,0       ;CALL 5,
+020     001 007         MOVE B,(C)
+021     001 018         HRR B,U
+022     118 044 UTRNL:  SKIPN UNAME(A)
+023     029 026         JRST UTRNA
+024     118 034         CAMN B,SUPPRO(A)
+025     029 031         JRST UTFND
+026     117 014 UTRNA:  CAML A,USRHI
+027     001 016         POPJ P,
+028     118 062         ADDI A,LUBLK
+029     029 022         JRST UTRNL
+030
+031     118 044 UTFND:  MOVE B,UNAME(A)
+032     001 007         MOVEM B,1(C)
+033     118 045         MOVE B,JNAME(A)
+034     001 007         MOVEM B,2(C)
+035     100 023         JRST POPJ1
+036
+037     001 048 PCCK1:  CONO PI,CLKON
+038     041 003         PUSHJ P,UDELAY
+039     001 049 PCCK:   CONO PI,CLKOFF
+040     118 041         SKIPN MEMTOP(U)
+041     001 016         POPJ P,
+042     010 003         PUSHJ P,PCLSR
+043     029 037         JRST PCCK1
+044     001 016         POPJ P,
+045

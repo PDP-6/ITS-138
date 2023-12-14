@@ -1,0 +1,56 @@
+001             ;SUBTTL IO TRANSLATOR                                           PAGE 26
+002             ;TRAN1: UNAME
+003             ;TRAN2: JNAME
+004             ;TRAN3: 4.9 0 RETRANSLATE 1 ATOM 3.1 0 INPUT 1 OUTPUT,,DEV
+005             ;TRAN4: NAME1
+006             ;TRAN5: NAME2
+007             ;TRAN6: DEV
+008             ;TRAN7: NAME 1
+009             ;TRAN8: NAME 2
+010
+011     001 008 TRAN:   MOVEI C,10
+012     117 028 TRAN0:  MOVE I,SIOMTU
+013     001 006 ITRN3:  SKIPN A,TRAN1
+014     026 022         JRST ITRN1
+015     001 006         CAME A,[SIXBIT /*/]
+016     118 044         CAMN A,UNAME(U)
+017     001 006         SKIPN A,TRAN2(I)
+018     026 022         JRST ITRN1
+019     118 045         CAME A,JNAME(U)
+020     001 006         CAMN A,[SIXBIT /*/]
+021     026 025         JRST ITRN2
+022     026 013 ITRN1:  AOBJN I,ITRN3
+023     100 023         JRST POPJ1
+024
+025     001 007 ITRN2:  MOVE B,TRAN4(I)
+026     001 007         CAME B,[SIXBIT /*/]
+027     001 007         CAMN B,-2(P)
+028     001 007         SKIPN B,TRAN5(I)
+029     026 022         JRST ITRN1
+030     001 006         CAME A,[SIXBIT /*/]
+031     001 006         CAMN A,-1(P)
+032     001 006         SKIPN A,TRAN3(I)
+033     026 022         JRST ITRN1
+034     001 006         HRRZ B,A
+035     001 006         XOR A,-3(P)
+036     001 007         CAIN B,(SIXBIT /*/)
+037     026 054         JRST ITRN5
+038     001 021         TDNE A,[IOBIT,,-1]
+039     026 022         JRST ITRN1
+040     001 006 ITRN4:  HRRZ A,TRAN6(I)
+041     001 006         CAIE A,(SIXBIT /*/)
+042     001 006         HRRM A,-3(P)
+043     001 006         MOVE A,TRAN7(I)
+044     001 006         CAME A,[SIXBIT /*/]
+045     001 006         MOVEM A,-2(P)
+046     001 006         MOVE A,TRAN8(I)
+047     001 006         CAME A,[SIXBIT /*/]
+048     001 006         MOVEM A,-1(P)
+049                     SKIPGE TRAN3(I)
+050     100 023         JRST POPJ1
+051     026 012         SOJG C,TRAN0
+052     001 016         POPJ P,
+053
+054     001 021 ITRN5:  TLNE A,IOBIT
+055     026 022         JRST ITRN1
+056     026 040         JRST ITRN4

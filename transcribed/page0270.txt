@@ -1,0 +1,57 @@
+001                                                                             PAGE 27
+002     058 005 DEVTAB: 200000+LPTO,,(SIXBIT /LPT/)     ;4.8 OUTPUT 4.9 INPUT
+003     060 004         600000+TTYO1,,(SIXBIT /TTY/)
+004     052 003         600000+NULO,,(SIXBIT /NUL/)
+005     053 004         600000+USRO,,(SIXBIT /USR/)
+006     002 033         400000+VIDI,,(SIXBIT /VID/)
+007
+008     027 002 NDEVS==.-DEVTAB
+009
+010     060 010 DVT1:   TTYO,,<SIXBIT /TY/>_-24.
+011     084 026         UTO,,<SIXBIT /UT/>_-24.
+012
+013     027 010 NDV1==.-DVT1
+014
+015     001 015 GET40:  LDB R,[270400,,40
+016     001 008 GET40A: HRRZ C,40
+017     118 041         CAML C,MEMTOP(U)
+018     021 039         JRST IOADC
+019     118 024         ADDI C,@UPR(U)
+020     001 016         POPJ P,
+021
+022             ;SUBTTL OPER DISPATCH
+023
+024     001 015 AOPER:  LDB R,[270400,,40
+025     001 015         MOVE J,R
+026     118 024         ADDI J,@UPR(U)
+027     118 004         ADDI R,IOCHNM(U)
+028     001 008         HRRZ C,40
+029     027 056         CAIL C,MXOPR
+030     021 031         JRST ILUUO
+031     027 036         PUSHJ P,@OPRDSP(C)
+032     001 016         POPJ P,
+033     020 017         AOS UUOH
+034     001 016         POPJ P,
+035
+036     021 031 OPRDSP: ILUUO
+037     061 040         AITYI
+038     062 002         ALISTEN
+039     031 020         ALSEEP
+040     031 041         ASETMSK
+041     031 037         AGETMSK
+042     031 024         ALOGIN
+043     029 001         ACLOSE
+044     030 002         AUFLUSH
+045     033 004         AATTY
+046     033 044         AGBLTTY
+047     033 073         AIPUSH
+048     033 082         AIPOP
+049     048 008         ADFLUSH
+050     048 002         ADSTOP
+051     031 051         AREDTIM
+052     031 052         AREDDTS
+053     048 016         ALTPOP
+054     084 001         AUTOM
+055     
+056     027 036 MXOPR==.-OPRDSP
+057
