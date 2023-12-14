@@ -1,0 +1,23 @@
+001                                                                             PAGE 43
+002     001 009 MXCCA:  MOVEI D,0
+003     002 002         MOVSI I,-MX1KB
+004     051 039 MXCC1:  LDB Q,[MUR,,MEMBLT(I)
+005     001 013         CAIN Q,75
+006     043 009         JRST MXCC2
+007     043 004 MXCC5:  AOBJN I,MXCC1
+008     001 016         POPJ, P,
+009     001 014 MXCC2:  MOVEI J,1
+010     001 012         MOVE T,I
+011     043 015         AOBJP I,MXCC4
+012     051 039 MXCC6:  LDB Q,[MUR,,MEMBLT(I)]
+013     001 013         CAIN Q,75
+014     043 022         AOJA J,MXCC3
+015     001 014 MXCC4:  CAMGE D,J
+016     001 017         MOVE E,T
+017     001 014         CAMGE D,J
+018     001 014         MOVE D,J
+019     043 007         JRST MXCC5
+020                     
+021                     
+022     043 012 MXCC3:  AOBJN I,MXCC6
+023     043 015         JRST MXCC4
