@@ -1,4 +1,4 @@
-001             ;SUBTTL USER UUO WAIT ROUTINE                                   PAGE 17                                          
+001             ;SUBTTL USER UUO WAIT ROUTINE                                   PAGE 17
 002     001 049 UFLS:   CONO PI,CLKOFF  ;DOES NOT WORK FOR XCT T
 003     117 011         EXCH U,USER
 004     118 060         MOVEM T,EPDL2(U)        ;SAVE C(U)
@@ -7,18 +7,18 @@
 007     117 011         MOVEM U,USER
 008     001 017         POP P,T         ;WORK FOR INST (P)
 009     118 009         MOVEM T,UPC(U)
-010     001 017         SIPA T,-2(T)
+010     001 017         SKIPA T,-2(T)
 011     001 017 UFL3:   MOVE T,(T)
 012     001 017         HRRI T,@T       ;CALCULATE E
 013     001 017         TLZ T,37
 014     118 037         MOVEM T,FLSINS(U)
 015     001 017         TLC T,(XCT)
 016     001 017         TLNN T,777740
-017     017 011         JRT UFL3        ;WORK FOR XCT
-018     008 003         PUSHJ P,SEARCH  ;FIND NEXT USER
+017     017 011         JRST UFL3       ;WORK FOR XCT
+018     008 003         PUSHJ P,SEARCH  ;FIND NEW USER
 019     117 011         CAMN U,USER
 020     018 002         JRST UFL1       ;SAME USER
-021     118 060         MOVE T,EPLD2(U)
+021     118 060         MOVE T,EPDL2(U)
 022     118 012         MOVEM T,AC16S(U)
 023     118 059         MOVE T,EPDL1(U)
 024     118 013         MOVEM T,AC17S(U)
@@ -30,7 +30,7 @@
 030     017 035         XORI T,UFL4
 031     020 016         MOVEM T,URSTR
 032     118 012         MOVE T,AC16S(U)
-033     118 013         MOVE U,SC17S(U)
+033     118 013         MOVE U,AC17S(U)
 034     001 048 UFL4A:  CONO PI,CLKON   ;CAUSE OF LOSE LOSE
 035     020 016 UFL4:   JRST 2,@URSTR
 036
@@ -41,4 +41,3 @@
 041                     MOVEI
 042                     MOVSI 1,(AOJA)
 043                     AOJA 1,1
-060
