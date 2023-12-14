@@ -1,0 +1,52 @@
+001                                                                             PAGE 25
+002     099 030 CLSTB:  CPOPJ   ;SYS CLOSETAB
+003     058 001         LPTCLS
+004     061 010         TYICLS
+005     061 026         TYOCLS
+006     099 030         REPEAT 4,CPOPJ
+007     099 030         REPEAT 4,SETZ CPOPJ
+008     093 009         UTICL
+009     088 038         UTOCLR
+010     093 009         UTICL
+011     091 030         UTOCL
+012     093 009         UTICL
+013     091 030         UTOCL
+014     049 002         VIDCLS
+015
+016     021 049 IOTTB:  IOCERR
+017     025 016 LPTDN==.-IOTTB
+018     058 014         PILPT1
+019     025 016 TYIDN==.-IOTTB
+020     060 032         TYI
+021     025 016 TYODN==.-IOTTB
+022     060 055         TYO
+023     025 016 NLIDN==.-IOTTB
+024     052 014         NULI
+025     025 016 NLBIDN==.-IOTTB
+026     052 019         NULBI
+027     025 016 NLODN==.-IOTTB
+028     052 017         NULOD
+029     025 016 NLBDN==.-IOTTB
+030     052 026         NULBOD
+031     025 016 UWIDN==.-IOTTB
+032     056 002         UWI
+033     025 016 UWODN==.-IOTTB
+034     055 017         UWO
+035     025 016 UBODN==.-IOTTB
+036     055 020         UBO
+037     025 016 UBIDN==.-IOTTB
+038     056 005         UBI
+039     025 016 DNUACII==.-IOTTB
+040     088 002         UASCII
+041     025 016 DNUACCO==.-IOTTB
+042     088 005         UASCCO
+043     025 016 DNUBKI==.-IOTTB
+044     087 040         UBLKI
+045     025 016 DNUBKO==.-IOTTB
+046     089 030         UBLKO
+047     025 016 DNUDTI==.-IOTTB
+048     087 037         UDATAI
+049     025 016 DNUDTO==.-IOTTB
+050     089 027         UDATAO
+051     025 016 VIDOPN==.-IOTTB
+052     049 021         VIDIOT

@@ -1,0 +1,56 @@
+001             ;UUO DISPATCH                                                   PAGE 22
+002
+003     022 024 UUODSP: PUSHJ P,AIOT
+004     024 016         PUSHJ P,AOPEN
+005     027 024         PUSHJ P,AOPER
+006     028 004         PUSHJ P,ACALL
+007     022 035         PUSHJ P,AUSET   ;INSERT ADDED UUO'S HERE
+008     029 014         PUSHJ P,ABREAK
+009     022 018         PUSHJ P,ILLOP2
+010
+011
+012     020 017 ILLOP:  MOVE T,UUOH
+013     001 052         TLNN T,LSRMOD
+014                     JRST 4,.
+015     001 017         MOVSI T,(AUUO)
+016     020 027         JRST ILLOP1
+017
+018     001 028 ILLOP2: MOVEI T,BILLOP
+019     118 033 ILLOP4: IORM T,PIRQC(U)
+020     021 009         JRST ILLOP3
+021
+022             ; IOT DISPATCH
+023
+024     001 015 AIOT:   LDB R,[270400,,40
+025     118 004         ADDI R,IOCHNM(U)
+026     001 006         HLRZ A,(R)
+027     001 007         HRRZ B,(R)
+028     001 008         HRRZ C,40
+029     118 042         CAML C,RMEMT(U)
+030     021 039         JRST IOADC
+031     118 024         ADDI C,@UPR(U)
+032     025 016         JRST @IOTTB(B)
+033
+034             ;USET DISPATCH
+035     001 008 AUSET:  HRRZ C,40
+036     118 042         CAML C,RMEMT(U)
+037     021 039         JRST IOADC
+038     118 024         ADDI C,@UPR(U)
+039     001 015         LDB R,[270400,,40
+040     118 004         ADDI R,IOCHNM(U)
+041     001 006         HLRZ A,(R)
+042     001 007         HRRZ B,(R)
+043     025 002         SKIPL CLSTB(B)
+044     021 049         JRST IOCERR     ;NO USER IS OPENED ON THIS CHANNEL
+045     001 007         HRRZ B,(C)
+046     118 042         CAML B,RMEMT(U)
+047     021 039         JRST IOADC
+048     118 024         ADDI B,@UPR(U)
+049     001 013         HLRZ Q,(C)
+050     001 013         TRZE Q,400000
+051     023 016         JRST OUTLOC
+052     023 014         CAIL Q,MXVAL
+053     021 031         JRST ILUUO
+054     023 002         XCT USETL(Q)
+055     001 009         MOVEM D,(B)
+056     001 016         POPJ P,
