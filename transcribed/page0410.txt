@@ -1,0 +1,60 @@
+001                                                                             PAGE 41
+002     009 021         JUMPA SEARC
+003     017 002 UDELAY: PUSHJ P,UFLS
+004     001 016         POPJ P,
+005
+006     001 009 ACMS6:  HRRZ A,D
+007     050 055         PUSHJ P,TCALL
+008     050 042         JRST MPOUT
+009     041 016         PUSHJ P,AIOBT   ;MOVE C(J) TO C(D)
+010     051 039         LDB E,[MUR,,MEMBLT(J)
+011     051 039         DPB E,[MUR,,MEMBLT(D)
+012     001 014         HRRZ A,J
+013     050 037         PUSHJ P,MEMR
+014     039 006         JRST ACMSS
+015
+016     051 039 AIOBT:  LDB R,[MLO,,MEMBLT(J)
+017     001 010 AIOBTL: MOVSI E,400000  ;LOCK ALL BUFFERS IN BLOCK BEING VACATED
+018     051 004         IORM E,IOBFT(R)
+019     051 004         LDB R,[IOLC,,IOBFT(R)
+020     001 015         CAIE R,377
+021     041 017         JRST AIOBTL
+022             ;       MOVNI R,8
+023             ;       ADDM R,UTTBF
+024             ;       ADDM R,UTTLB
+025             ;       HRRZ A,D
+026             ;       PUSHJ P,TCALL
+027             ;       JRST UTMGB
+028
+029     001 016 AIOBT1: PUSH P,[0
+030     051 039         LDB R,[MLO,,MEMBLT(J)
+031     051 004 AIOBT2: SKIPL IOBFT(R)
+032     041 042         JRST AIOB5A
+033     051 004         LDB Q,[(IOCH,,IOBFT(R)
+034     001 013         CAIE, Q,77      ;FREE
+035     041 050         JRST AIOBT3
+036     051 004 AIOBT4: DPB D,[141000,,IOBFT(R) ;RELOCATE IOSA
+037     051 004         ANDCAM E,IOBFT(R)
+038
+039     051 004 AIOBT5: SKIPGE IOBFT(R)
+040                     SETOM (P)
+041
+042     051 004 AIOB5A: LDB R,[IOLC,,IOBFT(R)
+043     001 015         CAIE R,377
+044     041 031         JRST AIOBT2
+045     001 006         POP P,A
+046     099 030         JUMPE A,CPOPJ
+047     041 003         PUSHJ P,UDELAY
+048     041 029         JRST AIOBT1
+049
+050     083 005 AIOBT3: CAIL Q,NUTIC+NUTOC
+051     042 005         JRST AIOBT6
+052     083 026         IORM E,UTRAC(Q)
+053     051 004         LDB C,[IOLO,,IOBFT(R)
+054     001 008         CAIN C,-4&1777
+055     042 002         JRST AIOBT7     ;ACTIVE AT PI
+056     001 008         CAIN C,-3&1777
+057     042 037         JRST AIOBT8     ;ACTIVE AT MN PROG
+058     042 029         PUSHJ P,ACMBM
+059     083 026 AIOB8B: ANDCAM E,UTRAC(Q)
+060     041 036         JRST AIOBT4
