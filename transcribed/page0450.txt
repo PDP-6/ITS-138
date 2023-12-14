@@ -1,0 +1,52 @@
+001                                                                             PAGE 45
+002     117 013 ACORE3: CAMN U,DISUSR
+003     045 042         JSR DISACR
+004     001 006         SUBI A,-1(B)
+005     001 006         HRRZ E,A
+006     118 024         HLRZ A,UPR(U)
+007     118 024         ADD A,UPR(U)
+008     001 006         LSH A,-10.
+009     050 037 ACR2L:  PUSHJ P,MEMR
+010     001 009         MOVEI D,377
+011     051 039         LDB C,[MUR,,MEMBLT-1(A)
+012     118 062         IMULI C,LUBLK
+013     001 018         CAMN C,U
+014     051 039         DPB D,[MLO,,MEMBLT-1(A)
+015     001 006         SOS A
+016     045 009         SOJG E,ACR2L
+017     001 006         LSH A,10.
+018     118 024         SUB A,UPR(U)
+019     044 055         JUMPEGE A,ACORT1
+020     118 041         CLEARM MEMTOP(U)
+021     118 042         CLEARM RMEMT(U)
+022     118 024         HRRZS UPR(U)
+023     044 065         JRST ACORR2
+024
+025
+026     050 055 CCFRE:  PUSHJ P,TCALL
+027     050 042         JRST MPOUT
+028     001 018 CCRTN:  MOVE I,U
+029     118 062         IDIVI I,LUBLK
+030     051 039         DPB I,[MUR,,MEMBLT(A)
+031     001 016         POPJ P,
+032
+033
+034     001 006 CZRR:   LSH A,10.
+035                     CLEARM (A)
+036     001 006         HRLS A
+037     001 006         AOS A
+038     001 006         MOVE C,A
+039     001 006         BLT A,1776(C)
+040     001 016         POPJ P,
+041
+042             DISACR: 0
+043     001 006         PUSH P,A
+044     001 006         MOVEI A,1(B)
+045     001 006         LSH A,10.
+046     046 036         CAML A,DISPRT
+047     045 051         JRST DISAC2
+048     117 013         SETOM DISUSR
+049     047 035         SETOM DISOFF
+050     047 036         CLEARM CDSOFF
+051     001 006 DISAC1: POP P,A
+052     045 042         JRST @DIACR
