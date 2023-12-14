@@ -1,0 +1,60 @@
+001                                                                                     PAGE 51
+002             ;MEMORY ALLOCATION TABLES
+003
+004     002 004 IOBFT:  REPEAT  MXIOB-1,176000,,.RPCNT+1        ;MAX DYN ALLOC IO BUFFERS
+005                     176000,,377     ;4.9 FREEZE
+006                     ;4.8 ALLOC INHIBIT
+007             IOCH=340600     ;4.7-4.2 SYS CHN NO 77 => FREE
+008             IOLC=241000     ;4.1 3.3 LINK TO NEXT SEQ BUF IN CORE (W/IN 1K BLK)
+009             IOLO==1000      ; LINK TO FOLLOWING BUFFER OR
+010                     ;SPECIAL STATES LINK OUT
+011                     ;-1     LAST BUFFER CURRENTLY FILLED
+012                     ;-2   END OF FILE
+013                     ;-3   BUFFER ACTIVE AT MAIN PROG LEVEL
+014                     ;-4   BUFFER ACTIVE AT PI LEVEL
+015             ;IF CHN IS NUTIC+NUTOC (UTAPE FILE DIR) THEN IOLO IS TAPE NO
+016
+017             IOSA=101400     ; BUFFER SA _-6
+018
+019
+020             IOBFP:  0       ;FREE STG TO IOBFT ENT
+021     002 004 IOBFC:  MXIOB-8 ;CNT OF AVAIL
+022                                     ;LEAVE 8 AVAIL SO CORE HACKER CAN NOT RUN OUT
+023
+024
+025     051 004 IOBCNS: MOVEI A,IOBFP-IOBFT
+026     001 006 IOBC1:  MOVE E,A
+027     051 004         LDB A,[IOLO,,IOBFT(A)
+028     001 006         CAIN A,337
+029                     JRST 4,.        ;IOBFT POINTERS FOULED UP
+030
+031     051 004 IOBC2:  LDB B,[420200,,IOBFT(A)
+032     051 026         JUMPN B,IOBC1
+033     051 004         LDB B,[IOLO,,IOBFT(A)
+034     051 004         DPB B,[IOLO,,IOBFT(E)
+035     051 021         SOS IOBFC
+036     001 016         POPJ P,
+037
+038             MEMFP:
+039             MEMBLT: 37400,,377_8+1  ;POINTER ONLY BLK DOES NOT EXIST
+040     002 002         REPEAT MX1KB-1-1,36400,,<.RPCNT>_8.+.RPCNT+2
+041     002 002         36400,,<MX1KB-2>_8+377
+042             ;4.9  FREEZE
+043             ;4.8 ALLOC INHIBIT
+044             MUR=320600      ;USER OR 77 EXEC, 76 IOBUF, 75 FREE, 74 in PROCESS
+045
+046             MLO==1000       ;LINK DOWN
+047             ;IOBFT LINK FIRST BUFFER IN AREA (MUR=76)
+048             MLU=101000      ;LINK UP
+049
+050             ;SYS MEM ALLOC VARIABLES
+051     002 002 MEMFR:  MX1KB-1
+052             MEMDSP: 0       ;-1 TRY HARD TO GET MEMORY 0 LOOK AROUND
+053             UMEMT:  0       ;TOTAL MEMORY FOR USER PROGS (IN CORE)
+054             MEMFRZ: 0       ;-1 MEMORY FROZE
+055
+056
+057             ;SYS CHANNEL ASSIGN
+058             ;  77=>FREE
+059             ; 0 - NUTIC+NUTOC-1 => UTAPE CHNL
+060             ;NUTIC+NUTOC =>UTAPE FILE DIR

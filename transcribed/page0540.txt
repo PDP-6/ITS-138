@@ -1,0 +1,33 @@
+001                                                                                     PAGE 54
+002     001 018 NOGO:   EXCH TT,U
+003     053 040         JRST NOGO1
+004
+005     001 007 SETBIT: HRLZ B,B
+006     001 018         HRR B,U
+007     118 034         MOVEM B,SUPPRO(TT)
+008     001 018         EXCH TT,U
+009     001 007         MOVEI B,1
+010     034 004         PUSHJ P,ACORE
+011     054 002         JRST NOGO
+012                                     ;FALLS THRU
+013
+014     001 008 UFOUND: HLRZS C
+015     001 008         TRNE C,777774
+016     021 031         JRST ILUUO
+017     001 018         HRLZ D,U
+018     117 011         MOVE U,USEP
+019     054 023         XCT INFINT(C)
+020     001 009         MOVEM D,(R)
+021     087 008         JRST RSKP
+022
+023     025 031 INFINT: HRRI D,UWIDN
+024     025 033         HRRI D,UWODN
+025     025 037         HRRI D,UBIDN
+026     025 035         HRRI D,UBODN
+027
+028
+029     001 006 ULOSE:  MOVE U,A
+030     001 032 UWIERR: MOVEI T,ILLUAD
+031     021 033         JRST UUOERR
+032
+033
