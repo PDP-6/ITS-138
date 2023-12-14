@@ -1,4 +1,4 @@
-001             ADISMIS:        ;CALL 1,                                        PAGE 31
+001             ADISMIS:        ;CALL 1,                                     PAGE 31
 002     001 007         MOVE B,(C)
 003     001 052         TLO B,LSRMOD
 004     001 051         TLZ B,BADPC
@@ -9,46 +9,46 @@
 009                     SKIPN TINTC(B)
 010     031 014         JRST ADISM1
 011     118 033         IORM C,PIRQC(U)
-012     021 002         MOVE C,[JRST ONEFLS
+012     021 002         MOVE C,[JRST ONESFS
 013     020 014         MOVEM C,UEXIT
-014     001 027 ADISM1: MOVEI C,AROIF
+014     001 027 ADISM1: MOVEI C,ARIOF
 015     118 033         ANDCAM C,PIRQC(U)
 016     118 035         SETOM PICLR(U)
 017     001 016         POPJ P,
-018
-019
+018    
+019    
 020             ASLEEP: SOSL (J)        ;OPER 3
 021     017 002         PUSHJ P,UFLS
 022     001 016         POPJ P,
-023
+023    
 024     118 044 ALOGIN: MOVE A,UNAME(U) ;OPER 6
 025     031 031         AOJN A,ALOG1    ;JUMP ON ALREADY LOGGED IN
 026     001 006         MOVE A,(J)
 027     031 031         JUMPE A,ALOG1   ;READ JNAME EVEN THOUGH NOT LOGGED IN
 028     118 044         MOVEM A,UNAME(U)
 029                     AOS (P)
-030
+030    
 031     118 044 ALOG1:  MOVE A,UNAME(U)
 032     118 045         MOVE B,JNAME(U)
 033     001 006         MOVEM A,(J)
 034     001 007         MOVEM B,1(J)
 035     001 016         POPJ P,
-036
+036    
 037     118 036 AGETMSK:        MOVE A,MSKST(U) ;OPER 5
 038     001 006         MOVEM A,(J)
 039     001 016         POPJ P,
-040
-041     001 006 ASETMSK:        MOVE A,(J)      ;OPER 4
-042     001 025         TRZ A,BPIPT+VALRTF+BRKF+BCNTRZI ;MAKE SURE THESE GO TO SUP. PRO.
+040    
+041     001 006 ASETMSK:        MOVE A,(J)     ;OPER 4
+042     001 025         TRZ A,BPIPI+VALRTF+BRKF+BCNTRZI ;MAKE SURE THESE GO TO SUP. PRO.
 043     118 036         MOVEM A,MSKST(U)
 044     001 050         MOVEI B,40+APRCHN
 045     001 027         TRNE A,AROIF
-046     001 050         MOVEI B,20+APRCHN
+046     001 050         MOVEI B,20+ARPCHN
 047     118 025         MOVEM B,APRC(U)
 048     118 025         CONO @APRC(U)
 049     001 016         POPJ P,
-050
-051     117 018 AREDTIM:        SKIPA A,TIME
-052     001 006 AREDDTS:        DATAI A
+050    
+051     117 018 AREDTIM:       SKIPA A,TIME
+052     001 006 AREDDTS:       DATAI A
 053     001 006         MOVEM A,(J)
 054     001 016         POPJ P,

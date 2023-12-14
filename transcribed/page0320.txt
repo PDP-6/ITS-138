@@ -1,7 +1,7 @@
-001                                                                             PAGE 32
+001                                                                     PAGE 32
 002     118 041 ATRAND: CAML B,MEMTOP(U)
-003     021 039         JRST IOADC
-004     001 016         PUSH P,(C)      ;CALL 2,
+003     021 039         JRST ODADC
+004     001 016         PUSH P,(C)     ;CALL 2,
 005     001 016         PUSH P,1(C)
 006     001 016         PUSH P,2(C)
 007     026 011         PUSHJ P,TRAN
@@ -10,10 +10,10 @@
 010     001 016         POP P,1(C)
 011     001 016         POP P,(C)
 012     100 023         JRST POPJ1
-012
+013    
 014     118 041 ATRANAD:        CAML B,MEMTOP(U)
 015     021 039         JRST IOADC
-016     117 028         MOVE A,SIOMTU
+016     117 027         MOVE A,SIOMTU
 017                     SKIPN TRAN1(A)
 018     032 025         JRST ADDTRN
 019     001 006         AOBJN A,.-2
@@ -25,7 +25,7 @@
 025     001 007 ADDTRN: MOVE B,(C)
 026     118 044         CAME B,UNAME(U)
 027     001 016         POPJ P,
-028     001 007         MOVEM B,TRAN1(A)
+028     001 007         MOVEM B,TRAN1(A) 
 029     001 007         MOVE B,1(C)
 030     001 007         MOVEM B,TRAN2(A)
 031     117 028         MOVEM A,SIOMTU
@@ -37,19 +37,19 @@
 037     100 023         JRST POPJ1
 038     001 048 CLKONJ: CONO PI,CLKON
 039     001 016         POPJ P,
-040
+040    
 041             ATRNDL:         ;CALL 7,
 042     117 028         MOVE A,SIOMTU
 043     001 007         MOVE B,(C)
 044     118 044         CAME B,UNAME(U)
 045     001 016         POPJ P,
 046             TRND:   IRPC N,,12345678
-047     001 007         MOVE B,TRAN1N(A)
+047     001 007         MOVE B,TRANIN(A)
 048     001 007         CAME B,N-1(C)
 049     032 054         JRST TRND2
 050                     TERMIN
 051                     CLEARM TRAN1(A)
 052     100 023         JRST POPJ1
-053
+053       
 054     032 046 TRND2:  AOBJN A,TRND
 055     001 016         POPJ P,
