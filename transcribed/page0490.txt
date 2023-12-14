@@ -1,0 +1,32 @@
+001                                                                                     PAGE 49
+002     049 032 VIDCLS: SETOM VIDUSR
+003     117 013         SETOM DISUSR
+004     001 016         POPJ P,
+005
+006     001 049 VIDI:   CONO PI,CLKOFF
+007     049 032         CAMN U,VIDUSR
+008     049 011         JRST VID1A
+009     117 013         SKIPL DISUSR
+010     032 038         JRST CLKONJ
+011     117 013 VID1A:  CLEARM DISUSR
+012     049 032         MOVEM U,VIDUSR
+013     047 035         SETOM DISOFF
+014     001 048         CONO PI,CLKON
+015                     CONO DIS,100
+016                     DATAO DIS,[20117]
+017     025 051         MOVEI A,VIDOPN
+018     001 006         MOVEM A,(R)
+019     100 023         JRST POPJ1
+020
+021     002 033 VIDIOT: CONO VID,10
+022                     DATAO DIS,(C)
+023     001 006         MOVEI A,1000.
+024     002 033         CONSO VID,10
+025     001 006         SOJG A,.-1
+026     049 030         JUMPE A,VIDIB
+027     002 033         DATAI VID,(C)
+028     001 016         POPJ P,
+029
+030             VIDIB:  SETOM (C)
+031     001 016         POPJ P,
+032             VIDUSR: -1

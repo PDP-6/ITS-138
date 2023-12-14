@@ -1,0 +1,42 @@
+001                                                                                     PAGE 46
+002     001 049 ADSTART:        CONO PI,CLKOFF
+003     049 032         SKIPL VIDUSR
+004     032 038         JRST CLKONJ
+005     118 046         SKIPE TTYTBL(U) ;ALWAYS LET CONSOLE TTY USER OPEN DISPLAY
+006     117 013         CAMN U,DISUSR
+007     046 011         JRST DSTRT1
+008     117 013         SKIPL DISUSR
+009     032 038         JRST CLKONJ
+010
+011             DSTRT1: CONO DIS,100
+012     047 036         CLEARM CDSOFF
+013     117 013         MOVEM U,DISUSR
+014     001 006         MOVE A,(C)
+015     001 006         HLRO B,A
+016     001 007         MOVNS B
+017     001 007         ADDI B,(A)
+018     118 042         CAML B,RMEMT(U)
+019     046 032         JRST DISBRF
+020     046 036         MOVEM B,DISPRI
+021     118 024         ADDI A,@UPR(U)
+022     046 037         MOVEM A,DISPTR
+023     046 038         MOVEM A,DBLKOP
+024
+025     118 024         MOVE A,UPR(U)
+026     046 035         HRRZM A,DRELOC
+027     047 035         CLEARM DISOFF
+028     002 019         CONO DIS,100\DISCHN\SDCHN_3
+029     001 048 CLKNJ1: CONO PI,CLKON
+030                     AOS (P)
+031     001 016         POPJ P,
+032
+033     117 013 DISBRF: SETOM DISUSR
+034     032 038         JRST CLKONJ
+035
+036             DRELOC: 0       ;RELOC OF DIS USER
+037             DISPRT: 0       ;LARGEST LOC USED BY DISLIST
+038             DISPTR: 0       ;PERM DIS BLKO PTR
+039             DBLKOP: 0       ;TEMP DIS BLKO PTR
+040             DISON:  0       ;-1 IF DIS STOPPED AFTER SPECIAL INT OR BLKO OVERFLOW
+041                             ;WILL BE RESTARTED IN CLKBRK ROUTNE.
+042

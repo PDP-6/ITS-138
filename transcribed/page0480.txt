@@ -1,0 +1,26 @@
+001                                                                                     PAGE 48
+002     117 013 ADSTOP: CAME U,DISUSR   ;OPER 16
+003     001 016         POPJ P,
+004                     CONO DIS,100
+005     047 035         SETOM DISOFF
+006     001 016         POPJ P,
+007
+008     117 013 ADFLUSH:        CAME U,DISUSR   ;OPER 15
+009     001 016         POPJ P,
+010     047 035         SETOM DISOFF
+011     117 013         SETOM DISUSR
+012     047 036         CLEARM CDSOFF
+013                     CONO DIS,100
+014     001 016         POPJ P,
+015
+016     047 031 ALTPOP: SETOM LTPOPO    ;OPER 21
+017     001 007         MOVEI B,(J)
+018     047 027         HRLI B,LLTPSN
+019     001 007         BLT B,3(J)
+020     117 013         CAME U,DISUSR
+021     048 025         JRST ALTPP2
+022     047 028         SETZB A,LTPCNT
+023     047 029         MOVEM A,LTPCY
+024     047 030         MOVEM A,LTPCX
+025     047 031 ALTPP2: SETZM LTPOPO
+026     001 016         POPJ P,

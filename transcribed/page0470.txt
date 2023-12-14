@@ -1,0 +1,37 @@
+001                                                                                     PAGE 47
+002
+003     047 034 SRECYC: MOVEM A,DISAS
+004                     CONSZ DIS,2000
+005     047 011         JRST DSLTPB
+006     046 039         SETOM DISON
+007                     CONO DIS,0
+008     047 034 SRCYCX: MOVE A,DISAS
+009     066 002         JRST 12,@TTYBRK
+010
+011     047 031 DSLTPB: SKIPE LTPOPO
+012     047 008         JRST SRCYCX     ;IN LIGHT PEN UUO
+013     047 027         DATAI DIS,LLTPSN
+014     047 028         AOS LTPCNT
+015     047 027         HRRZ A,LLTPSN
+016     047 029         ADDM A,LTPCY
+017     047 027         HLRZ A,LLTPSN
+018     047 030         ADDM A,LTPCX
+019     002 018         CONO DIS,10000\SDCHN_3\DISCHN
+020     047 008         JRST SRCYCX
+021
+022             DRECYC: 0
+023     046 039         SETOM DISON
+024                     CONO DIS,0
+025     047 022         JRST 12,@DRECYC
+026
+027             LLTPSN: 0       ;. TO .+3 BLTED TO USER
+028             LTPCNT: 0
+029             LTPCY:  0
+030             LTPCX:  0
+031             LTPOPO: 0
+032
+033             DISA:   0
+034             DISAS:  0
+035             DISOFF: 0       ;-1 IF DIS NOT IN USE
+036             CDSOFF: 0       ;-1 IF DIS STOPPED BY CORE ALLOCATOR
+037

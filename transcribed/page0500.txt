@@ -1,0 +1,60 @@
+001                                                                                     PAGE 50
+002     051 021 UIMRQ:  MOVE A,IOBFC
+003     001 006         CAIGE A,8
+004     001 016         POPJ P, ;NOT ENOUGH ROOM IM IOBFT
+005             IOMQ:
+006     051 054 IMEMRQ: SKIPGE MEMFRZ
+007     001 016         POPJ P, ;MEMORY FROZE
+008     001 006         MOVEI A,0
+009     001 007         PUSH P,B
+010     001 010         PUSH P,E
+011     051 039 IMRQ2:  LDB A,[MLO,,MEMBLT(A)
+012     001 006         CAIE A,377
+013     050 020         JRST IMRQ3
+014     051 052         CLEARM MEMDSP
+015             MPOUT1:
+016     001 010 IMRQR:  POP P,E
+017     001 007 POPBJ:  POP P,B
+018     001 016         POPJ P,
+019
+020     051 039 IMRQ3:  LDB B,[420200,,MEMBLT(A)
+021     050 011         JUMPN B,IMRQ2
+022                     AOS -2(P)
+023     050 044         JRST IMRQ4
+024
+025     001 007 IMEMR:  PUSH P,B
+026     051 038         LDB B,[MLO,,MEMFP
+027     051 039         DPB B,[MLO,,MEMBLT(A)
+028     051 039         DPB A,[MLU,,MEMBLT(B)
+029     001 007         MOVEI B,0
+030     051 039         DPB B,[MLU,,MEMBLT(A)
+031     001 007         MOVEI B,75
+032     051 039         DPB B,[MUR,,MEMBLT(A)
+033     051 038         DPB A,[MLO,,MEMFP
+034     051 051         AOS MEMFR
+035     050 017         JRST POPBJ
+036
+037     002 022 MEMR:   CONO PI,UTCOFF
+038     050 025         PUSHJ P,IMEMR
+039     002 021         CONO PI,UTCON
+040     001 016         POPJ P,
+041
+042     001 007 MPOUT:  PUSH P,B
+043     001 010         PUSH P,E
+044     051 039 IMRQ4:  LDB B,[MLU,,MEMBLT(A)
+045     051 039         LDB E,[MLO,,MEMBLT(A)
+046     001 007         CAIE B,377
+047     051 039         DPB E,[MLO,,MEMBLT(B)
+048     001 010         CAIE E,377
+049     051 039         DPB B,[MLU,,MEMBLT(E)
+050     051 051         SOS MEMFR
+051     001 007         MOVEI B,74      ;IN PROCESS
+052     051 039         DPB B,[MUR,,MEMBLT(A)
+053     050 015         JRST MPOUT1
+054
+055     002 022 TCALL:  CONO PI,UTCOFF
+056     001 016         PUSHJ P,@(P)
+057                     SKIPA
+058                     AOS (P)
+059     002 021         CONO PI,UTCON
+060     100 023         JRST POPJ1
