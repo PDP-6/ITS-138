@@ -60,7 +60,7 @@
                         .EXCH U,A
                         PUSHJ P,PLLSR
                         JRST AGBLT4
-                        MOVE U,A
+                        MOVE U,A        ;ACTUALLY GOBBLE TTY
                         HRRZ A,TTYTBL(U)
                 AGBLT6: MOVE E,TTYTBL(A)
                         JUMPL E,AGBLT5
