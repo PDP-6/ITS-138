@@ -5,7 +5,7 @@
 065     027 010         HRRZ B,DVT1(C)
 066     001 007         CAIE B,(E)
 067     001 008         AOBJN C,.-2
-068     021 046         JUMPQ C,NSD
+068     021 046         JUMPG C,NSD
 069     027 010         HLRZ C,DVT1(C)
 070     024 047         JRST OPEN2
 071
