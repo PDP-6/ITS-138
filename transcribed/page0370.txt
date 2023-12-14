@@ -1,4 +1,4 @@
-001                                                    PAGE 37
+001                                                                             PAGE 37
 002     001 009 ACORE6: MOVE A,D
 003     045 026         PUSHJ P,CCFRE
 004     051 039         DPB A,[MLO,,MEMBLT-1(A)
@@ -9,13 +9,13 @@
 009     001 009         HRRZ A,D
 010     045 034         PUSHJ P,CZRR    ;ZERO BLOCK ADDED
 011     001 006         MOVEI A,2000
-012    
+012
 013     118 024 ACORTN: HLRZ C,UPR(U)
 014     118 041         SKIPN MEMTOP(U)
 015     001 008         MOVNI C,2000
 016     001 008         ADD A,C
 017     044 055         JRST ACORT1
-018    
+018
 019     001 009 ACMS2:  MOVE J,D        ;D HAS FIRST FREE BLOCK BELOW
 020     051 039 ACMS7:  LDB E,[MUR,,MEMBLT(J)
 021     001 009         CAMN J,D

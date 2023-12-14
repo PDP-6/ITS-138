@@ -1,4 +1,4 @@
-001                                                               PAGE 30
+001                                                                             PAGE 30
 002     001 007 AUFLUSH:        HRRZ B,(R)      ;OPER 10
 003     001 006         HLRZ A,(R)
 004     025 002         SKIPL CLSTB(B)
@@ -6,9 +6,9 @@
 006     001 009         MOVNI D,1
 007     023 035         PUSHJ P,USTOP
 008                     CLEARM (R)
-009     118 004         MOVEI R,IOCVHNM(U)
-010     001 007 AULS1:  HRRZ B,(R)
-011     001 008         HLRZ  C,(R)
+009     118 004         MOVEI R,IOCHNM(U)
+010     001 007 AUFLS1: HRRZ B,(R)
+011     001 008         HLRZ C,(R)
 012     025 002         SKIPL CLSTB(B)
 013     030 016         JRST AUFLS2
 014     001 006         CAMN C,A
@@ -32,9 +32,9 @@
 032     001 007         MOVEI B,0
 033     034 004         PUSHJ P,ACORE
 034                     JRST .-2
-035    
+035
 036     001 006 AUFLS5: POP P,A
-037     001 005         EXCH U,A
+037     001 006         EXCH U,A
 038     118 044         CLEARM UNAME(A)
 039     041 003         JRST UDELAY
 040

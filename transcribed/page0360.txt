@@ -1,10 +1,10 @@
-001                                                            PAGE 36
+001                                                                             PAGE 36
 002     049 032 DCRSTP: CAMN U,VIDUSR
 003     001 016         POPJ P,
 004     047 036         SETOM CDSOFF
 005                     CONO DIS,0
 006     001 016         POPJ P,
-007    
+007
 008     049 032 DCRRST: CAMN U,VIDUSR
 009     001 016         POPJ P,
 010     047 035         SKIPL DISOFF
@@ -13,8 +13,8 @@
 013     002 019         CONO DIS,DISCHN+SDCHN_3
 014     047 036         CLEARM CDSOFF
 015     001 016         POPJ P,
-016    
-017     038 013 ACORE4: JSRT ACR9A      ;TEMP
+016
+017     038 013 ACORE4: JRST ACR9A      ;TEMP
 018     002 022         CONO PI,UTCOFF
 019     083 051         MOVE D,UTTBF
 020     001 009         CAIGE D,8
