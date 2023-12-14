@@ -1,7 +1,7 @@
 061     118 046         MOVEM D,TTYTBL(A)                                       PAGE 33.1
 062     118 046         LDB D,[220300,,TTYTBL(U)
 063     001 018         HRL D,U
-064     070 028         MOVSM D.TTYSTS(E)
+064     070 028         MOVSM D,TTYSTS(E)
 065     118 046         HRRZM E,TTYTBL(U)
 066     033 033         JRST CLKOJ1
 067
@@ -24,7 +24,7 @@
 084     001 017         TLNN T,-1
 085     021 049         JRST IOCERR
 086     001 017         POP T,(R)
-087     118 008         MOVEM T.SIOCP(U)
+087     118 008         MOVEM T,SIOCP(U)
 088     001 016         POPJ P,
 089
 090

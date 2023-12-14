@@ -5,7 +5,7 @@
 005     001 016         POPJ P,         ;IF U=USER,THIS IS IN CORE
 006     117 011         CAMN U,USER
 007     035 022         JUMPE B,ACRF
-008     001 006 ACRF1:  PUSH P,A
+008     001 006 ACRF1:  PUSH P,A        ;MAY CLOBBER ALL ACS EX A,C,E,D,U
 009     001 008         PUSH P,C
 010     001 010         PUSH P,E
 011     001 009         PUSH P,D

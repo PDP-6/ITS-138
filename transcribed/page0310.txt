@@ -8,7 +8,7 @@
 008     001 024         MOVEI C,TTYIF
 009                     SKIPN TINTC(B)
 010     031 014         JRST ADISM1
-011     118 033         TORM C,PIRQC(U)
+011     118 033         IORM C,PIRQC(U)
 012     021 002         MOVE C,[JRST ONEFLS
 013     020 014         MOVEM C,UEXIT
 014     001 027 ADISM1: MOVEI C,AROIF
@@ -45,7 +45,7 @@
 045     001 027         TRNE A,AROIF
 046     001 050         MOVEI B,20+APRCHN
 047     118 025         MOVEM B,APRC(U)
-048     118 025         CONO APRC(U)
+048     118 025         CONO @APRC(U)
 049     001 016         POPJ P,
 050
 051     117 018 AREDTIM:        SKIPA A,TIME
