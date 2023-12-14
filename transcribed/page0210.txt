@@ -17,9 +17,9 @@
 017     118 024 UFL8:   HRLZ P,UPR(U)
 018     001 016         BLT P,P
 019     118 021         MOVE T,@AC16P(U)
-020     118 012         MOVEM T,@AC16S(U)
+020     118 012         MOVEM T,AC16S(U)
 021     020 018         MOVE T,@AC17P
-022     118 012         MOVEM T,@AC17S(U)
+022     118 013         MOVEM T,AC17S(U)
 023     017 025         JRST UFL2
 024
 025     117 025 UFL7:   SKIPN SCRFG1

@@ -5,7 +5,7 @@
 005     118 054         MOVE D,UOLOOK(A)
 006     118 044         MOVE D,UNAME(A)
 007     118 045         MOVE D,JNAME(A)
-008     118 036         MOVE D,MSTST(A)
+008     118 036         MOVE D,MSKST(A)
 009     118 027         MOVE D,USTP(A)
 010     118 033         MOVE D,PIRQC(A)
 011     118 034         HLLZ D,SUPPRO(A)
@@ -44,8 +44,8 @@
 044     001 006 UPCSET: EXCH U,A
 045     029 039         PUSHJ P,PCCK
 046     001 052         TLO D,LSRMOD
-047     001 051         TLQ D,BADPC
+047     001 051         TLZ D,BADPC
 048     118 009         MOVEM D,UPC(U)
-049     001 048         CONO PI, CLKON
+049     001 048         CONO PI,CLKON
 050     001 006         EXCH U,A
-051     001 0016        POPJ P,
+051     001 016         POPJ P,

@@ -1,4 +1,4 @@
-001             ;UUO DISPATCH                                                   PAGE 21
+001             ;UUO DISPATCH                                                   PAGE 22
 002
 003     022 024 UUODSP: PUSHJ P,AIOT
 004     024 016         PUSHJ P,AOPEN
@@ -21,7 +21,7 @@
 021
 022             ; IOT DISPATCH
 023
-024     001 015 AIOT:   LDBR,[270400,,40
+024     001 015 AIOT:   LDB R,[270400,,40
 025     118 004         ADDI R,IOCHNM(U)
 026     001 006         HLRZ A,(R)
 027     001 007         HRRZ B,(R)
@@ -36,7 +36,7 @@
 036     118 042         CAML C,RMEMT(U)
 037     021 039         JRST IOADC
 038     118 024         ADDI C,@UPR(U)
-039     001 015         LDB R,[240400,,40
+039     001 015         LDB R,[270400,,40
 040     118 004         ADDI R,IOCHNM(U)
 041     001 006         HLRZ A,(R)
 042     001 007         HRRZ B,(R)
