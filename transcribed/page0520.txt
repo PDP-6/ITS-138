@@ -1,0 +1,31 @@
+001     003 004 SUBTTL NULL DEVICE                                                      PAGE 52
+002
+003     052 009 NULO:   JUMPL D,NULOO
+004     025 025         MOVEI A,NLBIDN
+005     001 009         TLNN D,1
+006     025 023         MOVEI A,NLIDN
+007     001 006 BCHR:   MOVEM A,(R)
+008     087 008         JRST RSKP
+009     025 027 NULOO:  MOVEI A,NLODN
+010     001 009         TLNE D,1
+011     025 029         MOVEI A,NLBDN
+012     052 007         JRST BCHR
+013
+014             NULI:   CLEARM (C)
+015     001 016         POPJ P,
+016
+017     001 016 NULOD:  POPJ P,
+018
+019     118 042 NULBI:  MOVE A,RMEMT(U)
+020     001 009         MOVE D,(C)
+021     001 006         CAIL A,(D)
+022                     CLEARM (D)
+023     001 009         AOBJN D,.-2
+024     001 016         POPJ P,
+025
+026     001 006 NULBOD: HLRE A,(C)
+027     001 006         MOVNS A
+028     001 006         ADD A,(C)
+029     001 006         HRRZM A,(C)
+030     001 016         POPJ P,
+031

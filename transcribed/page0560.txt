@@ -1,0 +1,31 @@
+001                                                                                     PAGE 56
+002     001 013 UWI:    HRRO Q,(C)
+003     001 013         MOVEI C,0
+004
+005     057 005 UBI:    PUSHJ P,SUSTPR
+006     001 009         HLRO D,(C)
+007     001 009         MOVNS B,D
+008     001 007         ADD B,(C)
+009     118 042         CAMLE B,RMEMT(U)
+010     021 039         JRST IOADC
+011     001 007         HRRZM B,(C)
+012     118 024         ADDI B,@UPR(U)
+013     118 053         HRRZ C,UILOOK(A)
+014     001 008         ADDI C,(D)
+015     118 042         CAMLE C,RMEMT(A)
+016     054 030         JRST UWIERR
+017     118 053         HRRZM C,UILOOK(A)
+018     001 008         SUBI C,(D)
+019     118 024         ADDI C,@UPR(A)
+020     001 009         SUBM B,D
+021     001 009         HRL C,D
+022     001 008         MOVSS C
+023     001 008 UBI2:   HLRZ Q,C
+024     118 024         SUBI Q,@UPR(A)
+025     001 013         CAIGE Q,20
+026     057 017         JRST UBI3
+027     001 008         BLT C,-1(B)
+028     118 031 UBO1:   MOVSI B,BEXC
+029     118 027         ANDCAM B,USTP(A)
+030     001 016         POPJ P,
+031

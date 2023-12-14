@@ -1,0 +1,34 @@
+001                                                                                     PAGE 57
+002     001 006 SUSTP2: EXCH U,A
+003     001 048 SUSTP1: CONO PI,CLKON
+004     041 003         PUSHJ P,UDELAY
+005     001 049 SUSTPR: CONO PI,CLKOFF
+006     118 027         SKIPGE USTP(A)
+007     057 003         JRST SUSTP1
+008     001 006         EXCH U,A
+009     010 003         PUSHJ P,PCLSR
+010     057 002         JRST SUSTP2
+011     001 006         EXCH U,A
+012     118 031         MOVSI B,BEXC
+013     118 027         IORM B,USTP(A)
+014     001 048         CONO PI,CLKON
+015     001 016         POPJ P,
+016
+017     118 010 UBI3:   ADDI Q,ACOS(A)
+018     001 014         MOVE J,(Q)
+019     001 014         MOVEM J,(C)
+020     001 008         ADD C,[1,,1
+021     001 007         HRRZS B
+022     001 007         CAIE B,(C)
+023     056 023         JRST UBI2
+024     056 028         JRST UBO1
+025
+026     118 010 UBO3:   ADDI Q,ACOS(A)
+027     001 008         HLRZ E,C
+028     001 014         MOVE J,(E)
+029     001 014         MOVEM J,(Q)
+030     001 008         ADD C,[1,,1
+031     001 009         HRRZS D
+032     001 009         CAIE D,(C)
+033     055 038         JRST UBO2
+034     056 028         JRST UBO1

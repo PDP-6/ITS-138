@@ -1,0 +1,50 @@
+001     059 061 LPTCLS: SETOM LPTUSR                                                    PAGE 58
+002     059 062         SETOM LPTUSE
+003     001 016         POPJ P,
+004
+005     059 061 LPTO:   CAMN U,LPTUSR
+006     058 010         JRST LPTO1
+007     059 062         AOSE LPTUSE
+008     001 016         POPJ P,
+009     059 061         MOVEM U,LPTUSR
+010     025 017 LPTO1:  MOVEI A,LPTDN
+011     001 006         MOVEM  A,(R)
+012     087 008         JRST RSKP
+013
+014     001 006 PILPT1: SKIPA A,(C)
+015     001 006 LPTS:   MOVEI A,40
+016     058 045         PUSHJ P,LPTCHK
+017     017 002         PUSHJ P,UFLS
+018                     JFCL
+019     001 006 PILPT:  PUSH P,A
+020     001 006         CAIN A,11
+021     059 002         JRST LPTTAB
+022     001 006         CAIE A,12
+023     001 006         CAIN A,14
+024     059 008         JRST LPC
+025     059 024         SETOM PCL
+026     001 006         CAIE A,15
+027     059 023         AOSA LINEPOS
+028     059 023         CLEARM LINEPOS
+029     001 006 LPC1:   SUBI A,40
+030     059 022         SKIPG LPTCC
+031                     JRST .-1
+032     059 025         IDPB A,LPTIP
+033     059 025         HRRZ A,LPTIP
+034     059 059         CAIN A,LPTBE-1
+035     059 058         MOVEI A,LPTBO
+036     059 025         HRRM A,LPTIP
+037     059 022         SOS LPTCC
+038                     CONSO LPT,7
+039     002 016         CONO LPT,LPTCHN
+040     001 006 LPTRET: POP P,A
+041     001 016         POPJ P,
+042
+043
+044
+045     059 022 LPTCHK: MOVE T,LPTCC
+046     001 017         CAIG T,130.
+047     001 016         POPJ P,
+048     001 017         CAIG T,300.
+049                     AOS (P)
+050     100 023         JRST POPJ1

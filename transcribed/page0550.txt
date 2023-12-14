@@ -1,0 +1,44 @@
+001                                                                                     PAGE 55
+002     001 007 UMEMEX: PUSH P,B
+003     001 013         PUSH P,Q
+004     001 006         MOVE U,A
+005     118 024         HLRZ B,UPR(U)
+006     001 007         LSH B,-10.
+007     001 007         ADDI B,2
+008     034 004 TRYOVR: PUSHJ P,ACORE
+009     054 029         JRST ULOSE
+010     118 041         CAML D,MEMTOP(U)
+011     055 008         AOJA B,TRYOVR
+012     117 011         MOVE U,USER
+013     001 013         POP P,Q
+014     050 017         JRST POPBJ
+015
+016
+017     001 013 UWO:    HRRO Q,(C)
+018     001 013         MOVEI C,Q
+019
+020     057 005 UBO:    PUSHJ P,SUSTPR
+021     001 009         HLRO D,(C)
+022     001 009         MOVNS B,D
+023     118 054         ADD D,UOLOOK(A)
+024     001 009         MOVE R,D
+025     118 042         CAMLE D,RMEMT(A)
+026     055 002         PUSHJ P,UMEMEX
+027     118 024         ADDI D,@UPR(A)
+028     001 010         MOVE E,(C)
+029     001 007         ADDI B,(E)
+030     001 007         MOVEM B,(C)
+031     118 042         CAMLE B,RMEMT(U)
+032     021 039         JRST IOADC
+033     118 024         ADDI E,@UPR(U)
+034     118 054         MOVE C,UOLOOK(A)
+035     118 024         ADDI C,@UPR(A)
+036     001 010         HRL C,E
+037     118 054         MOVEM R,UOLOOK(A)
+038     001 008 UBO2:   HRRZ Q,C
+039     118 024         SUBI Q,@UPR(A)
+040     001 013         CAIGE Q,20
+041     057 026         JRST UBO3
+042     001 008         BLT C,-1(D)
+043     056 028         JRST UBO1
+044
