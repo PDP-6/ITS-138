@@ -1,25 +1,25 @@
-061     118 046         MOVEM D,TTYTBL(A)                                       PAGE 33.1
+061     118 046         MOVEM D,TTYTBL(A)
 062     118 046         LDB D,[220300,,TTYTBL(U)
 063     001 018         HRL D,U
 064     070 028         MOVSM D,TTYSTS(E)
 065     118 046         HRRZM E,TTYTBL(U)
 066     033 033         JRST CLKOJ1
-067
+067    
 068     001 009 AGBLT2: MOVSI D,100000
 069     118 046         IORM D,TTYTBL(A)
 070     118 046         HRRZ A,TTYTBL(A)
 071     033 057         JRST AGBLT3
-072
+072    
 073     118 008 AIPUSH: MOVE T,SIOCP(U) ;OPER 13
 074     001 017         HLRZ A,T
 075     001 006         CAIL A,20
 076     021 049         JRST IOCERR
 077     001 017         PUSH T,(R)
 078     118 008         MOVEM T,SIOCP(U)
-079
+079                     CLEARM (R)
 080     001 016         POPJ P,
-081
-082     029 001 AIPOP:  PUSHJ P,ACLOSE  ;OPER 14
+081    
+082     029 001 AIPOP:  PUSHJ P,ACLOSE   ;OPER 14
 083     118 008         MOVE T,SIOCP(U)
 084     001 017         TLNN T,-1
 085     021 049         JRST IOCERR
