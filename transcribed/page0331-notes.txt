@@ -1,33 +1,34 @@
-068     118 046         MOVEM D,TTYTBL(A)                                       PAGE 33.1
-069     118 046         LDB D,[220300,,TTYTBL(U)
-070     001 018         HRL D,U
-071     070 028         MOVSM S,TTYSTS(E)
-072     118 046         HRRZM E,TTYTBL(U)
-073     033 033         JRST CLKOJ1
-074
-075     001 009 AGBLT2:                 ;MOVSI D,100000
-076     118 046                         ;IORM D,TTYTBL(A)
-077     118 046         HRRZ A,TTYTBL(A)
-078     033 057         JRST AGBLT3
-079             AGBLT5: MOVSI D,100000
-080                     IORM D,TTYTBL(A)
-081                     HRRZ A,TTYTBL(A)
-082                     JRST AGBLT6
-083     118 008 AIPUSH: MOVE T,SIOCP(U) ;OPER 13
-084     001 017         HLRZ A,T
-085     001 006         CAIL A,20
-086     021 049         JRST IOCERR
-087     001 017         PUSH T,(R)
-088     118 008         MOVEM T,SIOCP(U)
-089                     CLEARM (R)
-090     001 016         POPJ P,
-091
-092     029 001 AIPOP:  PUSHJ P,ACLOSE  ;OPER 14
-093     118 008         MOVE T,SIOCP(U)
-094     001 017         TLNN T,-1
-095     021 049         JRST IOCERR
-096     001 017         POP T,(R)
-097     118 008         MOVEM T,SIOCP(U)
-098     001 016         POPJ P,
-099
-100
+061     118 046         MOVEM D,TTYTBL(A)                                       PAGE 33.1
+062     118 046         LDB D,[220300,,TTYTBL(U)
+063     001 018         HRL D,U
+064     070 028         MOVSM D.TTYSTS(E)
+065     118 046         HRRZM E,TTYTBL(U)
+066     033 033         JRST CLKOJ1
+067
+068     001 009 AGBLT2: MOVSI D,100000
+069     118 046         IORM D,TTYTBL(A)
+070     118 046         HRRZ A,TTYTBL(A)
+071     033 057         JRST AGBLT3
+072
+                AGBLT5: MOVSI D,100000
+                        IORM D,TTYTBL(A)
+                        HRRZ A,TTYTBL(A)
+                        JRST AGBLT6
+073     118 008 AIPUSH: MOVE T,SIOCP(U) ;OPER 13
+074     001 017         HLRZ A,T
+075     001 006         CAIL A,20
+076     021 049         JRST IOCERR
+077     001 017         PUSH T,(R)
+078     118 008         MOVEM T,SIOCP(U)
+079
+080     001 016         POPJ P,
+081
+082     029 001 AIPOP:  PUSHJ P,ACLOSE  ;OPER 14
+083     118 008         MOVE T,SIOCP(U)
+084     001 017         TLNN T,-1
+085     021 049         JRST IOCERR
+086     001 017         POP T,(R)
+087     118 008         MOVEM T.SIOCP(U)
+088     001 016         POPJ P,
+089
+090

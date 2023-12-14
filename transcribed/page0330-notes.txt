@@ -1,7 +1,7 @@
 001     001 048 AATT5:  CONO PI,CLKON                                           PAGE 33
 002     041 003         PUSHJ P,UDELAY
 003
-004     001 006 AATTY:  HLRZ A,(R)
+004     001 006 AATTY:  HLRZ A,(R)      ;OPER 11
 005     001 007         HRRZ B,(R)
 006     025 002         SKIPL CLSTB(B)
 007     001 016         POPJ P,
@@ -29,15 +29,16 @@
 029     118 046 AATT3:  HLL A,TTYTBL(A)
 030     001 006         TLZ A,700000
 031     070 028         MOVEM A,TTYSTS(B)
-032     118 046         HRRZM B,TTYTBL(A)
-033     001 048 CLKOJ1: CONO PI,CLKON
+032     118 046         HRRRZM B,TTYTBL(A)
+033     001 048 CLK0J1: CONO PI,CLKON
 034     100 023         JRST POPJ1
 035
 036     001 007 AATT1:  TLNN B,100000
 037     032 038         JRST CLKONJ
 038     033 001         JRST AATT5
 039
-040             AGBLT4: MOVE U,A
+040
+                AGBLT4: MOVE U,A
 041     001 048 AGBLT1: CONO PI,CLKON
 042     041 003         PUSHJ P,UDELAY
 043
@@ -55,13 +56,13 @@
 055     001 006         TRNE A,400000
 056     032 038         JRST CLKONJ     ;NEVER GAVE IT AWAY
 057     118 046 AGBLT3: MOVE E,TTYTBL(A)
-058     038 068         JUMPL E,AGBLT2
-059                     .EXCH U,A
-060                     PUSH P,PLLSR
-061                     JRST AGBLT4
-062                     MOVE U,A        ;ACTUALLY GOBBLS TTY
-063                     HRRE A,TTYTBL(U)
-064             AGBLT6: MOVE E,TTYTBL(A)
-065                     JUMPL E,AGBLT5
-066     070 028         HLLZ D,TTYSTS(E)
-067     001 009         IOR D,[500000,400000
+058     033 068         JUMPL E,AGBLT2
+                        .EXCH U,A
+                        PUSHJ P,PLLSR
+                        JRST AGBLT4
+                        MOVE U,A
+                        HRRZ A,TTYTBL(U)
+                AGBLT6: MOVE E,TTYTBL(A)
+                        JUMPL E,AGBLT5
+059     070 028         HLLZ D,TTYSTS(E)
+060     001 009         IOR D,[500000,,400000
