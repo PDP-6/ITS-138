@@ -12,7 +12,7 @@
 012     001 017         TLNN T,-1
 013     001 016         POPJ P,
 014     001 017         POP T,(R)
-015     118 008         MOVEM T,SCIOCP(U)
+015     118 008         MOVEM T,SIOCP(U)
 016     016 009         JRST IODCL2
 017
 018     001 018 URSTRT: POP P,U
