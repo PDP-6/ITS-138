@@ -1,0 +1,28 @@
+001                                                                             PAGE 36
+002     049 032 DCRSTP: CAMN U,VIDUSR
+003     001 016         POPJ P,
+004     047 036         SETOM CDSOFF
+005                     CONO DIS,0
+006     001 016         POPJ P,
+007
+008     049 032 DCRRST: CAMN U,VIDUSR
+009     001 016         POPJ P,
+010     047 035         SKIPL DISOFF
+011     046 039         SKIPGE DISON
+012                     JRST .+2
+013     002 019         CONO DIS,DISCHN+SDCHN_3
+014     047 036         CLEARM CDSOFF
+015     001 016         POPJ P,
+016
+017     038 013 ACORE4: JRST ACR9A      ;TEMP
+018     002 022         CONO PI,UTCOFF
+019     083 051         MOVE D,UTTBF
+020     001 009         CAIGE D,8
+021     038 012         JRST ACR9B      ;CANNOT GET ANOTHER BLOCK BY RECLAIMING FREE IO BUFFER
+022     002 002         MOVSI I,-MX1KB
+023     051 039         LDB D,[MUR,,MEMBLT(I)
+024     001 009         CAIN D,76
+025     001 012         AOBJN I,.-2
+026     001 012         JUMPGE I,[JRST 4,.]     ;MEMBLT FOULED UP
+027     001 009         MOVSI D,200000
+028     051 039         IORM D,MEMBLT(I)        ;ALLOCATION INHIBIT

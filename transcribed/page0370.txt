@@ -1,0 +1,31 @@
+001                                                                             PAGE 37
+002     001 009 ACORE6: MOVE A,D
+003     045 026         PUSHJ P,CCFRE
+004     051 039         DPB A,[MLO,,MEMBLT-1(A)
+005     001 008         MOVEI C,377
+006     051 039         DPB C,[MLO,,MEMBLT(A)
+007     001 009         SOS A
+008     051 039         DPB A,[MLU,,MEMBLT+1(A)
+009     001 009         HRRZ A,D
+010     045 034         PUSHJ P,CZRR    ;ZERO BLOCK ADDED
+011     001 006         MOVEI A,2000
+012
+013     118 024 ACORTN: HLRZ C,UPR(U)
+014     118 041         SKIPN MEMTOP(U)
+015     001 008         MOVNI C,2000
+016     001 008         ADD A,C
+017     044 055         JRST ACORT1
+018
+019     001 009 ACMS2:  MOVE J,D        ;D HAS FIRST FREE BLOCK BELOW
+020     051 039 ACMS7:  LDB E,[MUR,,MEBLT(J)
+021     001 009         CAMN J,D
+022     038 002         JRST ACMS4F     ;;NO FREE MEM SO FAR
+023     001 010         CAIGE E,74
+024     038 029         JRST ACMS4      ;USER
+025     001 010         ORCMI E,77
+026     039 006         AOJE E,ACMS5    ;EXEC
+027     041 006         AOJE E,ACMS6    ;IO
+028     039 007         AOJE E,ACMS8    ;FREE
+029     041 003         PUSHJ P,UDELAY  ;IN PROCESS
+030     037 020         JRST ACMS7
+031
