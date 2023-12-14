@@ -1,0 +1,28 @@
+001                                                                             PAGE 73
+002     060 030 GTYI6A: AOS B,GCMLC-NTTYS(I)
+003     071 004         CAIL B,NCML
+004     060 030         CLEARB B,GCMLC-NTTYS(I)
+005     071 006         IMULI B,GSTGL+1
+006     060 030         ADD B,GECBL-NTTYS(I)
+007     071 005         ADDI B,<GSTGL+1>*NNCML
+008     060 030         CLEARM CEHOP-NTTYS(I)
+009     060 030         MOVEM B,GTYILD-NTTYS(I)
+010     001 007         ADD B,[441000,,]
+011     060 030         MOVEM B,GCMPR-NTTYS(I)
+012     078 027         MOVE A,GTYIT2
+013     001 006         CAIE A,15
+014     071 043         JRST GTYI6B
+015     060 030         PUSH P,GCMPR-NTTYS(I)
+016     071 002         PUSH P,[MCPL]
+017     001 006         MOVEI A,40
+018     072 008         PUSHJ P,GTYIS1
+019                     SOSLE (P)
+020                     JRST .-3
+021     001 016         SUB P,[1,,1
+022     060 030         POP P,GCMPR-NTTYS(I)
+023     071 051         JRST GTYI6C
+024
+025
+026     001 006 GDING:  MOVEI A,"?
+027     078 027         MOVEM A,GTYIY2
+028     071 033         JRST GTYI7

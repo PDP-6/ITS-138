@@ -1,0 +1,50 @@
+001                                                                             PAGE 72
+002
+003
+004     060 030 GTYIS:  AOS B,CEHOP-NTTYS(I)
+005     071 002         CAIGE B,MCPL
+006                     AOSA (P)
+007     001 006         MOVEI A,"]
+008     001 006 GTYIS1: ORCBI A,177
+009     001 006         ROT A,-1
+010     001 006         TLNN A,400000
+011     001 006         TRZ A,100
+012     060 030         ILCB B,GCMPR-NTTYS(I)
+013     001 006         XOR B,A
+014     001 007         TRNN B,177
+015     001 016         POPJ P,
+016     060 030         DPB A,GDMPR-NTTYS(I)
+017     060 030         AOS @GTYILD-NTTYS(I)
+018     060 030         AOS GDFRSC-NTTYS(I)
+019     002 032         CONSO GTYO,7
+020     002 015         CONO GTYO,200+GETTOC
+021     001 016         POPJ P,
+022
+023     001 006 GTYIG1: MOVEI A,"_
+024     072 004         PUSHJ P,GTYIS
+025     072 044         JRST GTYI6
+026     078 027         MOVE A,GTYIT2
+027     001 006         ADDI A,100
+028     072 004         PUSHJ P,GTYIS
+029     072 044         JRST GTYI6
+030     071 051         JRST GTYI6C
+031
+032     001 006 GTYT1:  MOVEI A,40
+033     072 004         PUSHJ P,GTYIS
+034     072 044         JRST GTYI6
+035     060 030         LDB A,[300,,CEHOP-NTTYS(I)
+036     072 032         JUPMN A,GTYT1
+037     071 051         JRST GTYI6C
+038
+039             GINTTY: AOS TINTC(I)
+040     001 024         MOVEI A,TTYIF
+041     118 033         IORM A,PIRQC-1(B)
+042     071 033         JRST GTYI7
+043
+044     001 006 GTYI6:  MOVEI A,40      ;CR OR LINE OVERFLOW
+045     060 030         AOS B,CEHOP-NTTYS(I)
+046     071 002         CAILE B,MCPL
+047     073 002         JRST GTYI6A
+048     072 008         PUSHJ P,GTYIS1
+049     072 044         JRST GTYI6
+050
