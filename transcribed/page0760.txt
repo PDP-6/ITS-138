@@ -1,4 +1,4 @@
-001                                                                             PAGE 0
+001                                                                             PAGE 76
 002     079 007 GTYO7:  MOVE A,GTYOT1
 003     078 031         SUB A,CENPLH(I) ;THERE VERTICALLY GET IT THERE HORIZ
 004     076 039         JUMPE A,GTYO7F  ;ITS THERE
@@ -7,8 +7,8 @@
 007     079 007         CAMG A,GTYOT1
 008     076 032         JRST GTYO7B     ;BS BACK
 009     074 005         MOVEI A,GLR
-010     078 031         CLEARM GENPLH(U)
-011     077 014         JST GTYOBE
+010     078 031         CLEARM CENPLH(I)
+011     077 014         JSR GTYOBE
 012     076 002         JRST GTYO7
 013
 014
@@ -32,7 +32,7 @@
 032     079 019 GTYO7B: MOVEM A,GTYOT4
 033     074 007 GTYO7D: MOVEI A,GRS
 034     078 031         SOS CENPLH(I)
-035     077 014         JST GTYOBE
+035     077 014         JSR GTYOBE
 036     079 019         SOSLE GTYOT4
 037     076 033         JRST GTYO7D
 038
@@ -52,9 +52,9 @@
 052     078 031         CLEARM CENPLH(I)
 053     078 030         AOS A,CENPLV(I)
 054     071 006         MOVEI B,GSTGL+1
-055     078 020         ADDB B,GTYOT5
+055     079 020         ADDB B,GTYOT5
 056     001 007 GTYO7G: HRLI B,1000
-057     078 017         MOVEM B,GTYOT2
+057     079 017         MOVEM B,GTYOT2
 058     079 021         MOVEM B,GTYOT7
-059     079 007         CLEARM GTYOY1
+059     079 007         CLEARM GTYOT1
 060     071 003         CAIGE A,NLV
