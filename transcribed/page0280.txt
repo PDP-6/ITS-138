@@ -1,7 +1,7 @@
 001                                                                             PAGE 28
 002             ;SUBTTL CALL DISPATCH
 003
-004     001 017 ACALL:  LDB T,[270400,40
+004     001 017 ACALL:  LDB T,[270400,,40
 005     001 007         HRRZ B,40
 006     001 007         MOVE C,B
 007     118 024         ADDI C,@UPR(U)
@@ -14,7 +14,7 @@
 014     032 014         ATRANAD
 015     029 009         AVALRET
 016     029 017         AUTRAN
-017     023 003         UACORE
+017     034 003         UACORE
 018     032 041         ATRNDL
 019     046 002         ADSTART
 020     024 002         AFDELE
