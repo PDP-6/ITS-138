@@ -20,7 +20,7 @@
 080     001 014         MOVSI J,100000
 081     103 032         IORM J,UDIRO(C)
 082     103 032 UDELE6: HRRZ B,UDIRO(C)
-083     001 007         ADD B,[500.,23.*2-1
+083     001 007         ADD B,[500,,23.*2-1
 084     001 014         MOVEI J,0
 085     001 007 UDELE2: ILDB E,B
 086     001 006         CAMN E,A
