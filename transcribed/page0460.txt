@@ -17,7 +17,7 @@
 017     001 007         ADDI B,(A)
 018     118 042         CAML B,RMEMT(U)
 019     046 032         JRST DISBRF
-020     046 036         MOVEM B,DISPRI
+020     046 036         MOVEM B,DISPRT
 021     118 024         ADDI A,@UPR(U)
 022     046 037         MOVEM A,DISPTR
 023     046 038         MOVEM A,DBLKOP

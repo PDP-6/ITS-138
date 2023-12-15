@@ -15,7 +15,7 @@
 015     001 008         TRNE C,777774
 016     021 031         JRST ILUUO
 017     001 018         HRLZ D,U
-018     117 011         MOVE U,USEP
+018     117 011         MOVE U,USER
 019     054 023         XCT INFINT(C)
 020     001 009         MOVEM D,(R)
 021     087 008         JRST RSKP

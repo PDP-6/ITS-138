@@ -1,6 +1,6 @@
 001                                                                             PAGE 44
 002
-003     001 007 ACORE7: MOVE TT,B,
+003     001 007 ACORE7: MOVE TT,B
 004     001 010         HRRZ A,E
 005     001 009         MOVEI D,377
 006     045 026 ACR7L:  PUSHJ P,CCFRE
