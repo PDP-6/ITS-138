@@ -1,0 +1,15 @@
+001                                                                             PAGE 101
+002     001 007 UDOUT1: CLEARB A,B
+003     102 003         PUSHJ P,UTLOOK
+004     100 023         JUMPE B,POPJ1   ; FILE DIR FULL
+005     083 018         LDB J,[300500,,UTDBC(D)
+006     001 014         MOVEM J,1(B)
+007     100 034         JRST UDOUT4
+008
+009     083 018 UDOUT5: LDB A,[220500,,UTDBC(D)
+010     001 006         LSH A,1
+011     103 032         ADD A,UDIRO(C)
+012                     SKIPE -2(A)
+013     100 021         JRST UDARET
+014     001 006         MOVE A,-1(A)
+015     100 033         JRST UDOUT6

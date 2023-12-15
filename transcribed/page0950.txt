@@ -1,0 +1,36 @@
+001                                                                             PAGE 95
+002             IUTCONS:
+003     083 051 IUTCO1: SKIPG UTTBF
+004     095 022         JRST IUTC1
+005     051 004         MOVEI E,UTFS-IOBFT
+006     083 049         MOVE A,UTFS     ;CHNL NO IN D
+007     001 006 IUTC3:  CAIN A,377
+008     095 022         JRST IUTC1
+009     051 004         LDB B,[420200,,IOBFT(A)
+010     095 018         JUMPN B,IUTC2
+011     051 004         LDB B,[IOLO,,IOBFT(A)
+012     051 004         DPB B,[IOLO,,IOBFT(E)
+013     051 004         DPB D,[IOCH,,IOBFT(A)
+014     083 051         SOS UTTBF
+015                     AOS (P)
+016     001 016         POPJ P,
+017
+018     001 006 IUTC2:  MOVE E,A
+019     051 004         LDB A,[IOLO,,IOBFT(A)
+020     095 007         JRST IUTC3
+021
+022     050 002 IUTC1:  PUSHJ P,UIMRQ
+023     001 016         POPJ P,
+024     096 002         PUSHJ P,UTMGB
+025     095 003         JRST IUTCO1
+026
+027     001 007 IBRTN:  PUSH P,B
+028     083 049         MOVE B,UTFS
+029     051 004         DPB B,[IOLO,,IOBFT(A)
+030     083 049         MOVEM A,UTFS
+031     001 007         MOVEI B,77
+032     051 004         DPB B,[IOCH,,IOBFT(A)
+033     083 051         AOS UTTBF
+034     050 017         JRST POPBJ
+035
+036
