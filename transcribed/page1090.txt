@@ -1,0 +1,42 @@
+001                                                                             PAGE 109
+002             UTCBRK: 0
+003     001 006         MOVEM P,UTACS+P-A
+004     104 021         MOVE P,[A,UTACS
+005     001 006         BLT P,UTACS+P-1-A
+006     104 018         MOVE P,UTCPDP
+007     104 002         MOVE C,SUNIT
+008                     CONSZ UTC,4000
+009                     CONSO UTS,20
+010     110 035         JRST JDBRK
+011     104 003         MOVE A,SUNITL
+012     103 022         MOVE B,UDIR(C)
+013     104 024         AOSN UTHERR     ;HANG UP ERROR SENT FOR SLOW CLOCK ROUTINE
+014     108 001         JRST UTERR
+015     104 025         AOSN USTSW
+016     115 004         JRST DCGBL1
+017     113 024         AOSN USTPF
+018     113 028         JRST JDB7D
+019     001 008         MOVEI C,0
+020     104 015         EXCH C,FLPUNT
+021     112 065         JUMPN C,JDF8
+022     113 025         EXCH C,STPUNT
+023     113 011         JUMPN C,JDB4B
+024     111 002         JRST JDB3
+025
+026
+027     103 024 JDDT3:  MOVE A,EUPOS(C)
+028     103 023         SUB A,UGOAL(C)
+029     001 006         MOVEMS E,A
+030     117 018         ADD A,TIME
+031     103 019         MOVEM A,DRTM(C)
+032     103 005         MOVE C,[-NUNITS,,1
+033     103 019         MOVM B,DRTM(C)
+034     117 018         CAMGE B,TIME
+035     111 002         JRST JDB3       ;SOMETHING ELSE DUE
+036     001 008         AOBJN C,.-3
+037     104 002         MOVE C,SUNIT
+038     103 022         MOVE B,UDIR(C)
+039     104 003         MOVE A,SUNITL
+040     115 004         SOJLE E,DCGBL1  ;RELOADING FOR NEXT BLOCK
+041     111 002         JRST JDB3
+042

@@ -1,0 +1,46 @@
+001                                                                             PAGE 105
+002             TAPE:   0
+003             UTP1:   0       ;JRST PIPOS OR DATAI DC, OR JRST UTP3
+004                     SOS .-1
+005     104 006         AOSGE TAPCNT
+006     105 002         JRST 12,@TAPE
+007
+008
+009     002 013 UTP3:   CONO PI,1000+DCCHNA
+010     104 005         SKIPN WRITE
+011     002 012         CONO DC,DCCHN
+012     105 002         JRST 12,@TAPE
+013
+014     104 007 PIPOS:  MOVEM A,TAP1
+015     104 008         MOVEM B,TAP2
+016     104 009         MOVEM C,TAP3
+017     104 002         MOVE C,SUNIT
+018     001 007         DATAI DC,B
+019     001 007         TDZE B,[1777#-1
+020     105 043         JRST PIPOS7
+021     103 024         MOVEM B,EUPOS(C)
+022     103 029         HRRZM C, DG2(C)
+023     103 023         SKIPGE UGOAL(C)
+024     106 023         JRST PIPF1
+025     103 023         SUB B,UGOAL(C)
+026     107 007         JUMPE B,PIPOS2
+027     103 022         ADD B,UDIR(C)
+028     104 022         MOVMM B,UTENB
+029     103 038         SKIPGE ULDCH(C)
+030     106 002         JRST PIPOS3
+031     106 002         JUMPN B,PIPOS3
+032     104 003 PIPOSL: MOVE A,SUNITL   ;HOLD DC
+033     103 022         MOVE B,UDIR(C)
+034     115 024         XCT UTST(B)
+035     002 012         CONO DC,4010+DCCHN
+036     104 009 POPOS5: MOVE C,TAP3
+037     104 008         MOVE B,TAP2
+038     104 007         MOVE A,TAP1
+039     105 002         JRST 12,@TAPE
+040
+041
+042
+043     105 046 PIPOS7: AOS BDBLKC
+044     105 032         JRST PIPOSL
+045
+046             BDBLKC: 0

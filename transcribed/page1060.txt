@@ -1,0 +1,24 @@
+001                                                                             PAGE 106
+002     103 022 PIPOS3: MOVE A,UDIR(C)
+003     001 006         LSH A,2
+004     001 006         SUB B,A
+005     103 022         XOR B,UDIR(C)
+006     104 003         MOVE A,SUNITL
+007     107 002         JUMPG B,PIPOS4  ;GOIGN WRONG DIR
+008     103 006 PIPF2:  TRO A,JDENB     ;ENB JD SO NEXT BREAK TO UTC ON BLOCK
+009     117 018 PIPOS6: MOVE B,TIME
+010     103 017         MOVEM B,ULCTM(C)
+011     104 022         ADD B,UTENB
+012     103 019         MOVEM B,DRTM(C)
+013     103 022         MOVE B,UDIR(C)
+014     115 024         XCT  UTST(B)
+015     002 013         CONO PI,1000+DCCHNA
+016     104 026         CLEARM UDCC
+017     104 016         SETOM DCFREE
+018                     CONO DC,0
+019     105 036         JRST PIPOS5
+020
+021
+022
+023     104 003 PIPF1:  MOVE A,SUNITL
+024     106 008         JRST PIPF2
