@@ -1,0 +1,25 @@
+001                                                                                   PAGE 86
+002     083 015 UTO1:   HRLOM U,UTUSR(TT)
+003     083 016         HRRM TT,UTUL(J)
+004     083 037         HRRZM I,UTTNO(TT)
+005     083 018         CLEARM UTDBC(TT)
+006     083 018         DPB A,[300500,,UTDBC(TT)
+007     087 021         JUMPL D,UTOW3
+008     083 018         DPB A,[220500,,UTDBC(TT)
+009     083 037 UTOW4:  HRLM A,UTTNO(TT)
+010     103 032         HRRZ J,UDIRO(I)
+011     001 014         ADD J,[500,,23.*2-1
+012     083 017         MOVEM J,UTDIRP(TT)
+013     001 014         MOVE J,[SETZ 377
+014     083 012         MOVEM J,UTBFP(TT)
+015     083 023         CLEARM UTBFS(TT)
+016     117 018         MOVE J,TIME
+017     083 024         HRROM J,UTLSTM(TT)
+018     083 026         HLLOS UTRAC(TT)
+019     083 026         HRRZS UTRAC(TT)
+020     002 021         CONO PI,UTCON
+021     083 036         CLEARM MPRC(TT)
+022     001 008         LDB Q,[220300,,C
+023     087 028         MOVE Q,UTOT(Q)
+024     083 052         AOS NUTCA
+025     096 020         PUSHJ P,FSCMP

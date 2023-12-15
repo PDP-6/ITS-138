@@ -1,0 +1,33 @@
+001                                                                                   PAGE 90
+002     001 006 UTBWG:  PUSH P,A
+003     001 007         PUSH P,B
+004     001 006         MOVE D,A
+005     083 012         HRRZ Q,UTBFP(D)
+006     001 013         CAIL Q,376
+007     090 022         JRST UTBWG1     ;NO BUFS NOW RELOAD
+008     083 018         SKIPGE UTDBC(D)
+009     090 032         JRST POPBAJ     ;CHNL IN ERR
+010
+011     083 023 UTBWG2: HRRZ J,UTBFS(D)
+012     083 054         CAMG J,UPCHFS
+013     090 022         JRST UTBWG1
+014     050 055 UTBWG3: PUSHJ P,TCALL
+015     050 002         JRST UIMRQ
+016     090 032         JRST POPBAJ
+017     050 055         PUSHJ P,TCALL
+018     096 002         JRST UTMGB
+019     090 011         JRST UTBWG2
+020
+021
+022     050 055 UTBWG1: PUSHJ P,TCALL
+023     095 002         JRST IUTCONS
+024     090 014         JRST UTBWG3
+025     001 006         MOVE Q,A
+026     001 007         POP P,B
+027     001 006         POP P,A
+028     083 023         AOS UTBFS(A)
+029     089 017         JRST UTBWG4
+030
+031
+032     001 007 POPBAJ: POP P,B
+033     102 010         JRST POPAJ

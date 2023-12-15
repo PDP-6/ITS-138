@@ -1,0 +1,12 @@
+001                                                                                   PAGE 81
+002     001 006 GEKO:   ORCBI A,177
+003     081 012         EQVM A,GEKICK
+004     001 006         ROT A,-1
+005     001 006         TLNN A,400000
+006     001 006         TRZ A,100
+007     002 032         CONSO GTYO,100
+008                     JRST .-1
+009     001 006         DATAO GTYO,A
+010     001 016         POPJ P,
+011
+012             GEKICK: 0

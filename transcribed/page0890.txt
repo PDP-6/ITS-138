@@ -1,0 +1,37 @@
+001                                                                                   PAGE 89
+002     083 012 UTBGB:  LDB Q,[IOLO,,UTBFP(A)
+003     001 013         CAIN Q,377
+004                     JRST 4,.        ;PNTRS OUT OF PHASE
+005     001 013         CAIN Q,376
+006     093 002         JRST UTBG1      ;END OF FILE
+007     051 004         SKIPGE IOBFT(Q)
+008     001 016         POPJ P,
+009     002 022         CONO PI,UTCOFF
+010     051 004         LDB J,[IOLO,,IOBFT(Q)
+011     083 012         HRRM J,UTBFP(A)
+012     001 011         MOVEI TT,(SETZ)
+013     001 014         CAIL J,376
+014     083 012         HRLM TT,UTBFP(A)
+015     002 021         CONO PI,UTCON
+016     083 023         SOS UTBFS(A)
+017     117 018 UTBWG4: MOVE J,TIME
+018     083 024         HRRM J,UTLSTM(A)
+019     001 014         MOVEI J,-3
+020     051 004         DPB J,[IOLO,,IOBFT(Q)
+021     051 004         LDB TT,[IOSA,,IOBFT(Q)
+022     001 011         LSH TT,6
+023     083 024         HRLM Q,UTLSTM(A)
+024     100 023         JRST POPJ1
+025
+026
+027     001 012 UDATAO: HRROM C,I
+028     001 012         MOVEI C,I
+029
+030     082 010 UBLKO:  JSP B,BLKT
+031     083 035         SETZ MPRP(A)
+032     083 036         MPRC(A)
+033     090 002         UTBWG
+034     091 002         UTBWW
+035                     200
+036                     0
+036

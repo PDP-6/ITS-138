@@ -1,0 +1,47 @@
+001                                                                                   PAGE 87
+002     001 010 UTO9:   MOVSI E,400000
+003     103 032         ANDCAM E,UDIRO(I)       ;RELEASE FILE DIR
+004     083 026         HRRZS UTRAC(TT)
+005     001 011         HRL Q,TT
+006     001 013         MOVEM Q,(R)     ;STORE CHANNEL WD
+007
+008     020 017 RSKP:   AOS UUOH
+009     001 016         POPJ P,
+010
+011     103 032 UTO5A:  ANDCAM TT,UDIRO(I)
+012     001 016         POPJ P,
+013
+014     001 007 UTOW1:  PUSH P,B
+015     001 006         PUSH P,A
+016     001 007         CLEARB A,B
+017     102 002         PUSHJ P,UTLK3
+018     021 053         JUMPE B,FILDF   ;FILE DIR FULL
+019     085 010         JRST UTOW2
+020
+021     001 011 UTOW3:  HRROM TT,1(B)   ;RESERVE FILE NAME
+022     083 031         POP P,UTN1(TT)
+023     083 033         POP P,UTN2(TT)
+024     001 014         MOVSI J,100000
+025     103 032         IORM J,UDIRO(I) ;SET FILE DIR MODIFYED
+026     086 009         JRST UTOW4
+027
+028     025 039 UTOT:   DNUACII ;ASCII UNITS INPUT
+029     025 041         DNUACCO ;ASCII UNITS OUTPUT
+030     025 043         DNUBKI  ; "     BLOCK INPUT
+031     025 045         DNUBKO  ;  "   BLOCK OUTPUT
+032     025 047         DNUDTI  ; WD INPUT
+033     025 049         DNUDTO  ; WD OUTPUT
+034     025 043         DNUBKI  ; BLOCK IN
+035     025 045         DNUBKO  ;BLOCK OUT
+036
+037     001 012 UDATAI: HRROM C,I
+038     001 012         MOVEI C,I
+039
+040     082 010 UBLKI:  JSP B,BLKT
+041     083 035         MPRP(A)
+042     083 036         MPRC(A)
+043     089 002         UTBGB
+044     094 029         UTBRB
+045                     200
+046     083 023         SKIPG UTBFS(A)
+047
