@@ -5,7 +5,7 @@
 005     001 013         CAIN Q,75
 006     043 009         JRST MXCC2
 007     043 004 MXCC5:  AOBJN I,MXCC1
-008     001 016         POPJ, P,
+008     001 016         POPJ P,
 009     001 014 MXCC2:  MOVEI J,1
 010     001 012         MOVE T,I
 011     043 015         AOBJP I,MXCC4

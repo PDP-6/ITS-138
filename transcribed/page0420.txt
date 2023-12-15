@@ -1,7 +1,7 @@
 001                                                                             PAGE 42
 002     083 026 AIOBT7: ANDCAM E,UTRAC(Q)
 003     041 039         JRST AIOBT5
-004                     
+004
 005     083 005 AIOBT6: CAIE Q,NUTIC+NUTOC
 006                     JRST 4,.        ;UNKNOWN CHNL
 007     002 022         CONO PI,UTCOFF
@@ -19,21 +19,21 @@
 019     083 017         DPB D,[121000,,UTDIRP(T)
 020     083 016         HRRE T,UTUL(T)
 021     042 018         JRST AIOB6B
-022                     
-023                     
-024                     
+022
+023
+024
 025     042 029 AIOB6C: PUSHJ P,ACMBM
 026     103 032         ANDCAM C,UDIRO(A)
 027     041 036         JRST AIOBT4
-028                     
+028
 029     051 004 ACMBM:  LDB TT,[IOSA,,IOBFT(R)
 030     001 011         LSH TT,6
 031     001 011         HRLS TT
-032     001 011         DPB D,[121000,TT
+032     001 011         DPB D,[121000,,TT
 033     001 017         MOVEI T,177(TT)
 034     001 011         BLT TT,(T)
 035     001 016         POPJ P,
-036                     
+036
 037     001 049 AIOBT8: CONO PI,CLKOFF
 038     083 015         HLRZ U,UTUSR(Q)
 039     010 003         PUSHJ P,PCLSR
@@ -47,11 +47,11 @@
 047     118 027         ANDCAM TT,USTP(U)
 048     117 012         MOVE U,CUSER
 049     041 059         JRST AIOB8B
-050                     
+050
 051     002 021 AIOB5B: CONO PI,UTCON
 052     041 039         JRST AIOBT5
-053                     
-054                     
+053
+054
 055     001 048 AIOB8A: CONO PI,CLKON
 056     117 012         MOVE U,CUSER
 057     041 039         JRST AIOBT5
