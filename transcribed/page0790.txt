@@ -9,7 +9,7 @@
 009
 010             GTYOBP: 0       ;OUTPUT BUFFER POINTER
 011             GTYOBF: 77      ;SOH
-012                     0       ;SELECT CODE
+012                     0       ;SELCT CODE
 013                     177     ;SOM
 014                     176     ;STX
 015     074 003         BLOCK MXML+10
