@@ -1,0 +1,55 @@
+001                                                                                   PAGE 83
+002     003 004 SUBTTL UTAPE SERVICE ROUTINE
+003
+004             NUTIC==6        ;NUM UT IN CHNLS
+005             NUTOC==6        ;NUM UT OUTPUT CHAN
+006             UTBLKS==4
+007
+008             ;UT CHANNEL STORAGE
+009             ;INPUT CHANNELS
+010             UTCHNT:
+011
+012     083 005 UTBFP:  REPEAT NUTIC+NUTOC,400000,,377  ;L H BUFFER LINK PTR (INPUT PI)
+013                             ;RH  "   "  OUTPUT MAIN PROG
+014
+015             UTUSR:          ;USER OR -1 IF FREE (LH)
+016     083 005 UTUL:   REPEAT NUTIC+NUTOC,-1   ;LINK TO CHANNEL ON SAME UTAPE OR -1(RH)
+017     083 005 UTDIRP: BLOCK NUTIC+NUTOC       ;BYTE POINTER TO UTDIR
+018     083 005 UTDBC:  BLOCK NUTIC+NUTOC       ;RH BLCK COUNT CORRESP WITH UTDIRP
+019                             ;L H 3.1 3.5 READ FILE NO  4.9  ERROR  4.5 4.8 ERROR CNT
+020                     ;3.6 =0 FORD EXT =1 BACK EXT 3.7 4.2 PUT FILE NO
+021                     ;4.4 DELETE ON READ CLOSE
+022
+023     083 005 UTBFS:  BLOCK NUTIC+NUTOC       ;BUFFERS IN USE
+024     083 005 UTLSTM: BLOCK NUTIC+NUTOC       ; TIME LAST BUF TAKEN BY PROG(RH)
+025                                     ; MN PROG ACTIVE BFFR NO OR -1,IF NO BUFFER ACIVE (LH)
+026     083 005 UTRAC:  BLOCK NUTIC+NUTOC+1     ;ACTIVE  BUFFER NO PI  RH
+027                                     ;FLAG TO MAIN PROG TP FULL (WRITE) RH
+028                             ;SIGN SET =>CHANNEL LOCKED
+029                             ;4.8 READ EOF REACHED AT PILEVEL OR CHNL CLOSED
+030                             ;EXTRA WORD FOR FILE DIR CHNL
+031     083 004 UTN1=.-NUTIC+1
+032     083 005                 BLOCK NUTOC
+033     083 004 UTN2=.-NUTIC+1
+034     083 005         BLOCK NUTOC     ;NAME OF FILE BEING WRITTEN
+035     083 005 MPRP:   BLOCK NUTIC+NUTOC       ;MAIN PRGM BUFFER PNTR
+036     083 005 MPRC:   BLOCK NUTIC+NUTOC       ;CNT REMAINING
+037     083 004 UTTNO:  BLOCK NUTOC+NUTIC       ;TAPE NO (RH)
+038                                     ;LH CLOSE FLAG WRITE ORG FILE NO READ
+039
+040     083 005 UTLDD:  BLOCK NUTIC+NUTOC+1     ;IF -1, DC IS ACTUALLY SET UP AND TRANSFER CAN
+041                                             ;BE EXPECTED IN LESS TAH 100 MS.
+042                                             ;IF D CHANNEL LOCKED FLAG(4.9 UTRAC) WELL BE CHECKED
+043                                             ;BEFORE GOING TO THE -1 STATE
+044                                             ;EXTRA WORD FOR DIR CHNL
+045             ;UTBFP RH OUTPUT LINK (PI)
+046             ; LH INPUT
+047             ;UTDBC  BLOCK CNT
+048
+049             UTFS:   377     ;FREE STG PNTR TO 200 WD BUFFERS
+050     083 005 UTTLB:  -NUTIC-NUTOC    ;TOTAL BUFFERS ALLOCATED TO UTAPES
+051             UTTBF:  0       ;TOTAL UT BUFFERS FREE
+052             NUTCA:  0       ;NUMBER UTAPE CHANNELS ACTIVE
+053
+054             UPCHFS: 0       ;FAIR SHARE BFS PER CHNL
+055

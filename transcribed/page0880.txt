@@ -1,0 +1,47 @@
+001                                                                                   PAGE 88
+002     087 040 UASCII: MOVEI B,UBLKI+1
+003     088 006         JRST CHRKT
+004
+005     089 030 UASCCO: MOVEI B,UBLKO+1
+006             CHRKT:  SOSGE @1(B)
+007     088 020         JRST CHRKT1     ;GET NEW BUFFER
+008                     SKIPGE (B)
+009     088 016         JRST CHRKT2
+010     001 009         ILDB D,@(B)
+011     001 009         CAIN D,141
+012     088 034         JRST CHRKT3
+013     001 009         MOVEM D,(C)
+014     001 016         POPJ P,
+015
+016     001 009 CHRKT2: MOVE D,(C)
+017     001 009         IDPB D,@(B)
+018     001 016         POPJ P,
+019
+020     001 016 CHRKT1: PUSHJ P,@3(B)
+021                     SKIPE 5(B)
+022                     XCT 5(B)
+023     017 002         PUSHJ P,UFLS
+024     001 016         PUSHJ P,@2(B)
+025             CHRKT4: JRST .-2
+026     001 011         HRRM TT,@(B)
+027     001 010         MOVEI E,440700
+028     001 010         HRLM E,@(B)
+029     001 010         MOVE E,4(B)
+030     001 010         IMULI E,5
+031     001 010         MOVEM E,@1(B)
+032     088 006         JRST CHRKT
+033
+034     001 009 CHRKT3: HRROI D,141
+035     001 009         MOVEM D,(C)
+036     093 009         JRST UTICL
+037
+038     001 013 UTOCLR: MOVSI Q,(SETZ)
+039     083 037         IORM Q,UTTNO(A)
+040     001 008         MOVEI C,[141
+041     083 036 UTOCR2: SKIPG MPRC(A)
+042     088 046         JRST UTOCR3
+043     088 005         PUSHJ P,UASCCO
+044     088 041         JRST UTOCR2
+045
+046     091 002 UTOCR3: PUSHJ P,UTBWW
+047     092 002         JRST UTOCL2

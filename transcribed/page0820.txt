@@ -1,0 +1,39 @@
+001             BLKTNB: SKIPE 5(B)                                                    PAGE 82
+002                     XCT 5(B)        ;BLOCK IO HANDLER
+003     017 002 BLKTF:  PUSHJ P,UFLS    ; CALL JSP B,BLKT       ;ADR OF PTR IN C
+004     001 016         PUSHJ P,@2(B)   ; UPPA(A)       ;ADR OF AC BUF PTR 4.9 OUT
+005     082 003         JRST BLKTF      ;UTPPC(A)       ;CNT REM IN CUR BF
+006                                     ;UTRBUF NO SKIP NO MEMORY SKIP
+007                                     ;OTHERWISE TT BUF ORG   ;ADR TO GET NEXT BUF
+008     001 011         HRRM TT,@(B)    ;UTRLBF ;PUT BUF ON FREE STG
+009     001 011         SKIPA TT,4(B)   ;BUFSIZ ;SIZE OF BUFFER
+010     001 010 BLKT:   SKIPA E,(C)                     ;ADDR TO WAIT FOR BUF
+011     001 011         MOVEM TT,@1(B)  ;BFLIS(A)
+012     001 011 BLKT1:  SKIPL TT,(C)
+013     001 016         POPJ P,
+014     001 009         SKIPG D,@1(B)
+015     082 001         JRST BLKTNB     ;NEW BUFFER
+016     001 011         HLRES TT
+017     001 011         MOVNS TT
+018     001 009         CAMLE TT,D
+019     001 009         MOVE TT,D
+020     001 009         HRRZ D,(C)
+021     001 011         ADD D,TT
+022     118 042         CAML D,RMEMT(U) ;PROTECTION ERR
+023     021 039         JRST IOADC
+024     001 009         HRRZ D,(C)
+025     118 024         ADDI D,@UPR(U)
+026     001 009         HRL D,@(B)
+027                     SKIPGE (B)
+028     001 009         MOVSS D
+029     001 011         ADDM TT,@(B)
+030     001 011         MOVN J,TT
+031     001 014         ADDM J,@1(B)
+032     001 011         HRLS TT
+033     001 011         ADDM TT,(C)
+034     001 011         ADDI TT,(D)
+035     001 009         BLT D,-1(TT)
+036                     SKIPN @1(B)
+037     001 016         PUSHJ P,@3(B)
+038     082 012         JRST BLKT1
+039

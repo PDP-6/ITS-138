@@ -1,0 +1,25 @@
+001                                                                                   PAGE 85
+002     001 011 UTO5:   MOVSI TT,400000
+003     103 032         IORM TT,UDIRO(I)        ;LOCK DIRECTORY
+004     002 021         CONO PI,UTCON
+005     001 009         TRNE D,200000
+006     092 032         JRST UTDEL1     ;DELETE OR RENAME
+007     087 014         JUMPL D,UTOW1   ;WRITE
+008     102 002         PUSHJ P,UTLK3   ;MUST NOT CLOBBER TT
+009     087 011         JUMPE B,UTO5A
+010     002 021 UTOW2:UTO8:     CONO PI,UTCON
+011     083 004         MOVSI TT,-NUTIC
+012     001 008         TLNE C,1
+013     083 004         MOVE TT,[-NUTOC,,NUTIC
+014     083 015         SKIPL UTUSR(TT)
+015     001 011         AOBJN TT,.-1
+016     021 052         JUMPG TT,NCA    ;NO CHANNEL AVAILABLE
+017     002 022         CONO PI,UTCOFF
+018     083 015         SKIPL UTUSR(TT)
+019     085 010         JRST UTO8
+020     083 016 UTO7:   MOVEI J,DCHNT-UTUL(I)
+021                     JRST .+2
+022     001 013 UTO2:   MOVE J,Q
+023     083 016         HRRE Q,UTUL(J)
+024     085 022         JUMPGE Q,UTO2
+025
