@@ -4,7 +4,7 @@
 004     001 014         MOVEI J,377
 005     051 004         IORM J,IOBFT(Q)
 006     083 037         SKIPGE UTTNO(A)
-007     051 004         SOS IOBFT(Q)     ;CHANGE TO EOF
+007     051 004         SOS IOBFT(Q)    ;CHANGE TO EOF
 008     002 022         CONO PI,UTCOFF
 009     083 012         HLRE J,UTBFP(A)
 010     091 018         JUMPL J,UTBWW1
@@ -33,6 +33,6 @@
 033     083 036         SKIPG MPRC(A)
 034     092 002         JRST UTOCL2
 035     089 027         PUSHJ P,UDATAO+1
-036     089 027         JRST UTOCL1
+036     091 032         JRST UTOCL1
 037
 038
