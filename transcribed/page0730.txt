@@ -13,7 +13,7 @@
 013     001 006         CAIE A,15
 014     071 043         JRST GTYI6B
 015     060 030         PUSH P,GCMPR-NTTYS(I)
-016     071 002         PUSH P,[MPCL]
+016     071 002         PUSH P,[MCPL]
 017     001 006         MOVEI A,40
 018     072 008         PUSHJ P,GTYIS1
 019                     SOSLE (P)
