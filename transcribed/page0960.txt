@@ -1,0 +1,32 @@
+001                                                                             PAGE 96
+002     001 007 UTMGB:  MOVEI B,76      ;GOBBLE MEM BLK IN A FOR UTAPE BUFFER
+003     051 039         DPB B,[MUR,,MEMBLT(A)
+004     001 006         MOVE J,A
+005     001 006         LSH A,10,-6     ;CONV TO BUF SA
+006     001 006         MOVE TT,A       ;INCR TO NEXT BUF ADR
+007     001 015         MOVEI R,8
+008     083 050         ADDM R,UTTLB    ;UTTBF AOSED AT IBRTN
+009     001 013         MOVNI Q,1
+010     051 025 UTMG1:  PUSHJ P,IOBCNS
+011     051 004         DPB A,[IOLC,,IOBFT(Q)
+012     096 031         JUMPL Q,UTMG2
+013     051 004         DPB A,[IOLC,,IOBFT(A)
+014     001 006 UTMG3:  MOVE Q,A
+015     095 027         PUSHJ P,IBRTN
+016     001 011         ADDI TT,2
+017     096 010         SOJG R,UTMG1
+018     001 011         MOVEI TT,377
+019     051 004         DPB TT,[IOLC,,IOBFT(A)
+020     083 050 FSCMP:  MOVE A,UTTLB
+021     083 052         IDIV A,NUTCA
+022     083 054         MOVEM A,UPCHFS
+023     001 016         POPJ P,
+024
+025
+026     002 022 BRTN:   CONO PI,UTCOFF
+027     095 027         PUSHJ P,IBRTN
+028     002 021         CONO PI,UTCON
+029     001 016         POPJ P,
+030
+031     051 039 UTMG2:  DPB A,[MLO,,MEMBLT(J)
+032     096 014         JRST UTMG3
