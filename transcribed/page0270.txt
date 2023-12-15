@@ -1,5 +1,5 @@
 001                                                                             PAGE 27
-002     058 005 DEVTAB: 200000+LPTO,,(SIXBIT /LPT/)    ;4.8 OUTPUT 4.9 INPUT
+002     058 005 DEVTAB: 200000+LPTO,,(SIXBIT /LPT/)     ;4.8 OUTPUT 4.9 INPUT
 003     060 004         600000+TTYO1,,(SIXBIT /TTY/)
 004     052 003         600000+NULO,,(SIXBIT /NUL/)
 005     053 004         600000+USRO,,(SIXBIT /USR/)
@@ -7,8 +7,8 @@
 007
 008     027 002 NDEVS==.-DEVTAB
 009
-010     060 010 DVT1:   TTYO,,<SIXBIT /TY/>--24.
-011     084 026         UTO,,<SIXBIT /UT/>--24.
+010     060 010 DVT1:   TTYO,,<SIXBIT /TY/>_-24.
+011     084 026         UTO,,<SIXBIT /UT/>_-24.
 012
 013     027 010 NDV1==.-DVT1
 014
