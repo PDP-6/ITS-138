@@ -1,0 +1,9 @@
+Pencil notes on page 0921
+
+under page number, maybe a line to previous paper sheet
+	  line over
+            JUMPA A,CPMJ       (M??? hard to read)
+      MOVEM A,UTN1
+      MOVE  A,4(R)
+      MOVEM A,UTN2(C)
+      JRST  POPJ1

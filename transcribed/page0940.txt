@@ -1,0 +1,35 @@
+001                                                                             PAGE 94
+002     083 037 UCPAT0: HRRZ B,UTTNO(D) ;PATCH OUT CHANNEL
+003     083 016         MOVEI C,DCHNT-UTUL(B)
+004     002 022         CONO PI,UTCOFF
+005     083 016 UCPAT2: HRRE E,UTUL(C)
+006     094 015         JUMPL E,UTCOP
+007     001 009         CAMN E,D
+008     094 012         JRST UCPAT1
+009     001 010         MOVE C,E
+010     094 005         JRST UCPAT2
+011
+012     083 016 UCPAT1: HRRZ E,UTUL(E)
+013     083 016         HRRM E,UTUL(C)
+014     083 052         SOS NUTCA
+015     002 021 UTCOP:  CONO PI,UTCON
+016     001 016         POPJ P,
+017
+018     091 021 UDELE5: PUSHJ P,UDLOCK
+019     083 037         HLRZ Q,UTTNO(D)
+020     001 013         LSH Q,1
+021     103 032         ADD Q,UDIRO(C)
+022     001 013         SUBI Q,2
+023     092 076         PUSHJ P,UDELE1
+024     001 006 UDULK:  MOVESI A,(SETZ)
+025     103 032         ANDCAM A,UDIRO(C)
+026     001 016         POPJ P,
+027
+028     001 009 UTBRB1: MOVE A,D
+029     001 006 UTBRB:  PUSH P,A
+030     083 024         HLRE A,UTLSTM(A)
+031     102 010         JUMPL A,POPAJ
+032     096 026         PUSHJ P,BRTN
+033     001 006         POP P,A
+034     083 024         HRROS UTLSTM(A)
+035     001 016         POPJ P,

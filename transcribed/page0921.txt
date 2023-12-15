@@ -1,0 +1,33 @@
+061     083 004         MOVEI E,NUTIC-1                                         PAGE 92.1
+062     083 037 UDELE4: HRRZ J,UTTNO(E)
+063     083 015         SKIPL UTUSR(E)
+064     001 008         CAME J,C
+065     092 077         JRST UDELE3
+066     083 037         HLRZ J,UTTNO(E)
+067     001 006         CAME J,A
+068     092 077         JRST UDELE3
+069     083 018         LDB J,[360100,,UTDBC(E)
+070     092 077         JUMPN J,UDELE3
+071     001 014         MOVSI J,10000
+072     083 018         IORM J,UTDBC(E)
+073                     CLEARM (Q)
+074                     SETOM 1(Q)
+075     001 016         POPJ P,
+076
+077     092 062 UDELE3: SOJGE E,UDELE4
+078             UDELE1: CLEARM (Q)
+079                     CLEARM 1(Q)
+080     001 014         MOVSI J,100000
+081     103 032         IORM J,UDIRO(C)
+082     103 032 UDELE6: HRRZ B,UDIRO(C)
+083     001 007         ADD B,[500.,23.*2-1
+084     001 014         MOVEI J,0
+085     001 007 UDELE2: ILDB E,B
+086     001 006         CAMN E,A
+087     001 007         DPB J,B
+088     001 010         CAIE E,37
+089     092 085         JRST UDELE2
+090     001 006         MOVE B,A
+091     001 006         MOVEI A,0
+092     092 059         JRST UDELETE
+093

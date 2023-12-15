@@ -1,0 +1,60 @@
+001                                                                             PAGE 92
+002     001 006 UTOCL2: MOVE D,A
+003     083 023         SKIPE UTBFS(D)
+004     017 002         PUSHJ P,UFLS
+005     091 021         PUSHJ P,UDLOCK
+006     083 037         HRRZ C,UTTNO(D)
+007     083 012         HRRZ Q,UTBFP(D)
+008     001 013         CAIL Q,376
+009     092 018         JRST UTOCL4     ;NORMAL CLOSE
+010     021 049         MOVEI Q,IOCERR  ;ABORT WORKS
+011     118 033         IORM Q,PIRQC(U)
+012     001 006         MOVEI A,0
+013     001 007         HRROI B,(D)
+014     092 059         PUSHJ P,UDELETE
+015     094 024         PUSHJ P,UDULK
+016     093 027         JRST UTOCL3
+017
+018     083 031 UTOCL4: MOVE A,UTN1(D)
+019     083 033         MOVE B,UTN2(D)
+020     092 059         PUSHJ P,UDELETE
+021     083 037         LDB Q,[220500,,UTTNO(D)]
+022     001 013         LSH Q,1
+023     103 032         ADD Q,UDIRO(C)
+024     083 031         MOVE A,UTN1(D)
+025     083 033         MOVE B,UTN2(D)
+026     001 006         MOVEM A,-2(Q)
+027     001 007         MOVEM B,-1(Q)
+028     094 024         PUSHJ P,UDULK
+029     093 027         JRST UTOCL3
+030
+031
+032     001 012 UTDEL1:         MOVE C,I        ;DELETE
+033     001 015         HRRZ R,40
+034     118 024         ADDI R,@UPR(U)
+035                     SKIPE 3(R)
+036     092 042         JRST UTRN1      ;RENAME
+037     092 059         PUSHJ P,UDELETE
+038     094 024         PUSHJ P,UDULK
+039     099 030         JUMPN B,CPOPJ
+040     100 023         JRST POPJ1
+041
+042     102 003 UTRN1:  PUSHJ P,UTLOOK
+043     099 030         JUMPE B,CPOPJ
+044     001 013         PUSH P,Q
+045     001 006         MOVE A,3(R)
+046     001 007         MOVE B,4(R)
+047     102 003         PUSHJ P,UTLOOK
+048     001 013         POP P,Q
+049     094 024         JUMPE B,UDULK
+050     001 006         MOVE A,3(R)
+051     001 007         MOVE B,4(R)
+052     001 006         MOVEM A,1(Q)
+053     001 007         MOVEM B,2(Q)
+054     001 006         MOVSI A,100000
+055     103 032         IORM A,UDIRO(C)
+056     094 024 UTRN2:  PUSHJ P,UDULK
+057     100 023         JRST POPj1
+058
+059     102 003 UDELETE:        PUSHJ P,UTLOOK
+060     099 030         JUMPE B,CPOPJ   ;TAPE NO IN C,FILE NAME IN A,B

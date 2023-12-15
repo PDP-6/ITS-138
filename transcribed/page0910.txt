@@ -1,0 +1,38 @@
+001                                                                             PAGE 91
+002     083 024 UTBWW:  HLRE Q,UTLSTM(A)
+003     099 030         JUMPL Q,CPOPJ
+004     001 014         MOVEI J,377
+005     051 004         IORM J,IOBFT(Q)
+006     083 037         SKIPGE UTTNO(A)
+007     051 004         SOS IOBFT(Q)     ;CHANGE TO EOF
+008     002 022         CONO PI,UTCOFF
+009     083 012         HLRE J,UTBFP(A)
+010     091 018         JUMPL J,UTBWW1
+011     051 004         DPB Q,[IOLO,,IOBFT(J)
+012
+013     083 012 UTBWW2: HRLM Q,UTBFP(A)
+014     002 021         CONO PI,UTCON
+015     083 024         HRROS UTLSTM(A)
+016     001 016         POPJ P,
+017
+018     083 012 UTBWW1: HRRM Q,UTBFP(A)
+019     091 013         JRST UTBWW2
+020
+021     083 037 UDLOCK: HRRZ C,UTTNO(D)
+022     018 013         PUSHJ P,LWAIT
+023     103 032         SKIPGE UDIRO(C)
+024     001 006         MOVSI A,(SETZ)
+025     103 032         IORM A,UDIRO(C)
+026     002 021         CONO PI,UTCON
+027     001 016         POPJ P,
+028
+029
+030     001 013 UTOCL:  MOVSI Q,(SETZ)
+031     083 037         IORM Q,UTTNO(A)
+032     001 012 UTOCL1: HRROI I,0
+033     083 036         SKIPG MPRC(A)
+034     092 002         JRST UTOCL2
+035     089 027         PUSHJ P,UDATAO+1
+036     089 027         JRST UTOCL1
+037
+038

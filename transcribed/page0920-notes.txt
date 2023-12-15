@@ -1,0 +1,20 @@
+Pencil notes on page 92
+
+after 043, line out
+      JUMPE A,UTRN3 ;RENAME
+
+after 050, line out
+      JUMPE A,UDULK
+
+after 057, line out
+      UTRN3
+      line out
+             TDNE B,[-1,,777760
+			 POPJ P,
+			 ADDI B,IOCHNM(U)
+			 HRRZ C,(B)
+			 MOVE P,CLSTB(C)
+			 TLNN D,(MOVE)
+			 POPJ P,
+			 HLRZ C,(B)
+			        MOVE A,3(R)
