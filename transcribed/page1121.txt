@@ -1,0 +1,23 @@
+061     112 065         JRST JDF8                                               PAGE 112.1
+062     104 015         MOVEM C,FLPUNT
+063     113 028         JRST JDB7D
+064
+065     001 008 JDF8:   LSH 3,C
+066     002 014         CONO UTC,235000+UTCCHN(C)
+067     113 021         JRST JDF9
+068
+069     104 016 JDF6:   SKIPL DCFREE
+070     112 011         JRST JDF6A
+071     104 002         SKIPE SUNIT
+072     104 002         CAMN C,SUNIT
+073                     JRST .+2
+074     113 028         JRST JDB7D
+075     103 022         SETOM UDIR(C)
+076     104 002         MOVEM C,SUNIT
+077     104 003         DPB C,[30300,,SUNITL
+078     115 031         JRST JDF6B
+079
+080
+081     001 009 JDF4:   MOVE C,D
+082     103 043         CLEARM UFLAPF(C)
+083     111 038         JRST JDF5

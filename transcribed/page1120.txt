@@ -1,0 +1,60 @@
+001                                                                             PAGE 112
+002     111 009 JDBRK6: AOBJN C,JDBRK7
+003     104 012         MOVE C,UTTM3    ;MOST PRESSING RUNNING UNIT
+004     104 011         MOVE B,UTTM2
+005     001 007         CAIGE B,30.
+006     113 003         JRST JDB7       ;STAY WITH PRESSING UNIT
+007     104 010         SKIPE UTTM1
+008     113 002         JRST JDB5       ;START UNIT IF POSSIBLE
+009     104 013         SKIPL D,UTTM4
+010     112 043         JRST JDF3
+011     104 014 JDF6A:  SKIPL D,UTTM5
+012     112 081         JRST JDF4
+013     001 007         CAMG B,[10000000.       ;SKIP ON IDLE
+014     113 003         JRST JDB7
+015     104 002         SKIPE SUNIT
+016     113 028         JRST JDB7D
+017     104 017         SETOM UIDLE
+018
+019     115 016         JRST POPRET
+020
+021
+022
+023     103 032 JDF1:   MOVE E,UDIRO(C)
+024     112 027         AOJE E,JDF1A
+025     001 010         TLNE E,100000
+026     111 011         JRST JDF2
+027     103 023 JDF1A:  SKIPGE UGOAL(C)
+028     103 038         SKIPGE ULDCH(C)
+029     111 011         JRST JDF2       ;FILE DIR WRITE IN PROG
+030     103 022         SKIPE UDIR(C)
+031     103 029         SKIPG DG2(C)
+032                     JRST .+2
+033     112 050         JRST JDF3A      ;JUST READ IN TAPE POS
+034     001 007         TLNN B,100000
+035     104 013         HRRZM D,UTTM4   ;UNIT TO START FLAPPING
+036     001 007         HRRZ D,B
+037     001 007         TLNN B,100000
+038                     JRST .+3
+039     117 018         CAMG D,TIME
+040     104 014         hrrzm c,uttm5   ;unit to stop flapping
+041     112 002         jrst jdbrk6
+042
+043     001 009 jdf3:   move c,d
+044     103 038         hrrz a,uldch(c)
+045     103 032         aose udiro(c)
+046     095 027         pushj p,ibrtn
+047     103 032         setom udiro(c)
+048     103 029         skipge dg2(c)
+049     112 069         jrst jdf6
+050     103 029 jdf3a:  setom dg2(c)
+051     103 024         move e,eupos(c)
+052     001 010         imuli e,50.
+053     001 010         idivi e,33.
+054     001 010         addi e,30.
+055     117 018         add e,time
+056     103 043         hrrm e,uflapf(c)
+057     001 010         movsi e,100000
+058     103 043         iorm e,uflapf(c)
+059     104 002         skipe sunit
+060     104 002         camn c,sunit

@@ -1,0 +1,26 @@
+001                                                                             PAGE 104
+002             SUNIT:  0       ;SELECTED UNIT OR 0
+003             SUNITL: 0       ;SAME - 3
+004             SMODE:  -1      ;-1 POSIT 0 DATA
+005             WRITE:  0       ;0 READ -1 WRITE
+006             TAPCNT: 0
+007             TAP1:   0
+008             TAP2:   0
+009             TAP3:   0
+010             UTTM1:  0       ;UNIT COULD START IN SEARCH LOOP
+011             UTTM2:  0       ;MOST PRESSING UNIT SO FAR
+012             UTTM3:  0       ;TIME FOR ABOVE OR -1 IF NONE
+013             UTTM4:  0       ;TAPE TO START FLAPPING
+014             UTTM5:  0       ;TAPE TO STOP FLAPPING
+015             FLPUNT: 0
+016             DCFREE: -1      ;-1 => DC FREE
+017             UIDLE:  -1      ;-1 UTAPES COMPLETELY IDLE
+018     104 019 UTCPDP: -LUTCP,,UTCP-1
+019     103 004 UTCP:   BLOCK LUTCP
+020
+021     001 006 UTACS:  BLOCK P-A+1
+022             UTENB:  0
+023             LUTOTM: 0       ;TIME OF LAST UT OPER
+024             UTHERR: 0       ;UT HANGUP ERR
+025             USTSW:  0       ;UT START SWITCH
+026             UDCC:   0       ;-1 IF UTAPE HAVE DC FOR BLK CYCLE

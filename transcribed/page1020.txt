@@ -1,0 +1,32 @@
+001                                                                             PAGE 102
+002     103 032 UTLK3:  SKIPA Q,UDIRO(I)
+003     103 032 UTLOOK: MOVE Q,UDIRO(C)
+004     001 013         HRLI Q,-23.
+005     001 016         PUSH P,[1
+006     001 006 UTLK2:  CAMN A,(Q)
+007     001 007         CAME B,1(Q)
+008     102 013         AOJA Q,UTLK1
+009     001 013         MOVEB,Q
+010     001 006 POPAJ:  POP P,A
+011     001 016         POPJ P,
+012
+013             UTLK1:  AOS(P)
+014     102 006         AOBJN Q,UTLK2
+015     001 007         MOVEI B,0
+016     102 010         JRST POPAJ
+017
+018
+019     083 018 ITAB:   AOSA J,UTDBC(D)
+020     102 025         JRST UAR
+021
+022     083 017 UAF:    ILDB B,UTDIRP(D)
+023     001 016         POPJ P,
+024
+025     001 007 UAR:    MOVSI B,50000
+026     083 017         ADD B,UTDIRP(D)
+027     001 007         SKIPGE B
+028     001 007         SUB B,[430000,,1
+029     083 017         MOVEM B,UTDIRP(D)
+030     001 007         LDB B,B
+031     083 018         SOS J,UTDBC(D)
+032     001 016         POPJ P,
