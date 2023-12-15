@@ -1,0 +1,52 @@
+001                                                                             PAGE 80
+002     060 031 GEKI:   MOVSI I,-NGEC
+003     002 032         CONO GTYO,200
+004     001 006 GEK1:   MOVEI A,1       ;GET CONSOLES INTO HAPPY MODE
+005     081 002         PUSHJ P,GEKO
+006     081 012         CLEARM GEKICK
+007     001 006         MOVEI A,140
+008     001 006         DPB I,[30200,,A
+009     081 002         PUSHJ P,GEKO
+010     001 006         MOVEI A,0
+011     081 002         PUSHJ P,GEKO
+012     001 006         MOVEI A,2
+013     081 002         PUSHJ P,GEKO
+014     001 006         MOVEI A,14
+015     081 002         PUSHJ P,GEKO
+016     001 006         MOVEI A,3
+017     081 002         PUSHJ P,GEKO
+018     001 006         MOVEI A,GEKICK
+019     081 002         PUSHJ P,GEKO
+020
+021     078 010         MOVE A,GECBL(I)
+022     078 029         MOVEM A,CPLNO(I)
+023     078 036         MOVEM A,MGCDP(I)
+024     001 006         HRLI A,1000
+025     078 035         MOVEM A,MGBP(I)
+026     071 006         ADDI A,NNCML*<GSTGL+1>
+027     078 022         MOVEM A,GTYILD(I)
+028     078 016         MOVEM A,GCMPR(I)
+029     078 024         CLEARM CEHOP(I)
+030     078 025         HRRZM A,GLNDP(I)
+031     078 026         CLEARM GDFRSC(I)
+032     078 028         CLEARM GCMLC(I)
+033     078 030         CLEARM CENPLV(I)
+034     078 031         CLEARM CENPLH(I)
+035     078 023         CLEARM BPGFW(I)
+036     078 037         CLEARM MGCC(I)
+037     078 010         MOVE B,GECBL(I)
+038             GEKI2:  CLEARM (B)
+039     001 008         MOVE C,[336675573360
+040     001 008         MOVEM C,1(B)
+041     001 014         HRLI J,1(B)
+042     001 014         HRRLI J,2(B)
+043     071 006         BLT J,GSTGL(B)
+044     071 006         ADDI B,GSTGL+1
+045     078 010         CAME B,GECBL+1(I)
+046     080 038         JRST GEKI2
+047     080 004         AOBJN I,GEK1
+048     001 006         DATAI GTYI,A
+049     002 015         CONO GTYO,200+GETYOC
+050     002 020         CONO GTYI,GETYIC
+051     006 016         POPJ P,
+052

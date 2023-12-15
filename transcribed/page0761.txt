@@ -1,0 +1,11 @@
+061     076 041         JRST GTYO7H                                             PAGE 76.1
+062     078 030         CLEARB A,CENPLV(I)
+063     078 010         MOVE B,GECBL(I)
+064     079 020         MOVEM B,GTYOT5
+065     076 056         JRST GTYO7G
+066
+067     074 011 GTYOFF: MOVEI A,GFF
+068     077 014         JSR GTYOBE
+069     078 030         CLEARM CENPLV(I)
+070     078 031         CLEARM CENPLH(I)
+071     077 020         JRST GTYO1A

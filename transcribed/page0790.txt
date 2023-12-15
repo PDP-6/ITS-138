@@ -1,0 +1,27 @@
+001                                                                             PAGE 79
+002
+003             GTYOI:  0
+004             GTYOA:  0
+005             GTYOB:  0
+006             GTYOCN: 0       ;CONSOLE NEXT IN LINE
+007             GTYOT1: 0       ;LINE POSITION
+008             MECC:   0       ;CHRS REMAINING IN MESS ALLOWABLE
+009
+010             GTYOBP: 0       ;OUTPUT BUFFER POINTER
+011             GTYOBF: 77      ;SOH
+012                     0       ;SELECT CODE
+013                     177     ;SOM
+014                     176     ;STX
+015     074 003         BLOCK MXML+10
+016
+017             GTYOT2: 0       ;BUFFER POINTER WHERE THEY DIFFER
+018             GTYOT3: 0       ;DESIRED LINE NO
+019             GTYOT4: 0
+020             GTYOT5: 0       ;BUFFER POINTER TO BEG OF CURRENT LINE ALSO
+021             GTYOT7: 0
+022                                     ;ADR POINTS TO DIFFERS COUNT
+023
+024             GTYOST: 117     ;CONSOLE SELECTION TABLE CONVERSION
+025                     113
+026                     107
+027                     103
