@@ -15,7 +15,7 @@
 015     081 002         PUSHJ P,GEKO
 016     001 006         MOVEI A,3
 017     081 002         PUSHJ P,GEKO
-018     001 006         MOVEI A,GEKICK
+018     081 012         MOVE A,GEKICK
 019     081 002         PUSHJ P,GEKO
 020
 021     078 010         MOVE A,GECBL(I)
@@ -39,7 +39,7 @@
 039     001 008         MOVE C,[336675573360
 040     001 008         MOVEM C,1(B)
 041     001 014         HRLI J,1(B)
-042     001 014         HRRLI J,2(B)
+042     001 014         HRRI J,2(B)
 043     071 006         BLT J,GSTGL(B)
 044     071 006         ADDI B,GSTGL+1
 045     078 010         CAME B,GECBL+1(I)
@@ -48,5 +48,5 @@
 048     001 006         DATAI GTYI,A
 049     002 015         CONO GTYO,200+GETYOC
 050     002 020         CONO GTYI,GETYIC
-051     006 016         POPJ P,
+051     001 016         POPJ P,
 052
