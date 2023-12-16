@@ -1,0 +1,27 @@
+001                                                                             PAGE 64
+002     060 030 MGTF:   SETOM GFFF-NTTYS(A)
+003     071 003         MOVSI D,-NLV
+004     060 030         MOVE TT,GECBL-NTTYS(A)
+005             MGTF1:  CLEARM (TT)
+006     001 013         MOVE Q,[336675573360
+007     001 013         MOVEM Q,1(TT)
+008     001 014         HRLI J,1(TT)
+009     001 014         HRRI J,2(TT)
+010     071 006         BLT J,GSTBL(TT)
+011     071 006         ADDI TT,GSTGL+1
+012     064 005         AOBJN D,MGTF1
+013     060 030         CLEARM GDFRSC-NTTYS(A)
+014     001 008         MOVEI C,[15
+015     063 050         JRST MGTF2
+016
+017     001 007 MGG1:   MOVEI B,"_
+018     062 034         PUSHJ P,MGTCR1
+019     001 007         LDB B,[700,,(C)
+020     001 007         ADDI B,100
+021     062 034         JRST MGTCR1
+022
+023     001 007 MGTYT1: MOVEI B,40
+024     062 034         PUSHJ P,MGTCR1
+025     060 030         LDB B,[300,,MGCC-NTTYS(A)
+026     064 023         JUMPN B,MGTYT1
+027     001 016         POPJ P,

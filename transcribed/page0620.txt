@@ -1,0 +1,54 @@
+001                                                                             PAGE 62
+002     118 046 ALISTEN:        SKIPGE A,TTYTBL(U)
+003     062 009         JRST ALIS1
+004     061 027         PUSHJ P,TYOW
+005     001 007         MOVEI B,0
+006     060 030         CAIL A,NTTYS
+007     062 010         JRST ALIS2
+008     001 007         SKIPA B,ECHOCC(A)
+009     001 007 ALIS1:  TDZA B,B
+010     001 007 ALIS2:  ADD B,TICC(A)
+011     061 051         JRST AOPERV
+012
+013
+014     060 030 MGTYO:  SKIPGE BPGFW-NTTYS(A)
+015     061 035         PUSHJ P,GTYOW1
+016     060 030         CLEARM BPGFW-NTTYS(A)   ;PAGE WAIT
+017     001 007         LDB B,[700,,(C)
+018     001 007         CAIN B,14
+019     064 002         JRST MGTF
+020     001 007         CAIN B,12
+021     001 016         POPJ P,
+022     001 007         CAIN B,15
+023     063 002         JRST MGTYCR
+024     001 007         CAIN B,11
+025     064 023         JRST MGTYT1
+026     001 007         CAIG B,176
+027     001 007         CAIGE B,175
+028     001 007         CAIN B,33
+029     001 007         MOVEI B,"$
+030     001 007         CAILE B,"_
+031     001 016         POPJ P,
+032     001 007         CAIGE B,40
+033     064 017         JRST MGG1
+034     060 030 MGTCR1: AOS D,MGCC-NTTYS(A)
+035     071 002         CAIL D,MCPL-1
+036     063 006         JRST MGTYO1
+037     062 042         PUSHJ P,MGTYOE
+038     002 032 MGTYOR: CONSO GTYO,7
+039     002 015         CONO GTYO,200+GETYOC
+040     001 016         POPJ P,
+041
+042     001 007 MGTYOE: ORCBI B,177
+043     001 007         ROT B,-1
+044     001 007         TLNN B,40000
+045     001 007         TRZ B,100
+046     060 030         ILDB D,MGBP-NTTYS(A)
+047     001 007         XOR D,B
+048     001 009         TRNN B,177
+049     001 016         POPJ P,
+050     060 030         DPB B,MGBP-NTTYS(A)
+051     060 030         AOS @MGCDP-NTTYS(A)
+052     060 030         AOS GDFRSC-NTTYS(A)
+053     001 016         POPJ P,
+054

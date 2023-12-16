@@ -1,0 +1,60 @@
+001                                                                             PAGE 60
+002     003 004 SUBTTL TELETYPE ROUTINES
+003
+004     118 046 TTYO1:  SKIPGE I,TTYTBL(U)
+005     041 003         JRST UDELAY
+006     001 012         HRRZS I
+007     060 031         CAIL I,NTTY+NGEC
+008     041 003         JRST UDELAY
+009     001 012         TLOA I,400000
+010     060 031 TTYO:   CAIGE I,NTTYS+NGEC
+011     001 009         TRNE D,1
+012     041 003         JRST UDELAY
+013     001 006         DPB I,[222100,,A]
+014     001 012         SKIPGE I
+015     001 006         TLO A,400000
+016     060 024         JUMPL D,TTYOO
+017     025 019         HRRI A,TYIDN
+018     070 028         MOVE B,[220200,,TTYSTS(I)
+019     001 006 TTYO2:  MOVEM A,(R)
+020     001 009         LSH D,-1
+021     001 007         DPB D,B
+022     087 008         JRST RSKP
+023
+024     070 028 TTYOO:  MOVE B,[240100,,TTYSTS(I)
+025     025 021         HRRI A,TYODN
+026     060 019         JRST TTYO2
+027
+028             TIBL==20
+029             TOBL==20
+030             NTTYS==5
+031             NGEC==4
+032     001 006 TYI:    TRZN A,400000
+033                     JRST .+3
+034     118 046         SKIPGE TTYTBL(U)
+035     017 002         PUSHJ P,UFLS    ;LOSER DOESNT HAVE TTY
+036     001 017         MOVE T,TICC(A)
+037     001 017         CAMGE T,TINTC(A)
+038     017 002         PUSHJ P,UFLS
+039                     SKIPG TICC (A)
+040     017 002         PUSHJ P,UFLS
+041     001 007         MOVE B,TIOP(A)
+042     001 007         CAMN B,TIBEP(A)
+043     050 028         SUBI B,TIBL
+044     001 007         HRRM B,TIOP(A)
+045     001 007         ILDB B,TIOP(A)
+046                     SOS TICC(A)
+047     001 007         CAIN B,^Z
+048     060 032         JRST TYI
+049     001 007 TYI1:   MOVEM B,(C)
+050     070 028         MOVE B,TTYSTS(A)
+051     001 042         TLNE B,TTYDDT
+052     060 030         CAIGE A,NTTYS
+053     001 016         POPJ P,
+054
+055     001 006 TYO:    TRZN A,400000
+056                     JRST .+3
+057     118 046         SKIPGE TTYTBL(U)
+058     017 002         PUSHJ P,UFLS
+059     060 030         CAIL A,NTTYS
+060     062 014         JRST MGTYO
