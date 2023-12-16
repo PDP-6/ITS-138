@@ -4,7 +4,7 @@
 004     001 007         CAME A,B
 005                     JRST .+2
 006                     SOSE LIF(I)
-007     001 006 TYP1:   DATAO TTY,A
+007     001 006 TYPI:   DATAO TTY,A
 008     001 006         HRLM A,LCHAR(I)
 009     001 006         CAIL A,140
 010     066 017         JRST TTYRET
