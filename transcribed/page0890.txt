@@ -7,7 +7,7 @@
 007     051 004         SKIPGE IOBFT(Q)
 008     001 016         POPJ P,
 009     002 022         CONO PI,UTCOFF
-010     051 004         LDB J,[IOLO,,IOBFT(Q)]
+010     051 004         LDB J,[IOLO,,IOBFT(Q)
 011     083 012         HRRM J,UTBFP(A)
 012     001 011         MOVEI TT,(SETZ)
 013     001 014         CAIL J,376
