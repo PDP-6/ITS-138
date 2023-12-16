@@ -1,0 +1,55 @@
+001                                                                                   PAGE 65
+002             HGCBT:  CONO 635550     ;DEBUGGING ONLY
+003     118 056         MOVE P,USRPDL
+004                     CONO TTY,400000
+005
+006     065 034 HGCBTL: PUSHJ P,HTYI
+007     001 006         CAIN A,"D
+008                     JRST 174000
+009     001 017         MOVEI T,-"0(A)
+010     078 010         MOVE B,GECBL(T)
+011     001 008         MOVEI C,0
+012     001 007 GCBTL1: ILDB A,B
+013     065 046         JUMPE A,GCBTL2
+014     001 006         LSH A,1
+015     001 006         TRZE A,200
+016     001 006         TRO A,1
+017     001 006         XORI A,177
+018     001 006         CAIN A,40
+019     065 012         AOJA C,[AOJA C,GCBTL1
+020     065 026 GCBTL4: JUMPE C,GCBTL3
+021     001 006         PUSH P,A
+022     001 006         MOVEI A,40
+023     065 039         PUSHJ P,HTYO
+024     001 006         POP P,A
+025     065 020         SOJA C,GCBTL4
+026     065 039 GCBTL3: PUSHJ P,HTYO
+027     001 006         MOVE D,A
+028     001 006         MOVEI A,"*
+029     001 009         TRZN D,400
+030     001 006         MOVEI A,40
+031     065 039         PUSHJ P,HTYO
+032     065 012         JRST GCBTL1
+033
+034             HTYI:   CONSO TTY,40
+035                     JRST .-1
+036     001 006         DATAI TTY,A
+037     001 006         ANDI A,177
+038
+039             HTYO:   CONSZ TTY,20
+040                     JRST .-1
+041     001 006         DATAO TTY,A
+042                     CONSO TTY,40
+043     001 016         POPJ P,
+044     065 006         JRST HGCBTL
+045
+046     001 007 GCBTL2: HRRZS B
+047     078 010         CAMN B,GECBL+1(T)
+048     065 006         JRST HGCBTL
+049     001 008         MOVEI C,0
+050     001 007         HRLI B,1000
+051     001 006         MOVEI A,15
+052     065 039         PUSHJ P,HTYO
+053     001 006         MOVEI A,12
+054     065 039         PUSHJ P,HTYO
+055     065 012         JRST GCBTL1

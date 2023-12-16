@@ -1,0 +1,44 @@
+001                                                                                   PAGE 69
+002     001 007 TYP31:  HLRZ B,LCHAR(I)
+003     001 006         CAIN A,12
+004     001 007         CAME A,B
+005                     JRST .+2
+006                     SOSE LIF(I)
+007     001 006 TYP1:   DATAO TTY,A
+008     001 006         HRLM A,LCHAR(I)
+009     001 006         CAIL A,140
+010     066 017         JRST TTYRET
+011     001 006         CAIL A,40
+012                     AOS TICHRC(I)
+013     001 006         CAIN A,15
+014                     CLEARM TICHRC(I)
+015     066 017         JRST TTYRET
+016             TYP4:   SKIPLE ECHOCC(I)
+017     069 021         JRST TYP4A
+018     002 017 TYP5:   CONO TTY,200+TTYCHN
+019     070 017         SETOM TTYON(I)
+020     066 017         JRST TTYRET
+021     001 006 TYP4A:  MOVE A,ECHOP(I)
+022     001 006         CAMN A,TIBEP(I)
+023     060 028         SUBI A,TIBL
+024     001 006         HRRM A,ECHOP(I)
+025     001 006         ILDB A,ECHOP(I)
+026                     SOS ECHOCC(I)
+027                     AOS TICC(I)
+028     070 028         MOVE B,TTYSTS(I)
+029     001 006         CAIG A,12
+030     001 006         CAIGE A,11
+031     001 006         CAIN A,15
+032     001 042         TLNN B,TTYDDT
+033     001 042         TLNE B,TTYIMI
+034     001 006         CAIN A,^Z
+035     068 051         JRST TYPCM1
+036     066 017         JRST TTYRET
+038
+038     001 006 TYO1:   CAIL A,40
+039     068 043         JRST TYP3
+040     001 006         ADDI A,100
+041     001 006         HRRM A,LCHAR(I)
+042     001 006         MOVEI A,"^
+043     068 037         JRST TYP6
+044 

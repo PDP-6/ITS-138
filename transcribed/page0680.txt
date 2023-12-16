@@ -1,0 +1,54 @@
+001                                                                                   PAGE 68
+002     070 019 TYP11:  AOSE TYOBFC(I)
+003     068 009         JRST TYP1
+004     001 006         MOVEI A,TOBS
+005     070 018         MOVEM A,TORM(I)
+006     001 006         MOVE A,TIOP(I)
+007     001 006         MOVEM A,TOOP(I)
+008
+009     001 006 TYP1:   HRRZ A,LCHAR(I)
+010                     AOSN LIF(I)
+011     068 043         JRST TYP3
+012     001 006         MOVEI A,12
+013     001 006         HRRM A,LCHAR(I)
+014     001 006         MOVEI A,7
+015                     AOSN DINGF(I)
+016     068 043         JRST TYP3
+017     001 006         MOVEI A,40
+018                     AOSG SPCCC(I)
+019     068 043         JRST TYP3
+020     070 018         MOVE A,TORM(I)
+021     001 006         CAIL A,TOBS
+022     069 016         JRST TYP4
+023     001 006         MOVE A,TOOP(I)
+024     001 006         CAMN A,TOBEP(I)
+025     060 029         SUBI A,TOBL
+026     001 006         HRRM A,TOOP(I)
+027     001 006         ILDB A,TOOP(I)
+028     070 018         AOS TORM(I)
+029     070 028         MOVE B,TTYSTS(I)
+030     001 043 TYP7:   TLNE B,TTYIMO
+031     069 007         JRST TYP1
+032     001 006 TYPCOM: CAIN A,177
+033     066 017         JRST TTYRET
+034     001 006         CAIN A,175
+035     001 006         MOVEI A,"$
+036     001 006         CAIN A,15
+037             TYP6:   SETOM LIF(I)
+038     001 006         CAIN A,10
+039     069 038         JRST TYO1
+040     001 006         CAILE A,6
+041     001 006         CAIL A,16
+042     069 038         JRST TYO1
+043     001 006 TYP3:   CAIE A,11
+044     069 002         JRST TYP31
+045     001 006         MOVE A,TICHRC(I)
+046     070 002         IDIVI A,TABSPC
+047     070 002         SUBI B,TABSPC
+048     001 007 TYPCM2: MOVEM B,SPCCC(I)
+049     066 017         JRST TTYRET
+050
+051     001 006 TYPCM1: CAIE A,11
+052     068 032         JRST TYPCOM
+053     001 007         MOVNI B,3
+054     068 048         JRST TYPCM2
