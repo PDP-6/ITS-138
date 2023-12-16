@@ -1,4 +1,4 @@
-001                                                                             PAGE 88
+001                                                                                   PAGE 88
 002     087 040 UASCII: MOVEI B,UBLKI+1
 003     088 006         JRST CHRKT
 004

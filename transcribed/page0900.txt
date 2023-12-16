@@ -1,4 +1,4 @@
-001                                                                             PAGE 90
+001                                                                                   PAGE 90
 002     001 006 UTBWG:  PUSH P,A
 003     001 007         PUSH P,B
 004     001 006         MOVE D,A

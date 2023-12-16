@@ -1,4 +1,4 @@
-001                                                                             PAGE 87
+001                                                                                   PAGE 87
 002     001 010 UTO9:   MOVSI E,400000
 003     103 032         ANDCAM E,UDIRO(I)        ;RELEASE FILE DIR
 004     083 026         HRRZS UTRAC(TT)

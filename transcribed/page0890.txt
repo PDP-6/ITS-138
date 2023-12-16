@@ -1,4 +1,4 @@
-001                                                                             PAGE 89
+001                                                                                   PAGE 89
 002     083 012 UTBGB:  LDB Q,[IOLO,,UTBFP(A)
 003     001 013         CAIN Q,377
 004                     JRST 4,.        ;PNTRS OUT OF PHASE

@@ -1,4 +1,4 @@
-001                                                                             PAGE 85
+001                                                                                   PAGE 85
 002     001 011 UTO5:   MOVSI TT,400000
 003     103 032         IORM TT,UDIRO(I)        ;LOCK DIRECTORY
 004     002 021         CONO PI,UTCON
