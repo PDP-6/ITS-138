@@ -1,0 +1,24 @@
+001                                                                                   PAGE 67
+002             INTTY:  AOS TINTC(I)
+003     001 024         MOVEI A,TTYIF
+004     118 033         IORM A,PIRQC-1(B)
+005     066 049         JRST PITEL3
+006
+007     001 025 ZFLAG2: MOVEI A,BCNTRZI
+008     118 033         IORM A,PIRQC-1(B)
+009     118 034         SKIPGE SUPPRO-1(B)
+010     067 022         JRST ZFLAG4
+011     001 006 ZFLAG3: MOVEI A,^Z
+012     067 014         JRST @ZFLAG
+013
+014             ZFLAG:  0
+015     070 028         MOVE B,TTYSTS(I)
+016     067 007         AOJN B,ZFLAG2           ;NO USER HAS THIS TTY
+017     117 026 FINDU4: SKIPL UTTYST
+018     066 017         JRST TTYRET
+019     117 026         HRRZM I,UTTYST
+020     067 011         JRST ZFLAG3
+021
+022     118 030 ZFLAG4: MOVSI A,BUSRC
+023     118 027         ANDCAM A,USTP-1(B)
+024     067 011         JRST ZFLAG3

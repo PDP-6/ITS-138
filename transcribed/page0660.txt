@@ -1,0 +1,55 @@
+001                                                                                   PAGE 66
+002             TTYBRK: 0
+003                     CONSO DIS,77
+004     066 007         JRST LPENT
+005                     CONSZ DIS,7400
+006     047 003         JRST SRECYC
+007             LPENT:  CONSZ LPT,7
+008                     CONSZ LPT,10
+009                     SKIPA
+010     059 040         JRST LPENT1
+011     001 012         MOVEM I,TTYI
+012     001 006         MOVEM A,TTYA
+013     001 007         MOVEM B,TTYB
+014     002 031         CONSZ GTYI,10
+015     071 008         JRST GTYI1      ;FROM GE KLUDGE
+016     060 030         MOVSI I,-NTTYS
+017     070 021 TTYRET: CONO TTY,@TTYLT(I)
+018                     CONSO TTY,50
+019     001 012         AOBJN I,.-2
+020     066 025         JUMPL I,GOTTY
+021     001 012 TTYRT1: MOVE I,TTYI
+022     001 006         MOVE A,TTYA
+023     001 007         MOVE B,TTYB
+024     066 002         JRST 12,@TTYBRK
+025             GOTTY:  CONSZ TTY,10
+026     068 002         JRST TYP11
+027                     CONSO TTY,40
+028     066 017         JRST TTYRET
+029     001 006         DATAI TTY,A
+030     001 006         ANDI A,177
+031     001 006         CAIN A,^Z
+032     067 014         JSR ZFLAG
+033     001 007 ZFLAG1: MOVE B,ECHOCC(I)
+034     001 007         ADD B,TICC(I)
+035     001 007         CAIL B,TIBS
+036     066 050         JRST DING
+037     001 006         IDPB A,TIIP(I)
+038     001 006 PITEL2: MOVE A,TIIP(I)
+039     001 006         CAMN A,TIBEP(I)
+040     060 028         SUBI A,TIBL
+041     001 006         HRRM A,TIIP(I)
+042     070 028         MOVE B,TTYSTS(I)
+043     066 047         AOJE B,PITEL4   ;NO USER HAS TTY
+044     118 036         HRL B,MSKST-1(B)
+045     001 046         TLNE B,BTINTE
+046     067 002         JRST INTTY
+047             PITEL4: CLEARM TINTC(I)
+048     001 006         MOVEM A,TINTP(I)
+049             PITEL3: AOSA ECHOCC(I)
+050             DING:   SETOM DINGF(I)
+051     070 017         AOSN TTYON(I)
+052     002 017         CONO TTY,10+TTYCHN
+053     066 017         JRST TTYRET
+054
+055
