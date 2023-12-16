@@ -26,7 +26,7 @@
 026
 027     103 024 JDDT3:  MOVE A,EUPOS(C)
 028     103 023         SUB A,UGOAL(C)
-029     001 006         MOVEMS E,A
+029     001 006         MOVMS E,A
 030     117 018         ADD A,TIME
 031     103 019         MOVEM A,DRTM(C)
 032     103 005         MOVE C,[-NUNITS,,1
