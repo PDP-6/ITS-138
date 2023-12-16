@@ -37,24 +37,24 @@
 037     001 007         TLNN B,100000
 038                     JRST .+3
 039     117 018         CAMG D,TIME
-040     104 014         hrrzm c,uttm5   ;unit to stop flapping
-041     112 002         jrst jdbrk6
+040     104 014         HRRZM C,UTTM5   ;UNIT TO STOP FLAPPING
+041     112 002         JRST JDBRK6
 042
-043     001 009 jdf3:   move c,d
-044     103 038         hrrz a,uldch(c)
-045     103 032         aose udiro(c)
-046     095 027         pushj p,ibrtn
-047     103 032         setom udiro(c)
-048     103 029         skipge dg2(c)
-049     112 069         jrst jdf6
-050     103 029 jdf3a:  setom dg2(c)
-051     103 024         move e,eupos(c)
-052     001 010         imuli e,50.
-053     001 010         idivi e,33.
-054     001 010         addi e,30.
-055     117 018         add e,time
-056     103 043         hrrm e,uflapf(c)
-057     001 010         movsi e,100000
-058     103 043         iorm e,uflapf(c)
-059     104 002         skipe sunit
-060     104 002         camn c,sunit
+043     001 009 JDF3:   MOVE C,D
+044     103 038         HRRZ A,ULDCH(C)
+045     103 032         AOSE UDIRO(C)
+046     095 027         PUSHJ P,IBRTN
+047     103 032         SETOM UDIRO(C)
+048     103 029         SKIPGE DG2(C)
+049     112 069         JRST JDF6
+050     103 029 JDF3A:  SETOM DG2(C)
+051     103 024         MOVE E,EUPOS(C)
+052     001 010         IMULI E,50.
+053     001 010         IDIVI E,33.
+054     001 010         ADDI E,30.
+055     117 018         ADD E,TIME
+056     103 043         HRRM E,UFLAPF(C)
+057     001 010         MOVSI E,100000
+058     103 043         IORM E,UFLAPF(C)
+059     104 002         SKIPE SUNIT
+060     104 002         CAMN C,SUNIT
