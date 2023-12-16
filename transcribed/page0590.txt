@@ -1,0 +1,60 @@
+001                                                                             PAGE 59
+002     058 015 LPTTAB: PUSHJ P,LPTS
+003     059 023         LDB A,[300,,LINEPOS
+004     001 006         JUMPN A,.-2
+005     058 040         JRST LPTRET
+006
+007
+008     059 023 LPC:    PUSH P,LINEPOS
+009     001 006         MOVEI A,15
+010     059 024         AOSN PCL
+011     059 023         SKIPE LINEPOS
+012     058 019         PUSHJ P,PILPT
+013                     SOSGE (P)
+014     059 018         JRST LPC2
+015     058 015         PUSHJ P,LPTS
+016                     JRST .-3
+017
+018     001 006 LPC2:   POP P,A
+019     001 006         MOVE A,(P)
+020     058 029         JRST LPC1
+021
+022     059 058 LPTCC:  <LPTBE-LPTBO>*5-5
+023             LINEPOS:        0
+024             PCL:    0
+025     059 058 LPTIP:  700,,LPTBO-1
+026     059 058 LPTOP:  700,,LPTBO-1
+027
+028
+029     001 006 LPTCN:  CAIN A,<15-40>&177
+030     059 037         JRST LPTCR
+031     001 006         CAIN A,<12-40>&177
+032     001 006         MOVEI A,400
+033     001 006         CAIN A,<14-40>&177
+034     001 006         MOVEI A,401
+035     059 047         JRST LPTCN1
+036
+037     002 016 LPTCR:  CONO LPT,10+LPTCHN
+038     059 048         JRST LPTCR1
+039
+040     059 063 LPENT1: MOVEM A,LPTA
+041     059 058         MOVEI A,<LPTBE-LPTBO>*5-5
+042     059 022         CAMG A,LPTCC
+043     059 053         JRST LPTSTP
+044     059 026         ILDB A,LPTOP
+045     001 006         TRNE A,100
+046     059 029         JRST LPTCN
+047     001 006 LPTCN1: DATAO LPT,A
+048     059 026 LPTCR1: HRRZ A,LPTOP
+049     059 059         CAIN A,LPTBE-1
+050     059 058         MOVEI A,LPTBO
+051     059 026         HRRM A,LPTOP
+052     059 022         AOSA LPTCC
+053             LPTSTP: CONO LPT,0
+054     059 063         MOVE A,LPTA
+055     066 007         JRST LPENT
+056
+057             LPTBSZ=1000
+058     059 057 LPTBO:  BLOCK LPTBSZ
+059             LPTBE:
+060

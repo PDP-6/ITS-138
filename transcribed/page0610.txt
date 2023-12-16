@@ -1,0 +1,53 @@
+001                                                                             PAGE 61
+002
+003             TYOF:   SKIPG (T)
+004     001 016         POPJ P,
+005     001 017         MOVE T,(T)
+006     060 029         CAIL T,TOBL*2
+007                     AOS (P)
+008     100 023         JRST POPJ1
+009
+010     001 006 TYICLS: ANDI A,377777
+011     002 022         CONO PI,UTCOFF
+012     001 007         MOVE B,TIIP(A)
+013     001 007         MOVEM B,TIOP(A)
+014     060 030         CAIL A,NTTYS
+015     061 018         JRST TYICL1
+016                     CLEARM ECHOCC(A)
+017     001 007         MOVEM B,ECHOP(A)
+018     001 007 TYICL1: MOVEM B,TINTP(A)
+019                     CLEARM TICC(A)
+020                     CLEARM TINTC(A)
+021     002 021         CONO PI,UTCON
+022     001 016         POPJ P,
+023
+024
+025
+026             TYOCLS:
+027     001 006 TYOW:   ANDI A,377777
+028     060 030         CAIL A,NTTYS
+029     061 035         JRST GTYOW1
+030     007 017         MOVEI T,TOBS
+031     070 018         CAME T,TORM(A)
+032     017 002         PUSHJ P,UFLS
+033     001 016         POPJ P,
+034
+035     060 030 GTYOW1: SKIPE GDFRSC-NTTYS(A)
+036     017 002         PUSHJ P,UFLS
+037     001 016         POPJ P,
+038
+039
+040     118 046 AITYI:  SKIPL A,TTYTBL(U)
+041                     SKIPG TINTC(A)
+042     001 016         POPJ P,
+043     001 007         MOVE B,TINTP(A)
+044     001 007         CAMN B,TIBEP(A)
+045     060 028         SUBI B,TIBL
+046     001 007         HRRM B,TINTP(A)
+047     001 007         ILDB B,TINTP(A)
+048                     SOS TINTC(A)
+049             AOPVS:  AOS (P)
+050
+051     001 007 AOPERV: MOVEM B,(J)
+052     001 016         POPJ P,
+053

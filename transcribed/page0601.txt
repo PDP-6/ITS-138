@@ -1,0 +1,14 @@
+061     070 018        MOVEI T,TORM(A)                                          PAGE 60.1
+062     061 003        PUSHJ P,TYOF
+063     017 002        PUSHJ P,UFLS
+064                    JFCL
+065     001 007        MOVE B,(C)
+066     001 007        IDPB B,TOIP(A)
+067     070 018        SOS TORM(A)
+068     001 007        EXCH B,TOIP(A)
+069     001 007        CAMN B,TOBEP(A)
+070     060 029        SUBI B,TOBL
+071     001 007        EXCH B,TOIP(A)
+072     070 017        AOSN TTYON(A)
+073     070 020        CONO TTY,@TTYST(A)
+074     001 016        POPJ P,
