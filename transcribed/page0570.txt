@@ -14,7 +14,7 @@
 014     001 048         CONO PI,CLKON
 015     001 016         POPJ P,
 016
-017     118 010 UBI3:   ADDI Q,ACOS(A)
+017     118 010 UBI3:   ADDI Q,AC0S(A)
 018     001 014         MOVE J,(Q)
 019     001 014         MOVEM J,(C)
 020     001 008         ADD C,[1,,1
@@ -23,7 +23,7 @@
 023     056 023         JRST UBI2
 024     056 028         JRST UBO1
 025
-026     118 010 UBO3:   ADDI Q,ACOS(A)
+026     118 010 UBO3:   ADDI Q,AC0S(A)
 027     001 008         HLRZ E,C
 028     001 014         MOVE J,(E)
 029     001 014         MOVEM J,(Q)
