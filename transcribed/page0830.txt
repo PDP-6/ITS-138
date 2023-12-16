@@ -14,7 +14,7 @@
 014
 015             UTUSR:          ;USER OR -1 IF FREE (LH)
 016     083 005 UTUL:   REPEAT NUTIC+NUTOC,-1   ;LINK TO CHANNEL ON SAME UTAPE OR -1(RH)
-017     083 005 UTDIRP: BLOCK NUTIC+NUTOC       ;BYTE POINTER OT UTDIR
+017     083 005 UTDIRP: BLOCK NUTIC+NUTOC       ;BYTE POINTER TO UTDIR
 018     083 005 UTDBC:  BLOCK NUTIC+NUTOC       ;RH BLCK COUNT CORRESP WITH UTDIRP
 019                             ;L H 3.1 3.5 READ FILE NO  4.9  ERROR  4.5 4.8 ERROR CNT
 020                     ;3.6 =0 FORD EXT =1 BACK EXT 3.7 4.2 PUT FILE NO
@@ -39,9 +39,9 @@
 039
 040     083 005 UTLDD:  BLOCK NUTIC+NUTOC+1     ;IF -1, DC IS ACTUALLY SET UP AND TRANSFER CAN
 041                                             ;BE EXPECTED IN LESS TAH 100 MS.
-042                                             ;IF D CHANNEL LOCK FLAG(4.9 UTRAC) WELL BE CHECKED
+042                                             ;IF D CHANNEL LOCKED FLAG(4.9 UTRAC) WELL BE CHECKED
 043                                             ;BEFORE GOING TO THE -1 STATE
-044                                             ;EXTRA WORK FOR DIR CHNL
+044                                             ;EXTRA WORD FOR DIR CHNL
 045             ;UTBFP RH OUTPUT LINK (PI)
 046             ; LH INPUT
 047             ;UTDBC  BLOCK CNT
