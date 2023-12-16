@@ -1,4 +1,4 @@
-001                                                                             PAGE 83
+001                                                                                   PAGE 83
 002     003 004 SUBTTL UTAPE SERVICE ROUTINE
 003
 004             NUTIC==6        ;NUM UT IN CHNLS

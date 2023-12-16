@@ -1,4 +1,4 @@
-001                                                                             PAGE 81
+001                                                                                   PAGE 81
 002     001 006 GEKO:   ORCBI A,177
 003     081 012         EQVM A,GEKICK
 004     001 006         ROT A,-1

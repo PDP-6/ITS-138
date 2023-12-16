@@ -1,4 +1,4 @@
-001     001 007 AUTDM:  SKIPE B,(J)     ;UT DISMT                               PAGE 84
+001     001 007 AUTDM:  SKIPE B,(J)     ;UT DISMT                                     PAGE 84
 002     103 005         CAILE B,NUNITS
 003     001 016         POPJ P,
 004     083 005         MOVSI C,-NUTIC-NUTOC

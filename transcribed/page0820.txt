@@ -1,4 +1,4 @@
-001             BLKTNB: SKIPE 5(B)                                              PAGE 82
+001             BLKTNB: SKIPE 5(B)                                                    PAGE 82
 002                     XCT 5(B)        ;BLOCK IO HANDLER
 003     017 002 BLKTF:  PUSHJ P,UFLS    ; CALL JSP B,BLKT       ;ADR OF PTR IN C
 004     001 016         PUSHJ P,@2(B)   ; UPPA(A)       ;ADR OF AC BUF PTR 4.9 OUT
