@@ -13,6 +13,6 @@ fix() {
 
 make tabify >/dev/null 2>&1
 
-for i in transcribed/page*.txt; do
+for i in transcribed/page????.txt; do
     fix "$i"
 done
