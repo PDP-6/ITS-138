@@ -1,13 +1,13 @@
 001                                                                             PAGE 88
-002     087 040 UASCII: MOVEI B,UBLK1+1
+002     087 040 UASCII: MOVEI B,UBLKI+1
 003     088 006         JRST CHRKT
 004
-005     089 030 UASCCO: MOVEI B,UBLK0+1
+005     089 030 UASCCO: MOVEI B,UBLKO+1
 006             CHRKT:  SOSGE @1(B)
-007     088 020         JRST CHRKT1
+007     088 020         JRST CHRKT1     ;GET NEW BUFFER
 008                     SKIPGE (B)
 009     088 016         JRST CHRKT2
-010     001 009         JRDB D,@(B)
+010     001 009         ILDB D,@(B)
 011     001 009         CAIN D,141
 012     088 034         JRST CHRKT3
 013     001 009         MOVEM D,(C)
@@ -18,7 +18,7 @@
 018     001 016         POPJ P,
 019
 020     001 016 CHRKT1: PUSHJ P,@3(B)
-021                     SKIPE 5,(B)
+021                     SKIPE 5(B)
 022                     XCT 5(B)
 023     017 002         PUSHJ P,UFLS
 024     001 016         PUSHJ P,@2(B)
