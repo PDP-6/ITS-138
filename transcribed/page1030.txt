@@ -1,6 +1,6 @@
 001                                                                             PAGE 103
 002             ; T S UTAPE ROUTINES PI SERV
-003     000 000 LABEL:  INSTRUCTION     ;COMMENT
+003
 004             LUTCP=20        ;LENGTH UTC PDL
 005             NUINTS==4
 006             JDENDB=40000
