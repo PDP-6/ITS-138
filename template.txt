@@ -1,7 +1,7 @@
 001                                                                             PAGE 0
 002     000 000 LABEL:  INSTRUCTION     ;COMMENT
 003
-004
+004                     ;TAB    ;STOPS  ;       ;       ;       ;       ;
 005
 006
 007
