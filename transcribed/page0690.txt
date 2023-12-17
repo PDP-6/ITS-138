@@ -30,15 +30,15 @@
 030     001 006         CAIGE A,11
 031     001 006         CAIN A,15
 032     001 042         TLNN B,TTYDDT
-033     001 042         TLNE B,TTYIMI
+033     001 041         TLNE B,TTYIMI
 034     001 006         CAIN A,^Z
 035     068 051         JRST TYPCM1
 036     066 017         JRST TTYRET
-038
+037
 038     001 006 TYO1:   CAIL A,40
 039     068 043         JRST TYP3
 040     001 006         ADDI A,100
 041     001 006         HRRM A,LCHAR(I)
 042     001 006         MOVEI A,"^
 043     068 037         JRST TYP6
-044 
+044

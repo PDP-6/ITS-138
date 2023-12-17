@@ -1,5 +1,5 @@
 001                                                                             PAGE 63
-002     001 007 MTYCR:  MOVEI B,40
+002     001 007 MGTYCR: MOVEI B,40
 003     062 034         PUSHJ P,MGTCR1
 004                     JRST .-2
 005
@@ -9,7 +9,7 @@
 009     001 007         MOVEI B,"]
 010     062 042 MGTCR3: PUSHJ P,MGTYOE
 011     060 030         MOVE D,MGCDP-NTTYS(A)
-012     071 006         ADDI D,GSTGL-1
+012     071 006         ADDI D,GSTGL+1
 013     060 030         CAMN D,GECBL-NTTYS+1(A)
 014     063 049         JRST MGCR2      ;END OF PAGE
 015     070 028         MOVE TT,TTYSTS(A)
@@ -19,7 +19,7 @@
 019     063 049         JRST MGCR2
 020     060 030 MGCR3:  MOVEM D,MGCDP-NTTYS(A)
 021     001 009         HRLI D,1000
-022     060 030         MOVEM D,MGDP-NTTYS(A)
+022     060 030         MOVEM D,MGBP-NTTYS(A)
 023     060 030         CLEARM MGCC-NTTYS(A)
 024     001 007         LDB B,[700,,(C)
 025     001 007         CAIE B,15
@@ -48,9 +48,9 @@
 048
 049     060 030 MGCR2:  SETOM BPGFW-NTTYS(A)
 050     060 030 MGTF2:  MOVE D,GECBL-NTTYS(A)
-051     063 020         JRST MGCR2
+051     063 020         JRST MGCR3
 052
 053     001 016 MGTCR2: SUB P,[1,,1
 054     001 007         MOVEI B,40
-055     063 010         JRST MGTCR2
+055     063 010         JRST MGTCR3
 056

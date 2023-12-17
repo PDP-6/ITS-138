@@ -41,11 +41,11 @@
 041
 042     001 007 MGTYOE: ORCBI B,177
 043     001 007         ROT B,-1
-044     001 007         TLNN B,40000
+044     001 007         TLNN B,400000
 045     001 007         TRZ B,100
 046     060 030         ILDB D,MGBP-NTTYS(A)
-047     001 007         XOR D,B
-048     001 009         TRNN B,177
+047     001 007         XOR D,B'
+048     001 009         TRNN D,177
 049     001 016         POPJ P,
 050     060 030         DPB B,MGBP-NTTYS(A)
 051     060 030         AOS @MGCDP-NTTYS(A)

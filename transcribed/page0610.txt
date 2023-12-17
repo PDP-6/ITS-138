@@ -1,6 +1,6 @@
 001                                                                             PAGE 61
 002
-003             TYOF:   SKIPG (T)
+003             TYOF:   SKIPG (T)           ;DO NOT CHANGE TO T,
 004     001 016         POPJ P,
 005     001 017         MOVE T,(T)
 006     060 029         CAIL T,TOBL*2
@@ -27,7 +27,7 @@
 027     001 006 TYOW:   ANDI A,377777
 028     060 030         CAIL A,NTTYS
 029     061 035         JRST GTYOW1
-030     007 017         MOVEI T,TOBS
+030     001 017         MOVEI T,TOBS
 031     070 018         CAME T,TORM(A)
 032     017 002         PUSHJ P,UFLS
 033     001 016         POPJ P,
