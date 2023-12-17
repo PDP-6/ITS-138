@@ -1,5 +1,5 @@
 001                                                                                   PAGE 65
-002             HGCBT:  CONO 635550     ;DEBUGGING ONLY
+002             HGCBT:  CONO 635550            ;DEBUGGING ONLY
 003     118 056         MOVE P,USRPDL
 004                     CONO TTY,400000
 005

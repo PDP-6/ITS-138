@@ -4,12 +4,12 @@
 004     118 046 TTYO1:  SKIPGE I,TTYTBL(U)
 005     041 003         JRST UDELAY
 006     001 012         HRRZS I
-007     060 031         CAIL I,NTTY+NGEC
+007     060 031         CAIL I,NTTYS+NGEC
 008     041 003         JRST UDELAY
 009     001 012         TLOA I,400000
 010     060 031 TTYO:   CAIGE I,NTTYS+NGEC
 011     001 009         TRNE D,1
-012     041 003         JRST UDELAY
+012     041 003         JRST UDELAY     ;NO BLOCK MODE
 013     001 006         DPB I,[222100,,A]
 014     001 012         SKIPGE I
 015     001 006         TLO A,400000
@@ -40,7 +40,7 @@
 040     017 002         PUSHJ P,UFLS
 041     001 007         MOVE B,TIOP(A)
 042     001 007         CAMN B,TIBEP(A)
-043     050 028         SUBI B,TIBL
+043     060 028         SUBI B,TIBL
 044     001 007         HRRM B,TIOP(A)
 045     001 007         ILDB B,TIOP(A)
 046                     SOS TICC(A)

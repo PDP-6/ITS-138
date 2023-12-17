@@ -7,7 +7,7 @@
 007     001 013         MOVEM Q,1(TT)
 008     001 014         HRLI J,1(TT)
 009     001 014         HRRI J,2(TT)
-010     071 006         BLT J,GSTBL(TT)
+010     071 006         BLT J,GSTGL(TT)
 011     071 006         ADDI TT,GSTGL+1
 012     064 005         AOBJN D,MGTF1
 013     060 030         CLEARM GDFRSC-NTTYS(A)
