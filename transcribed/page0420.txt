@@ -1,4 +1,4 @@
-001                                                                             PAGE 42
+001                                                                                   PAGE 42
 002     083 026 AIOBT7: ANDCAM E,UTRAC(Q)
 003     041 039         JRST AIOBT5
 004

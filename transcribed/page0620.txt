@@ -1,4 +1,4 @@
-001                                                                             PAGE 62
+001                                                                                   PAGE 62
 002     118 046 ALISTEN:        SKIPGE A,TTYTBL(U)
 003     062 009         JRST ALIS1
 004     061 027         PUSHJ P,TYOW

@@ -1,4 +1,4 @@
-001                                                                                     PAGE 51
+001                                                                                   PAGE 51
 002             ;MEMORY ALLOCATION TABLES
 003
 004     002 004 IOBFT:  REPEAT  MXIOB-1,176000,,.RPCNT+1        ;MAX DYN ALLOC IO BUFFERS

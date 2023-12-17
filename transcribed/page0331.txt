@@ -1,4 +1,4 @@
-061     118 046         MOVEM D,TTYTBL(A)                                       PAGE 33.1
+061     118 046         MOVEM D,TTYTBL(A)                                             PAGE 33.1
 062     118 046         LDB D,[220300,,TTYTBL(U)
 063     001 018         HRL D,U
 064     070 028         MOVSM D,TTYSTS(E)

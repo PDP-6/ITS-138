@@ -1,4 +1,4 @@
-061                                                                             PAGE 118.1
+061                                                                                   PAGE 118.1
 062     118 003 LUBLK=.-USRSTG
 063     118 062 L=LUBLK
 064

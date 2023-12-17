@@ -1,4 +1,4 @@
-001                                                                             PAGE 4
+001                                                                                   PAGE 4
 002     003 004 SUBTTL TSS INITIALIZATION
 003
 004                     CONO 633550

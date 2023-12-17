@@ -1,4 +1,4 @@
-001                                                                             PAGE 2
+001                                                                                   PAGE 2
 002     001 002 IFE MOBY,MX1KB==12.     ;MAX SYS 1K BLOCKS
 003     001 002 IFN MOBY,MX1KB==250.
 004     001 002 IFE MOBY,MXIOB==30.     ;MAX DYN ALLOC ALLOC IO BUFFERS

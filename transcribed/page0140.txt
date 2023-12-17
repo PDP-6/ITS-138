@@ -1,4 +1,4 @@
-001     001 011 COREX:  LSH TT,-10.                                             PAGE 14
+001     001 011 COREX:  LSH TT,-10.                                                   PAGE 14
 002     019 015         CORE 2(TT)
 003                     JRST .-1
 004     001 011         LSH TT,10.

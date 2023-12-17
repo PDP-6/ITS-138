@@ -1,4 +1,4 @@
-001                                                                                     PAGE 56
+001                                                                                   PAGE 56
 002     001 013 UWI:    HRRO Q,(C)
 003     001 013         MOVEI C,0
 004

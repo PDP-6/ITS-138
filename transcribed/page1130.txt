@@ -1,4 +1,4 @@
-001                                                                             PAGE 113
+001                                                                                   PAGE 113
 002     104 010 JDB5:   HRRZ C,UTTM1
 003     104 002 JDB7:   EXCH C,SUNIT    ;SELECT UNIT IN C
 004     114 002         JUMPE C,JDB7A   ;NO UNIT SELECTED

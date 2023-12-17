@@ -1,4 +1,4 @@
-001                                                                                     PAGE 50
+001                                                                                   PAGE 50
 002     051 021 UIMRQ:  MOVE A,IOBFC
 003     001 006         CAIGE A,8
 004     001 016         POPJ P, ;NOT ENOUGH ROOM IM IOBFT

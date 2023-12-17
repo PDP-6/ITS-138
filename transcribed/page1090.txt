@@ -1,4 +1,4 @@
-001                                                                             PAGE 109
+001                                                                                   PAGE 109
 002             UTCBRK: 0
 003     001 006         MOVEM P,UTACS+P-A
 004     104 021         MOVE P,[A,,UTACS

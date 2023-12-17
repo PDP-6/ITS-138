@@ -1,4 +1,4 @@
-001                                                                             PAGE 78
+001                                                                                   PAGE 78
 002             ;GE TYPOUT DATA STORAGE
 003
 004     060 031 REPEAT NGEC,[

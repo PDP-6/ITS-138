@@ -1,4 +1,4 @@
-001     019 008 SUBTTL PROCESSOR BREAK ROUTINES                                 PAGE 5
+001     019 008 SUBTTL PROCESSOR BREAK ROUTINES                                       PAGE 5
 002
 003             CLKBRK: 0
 004                     CONSO 1000

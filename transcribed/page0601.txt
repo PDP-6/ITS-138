@@ -1,4 +1,4 @@
-061     070 018         MOVEI T,TORM(A)                                         PAGE 60.1
+061     070 018         MOVEI T,TORM(A)                                               PAGE 60.1
 062     061 003         PUSHJ P,TYOF
 063     017 002         PUSHJ P,UFLS
 064                     JFCL

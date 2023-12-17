@@ -1,4 +1,4 @@
-001                                                                             PAGE 30
+001                                                                                   PAGE 30
 002     001 007 AUFLUSH:        HRRZ B,(R)      ;OPER 10
 003     001 006         HLRZ A,(R)
 004     025 002         SKIPL CLSTB(B)

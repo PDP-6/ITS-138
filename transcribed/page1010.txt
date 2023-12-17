@@ -1,4 +1,4 @@
-001                                                                             PAGE 101
+001                                                                                   PAGE 101
 002     001 007 UDOUT1: CLEARB A,B
 003     102 003         PUSHJ P,UTLOOK
 004     100 023         JUMPE B,POPJ1   ; FILE DIR FULL

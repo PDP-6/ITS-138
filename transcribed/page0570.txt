@@ -1,4 +1,4 @@
-001                                                                                     PAGE 57
+001                                                                                   PAGE 57
 002     001 006 SUSTP2: EXCH U,A
 003     001 048 SUSTP1: CONO PI,CLKON
 004     041 003         PUSHJ P,UDELAY

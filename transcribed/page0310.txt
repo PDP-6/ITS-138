@@ -1,4 +1,4 @@
-001             ADISMIS:        ;CALL 1,                                        PAGE 31
+001             ADISMIS:        ;CALL 1,                                              PAGE 31
 002     001 007         MOVE B,(C)
 003     001 052         TLO B,LSRMOD
 004     001 051         TLZ B,BADPC

@@ -1,4 +1,4 @@
-001                                                                             PAGE 102
+001                                                                                   PAGE 102
 002     103 032 UTLK3:  SKIPA Q,UDIRO(I)
 003     103 032 UTLOOK: MOVE Q,UDIRO(C)
 004     001 013         HRLI Q,-23.

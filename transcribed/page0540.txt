@@ -1,4 +1,4 @@
-001                                                                                     PAGE 54
+001                                                                                   PAGE 54
 002     001 018 NOGO:   EXCH TT,U
 003     053 040         JRST NOGO1
 004

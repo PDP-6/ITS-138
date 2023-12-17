@@ -1,4 +1,4 @@
-001             TITLE ITS 1.0 3/19/67                                           PAGE 1
+001             TITLE ITS 1.0 3/19/67                                                 PAGE 1
 002             MOBY==1
 003
 004             ;AC DEFS

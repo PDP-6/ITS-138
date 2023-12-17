@@ -1,4 +1,4 @@
-001                                                                             PAGE 105
+001                                                                                   PAGE 105
 002             TAPE:   0
 003             UTP1:   0       ;JRST PIPOS OR DATAI DC, OR JRST UTP3
 004                     SOS .-1

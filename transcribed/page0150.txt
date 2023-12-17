@@ -1,4 +1,4 @@
-001                                                                             PAGE 15
+001                                                                                   PAGE 15
 002                     0       ;MAKE FLS INS ZERO
 003     017 002 USTCD3: PUSHJ P,UFLS
 004

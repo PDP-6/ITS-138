@@ -1,4 +1,4 @@
-001                                                                             PAGE 111
+001                                                                                   PAGE 111
 002     001 007 JDB3:   HRLOI B,177777
 003     104 011         MOVEM B,UTTM2
 004     104 012         SETOM UTTM3     ;UNIT MOST URGENT

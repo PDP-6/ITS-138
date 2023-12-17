@@ -1,4 +1,4 @@
-001                                                                             PAGE 76
+001                                                                                   PAGE 76
 002     079 007 GTYO7:  MOVE A,GTYOT1
 003     078 031         SUB A,CENPLH(I) ;THERE VERTICALLY GET IT THERE HORIZ
 004     076 039         JUMPE A,GTYO7F  ;ITS THERE

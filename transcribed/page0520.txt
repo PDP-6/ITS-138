@@ -1,4 +1,4 @@
-001     003 004 SUBTTL NULL DEVICE                                                      PAGE 52
+001     003 004 SUBTTL NULL DEVICE                                                    PAGE 52
 002
 003     052 009 NULO:   JUMPL D,NULOO
 004     025 025         MOVEI A,NLBIDN

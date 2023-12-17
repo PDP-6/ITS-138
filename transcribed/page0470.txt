@@ -1,4 +1,4 @@
-001                                                                                     PAGE 47
+001                                                                                   PAGE 47
 002
 003     047 034 SRECYC: MOVEM A,DISAS
 004                     CONSZ DIS,2000

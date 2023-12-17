@@ -1,4 +1,4 @@
-001                                                                             PAGE 96
+001                                                                                   PAGE 96
 002     001 007 UTMGB:  MOVEI B,76      ;GOBBLE MEM BLK IN A FOR UTAPE BUFFER
 003     051 039         DPB B,[MUR,,MEMBLT(A)
 004     001 006         MOVE J,A

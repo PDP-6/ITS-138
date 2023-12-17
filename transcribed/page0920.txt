@@ -1,4 +1,4 @@
-001                                                                             PAGE 92
+001                                                                                   PAGE 92
 002     001 006 UTOCL2: MOVE D,A
 003     083 023         SKIPE UTBFS(D)
 004     017 002         PUSHJ P,UFLS

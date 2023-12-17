@@ -1,4 +1,4 @@
-001                                                                             PAGE 16
+001                                                                                   PAGE 16
 002     048 008 IODCL:  PUSHJ P,ADFLUSH
 003     118 004         MOVEI R,IOCHNM(U)
 004     001 015 IODCL1: PUSH P,R

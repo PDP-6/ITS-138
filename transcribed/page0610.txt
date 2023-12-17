@@ -1,4 +1,4 @@
-001                                                                             PAGE 61
+001                                                                                   PAGE 61
 002
 003             TYOF:   SKIPG (T)           ;DO NOT CHANGE TO T,
 004     001 016         POPJ P,

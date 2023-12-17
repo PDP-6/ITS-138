@@ -1,4 +1,4 @@
-001                                                                             PAGE 6
+001                                                                                   PAGE 6
 002     117 025 CLKB5A: SKIPE SCRFG1
 003     005 032         JRST CLKSC1
 004     118 009         MOVE T,UPC(U)

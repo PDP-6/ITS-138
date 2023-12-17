@@ -1,4 +1,4 @@
-001                                                                             PAGE 112
+001                                                                                   PAGE 112
 002     111 009 JDBRK6: AOBJN C,JDBRK7
 003     104 012         MOVE C,UTTM3    ;MOST PRESSING RUNNING UNIT
 004     104 011         MOVE B,UTTM2

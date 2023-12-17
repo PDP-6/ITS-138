@@ -1,4 +1,4 @@
-001                                                                             PAGE 59
+001                                                                                   PAGE 59
 002     058 015 LPTTAB: PUSHJ P,LPTS
 003     059 023         LDB A,[300,,LINEPOS
 004     001 006         JUMPN A,.-2

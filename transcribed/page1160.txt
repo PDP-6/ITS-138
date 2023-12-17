@@ -1,4 +1,4 @@
-001             ;"SYSTEM" JOBS                                                  PAGE 116
+001             ;"SYSTEM" JOBS                                                        PAGE 116
 002
 003     117 016 SCOR:   SKIPL SUPCOR
 004     017 002         PUSHJ P,UFLS

@@ -1,4 +1,4 @@
-001     001 006 ACLOSE: HLRZ A,(R)      ;OPER 7                                 PAGE 29
+001     001 006 ACLOSE: HLRZ A,(R)      ;OPER 7                                       PAGE 29
 002     001 007         HRRZ B,(R)
 003     001 015         PUSH P,R
 004     025 002         PUSHJ P, @CLSTB(B)

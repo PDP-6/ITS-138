@@ -1,4 +1,4 @@
-001                                                                             PAGE 38
+001                                                                                   PAGE 38
 002     001 010 ACMS4F: CAIN E,75
 003     039 007         JRST ACMS8      ;FREE NOW
 004     118 062         IMULI E,LUBLK

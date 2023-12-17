@@ -1,4 +1,4 @@
-001                                                                             PAGE 73
+001                                                                                   PAGE 73
 002     060 030 GTYI6A: AOS B,GCMLC-NTTYS(I)
 003     071 004         CAIL B,NCML
 004     060 030         CLEARB B,GCMLC-NTTYS(I)

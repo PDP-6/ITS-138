@@ -1,4 +1,4 @@
-001                                                                             PAGE 35
+001                                                                                   PAGE 35
 002     001 008 ACORE2: MOVEI C,1(A)
 003     001 008         SUBM B,C
 004     051 051         CAMLE C,MEMFR

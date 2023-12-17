@@ -1,4 +1,4 @@
-001                                                                             PAGE 20
+001                                                                                   PAGE 20
 002     118 022 USRUUO: MOVEM T,@40P(U) ;USER INTERPRETED UUO
 003     118 023         HRRZ T,@41P(U)
 004     001 017         CAIL T,20

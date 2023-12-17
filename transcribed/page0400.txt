@@ -1,4 +1,4 @@
-001                                                                             PAGE 40
+001                                                                                   PAGE 40
 002     001 017 ACMS4B: MOVEI T,377     ;LINK UP IN GOING UP LINK DOWN IF DOWN
 003     001 009 ACMS4I: HRRZ A,D        ;MOVE CORE FOR USER
 004     050 055         PUSHJ P,TCALL

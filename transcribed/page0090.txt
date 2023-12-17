@@ -1,4 +1,4 @@
-001                                                                             PAGE 9
+001                                                                                   PAGE 9
 002
 003     117 024 URUN:SEARE:     AOSN SCRFLG     ;RESTORE CURRENT USER TO ACTUAL MACHINE IF NECESSARY
 004     009 046         PUSHJ P,SBRK2

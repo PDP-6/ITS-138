@@ -1,4 +1,4 @@
-001                                                                             PAGE 13
+001                                                                                   PAGE 13
 002     118 027 USTR4:  SETOM USTP(U)   ;TTY NO IN T
 003     118 044         SETOM UNAME (U)
 004     118 046         MOVEM T,TTYTBL(U)

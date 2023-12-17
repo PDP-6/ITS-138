@@ -1,4 +1,4 @@
-001                                                                             PAGE 110
+001                                                                                   PAGE 110
 002     103 023 ILLP:   MOVEM D,UGOAL(C)        ;LOW PRIORITY POSIT ENTRY
 003     001 006         MOVSI A,(SETZ)
 004     103 038         IORM A,ULDCH(C)

@@ -1,4 +1,4 @@
-001                                                                             PAGE 3
+001                                                                                   PAGE 3
 002             DEFINE CONC A,B
 003             A!B!TERMIN
 004             DEFINE SUBTTL A/
