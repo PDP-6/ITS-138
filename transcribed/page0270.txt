@@ -1,4 +1,4 @@
-001                                                                             PAGE 27
+001                                                                                   PAGE 27
 002     058 005 DEVTAB: 200000+LPTO,,(SIXBIT /LPT/)     ;4.8 OUTPUT 4.9 INPUT
 003     060 004         600000+TTYO1,,(SIXBIT /TTY/)
 004     052 003         600000+NULO,,(SIXBIT /NUL/)

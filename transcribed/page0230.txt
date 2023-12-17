@@ -1,4 +1,4 @@
-001                                                                             PAGE 23
+001                                                                                   PAGE 23
 002     118 009 USETL:  MOVE D,UPC(A)
 003     118 055         MOVE D,VALUE(A)
 004     118 053         MOVE D,UILOOK(A)

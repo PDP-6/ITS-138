@@ -1,4 +1,4 @@
-001             ;UUO DISPATCH                                                   PAGE 22
+001             ;UUO DISPATCH                                                         PAGE 22
 002
 003     022 024 UUODSP: PUSHJ P,AIOT
 004     024 016         PUSHJ P,AOPEN

@@ -1,4 +1,4 @@
-001                                                                             PAGE 94
+001                                                                                   PAGE 94
 002     083 037 UCPAT0: HRRZ B,UTTNO(D) ;PATCH OUT CHANNEL
 003     083 016         MOVEI C,DCHNT-UTUL(B)
 004     002 022         CONO PI,UTCOFF

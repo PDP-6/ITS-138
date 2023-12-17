@@ -1,4 +1,4 @@
-001                                                                             PAGE 39
+001                                                                                   PAGE 39
 002     039 005 ACMS4D: JUMPN I,ACMS4G  ;JUMP ON MOVEING DOWN
 003     001 009         HRRZ A,D        ;MOVE USER
 004     014 008         PUSHJ P,UADRS2  ;MOVE USER VARIABLES

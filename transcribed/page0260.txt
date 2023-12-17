@@ -1,4 +1,4 @@
-001             ;SUBTTL IO TRANSLATOR                                           PAGE 26
+001             ;SUBTTL IO TRANSLATOR                                                 PAGE 26
 002             ;TRAN1: UNAME
 003             ;TRAN2: JNAME
 004             ;TRAN3: 4.9 0 RETRANSLATE 1 ATOM 3.1 0 INPUT 1 OUTPUT,,DEV

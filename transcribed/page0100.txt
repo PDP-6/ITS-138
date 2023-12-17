@@ -1,4 +1,4 @@
-001             ;PUT PC IN LOSER MODE                                           PAGE 10
+001             ;PUT PC IN LOSER MODE                                                 PAGE 10
 002
 003     118 015 PCLSR:  MOVE T,SUEXIT(U)
 004     118 041         SKIPE MEMTOP(U) ;NO CORE (IN CORE ASSIGN ROUTINE

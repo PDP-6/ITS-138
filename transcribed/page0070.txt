@@ -1,4 +1,4 @@
-001             ;SLOW CLOCK SERVICE ROUTINE                                     PAGE 7
+001             ;SLOW CLOCK SERVICE ROUTINE                                           PAGE 7
 002
 003     002 024 SSLCK:  ADDI T,SCLKI
 004     117 029         MOVEM T,SLCLK

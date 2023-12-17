@@ -1,4 +1,4 @@
-001                                                                             PAGE 64
+001                                                                                   PAGE 64
 002     060 030 MGTF:   SETOM GFFF-NTTYS(A)
 003     071 003         MOVSI D,-NLV
 004     060 030         MOVE TT,GECBL-NTTYS(A)

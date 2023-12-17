@@ -1,4 +1,4 @@
-001                                                                             PAGE 60
+001                                                                                   PAGE 60
 002     003 004 SUBTTL TELETYPE ROUTINES
 003
 004     118 046 TTYO1:  SKIPGE I,TTYTBL(U)

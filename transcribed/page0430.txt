@@ -1,4 +1,4 @@
-001                                                                             PAGE 43
+001                                                                                   PAGE 43
 002     001 009 MXCCA:  MOVEI D,0
 003     002 002         MOVSI I,-MX1KB
 004     051 039 MXCC1:  LDB Q,[MUR,,MEMBLT(I)

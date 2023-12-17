@@ -1,4 +1,4 @@
-001                                                                             PAGE 95
+001                                                                                   PAGE 95
 002             IUTCONS:
 003     083 051 IUTCO1: SKIPG UTTBF
 004     095 022         JRST IUTC1

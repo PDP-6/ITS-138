@@ -1,4 +1,4 @@
-001     059 061 LPTCLS: SETOM LPTUSR                                                    PAGE 58
+001     059 061 LPTCLS: SETOM LPTUSR                                                  PAGE 58
 002     059 062         SETOM LPTUSE
 003     001 016         POPJ P,
 004

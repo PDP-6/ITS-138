@@ -1,4 +1,4 @@
-001                                                                             PAGE 80
+001                                                                                   PAGE 80
 002     060 031 GEKI:   MOVSI I,-NGEC
 003     002 032         CONO GTYO,200
 004     001 006 GEK1:   MOVEI A,1       ;GET CONSOLES INTO HAPPY MODE

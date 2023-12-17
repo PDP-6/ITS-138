@@ -1,4 +1,4 @@
-001                                                                             PAGE 45
+001                                                                                   PAGE 45
 002     117 013 ACORE3: CAMN U,DISUSR
 003     045 042         JSR DISACR
 004     001 006         SUBI A,-1(B)

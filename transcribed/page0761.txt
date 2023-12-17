@@ -1,4 +1,4 @@
-061     076 041         JRST GTYO7H                                             PAGE 76.1
+061     076 041         JRST GTYO7H                                                   PAGE 76.1
 062     078 030         CLEARB A,CENPLV(I)
 063     078 010         MOVE B,GECBL(I)
 064     079 020         MOVEM B,GTYOT5

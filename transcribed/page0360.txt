@@ -1,4 +1,4 @@
-001                                                                             PAGE 36
+001                                                                                   PAGE 36
 002     049 032 DCRSTP: CAMN U,VIDUSR
 003     001 016         POPJ P,
 004     047 036         SETOM CDSOFF

@@ -1,4 +1,4 @@
-001                                                                             PAGE 71
+001                                                                                   PAGE 71
 002             MCPL==46.       ;MAX CHAR/LINE
 003             NLV==26.        ;NO VERTICAL LINES
 004             NCML==3 ;NO COMMAND LINES

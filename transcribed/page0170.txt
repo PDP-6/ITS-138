@@ -1,4 +1,4 @@
-001             ;SUBTTL USER UUO WAIT ROUTINE                                   PAGE 17
+001             ;SUBTTL USER UUO WAIT ROUTINE                                         PAGE 17
 002     001 049 UFLS:   CONO PI,CLKOFF  ;DOES NOT WORK FOR XCT T
 003     117 011         EXCH U,USER
 004     118 060         MOVEM T,EPDL2(U)        ;SAVE C(U)

@@ -1,4 +1,4 @@
-001             ;SUBTTL USER START ROUTINES                                     PAGE 12
+001             ;SUBTTL USER START ROUTINES                                           PAGE 12
 002
 003     001 018 USTART: PUSH P,U
 004     012 018         PUSHJ P,USTRA

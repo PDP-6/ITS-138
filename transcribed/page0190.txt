@@ -1,4 +1,4 @@
-001     118 014 SUBTTL UUO PROCESSOR                                            PAGE 19
+001     118 014 SUBTTL UUO PROCESSOR                                                  PAGE 19
 002
 003     001 053 IOT=UUOMIN
 004     001 053 OPEN=UUOMIN+1_27.

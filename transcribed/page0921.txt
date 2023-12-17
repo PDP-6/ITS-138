@@ -1,4 +1,4 @@
-061     083 004         MOVEI E,NUTIC-1                                         PAGE 92.1
+061     083 004         MOVEI E,NUTIC-1                                               PAGE 92.1
 062     083 037 UDELE4: HRRZ J,UTTNO(E)
 063     083 015         SKIPL UTUSR(E)
 064     001 008         CAME J,C

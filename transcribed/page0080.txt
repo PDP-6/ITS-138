@@ -1,4 +1,4 @@
-001     117 011 SUBTTL USER SCHEDULER                                           PAGE 8
+001     117 011 SUBTTL USER SCHEDULER                                                 PAGE 8
 002
 003     117 025 SEARCH: CLEARM SCRFG1
 004     117 030         CLEARM SRCS

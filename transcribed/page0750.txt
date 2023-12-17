@@ -1,4 +1,4 @@
-001                                                                             PAGE 75
+001                                                                                   PAGE 75
 002
 003     078 029 GTYO3:  MOVEM B,CPLNO(I)
 004     001 007         HRLI B,1000

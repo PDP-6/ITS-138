@@ -1,4 +1,4 @@
-001                                                                                     PAGE 46
+001                                                                                   PAGE 46
 002     001 049 ADSTART:        CONO PI,CLKOFF
 003     049 032         SKIPL VIDUSR
 004     032 038         JRST CLKONJ

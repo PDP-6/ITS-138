@@ -1,4 +1,4 @@
-001     019 015 SUBTTL CORE ALLOCATOR                                           PAGE 34
+001     019 015 SUBTTL CORE ALLOCATOR                                                 PAGE 34
 002
 003             UACORE:
 004     117 035 ACORE:  CAILE B,MXC     ;U HAS USER THAT WANTS CORE

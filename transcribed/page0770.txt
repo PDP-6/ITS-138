@@ -1,4 +1,4 @@
-001                                                                             PAGE 77
+001                                                                                   PAGE 77
 002
 003
 004     079 017 GTYO5A: MOVE B,GTYOT2   ;END OF DIFFERENCE

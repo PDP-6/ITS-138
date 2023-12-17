@@ -1,4 +1,4 @@
-001                                                                             PAGE 28
+001                                                                                   PAGE 28
 002             ;SUBTTL CALL DISPATCH
 003
 004     001 017 ACALL:  LDB T,[270400,,40

@@ -1,4 +1,4 @@
-001     001 010 UTREOF: MOVSI E,200000                                          PAGE 98
+001     001 010 UTREOF: MOVSI E,200000                                                PAGE 98
 002     083 026         IORM E,UTRAC(D)
 003     083 012         HLRE E,UTBFP(D)
 004     001 010         SKIPL E

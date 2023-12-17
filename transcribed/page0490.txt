@@ -1,4 +1,4 @@
-001                                                                                     PAGE 49
+001                                                                                   PAGE 49
 002     049 032 VIDCLS: SETOM VIDUSR
 003     117 013         SETOM DISUSR
 004     001 016         POPJ P,

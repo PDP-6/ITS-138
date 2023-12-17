@@ -1,4 +1,4 @@
-061     112 065         JRST JDF8                                               PAGE 112.1
+061     112 065         JRST JDF8                                                     PAGE 112.1
 062     104 015         MOVEM C,FLPUNT
 063     113 028         JRST JDB7D
 064

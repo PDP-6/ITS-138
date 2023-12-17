@@ -1,4 +1,4 @@
-001                                                                             PAGE 25
+001                                                                                   PAGE 25
 002     099 030 CLSTB:  CPOPJ   ;SYS CLOSETAB
 003     058 001         LPTCLS
 004     061 010         TYICLS

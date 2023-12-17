@@ -1,4 +1,4 @@
-001     001 010 UTERR:  CONI UTS,E                                              PAGE 108
+001     001 010 UTERR:  CONI UTS,E                                                    PAGE 108
 002     104 004         SKIPL SMODE
 003     108 024         JRST UDATER
 004     104 026         SKIPGE UDCC

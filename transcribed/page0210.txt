@@ -1,4 +1,4 @@
-001                                                                             PAGE 21
+001                                                                                   PAGE 21
 002     001 049 ONEFLS: CONO PI,CLKOFF
 003     117 011         MOVE U,USER
 004     118 024         HRRZ T,UPR(U)

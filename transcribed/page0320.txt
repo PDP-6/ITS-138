@@ -1,4 +1,4 @@
-001                                                                             PAGE 32
+001                                                                                   PAGE 32
 002     118 041 ATRAND: CAML B,MEMTOP(U)
 003     021 039         JRST IOADC
 004     001 016         PUSH P,(C)      ;CALL 2,

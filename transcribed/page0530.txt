@@ -1,4 +1,4 @@
-001                                                                                     PAGE 53
+001                                                                                   PAGE 53
 002     117 011 SUBTTL USER DEVICE ROUTINES
 003
 004     001 011 USRO:   MOVEI TT,0

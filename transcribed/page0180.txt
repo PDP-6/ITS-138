@@ -1,4 +1,4 @@
-001                                                                             PAGE 18
+001                                                                                   PAGE 18
 002     117 025 UFL1:   SKIPE SCRFG1
 003     018 009         JRST UFL6
 004     118 009         MOVE T,UPC(U)

@@ -1,4 +1,4 @@
-001                                                                             PAGE 37
+001                                                                                   PAGE 37
 002     001 009 ACORE6: MOVE A,D
 003     045 026         PUSHJ P,CCFRE
 004     051 039         DPB A,[MLO,,MEMBLT-1(A)

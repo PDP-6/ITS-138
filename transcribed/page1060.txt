@@ -1,4 +1,4 @@
-001                                                                             PAGE 106
+001                                                                                   PAGE 106
 002     103 022 PIPOS3: MOVE A,UDIR(C)
 003     001 006         LSH A,2
 004     001 006         SUB B,A

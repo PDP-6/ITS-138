@@ -1,4 +1,4 @@
-001     001 048 AATT5:  CONO PI,CLKON                                           PAGE 33
+001     001 048 AATT5:  CONO PI,CLKON                                                 PAGE 33
 002     041 003         PUSHJ P,UDELAY
 003
 004     001 006 AATTY:  HLRZ A,(R)      ;OPER 11

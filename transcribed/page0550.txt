@@ -1,4 +1,4 @@
-001                                                                                     PAGE 55
+001                                                                                   PAGE 55
 002     001 007 UMEMEX: PUSH P,B
 003     001 013         PUSH P,Q
 004     001 006         MOVE U,A

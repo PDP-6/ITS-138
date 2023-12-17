@@ -1,4 +1,4 @@
-001                                                                             PAGE 114
+001                                                                                   PAGE 114
 002     104 002 JDB7A:  MOVE C,SUNIT
 003     103 024         MOVE A,EUPOS(C)
 004     103 022         SUB A,UDIR(C)
