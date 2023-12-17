@@ -18,7 +18,7 @@
 018     001 007         DATAI DC,B
 019     001 007         TDZE B,[1777#-1
 020     105 043         JRST PIPOS7
-021     103 024         MOVEM B,EUPOS(C)
+021     103 024         MOVEM B, EUPOS(C)
 022     103 029         HRRZM C, DG2(C)
 023     103 023         SKIPGE UGOAL(C)
 024     106 023         JRST PIPF1
@@ -33,7 +33,7 @@
 033     103 022         MOVE B,UDIR(C)
 034     115 024         XCT UTST(B)
 035     002 012         CONO DC,4010+DCCHN
-036     104 009 POPOS5: MOVE C,TAP3
+036     104 009 PIPOS5: MOVE C,TAP3
 037     104 008         MOVE B,TAP2
 038     104 007         MOVE A,TAP1
 039     105 002         JRST 12,@TAPE

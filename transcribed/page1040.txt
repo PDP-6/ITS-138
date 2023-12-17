@@ -1,6 +1,6 @@
 001                                                                             PAGE 104
 002             SUNIT:  0       ;SELECTED UNIT OR 0
-003             SUNITL: 0       ;SAME - 3
+003             SUNITL: 0       ;SAME _ 3
 004             SMODE:  -1      ;-1 POSIT 0 DATA
 005             WRITE:  0       ;0 READ -1 WRITE
 006             TAPCNT: 0
