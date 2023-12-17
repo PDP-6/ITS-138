@@ -1,7 +1,7 @@
 001                                                                             PAGE 109
 002             UTCBRK: 0
 003     001 006         MOVEM P,UTACS+P-A
-004     104 021         MOVE P,[A,UTACS
+004     104 021         MOVE P,[A,,UTACS
 005     001 006         BLT P,UTACS+P-1-A
 006     104 018         MOVE P,UTCPDP
 007     104 002         MOVE C,SUNIT

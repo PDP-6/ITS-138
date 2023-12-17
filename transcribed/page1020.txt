@@ -6,7 +6,7 @@
 006     001 006 UTLK2:  CAMN A,(Q)
 007     001 007         CAME B,1(Q)
 008     102 013         AOJA Q,UTLK1
-009     001 013         MOVEB,Q
+009     001 013         MOVE B,Q
 010     001 006 POPAJ:  POP P,A
 011     001 016         POPJ P,
 012
