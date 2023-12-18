@@ -15,7 +15,7 @@
 015     104 002         SKIPE SUNIT
 016     113 028         JRST JDB7D
 017     104 017         SETOM UIDLE
-018
+018                     CONO UTC,0
 019     115 016         JRST POPRET
 020
 021
@@ -32,7 +32,7 @@
 032                     JRST .+2
 033     112 050         JRST JDF3A      ;JUST READ IN TAPE POS
 034     001 007         TLNN B,100000
-035     104 013         HRRZM D,UTTM4   ;UNIT TO START FLAPPING
+035     104 013         HRRZM C,UTTM4   ;UNIT TO START FLAPPING
 036     001 007         HRRZ D,B
 037     001 007         TLNN B,100000
 038                     JRST .+3
