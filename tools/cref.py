@@ -21,9 +21,9 @@ def equals(text):
     return None
 
 def label(text):
-    m = re.search(r'^[^;]*?([A-Z0-9$%.\'"]+):', text)
+    m = re.search(r'^[^;]*?([A-Z0-9$%.\'"!]+):', text)
     if m:
-        return m.group(1)[0:6]
+        return m.group(1).replace('!','')[0:6]
     return None
 
 def definition(text):
@@ -46,8 +46,8 @@ def analyze(file):
             line = 1
             page += 1
         symbol = definition(text)
-        if symbol:
-            table.update({symbol[0]: (page, line, symbol[1])})
+        if symbol and not symbol[0] in table:
+            table.update({symbol[0]: (page, line, symbol[1], False)})
         line += 1
 
 def symbol(text):
@@ -56,19 +56,19 @@ def symbol(text):
 def reference(text):
     if define(text):
         return None
-    if label(text):
-        return None
-    e = equals(text)
     t = re.search(r'^([^;]*);', text)
     if t:
         text = t.group(1)
-    m = re.findall(r'([A-Z0-9$%.\'"]+)', text)
-    f = filter(lambda x: symbol(x) and x != e, m)
-    l = list(f)
-    try:
-        return table[l[-1]]
-    except:
-        return None
+    m = re.findall(r'[A-Z0-9$%.\'"!]+[:=)]?', text)
+    x = None
+    for s in m:
+        if re.search(r'[:=)]$', s) is not None:
+            continue
+        s = s.replace('!','')[0:6]
+        if s in table:
+            x = table[s]
+            table[s] = (x[0], x[1], x[2], True)
+    return x
 
 def listing(file):
     page = 1
@@ -94,7 +94,10 @@ def symtab():
         typ = x[1][2]
         pag = x[1][0]
         lin = x[1][1]
-        print("%-06s %c %03d%c%03d" % (sym, typ, pag, ' ', lin))
+        ref = "*"
+        if x[1][3]:
+            ref = " "
+        print("%-06s %c %03d%c%03d" % (sym, typ, pag, ref, lin))
 
 if __name__ == "__main__":
     analyze(sys.argv[1])
