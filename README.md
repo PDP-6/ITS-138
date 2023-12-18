@@ -1,10 +1,7 @@
 # ITS 138
 
-Sussman's paper listing is being processed, with results appearing
-here.
-
-If you want to help transcribing, please read
-[this](https://github.com/PDP-6/ITS/issues/2) for guidelines.
+Sussman's paper listing has been transcribed by volunteers.  The final
+result is in the ITS 138 file.
 
 The screenshot below is from MIT AI Film #42, "Minsky Arm".  It shows
 the Type 340 display with assembler code.  It's likely TECO running,
