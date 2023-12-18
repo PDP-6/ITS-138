@@ -3,7 +3,7 @@
 003     103 032         ANDCAM E,UDIRO(I)        ;RELEASE FILE DIR
 004     083 026         HRRZS UTRAC(TT)
 005     001 011         HRL Q,TT
-006     001 013         MOVEM Q,(R)      ;STORE CHANNEL WD
+006     001 013         MOVEM Q,(R)     ;STORE CHANNEL WD
 007
 008     020 017 RSKP:   AOS UUOH
 009     001 016         POPJ P,

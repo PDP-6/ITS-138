@@ -1,6 +1,6 @@
 001                                                                                   PAGE 61
 002
-003             TYOF:   SKIPG (T)           ;DO NOT CHANGE TO T,
+003             TYOF:   SKIPG (T)       ;DO NOT CHANGE TO T,
 004     001 016         POPJ P,
 005     001 017         MOVE T,(T)
 006     060 029         CAIL T,TOBL*2
