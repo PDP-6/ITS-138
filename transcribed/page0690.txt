@@ -30,7 +30,7 @@
 030     001 006         CAIGE A,11
 031     001 006         CAIN A,15
 032     001 042         TLNN B,TTYDDT
-033     001 042         TLNE B,TTYIMI
+033     001 041         TLNE B,TTYIMI
 034     001 006         CAIN A,^Z
 035     068 051         JRST TYPCM1
 036     066 017         JRST TTYRET
