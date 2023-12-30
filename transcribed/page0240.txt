@@ -13,7 +13,7 @@
 013             ;3.3=0  => ASCII   =1 IMAGE
 014             ;4.9 = DELETE OR RENAME
 015
-016     001 015 AOPEN:  LDB R,[2700400,,40      ;OPEN UUO
+016     001 015 AOPEN:  LDB R,[270400,,40       ;OPEN UUO
 017     001 008         HRRZ C,40
 018     118 041         CAML C,MEMTOP(U)
 019     021 039         JRST IOADC
