@@ -1,0 +1,60 @@
+420             (DEFPROP $SEARCH1
+421              (LAMBDA ()                                                           PAGE 1.7
+422               (PROG
+423                (CH CMS OP NAME CUR)
+424             S1 (SETQ NAME (SETQ OP NIL))
+425             S2 (SETQ CH (READCH))
+426                (COND ((EQ CH $AM) (GO SAM))
+427                      ((EQ CH $LP) (GO SLP))
+428                     ((EQ CH $RP) (GO SRP))
+429                      ((EQ CH $SP) (GO SSP))
+430                      ((MEMQ CH (LIST $CR $LF)) (GO S3)))
+431                (SETQ NAME (CONS CN NAME))
+432             S3 (GO S2)
+433             SLP(SETQ OP (Q SLPR))
+434                (GO SSP)
+435             SRP(SETQ OP (Q SRPR))
+436             SSP(AND
+437                 NAME
+438                 (SETQ CMS
+439                       (MCONS (READLIST (REVERSE NAME))
+440                              (Q $ATM)
+441                              CMS)))
+442                (AND OP (SETQ CMS (CONS OP CMS)))
+443                (GO S1)
+444             SAM(AND
+445                 NAME
+446                 (SETQ CMS
+447                       (MCONS (READLIST (REVERSE NAME))
+448                              (Q $ATM)
+449                              CMS)))
+450                (AND (SETQ CUR ($SEARCH2 (REVERSE CMS)
+451                                        $CURSOR))
+452                     (SETQ $CURSOR CUR))
+453                (RETURN ($CURLOC $CURSOR))))
+454              EXPR)
+455
+456             (DEFPROP $GL
+457              (LAMBDA (X)
+458                      (COND ((EQ (CAR X) (Q PNAME))
+459                             (Q ((($NOT FOUND$)))))
+460                            ((ATOM (CADR X))
+461                             ($GL (CDDR X)))
+462                            (T (SETQ $IND (CAR X))
+463                               (LIST (CADR X)
+464                                     (LIST (CADR X))))))
+465              EXPR)
+466
+467             (DEFPROP $YANK
+468              (LAMBDA (O I)
+469                ($CURLOC (SETQ
+470                 $CURSOR
+471                 (COND
+472                  ((ATOM (SETQ $OB O))
+473                   (COND
+474                    ((SETQ $IND I)
+475                     ((LAMBDA (X)
+476                       (COND (X (LIST X (LIST X)))
+477                             ((Q ((($NOT FOUND$$)))))))
+478                      (GET O I)))
+479                    (T (SETQ $IND NIL) ($GL (CDR O)))))

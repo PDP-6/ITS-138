@@ -1,0 +1,59 @@
+001             (DEFPROP TRACE                                                        PAGE 1
+002               (LAMBDA (L)
+003                 (PROG (X X Y Z)
+004                  B    (COND ((NULL L) (RETURN Y)))
+005                       (SETQ X (SETQ Z (CAR L)))
+006                       (SETQ L (CDR L))
+007                  C    (COND ((NULL (CDR Z)) (GO B))
+008                             ((EQ (CADR Z) (QUOTE TRACE)) (GO B))
+009                             ((MEMBER (CADR Z) (QUOTE (EXPR FEXPR SUBR FSUBR)))
+010                              (SETQ Z (CDR Z)))
+011                             ((SETQ Z (CDDR Z)) (GO C)))
+012                       (SETQ Y (NCONC Y (LIST X)))
+013                       (RPLACD (CDDR (SETQ W (GENSYM))) Z)
+014                       (RPLACD
+015                         X
+016                         (CONS
+017                           (QUOTE TRACE)
+018                           (CONS
+019                             W
+020                             (CONS
+021                               (QUOTE FEXPR)
+022                               (CONS
+023                                 (LIST
+024                                   (QUOTE LAMBDA)
+025                                   (QUOTE (/-L))
+026                                   (NCONC
+027                                     (LIST (SUBST W X (QUOTE PROG))
+028                                           (QUOTE (/-B /-C))
+029                                           (LIST (SUBST W X (QUOTE PRINT))
+030                                                 (LIST (SUBST W X (QUOTE QUOTE))
+031                                                       (LIST QUOTE ENTERING) X))))
+032                                     (APPEND
+033                                      (SUBST
+034                                       W
+035                                       X
+036                                       (COND
+037                                         ((OR (EQ (CAR Z) (QUOTE FSUBR))
+038                                              (EQ (CAR Z) (QUOTE FEXPR)))
+039                                          (QUOTE ((PRINT (SETQ /-C /-L)))))
+040                                         (T
+041                                          (QUOTE
+042                                           ((PRINT (SETQ /-B (EVAL (CONS (QUOTE LIST) /-L))))
+043                                            /-D
+044                                            (COND ((NULL /-B) (GO /-E)))
+045                                            (SETQ /-C (NCONC /-C
+046                                                             (LIST (CONS (QUOTE QUOTE)
+047                                                                         (LIST (CAR /-B))))))
+048                                            (SETQ /-B (CDR /-B))
+049                                            (GO /-D))))))
+050                                      (LIST (QUOTE /-E)
+051                                            (SUBST W X (LIST (QUOTE SETQ)
+052                                                             (QUOTE /-B)
+053                                                             (LIST (QUOTE EVAL)
+054                                                                   (LIST (QUOTE CONS)
+055                                                                         (LIST (QUOTE QUOTE)
+056                                                                               W)
+057                                                                         (QUOTE /-C)))))
+058                                            (LIST (SUBST W X (QUOTE PRINT))
+059                                                  (LIST (SUBST W X (QUOTE QUOTE))

@@ -1,0 +1,60 @@
+540             (DEFPROP $SETBREAK
+541              (LAMBDA ($E $AL)                                                     PAGE 1.9
+542               ((LAMBDA ($C)
+543                ((LAMBDA ($L $CN)
+544                         (COND ((EVAL $CN $AL)
+545                                ($LISP (CAR $E))
+546                                (CDR $E))))
+547                 ($LOAR $C)
+548                 ($CONDAR $C)))
+549               (CAR $C)))
+550              EXPR)
+551
+552             (DEFPROP $
+553                      (LAMBDA (X $A)
+554                              (EVAL ($BREAK X $A) $A))
+555                      FEXPR)
+556
+557             (DEFPROP $I
+558                      (LAMBDA (X) ($INSERT (CAR X)
+559                                           $CURSOR))
+560                      FEXPR)
+561
+562             (DEFPROP $S
+563              (LAMBDA () ($SEARCH1)) EXPR)
+564
+565             (DEFPROP $Y
+566                      (LAMBDA (L)
+567                              (COND ((NULL L) NIL)
+568                                    ((NULL (CDR L))
+569                                     ($YANK (CAR L) NIL))
+570                                    (($YANK (CAR L)
+571                                            (CADR L)))))
+572                      FEXPR)
+573
+574             (DEFPROP $F
+575                      (LAMBDA (L)
+576                              (COND ((NULL L)
+577                                     ($FILE NIL NIL))
+578                                    ((NULL (CDR L))
+579                                     ($FILE (CAR L) NIL))
+580                                    (($FILE (CAR L)
+581                                            (CADR l)))))
+582                      FEXPR)
+583
+584             (DEFPROP $C
+585              (LAMBDA NIL
+586               ($CURLOC
+587                ((LAMBDA (X)
+588                  (SETQ $CURSOR (LIST X (LIST X))))
+589                 (APPEND ($CUREXPR (LAST $CURSOR))
+590                         NIL))))
+591              FEXPR)
+592
+593             (DEFPROP $B
+594              (LAMBDA (L)
+595               ($SETBREAK $OB
+596                          $IND
+597                          $CURSOR
+598                          (COND (L (CAR L)) (0))
+599                          (COND ((AND L (CDR L))

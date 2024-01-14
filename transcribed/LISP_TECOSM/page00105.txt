@@ -1,0 +1,60 @@
+300                                    (CAR ($CURLOC CUR)))
+301                            (CDR ($CURLOC UR)))                                    PAGE 1.5
+302                    (RETURN C))
+303                   ((SETQ CUR ($LEFT C))
+304                    (RPLACD ($CURLOC CUR) NIL)
+305                    (RETURN ($RIGHT CUR)))
+306                   ((SETQ CUR ($UP C))
+307                    (RPLACA ($CURLOC CUR) NIL)
+308                    (RETURN CUR)))
+309                  (RETURN NIL)))))
+310              EXPR)
+311
+312             (DEFPROP $OPER
+313              (LAMBDA (OP N)
+314               (PROG (CUR)
+315                     (SETQ CUR $CURSOR)
+316                LOOP (COND ((AND (*GREAT (SETQ N
+317                                               (SUB1 N))
+318                                         -1)
+319                                 (SETQ CUR (OP CUR)))
+320                            (SETQ $CURSOR CUR)
+321                            (GO LOOP)))
+322                      (RETURN ($CURLOC $CURSOR))))
+323              EXPR)
+324
+325             (DEFPROP $R
+326                      (LAMBDA (L)
+327                              ($OPER (Q $RIGHT)
+328                                     (COND (L (CAR L))
+329                                           (1))))
+330                      FEXPR)
+331
+332             (DEFPROP $L
+333                      (LAMBDA (L)
+334                              ($OPER (Q $LEFT)
+335                              (COND (L (CAR L))
+336                                   (1))))
+337                      FEXPR)
+338
+339             (DEFPROP $D
+340                      (LAMBDA (L)
+341                              ($OPER (Q $DOWN)
+342                              (COND (L (CAR L))
+343                                    (1))))
+344                      FEXPR)
+345
+346             (DEFPROP $U
+347                      (LAMBDA (L)
+348                              ($OPER (Q $UP)
+349                              (COND (L (CAR L))
+350                                    (1))))
+351                      FEXPR)
+352
+353             (DEFPROP $K
+354                      (LAMBDA (L)
+355                              ($OPER (Q $KILL)
+356                              (COND (L (CAR L))
+357                                    (1))))
+358                      FEXPR)
+359

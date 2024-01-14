@@ -1,0 +1,51 @@
+GS7     GJS     16:40:30        APRIL 25,1968
+
+
+
+LLL                     IIIIIIIII            SSSSSSSSS         PPPPPPPPPPPP
+LLL                     IIIIIIIII            SSSSSSSSS         PPPPPPPPPPPP
+LLL                     IIIIIIIII            SSSSSSSSS         PPPPPPPPPPPP
+LLL                        III            SSS         SSS      PPP         PPP
+LLL                        III            SSS         SSS      PPP         PPP
+LLL                        III            SSS         SSS      PPP         PPP
+LLL                        III            SSS                  PPP         PPP
+LLL                        III            SSS                  PPP         PPP
+LLL                        III            SSS                  PPP         PPP
+LLL                        III               SSSSSSSSS         PPPPPPPPPPPP
+LLL                        III               SSSSSSSSS         PPPPPPPPPPPP
+LLL                        III               SSSSSSSSS         PPPPPPPPPPPP
+LLL                        III                        SSS      PPP
+LLL                        III                        SSS      PPP
+LLL                        III                        SSS      PPP
+LLL                        III            SSS         SSS      PPP
+LLL                        III            SSS         SSS      PPP
+LLL                        III            SSS         SSS      PPP
+LLLLLLLLLLLLLLL         IIIIIIIII            SSSSSSSSS         PPP
+LLLLLLLLLLLLLLL         IIIIIIIII            SSSSSSSSS         PPP
+LLLLLLLLLLLLLLL         IIIIIIIII            SSSSSSSSS         PPP
+
+GS7     GJS     16:40:30        APRIL 25,1968
+
+
+
+TTTTTTTTTTTTTTT      EEEEEEEEEEEEEEE         CCCCCCCCC            OOOOOOOOO            SSSSSSSSS         MMM         MMM
+TTTTTTTTTTTTTTT      EEEEEEEEEEEEEEE         CCCCCCCCC            OOOOOOOOO            SSSSSSSSS         MMM         MMM
+TTTTTTTTTTTTTTT      EEEEEEEEEEEEEEE         CCCCCCCCC            OOOOOOOOO            SSSSSSSSS         MMM         MMM
+      TTT            EEE                  CCC         CCC      OOO         OOO      SSS         SSS      MMMMMM   MMMMMM
+      TTT            EEE                  CCC         CCC      OOO         OOO      SSS         SSS      MMMMMM   MMMMMM
+      TTT            EEE                  CCC         CCC      OOO         OOO      SSS         SSS      MMMMMM   MMMMMM
+      TTT            EEE                  CCC                  OOO         OOO      SSS                  MMM   MMM   MMM
+      TTT            EEE                  CCC                  OOO         OOO      SSS                  MMM   MMM   MMM
+      TTT            EEE                  CCC                  OOO         OOO      SSS                  MMM   MMM   MMM
+      TTT            EEEEEEEEEEEE         CCC                  OOO         OOO         SSSSSSSSS         MMM         MMM
+      TTT            EEEEEEEEEEEE         CCC                  OOO         OOO         SSSSSSSSS         MMM         MMM
+      TTT            EEEEEEEEEEEE         CCC                  OOO         OOO         SSSSSSSSS         MMM         MMM
+      TTT            EEE                  CCC                  OOO         OOO                  SSS      MMM         MMM
+      TTT            EEE                  CCC                  OOO         OOO                  SSS      MMM         MMM
+      TTT            EEE                  CCC                  OOO         OOO                  SSS      MMM         MMM
+      TTT            EEE                  CCC         CCC      OOO         OOO      SSS         SSS      MMM         MMM
+      TTT            EEE                  CCC         CCC      OOO         OOO      SSS         SSS      MMM         MMM
+      TTT            EEE                  CCC         CCC      OOO         OOO      SSS         SSS      MMM         MMM
+      TTT            EEEEEEEEEEEEEEE         CCCCCCCCC            OOOOOOOOO           SSSSSSSSS          MMM         MMM
+      TTT            EEEEEEEEEEEEEEE         CCCCCCCCC            OOOOOOOOO           SSSSSSSSS          MMM         MMM
+      TTT            EEEEEEEEEEEEEEE         CCCCCCCCC            OOOOOOOOO           SSSSSSSSS          MMM         MMM

@@ -1,0 +1,60 @@
+360             (DEFPROP $INSERT
+361              (LAMBDA (S C)                                                        PAGE 1.6
+362               (COND
+363                ((NULL C)
+364                 ($RIGHT ($DOWN (LIST (LIST (LIST S))))))
+365                (($CURCON C)
+366                 (COND
+367                  (($CURLOC C)
+368                   (RPLACA
+369                    (RPLACD ($CURLOC C)
+370                            (CONS (CAR ($CURLOC C))
+371                                  (CDR ($CURLOC C))))
+372                    S)
+373                   ($RIGHT C))
+374                  ((SETQ C ($LEFT C))
+375                   (RPLACD ($CURLOC C) (LIST S))
+376                   ($RIGHT ($RIGHT C)))))))
+377              EXPR)
+378
+379             (DEFPROP $S1
+380                      (LAMBDA (CMS C)
+381                              (COND ((OR (NULL CMS)
+382                                         (NULL C))
+383                                     C)
+384                                    (((CAR CMS) (CDR CMS)
+385                                                C))))
+386                      EXPR)
+387
+388             (DEFPROP $ATM
+389                      (LAMBDA (CMS C)
+390                     (COND  ((AND ($CURLOC C)
+391                                   (EQUAL (CAR CMS)
+392                                          ($CUREXPR C)))
+393                                   ($S1 (CDR CMS)
+394                                        ($RIGHT C)))))
+395                      EXPR)
+396
+397             (DEFPROP $LPR
+398                      (LAMBDA (CMS C)
+399                              ($S1 CMS ($DOWN C)))
+400                      EXPR)
+401
+402             (DEFPROP $RPR
+403              (LAMBDA (CMS C)
+404                      (COND ((NOT ($RIGHT C))
+405                           ($S1 CMS ($RIGHT ($UP C))))))
+406                      EXPR)
+407
+408             (DEFPROP $SEARCH2
+409              (LAMBDA (CMS C)
+410               (PROG ($C1)
+411                A    (COND ((SETQ C
+412                                  ($S1 CMS (SETQ $1 ))))
+413                           ((SETQ C ($DOWN $C1)) (GO A))
+414                           ((SETQ C ($RIGHT $C1)) (GO A))
+415                           ((SETQ C ($RIGHT ($UP $C1)))
+416                            (GO A)))
+417                     (RETURN C)))
+418              EXPR)
+419
