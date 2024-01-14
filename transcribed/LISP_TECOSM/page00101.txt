@@ -1,0 +1,60 @@
+060                                                        (LIST (QUOTE VALUE) (QUOTE OF) X)))
+061                                            (SUBST W X (QUOTE (RETURN (PRINT /-B))))))))     PAGE 1.1
+062                                   (CDR X))))))
+063                              (GO B)))
+064              FEXPR)
+065
+066             (DEFPROP UNTRACE
+067              (LAMBDA (L)
+068               (PROG (X Y)
+069                B    (COND ((NULL L) (RETURN Y)))
+070                     (SETQ X (CAR L))
+071                C    (COND ((NULL (CDR X)) (GO D))
+072                           ((EQ (QUOTE TRACE) (CADR X))
+073                            (RPLACD X (CDR (CDDR (CDR X)))))
+074                           ((SETQ X (CDDR X)) (GO C)))
+075                     (SETQ Y (CONS (CAR L) Y))
+076                D    (SETQ L (CDR L))
+077                     (GO B)))
+078              FEXPR)
+079
+080
+081
+082             ((LAMBDA (IBASE) (MAPCAR (FUNCTION (LAMBDA (L) (EVAL (CONS (QUOTE DEFPROP) L)))) (EVAL (READ)))) (SETQ L
+083
+084             ((LAMBDA (G F) (PROG2 (G (QUOTE /       ) 17) (READ) (G (QUOTE / ) 7)))
+085              (FUNCTION (LAMBDA (L N) (EQ (EVAL (LIST (QUOTE ARRAY) L T N)) (F N))))
+086              (FUNCTION (LAMBDA (N) (AND (NOT (MINUSP N))
+087                                         (APPEND (GET L (QUOTE PNAME))
+088                                                 (CADDR (STORE (L N) (LIST (CAR T) (QUOTE PNAME) (F (SUB1 N))))))))))
+089
+090             ((EDIT (LAMBDA (L) (PROG2 (PUTPROP (CADDR L) (SUBST (CAR L) (CADR L) (CADDR (SETQ L (CADDR L)))) (CADR L
+091              (GRINDEF
+092               (LAMBDA (L)
+093                       (ERR ((LAMBDA (H)
+094                                     (MAPC (FUNCTION (LAMBDA (C)
+095                                                             (COND ((ATOM C)
+096                                                                    (MAPC (FUNCTION (LAMBDA (F)
+097                                                                                            (AND (SETQ L (GET C F))
+098                                                                                                 (TURPRI)
+099                                                                                                 (TURPRI)
+100                                                                                                 (SPRINT (LIST (QUOTE
+101                                                                                                         LINEL
+102                                                                                                         0))))
+103                                                                          H))
+104                                                                   ((SETQ H (APPEND C H))))))
+105                                          L))
+106                            (QUOTE (EXPR FEXPR VALUE MACRO)))))
+107              FEXPR)
+108             (TURPRI (LAMBDA NIL (PROG2 (TERPRI) (SETQ LINCT (REMAINDER (PLUS 72 LINCT) 74)))) EXPR)
+109             (SPRINT (LAMBDA (L N M)
+110                             (PROG (F G H)
+111                                   (AND (LESSP N CHRCT)
+112                                        (PRINC (/    (*DIF (LSH (*DIF LINEL N) -3) (LSH (*DIF LIEL CHRCT) -3))))
+113                                        (PRINC (/  (*DIF CHRCT N))))
+114                                   (AND (OR (LESSP (PLUS N -1 (FLATSIZE L)) CHRCT) (ATOM L)) (RETURN (PRINT1 L)))
+115                                   (SETQ F (EQ (CAR L) (QUOTE PROG)))
+116                                   (PRINC (QUOTE /())
+117                                          (ERRSET(AND (NOT(ATOM(CDR L)))
+118                                               (SETQ N (MAXPAN (CDR L) (DIFFERENCE CHRCT (FLATSIZE (CAR L)) 1)))
+119                                               (OR (ATOM (CAR L)) (NOT (LESSP (MAXPAN (CDR L) CHRCT) N)))

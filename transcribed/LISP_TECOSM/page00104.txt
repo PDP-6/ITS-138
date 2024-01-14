@@ -1,0 +1,60 @@
+240                      MACRO)
+241                                                                                   PAGE 1.4
+242             (DEFPROP $CUREXPR
+243                      (LAMBDA (L)
+244                              (CONS (Q CAAR) (CDR L)))
+245                      MACRO)
+246
+247             (DEFPROP $CURCON
+248                      (LAMBDA (L) (CONS (Q CDR) (CDR L)))
+249                      MACRO)
+250
+251             (DEFPROP $RIGHT
+252              (LAMBDA (C)
+253                      (COND ((AND C ($CURLOC C))
+254                             (CONS ($CURCON ($CURLOC C))
+255                                   ($CURCON C)))))
+256              EXPR)
+257
+258             (DEFPROP $LEFT
+259              (LAMBDA (C)
+260               (PROG
+261                (R S)
+262                (COND ((EQ (SETQ S
+263                                 ($CUREXPR ($CURCON C)))
+264                            (SETQ R ($CURLOC C)))
+265                       (RETURN NIL)))
+266             LOOP
+267                (COND ((EQ ($CURCON S) R)
+268                       (RETURN (CONS S ($CURCON C)))))
+269                (SETQ Q (CDR S))
+270                (GO LOOP)))
+271              EXPR)
+272
+273             (DEFPROP $down
+274              (LAMBDA (C)
+275               (COND
+276                ((AND C
+277                      ($CURLOC C)
+278                      (NOT (ATOM ($CUREXPR C))))
+279                 (CONS ($CUREXPR C) C))))
+280              EXPR)
+281
+282             (DEFPROP $UP
+283              (LAMBDA (C)
+284               (COND ((NULL C) NIL)
+285                     (((LAMBDA (X)
+286                               (COND ((AND X ($CURCON X))
+287                                      X)))
+288                       ($CURCON C)))))
+289              EXPR)
+290
+291             (DEFPROP $KILL
+292              (LAMBDA (C)
+293               (COND
+294                (($CURLOC C)
+295                 (PROG
+296                  (CUR)
+297                  (COND
+298                   (($CURLOC (SETQ CUR ($RIGHT C)))
+299                    (RPLACD (RPLACA ($CURLOC C)

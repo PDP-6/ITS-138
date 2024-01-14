@@ -1,0 +1,60 @@
+180               (COND ((GET (QUOTE COMPILING) (QUOTE NOW))
+181                (SETQ $COUNT 0)                                                   PAGE 1.3
+182                      (DEFPROP GENSYM
+183                       (LAMBDA NIL
+184                        (MAKNAM
+185                         (APPEND
+186                          (EXPLODE (Q $))
+187                          (EXPLODE (SETQ $COUNT
+188                                          (ADD1 $COUNT))))))
+189                       EXPR)
+190                       (SPECIAL
+191               $CURSOR $C1 $IND $OB
+192                $AM $VT $FF $CL  $LP $RP $SP $PT $H $CR
+193                $LF $CH $TB $RO $CO)))
+194
+195               (DEFPROP MCONS
+196                (LAMBDA (L)
+197                        (COND ((NULL (CDDR L)) (CADR L))
+198                              (T (LIST (Q CONS)
+199                                       (CADR L)
+200                                       (CONS (CAR L)
+201                                             (CDDR L))))))
+202                MACRO)
+203
+204              (DEFPROP Q
+205                       (LAMBDA (L) (CONS (QUOTE QUOTE)
+206                                         (CDR L)))
+207                       MACRO)
+208
+209              (MAPC
+210               (FUNCTION
+211                (LAMBDA (X)
+212                 (SET
+213                  (CAR X)
+214                  (INTERN
+215                   (LIST (CAR NIL)
+216                         (Q PNAME)
+217                         (LIST (CDDR (LSH (CADR X)
+218                                          35))))))))
+219               (Q (($TB 11) ($LF 12)
+220                           ($VT 13)
+221                           ($FF 14)
+222                           ($CR 15)
+223                           ($RO 177)
+224                           ($SP 40)
+225                           ($CO 54)
+226                           ($LP 50)
+227                           ($RP 51)
+228                           ($PT 56)
+229                           ($AM 33)
+230                           ($SL 57))))
+231
+232               (SETQ $CURSOR NIL)
+233
+234               (ARRAY $LOCAR T 10)
+235
+236               (ARRAY $CONDAR T 10)
+237
+238               (DEFPROP $CURLOC
+239                        (LAMBDA (L) (CONS (Q CAR) (CDR L)))

@@ -1,0 +1,22 @@
+600                                (CADR L))
+601                               (T))))                                              PAGE 1.10
+602                      FEXPR)
+603
+604             (DEFPROP $LISP
+606              (LAMBDA (NO)
+607               (PROG (EX)
+608                (PRINT (Q BREAK))
+609                (PRIN1 ($CUREXPR $CURSOR))
+610                LOOP
+611                (TERPRI)
+612                (SETQ EX (ERRSET (READ)))
+613                (COND ((NULL EX) (GO LOOP)))
+614                (SETQ EX (CAR EX))
+615                (SETQ EX (ERRSET (EVAL EX)))
+616                (COND ((NULL EX) (GO LOOP)))
+617                (PRINC $SP)
+618                (PRIN1 (CAR EX))
+619                (GO LOOP)))
+620              EXPR)
+621
+622             (DEFPROP $P (LAMBDA () (RETURN NIL)) EXPR)
