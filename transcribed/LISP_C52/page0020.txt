@@ -1,0 +1,57 @@
+001             (DEFPROP COMPILE                                                      PAGE 2
+002              (LAMBDA (L)
+003                (PROG (DATA)
+004                      (SETQ
+005                       DATA
+006                       (MAPCAR (FUNCTION (LAMBDA (J)
+007                                                 (COND ((SETQ DATA
+008                                                              (GETL J (QUOTE (EXPR FEXPR))))
+009                                                        (COM2 J (CAR DATA) (CADR DATA))))))
+010                               L))
+011                      (IOC TV)
+012                      (RETURN DATA)))
+013              FEXPR)
+014
+015             (DEFPROP CMP
+016                      (LAMBDA (X) (PROG NIL
+017                                        (PUTPROP (QUOTE TRY) (CAR X) (QUOTE EXPR))
+018                                        (RETURN (COMPILE TRY))))
+019                      FEXPR)
+020
+021             (DEFPROP COM2
+022                      (LAMBDA (NAME FLAG EXP)
+023                              (PROG (LOUT SCNT SPVARS LOCVARS CNT LSUBRF)
+024                                    (COND ((EQ FLAG (QUOTE EXPR)) (SETQ FLAG (QUOTE SUBR)))
+025                                          ((EQ FLAG (QUOTE FEXPR))
+026                                           (SETQ FLAG (QUOTE FSUBR))))
+027                                    (SETQ EXP (P1A EXP))
+028                                    (SETQ DATA NIL)
+029                                    (SETQ LOUT (LIST (QUOTE LAP) NAME FLAG))
+030                                    (SETQ SCNT CNT)
+031                                    (PHASE2 EXP)
+032                                    (OUTPUT (OUTPUT NIL))
+033                                    (TERPRI)
+034                                    (TERPRI)
+035                                    (TYO 14)
+036                                    (COND ((NOT (EQUAL CNT SCNT)) (PRINTTY (LIST SCNT CNT))))
+037                                    (RETURN NAME)))
+038                      EXPR)
+039
+040             (DEFPROP CMP1
+041                      (LAMBDA NIL
+042                              (PROG (X FL DATA)
+043                               A    (COND ((EQ T (SETQ DATA (READ))) (RETURN T))
+044                                          ((AND (EQ (CAR DATA) (QUOTE DEFPROP))
+045                                                (SETQ X (ASSOC (SETQ FL (CADDDR DATA))
+046                                                               (QUOTE ((EXPR . *EXPR)
+047                                                                       (FEXPR . *FEXPR))))))
+048                                           (PUTPROP (CADR DATA) T (CDR X))
+049                                           (COM2 (SETQ X (CADR DATA)) FL (CADDR DATA))
+050                                           (PRINTTY X))
+051                                          ((AND (EQ (CAR DATA) (QUOTE DEFPROP))
+052                                                (EQ (CADDDR DATA) (QUOTE MACRO)))
+053                                           (EVAL DATA)
+054                                           (PRINT DATA))
+055                                          (T (PRINT DATA)))
+056                                    (GO A)))
+057                      EXPR)

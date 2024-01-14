@@ -1,0 +1,42 @@
+001             (DEFPROP RESTORE                                                      PAGE 6
+002              (LAMBDA (X)
+003               (PROG (C V R TEM)
+004                     (COND ((NULL X) (RETURN NIL))
+005                     ((GREATERP (LENGTH X) (LENGTH SLOTLIST))
+006                       (PRINTTY (LIST X SLOTLIST))
+007                     (BARF RESTORE LOSSAGE)))
+008                A1   (SETQ C 0)
+009                A    (COND ((EQUAL (LENGTH X) (LENGTH SLOTLIST)) (RETURN (R1 C)))
+010                           ((DVP (SETQ R (CAR (NACS1)))) (GO CPP)))
+011                     (SETQ C (ADD1 C))
+012                     (SPOP)
+013                     (GO A)
+014                CPP  (R1 C)
+015                CPP1 (SETQ V (CDDDDR (CDR X)))
+016                     (SETQ C NACS)
+017                CPP3 (COND
+018                      ((NULL V) (OPOP (SETQ V (FREAC))) (CONT V R) (GO A1))
+019                      ((AND (CAR V)
+020                            (EQ (CAAR V) (CAR R))
+021                            (NOT (DVP (CONTENTS (SETQ TEM
+022                                                      (PLUS (MINUS C)
+023                                                            NACS
+024                                                            (LENGTH X)
+025                                                            (MINUS (LENGTH SLOTLIST))))))))
+026                       (GO CPP2)))
+027                     (SETQ C (ADD1 C))
+028                     (SETQ V (CDR V))
+029                     (GO CPP3)
+030                CPP2 (CONT TEM R)
+031                     (OPOP TEM)
+032                     (GO A1)))
+033              EXPR)
+034
+035             (DEFPROP R1
+036                      (LAMBDA (C) (COND ((NULL (ZEROP C))
+037                                         (OUTPUT (LIST (QUOTE SUB)
+038                                                       (QUOTE P)
+039                                                       (LIST (QUOTE C) 0 0 C C))))))
+040                      EXPR)
+041
+042             (DEFPROP BARF (LAMBDA (L) (PROG2 (PRINTTY L) (IOC G))) FEXPR)

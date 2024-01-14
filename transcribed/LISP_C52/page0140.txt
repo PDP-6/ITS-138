@@ -1,0 +1,60 @@
+001             (DEFPROP CARCDR                                                       PAGE 14
+002              (LAMBDA (ITEM AC)
+003               (PROG (T3 T4 T5)
+004                     (COND ((SETQ T5 (EQ (ILOC1 (SETQ T3 (CDDR ITEM)) AC) AC)) (REMOVE T3)))
+005                     (COND ((OR (NULL T5) (DVP (CONTENTS AC))) (CPUSH AC)))
+006                     (REMOVE T3)
+007                     (SETQ T4 (CSTEP (CADR ITEM) AC (LOC T3)))
+008                     (REMOVE T3)
+009                     (COND ((NULL (CDR T4))
+010                            (SETQ VL (CONS (CONS (CAR (CONTENTS (CAR T4))) (CAR ITEM)) VL))
+011                            (RETURN (CAR T4))))
+012                     (SETQ T4 (REVERSE T4))
+013                L1   (COND ((NULL (CDR T4)) (GO RET))
+014                           ((EQ (LENGTH T4) 2) (GO L2))
+015                           ((AND (EQ AC 1) (EQ (CAR T4) 1))
+016                            (OUTPUT (LIST (QUOTE CALL)
+017                                          1
+018                                          (LIST (QUOTE E)
+019                                                (READLIST (CONS (QUOTE C)
+020                                                                (NCONC (REVERSE (CDR T4))
+021                                                                       (QUOTE (4))))))))
+022                            (GO RET)))
+023                L2   (OUT1 (GET (CADR T4) (QUOTE INST)) AC (CAR T4))
+024                     (SETQ T4 (CONS AC (CDDR T4)))
+025                     (GO L1)
+026                RET  (CONT AC (LIST (CAR ITEM)))
+027                     (RETURN AC)))
+028              EXPR)
+029
+030             (DEFPROP CSTEP
+031                      (LAMBDA (FUN AC LARGS)
+032                              (PROG (T2)
+033                                    (RETURN (COND ((NULL FUN) (LIST LARGS))
+034                                                  ((SETQ T2 (COPT FUN LARGS)) (LIST T2))
+035                                                  (T (CONS (CAR (SETQ T2 (GET FUN
+036                                                                              (QUOTE OPEN))))
+037                                                           (CSTEP (CDR T2) AC LARGS)))))))
+038                      EXPR)
+039
+040             (DEFPROP COPT
+041                      (LAMBDA (X Y) (PROG (TEM T1)
+042                                          (SETQ TEM SPLDLST)
+043                                     L    (COND ((NULL TEM) (RETURN NIL))
+044                                                ((ATOM (CDAR TEM)) (GO L1))
+045                                                ((AND (EQ X (CADAR TEM))
+046                                                      (EQUAL (ILOC (CDDAR TEM)) Y)
+047                                                      (SETQ T1 (ILOC (LIST (CAAR TEM)))))
+048                                                 (RETURN T1)))
+049                                     L1   (SETQ TEM (CDR TEM))
+050                                          (GO L)))
+051                      EXPR)
+052
+053             (DEFPROP PHASE2
+054                      (LAMBDA (X)
+055                              (PROG (SLOTLIST LDLST
+056                                              SPFL
+057                                              FL
+058                                              ARGNO
+059                                              SFLG
+060                                              PVRL

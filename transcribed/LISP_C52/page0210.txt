@@ -1,0 +1,60 @@
+001             (DEFPROP PLOC                                                         PAGE 21
+002              (LAMBDA (IVAR NO)
+003                      (RPLACD (SASSOC IVAR
+004                                      LOCVARS
+005                                      (FUNCTION (LAMBDA NIL (CAR (SETQ LOCVARS
+006                                                                       (CONS (LIST IVAR)
+007                                                                             LOCVARS))))))
+008                              NO))
+009              EXPR)
+010
+011             (DEFPROP PRINTTY
+012                      (LAMBDA (DATA) (IOG NIL (FUNCTION (LAMBDA NIL (PRINT DATA)))))
+013                      EXPR)
+014
+015             (DEFPROP DOCOND
+016                      (LAMBDA (EXP AC)
+017                              (PROG (G1 G2 H1 H2 T1 RSL IRSSL JSP CTAG TEM)
+018                                    (PUTPROP (SETQ G1 (GENSYM))
+019                                             (SETQ IRSSL (APPEND SLOTLIST NIL))
+020                                             (QUOTE LEVEL))
+021                               A    (SETQ JSP T)
+022                                    (SETQ RSL NIL)
+023                                    (COND ((NULL EXP) (COND (T1 (OUT1 (QUOTE MOVEI)
+024                                                                      AC
+025                                                                      (QUOTE (QUOTE NIL)))))
+026                                                      (OUTTAG G1)
+027                                                      (CLRACS)
+028                                                      (RESTORE IRSSL)
+029                                                      (RETURN NIL))
+030                                          ((NULL (CDAR EXP))
+031                                           (LOAD1 AC (COMP (CAAR EXP)))
+032                                           (COND ((CDR EXP) (OUTJ (QUOTE JUMPN) AC G1))
+033                                                 (T (RESTORE IRSSL)))
+034                                           (GO B))
+035                                          ((AND (EQUAL (CDAR EXP) (QUOTE ((QUOTE NIL))))
+036                                                (EQ (CAAAR EXP) (QUOTE NULL))
+037                                                (OR (ATOM (CADAAR EXP))
+038                                                    (NOT (MEMBER (CAR (CADAAR EXP))
+039                                                                 (QUOTE (AND OR
+040                                                                             NULL
+041                                                                             EQ
+042                                                                             ZEROP))))))
+043                                           (LOAD1 AC (COMP (CADAAR EXP)))
+044                                           (OUTJ (QUOTE JUMPE) AC G1)
+045                                           (SETQ T1 T)
+046                                           (GO D))
+047                                          ((OR LDLST(CDDAR EXP)) (GO L2))
+048                                          ((AND(EQ (CAADAR EXP) (QUOTE GO))
+049                             (ATOM (SETQ T1 (CADADR (CAR EXP)))))
+050                                           (BOOL1 (CAAR EXP) (ADR T1) T)
+051                                           (GO B))
+052                                          ((EQUAL (CADAR EXP) (QUOTE (RETURN (QUOTE NIL))))
+053                                           (BOOL1 (CAAR EXP) EXITN T)
+054                                           (GO B)))
+055                               L2   (SETQ JSP (NOT (OR (EQ (SETQ H2 (CAAR (LAST (CAR EXP))))
+056                                                           (QUOTE RETURN))
+057                                                       (EQ H2 (QUOTE GO)))))
+058                                    (PUTPROP (SETQ G2 (SETQ CTAG (GENSYM)))
+059                                             IRSSL
+060                                             (QUOTE LEVEL))

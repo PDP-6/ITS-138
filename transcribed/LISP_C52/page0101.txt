@@ -1,0 +1,48 @@
+061                                        ((GETL (CAR X) (QUOTE (EXPR SUBR *EXPR))))       PAGE 10.1
+062                                        ((MEMBER (CAR X) (QUOTE (STORE NSTORE)))
+063                                         (SETQ Z (P1 (CADDR X)))
+064                                         (RETURN (LIST (CAR X) (P1 (CADR X)) Z)))
+065                                        ((GETL (CAR X) (QUOTE (FEXPR FSUBR *FEXPR))) (RETURN X))
+066                                        ((OR (GET (CAR X) (QUOTE SPECIAL)) (MEMBER (CAR X) BVARS))
+067                                         (SETQ X (CONS (P1 (CAR X)) (CDR X)))))
+068                                  (SETQ Z (MAPCAR (FUNCTION P1) (CDR X)))
+069                                  (COND ((AND (EQ (CAR X) (QUOTE EVAL))
+070                                              (NOT (CDDR X))
+071                                              (EQ (CAAR Z) (QUOTE CONS))
+072                                              (EQ (CAADAR Z) (QUOTE QUOTE))
+073                                              (GETL (SETQ TEM (CADADR (CAR Z)))
+074                                                    (QUOTE (FEXPR FSUBR *FEXPR))))
+075                                         (RETURN (CONS (CONS TEM (QUOTE SUBR)) (CADDAR Z)))))
+076                             C    (RETURN (CONS (CAR X) Z))
+077                             P1SETQ
+078                                  (VARB (SETQ Y (COND ((SETQ Z (ASSOC (CADR X) RNL)) (CDR Z))
+079                                                      (T (CADR X)))))
+080                                  (SETQ P1SCV (CONS Y P1SCV))
+081                                  (SETQ Z (P1 (CADDR X)))
+082                                  (SETQ CNT (ADD1 CNT))
+083                                  (RETURN (LIST (CAR X) Y Z))
+084                             P1COND
+085                                  (SETQ TEM LOCVARS)
+086                                  (SETQ Y CNT)
+087                                  (SETQ Z (P1CDC (CDR X)))
+088                             AOS  (SETQ CNT (ADD1 CNT))
+089                                  (P1BUG Y CNT TEM)
+090                                  (SETQ CNT (ADD1 CNT))
+091                                  (GO C)))
+092              EXPR)
+093
+094             (DEFPROP P1CDC
+095                      (LAMBDA (X) (PROG (P1SCV T1)
+096                                        (SETQ T1
+097                                              (MAPCAR (FUNCTION (LAMBDA (J)
+098                                                                        (MAPCAR (FUNCTION P1)
+099                                                                                J)))
+100                                                      X))
+101                                        (RETURN (CONS P1SCV T1))))
+102                       EXPR)
+103
+104             (DEFPROP GFY
+105                      (LAMBDA (Y) (COND ((ATOM X) X) (T (COM2 (GENSYM) (QUOTE EXPR) X))))
+106                      EXPR)
+107
+108             (DEFPROP P1PSTP (LAMBDA NIL (COND ((ZEROP P1SCNT) (SETQ P1SCNT P1STCNT)))) EXPR)

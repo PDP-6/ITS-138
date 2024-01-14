@@ -1,0 +1,27 @@
+001             (DEFPROP COMARG                                                       PAGE 20
+002                      (LAMBDA (Y)
+003                              (PROG NIL
+004                                    (COND ((EQ (CAR Y) (QUOTE QUOTE))
+005                                           (OUT1 (QUOTE MOVE) NO (INDEX))
+006                                           (RETURN (OUTPUT (LIST (QUOTE HRRZ) NO Y NO)))))
+007                                    (LOAD1 NO Y)
+008                                    (OUT1 (QUOTE ADD) NO (INDEX))
+009                                    (RETURN (OUTPUT (LIST (QUOTE HRRZ) NO 0 NO)))))
+010                      EXPR)
+011
+012             (DEFPROP INDEX (LAMBDA NIL (PLUS (MINUS (LENGTH SLOTLIST)) NACS -1)) EXPR)
+013
+014             (DEFPROP FIND
+015                      (LAMBDA (X) (PROG (ZZ)
+016                                        (SETQ ZZ SLOTLIST)
+017                                        (COND ((GREATERP X 0) (GO LP3)))
+018                                        (SETQ X (PLUS 1 NACS (MINUS X)))
+019                                   LP3  (SETQ X (SUB1 X))
+020                                        (COND ((ZEROP X) (RETURN ZZ)))
+021                                        (SETQ ZZ (CDR ZZ))
+022                                        (GO LP3)))
+023                      EXPR)
+024
+025             (DEFPROP SPUSH (LAMBDA NIL (RPLACD (NACS1) (CONS NIL (CDR (NACS1))))) EXPR)
+026
+027             (DEFPROP SPOP (LAMBDA NIL (RPLACD (NACS1) (CDDR (NACS1)))) EXPR)

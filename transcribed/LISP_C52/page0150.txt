@@ -1,0 +1,44 @@
+001             (DEFPROP LMB                                                          PAGE 15
+002                      (LAMBDA (X Y) (PROG (ACN SFLG1 TEM)
+003                                          (SETQ ACN 1)
+004                                     A    (COND ((NULL X) (RETURN SFLG1))
+005                                                ((SPECIALP (CAR X)) (GO SP1))
+006                                                ((SETQ TEM (ASSOC (CAR X) LOCVARS)) (GO LV1))
+007                                                (T (GO SP2)))
+008                                     LV1  (COND (Y (CONT ACN (LIST (CAR X)))))
+009                                     SP2  (SETQ ACN (ADD1 ACN))
+010                                          (SETQ X (CDR X))
+011                                          (GO A)
+012                                     SP1  (COND ((NULL SFLG) (GO B)))
+013                                          (OUTPUT (LIST 0
+014                                                        (COND (Y ACN) (T 0))
+015                                                        (LIST (QUOTE SPECIAL) (CAR X))))
+016                                          (GO LV1)
+017                                     B    (SETQ SFLG (SETQ SFLG1 T))
+018                                          (OUTPUT (QUOTE (JSP 6 SPECBIND)))
+019                                          (GO A)))
+020                      EXPR)
+021
+022             (DEFPROP CONT (LAMBDA (X Y) (RPLACA (FIND X) Y)) EXPR)
+023
+024             (DEFPROP CONTENTS (LAMBDA (X) (CAR (FIND X))) EXPR)
+025
+026             (DEFPROP OUTPUT
+027                      (LAMBDA (X) (PROG2 (COND ((NOT (EQ LOUT (QUOTE FOO))) (PRINT LOUT)))
+028                                         (SETQ LOUT X)))
+029                      EXPR)
+030
+031             (DEFPROP OUT1
+032                      (LAMBDA (A B C)
+033                              (OUTPUT (CONS (COND ((OR (ATOM C) (ATOM (CAR C))) A)
+034                                                  (T (SETQ C (CAR C))
+035                                                     (COND ((GET A (QUOTE IMMED)))
+036                                                           (T (SETQ C (LIST (QUOTE C) 0 0 C))
+037                                                              A))))
+038                                            (CONS B (CONS C (COND ((OR (NOT (NUMBERP C))
+039                                                                       (GREATERP C 0))
+040                                                                   NIL)
+041                                                                  ((QUOTE (P)))))))))
+042                      EXPR)
+043
+044             (DEFPROP ADD (LAMBDA (X Y) (COND ((MEMBER X Y) Y) (T (CONS X Y)))) EXPR)

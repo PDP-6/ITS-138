@@ -1,0 +1,5 @@
+001                                                                                   PAGE 1
+002
+003             (DEFPROP INCR
+004                      (LAMBDA (L) (LIST (QUOTE SETQ) (CADR L) (LIST (QUOTE ADD1) (CADR L))))
+005                      MACRO)

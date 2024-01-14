@@ -1,0 +1,52 @@
+061                                              SPLDLST                              PAGE 14.1
+062                                              RSL
+063                                              RSSL
+064                                              PROGSW
+065                                              VGOL
+066                                              GL
+067                                              CTAG
+068                                              VL
+069                                              HLAC)
+070                                    (SETQ HLAC -105105)
+071                                    (SETQ ARGNO 1)
+072                                    (SETQ CNT 1)
+073                                    (SETQ FL NACS)
+074                               L1   (COND ((ZEROP FL) (GO L2)))
+075                                    (SETQ SLOTLIST (CONS NIL SLOTLIST))
+076                                    (SETQ FL (SUB1 FL))
+077                                    (GO L1)
+078                               L2   (COND (LSUBRF (SETQ LOUT (SUBST (QUOTE LSUBR)
+079                                                                    (QUOTE SUBR)
+080                                                                    LOUT))
+081                                                  (OUTPUT (QUOTE (JSP 3 *LCALL))))
+082                                          ((AND (EQ (CADDR LOUT) (QUOTE FSUBR)) (CDADR X))
+083                                           (OUTPUT (QUOTE (PUSHJ P *AMAKE)))))
+084                                    (SETQ SPFL (LMB (CADR X) T))
+085                                    (COND ((NOT SPFL)) ((NOT (EQ (CAADDR X) (QUOTE PROG)))
+086                                                        (SETQ SFLG NIL)))
+087                                    (LOAD1 1 (COMP (CADDR X)))
+088                                    (COND ((SETQ FL (ASSOC (CAR LOUT)
+089                                                           (QUOTE ((PUSHJ . JRST)
+090                                                                   (CALL . JCALL)))))
+091                                           (SETQ ARGNO LOUT)
+092                                           (SETQ LOUT (QUOTE FOO))
+093                                           (NPDL)
+094                                           (OUTPUT ARGNO)
+095                                           (COND ((NOT SPFL)
+096                                                  (SETQ LOUT (CONS (CDR FL)
+097                                                                   (CONS (SUBST 0
+098                                                                                (QUOTE P)
+099                                                                                (CADR LOUT))
+100                                                                         (CDDR LOUT))))
+101                                                  (GO EXIT))))
+102                                          (T (NPDL) (COND ((NOT SPFL)
+103                                                           (OUTPUT (QUOTE (POPJ P)))
+104                                                           (GO EXIT)))))
+105                                    (OUTPUT (QUOTE (JRST 0 SPECSTR)))
+106                               EXIT (COND (VGOL (OUTG (CAR VGOL))
+107                                                (SETQ VGOL (CDR VGOL))
+108                                                (GO EXIT)))
+109                                    (RETURN (COND (LDLST (PRINTTY LDLST))))))
+110                      EXPR)
+111
+112             (DEFPROP NPDL (LAMBDA NIL (RESTORE (QUOTE (NIL NIL NIL NIL NIL)))) EXPR)

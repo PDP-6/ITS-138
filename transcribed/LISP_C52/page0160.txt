@@ -1,0 +1,54 @@
+001             (DEFPROP CPUSH                                                        PAGE 16
+002              (LAMBDA (X)
+003                      (PROG (Z ZZ ZZX LK)
+004                            (COND ((NULL (DVP (SETQ ZZX (CONTENTS X)))) (RETURN NILL))
+005                                  ((LESSP X 1) (GO NOSLOT1)))
+006                       A    (SETQ ZZ 0)
+007                            (SETQ Z (CDR (NACS1)))
+008                       A2   (COND ((NULL Z) (GO NOSLOT))
+009                                  ((DVP (CAR Z)))
+010                                  ((AND LK (OR (NOT (NUMBERP (CDAR Z))) (SPECIALP (CAAR Z))))
+011                                   (GO FNDSLOT))
+012                                  ((EQ (CAR ZZX) (CAAR Z)) (GO FNDSLOT)))
+013                            (SETQ Z (CDR Z))
+014                            (SETQ ZZ (SUB1 ZZ))
+015                            (GO A2)
+016                       FNDSLOT
+017                            (CONT ZZ ZZX)
+018                            (OUT1 (QUOTE MOVEM) X ZZ)
+019                       RET  (RETURN (CONT X (CONS (CAR ZZX) (QUOTE DJP))))
+020                       NOSLOT
+021                            (COND ((SETQ LK (NOT LK)) (GO A)))
+022                       NOSLOT1
+023                            (COND ((AND PROGSW (NOT (ASSOC (CAR ZZX) LOCVARS)))
+024                                   (SETQ Z (LENGTH SLOTLIST))
+025                                   (CPVRL)
+026                                   (COND ((LESSP X 1)
+027                                          (SETQ X
+028                                                (PLUS X
+029                                                      (DIFFERENCE Z (LENGTH SLOTLIST))))))))
+030                            (OPUSH X)
+031                            (CONT 0 ZZX)
+032                            (GO RET)))
+033              EXPR)
+034
+035             (DEFPROP SPECIALP (LAMBDA (X) (MEMBER X SPVARS)) EXPR)
+036
+037             (DEFPROP REMOVL
+038                      (LAMBDA (F VAR) (PROG NIL
+039                                            (SETQ VAR (GET VAR (QUOTE VALUE)))
+040                                       A    (COND ((NULL (CDR VAR)) (RETURN NIL))
+041                                                  ((F (CADR VAR)) (RPLACD VAR (CDDR VAR)))
+042                                                  (T (SETQ VAR (CDR VAR))))
+043                                            (GO A)))
+044                      EXPR)
+045
+046             (DEFPROP REMOVS (LAMBDA (DATA) (REMOVL (FUNCTION REM1) (QUOTE SPLDLST))) EXPR)
+047
+048             (DEFPROP REMOVE
+049                      (LAMBDA (DATA) (PROG NIL
+050                                           (REMOVL (FUNCTION REM1) (QUOTE LDLST))
+051                                           (REMOVL (FUNCTION REM1) (QUOTE SPLDLST))))
+052                      EXPR)
+053
+054             (DEFPROP REM1 (LAMBDA (X) (EQUAL X DATA)) EXPR)

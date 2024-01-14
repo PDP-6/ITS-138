@@ -1,0 +1,60 @@
+121             (DEFPROP MOVE MOVEI IMMED)                                            PAGE 21.2
+122
+123             (DEFPROP CAMN CAIN IMMED)
+124
+125             (DEFPROP CAME CAIE IMMED)
+126
+127             (DEFPROP CAR (A) OPEN)
+128
+129             (DEFPROP CDR (D) OPEN)
+130
+131             (DEFPROP CAAR (A . CAR) OPEN)
+132
+133             (DEFPROP CADR (A . CDR) OPEN)
+134
+135             (DEFPROP CDAR (D . CAR) OPEN)
+136
+137             (DEFPROP CDDR (D . CDR) OPEN)
+138
+139             (DEFPROP ADD1 3 ACS)
+140
+141             (DEFPROP SUB1 3 ACS)
+142
+143             (DEFPROP CONS XCONS COMMU)
+144
+145             (DEFPROP CONS 3 ACS)
+146
+147             (DEFPROP ATOM 1 ACS)
+148
+149             (DEFPROP NUMBERP 1 ACS)
+150
+151             (DEFPROP GENSYM 7 ACS)
+152
+153             (DEFPROP CAAAR (A . CAAR) OPEN)
+154
+155             (DEFPROP CAADR (A . CADR) OPEN)
+156
+157             (DEFPROP CADAR (A . CDAR) OPEN)
+158
+159             (DEFPROP CDAAR (D . CAAR) OPEN)
+160
+161             (DEFPROP CDADR (D . CADR) OPEN)
+162
+163             (DEFPROP CDDAR (D . CDAR) OPEN)
+164
+165             (DEFPROP CDDDR (D . CDDR) OPEN)
+166
+167             (DEFPROP CADDR (A . CDDR) OPEN)
+168
+169             (DEFPROP *PLUS *PLUS COMMU)
+170
+171             (DEFPROP EQUAL EQUAL COMMU)
+172
+173             (DEFPROP EQUAL 7 ACS)
+174
+175             (DEFPROP *TIMES *TIME COMMU)
+176
+177             (DEFPROP XCONS 3 ACS)
+178
+179             (DEFPROP NCONS 3 ACS)
+180

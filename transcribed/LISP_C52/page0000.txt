@@ -1,0 +1,51 @@
+GS9     GJS     16:40:30        APRIL 25,1968                                         PAGE 1
+
+
+
+LLL                     IIIIIIIII            SSSSSSSSS         PPPPPPPPPPPP
+LLL                     IIIIIIIII            SSSSSSSSS         PPPPPPPPPPPP
+LLL                     IIIIIIIII            SSSSSSSSS         PPPPPPPPPPPP
+LLL                        III            SSS         SSS      PPP         PPP
+LLL                        III            SSS         SSS      PPP         PPP
+LLL                        III            SSS         SSS      PPP         PPP
+LLL                        III            SSS                  PPP         PPP
+LLL                        III            SSS                  PPP         PPP
+LLL                        III            SSS                  PPP         PPP
+LLL                        III               SSSSSSSSS         PPPPPPPPPPPP
+LLL                        III               SSSSSSSSS         PPPPPPPPPPPP
+LLL                        III               SSSSSSSSS         PPPPPPPPPPPP
+LLL                        III                        SSS      PPP
+LLL                        III                        SSS      PPP
+LLL                        III                        SSS      PPP
+LLL                        III            SSS         SSS      PPP
+LLL                        III            SSS         SSS      PPP
+LLL                        III            SSS         SSS      PPP
+LLLLLLLLLLLLLLL         IIIIIIIII            SSSSSSSSS         PPP
+LLLLLLLLLLLLLLL         IIIIIIIII            SSSSSSSSS         PPP
+LLLLLLLLLLLLLLL         IIIIIIIII            SSSSSSSSS         PPP
+
+GS9     GJS
+
+
+
+   CCCCCCCCC         555555555555555         222222222
+   CCCCCCCCC         555555555555555         222222222
+   CCCCCCCCC         555555555555555         222222222
+CCC         CCC      555                  222         222
+CCC         CCC      555                  222         222
+CCC         CCC      555                  222         222
+CCC                  555555555555                     222
+CCC                  555555555555                     222
+CCC                  555555555555                     222
+CCC                              555               222
+CCC                              555               222
+CCC                              555               222
+CCC                              555            222
+CCC                              555            222
+CCC                              555            222
+CCC         CCC      555         555         222
+CCC         CCC      555         555         222
+CCC         CCC      555         555         222
+   CCCCCCCCC            555555555         222222222222222
+   CCCCCCCCC            555555555         222222222222222
+   CCCCCCCCC            555555555         222222222222222
