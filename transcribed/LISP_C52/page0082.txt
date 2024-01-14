@@ -1,0 +1,57 @@
+121                                                                                   PAGE 8.2
+122             (DEFPROP CSPLD3
+123                      (LAMBDA (DATA)
+124                              (REMOVL (FUNCTION (LAMBDA (L) (COND ((AND (NOT (ATOM (CDR L)))
+125                                                                        (NOT (ASSOC (CAR L)
+126                                                                             DATA)))
+127                                                                   (CSFUN L 1)
+128                                                                   NIL)
+129                                                                  (T NIL))))
+130                                      (QUOTE SPLDLST)))
+131                      EXPR)
+132
+133             (DEFPROP CSPLD1
+134                      (LAMBDA NIL (REMOVL (FUNCTION (LAMBDA (L)
+135                                                            (COND ((NOT (ATOM (CDR L))) NIL)
+136                                                                   (T (CSPVAR L) T))))
+137                                          (QUOTE SPLDLST)))
+138                      EXPR)
+139
+140             (DEFPROP CSPLD2
+141                      (LAMBDA (DATA LO)
+142                              (PROG NIL (REMOVL (FUNCTION (LAMBDA (L)
+143                                                                  (COND ((NOT (ATOM (CDR L)))
+144                                                                         (CSFUN L DATA)
+145                                                                         LO)
+146                                                                        (T (CSPVAR L) T))))
+147                                                (QUOTE SPLDLST))))
+148                      EXPR)
+149
+150             (DEFPROP CSFUN
+151                      (LAMBDA (L AC) (PROG (Y) (COND ((AND (SETQ Y (ASSOC (CAR L) LDLST))
+152                                                           (NOT (ILOC Y)))
+153                                                      (CARCDR L AC)))))
+154                      EXPR)
+155
+156             (DEFPROP CSPLD (LAMBDA NIL (CSPLD2 1 T)) EXPR)
+157
+158             (DEFPROP CSPVAR
+159                      (LAMBDA (L) (PROG NIL (COND ((NOT (NUMBERP (ILOC (CONS (CAR L) CNT))))
+160                                                   (OPUSHS (CAR L))
+161                                                   (CONT 0 (CONS (CAR L) CNT))))))
+162                      EXPR)
+163
+164             (DEFPROP P1A
+165                      (LAMBDA (X)
+166                              (PROG (Z BVARS RNL LL P1SCNT P1STCNT P1SCV)
+167                                    (SETQ CNT 1)
+168                                    (SETQ LOCVARS (SETQ SPVARS NIL))
+169                                    (COND ((NULL (EQ (CAR X) (QUOTE LAMBDA))) (BARF ER2-1))
+170                                          ((AND (CADR X) (ATOM (CADR X)))
+171                                           (SETQ LSUBRF T)
+172                                           (SETQ X (CONS (CAR X)
+173                                                         (CONS (LIST (CADR X)) (CDDR X))))))
+174                                    (SETQ LL (P1LMB (SETQ Z (CADR X))))
+175                                    (COND ((GREATERP (LENGTH Z) NACS) (BARF TMA)))
+176                                    (RETURN (LIST (CAR X) LL (P1 (CADDR X))))))
+177                      EXPR)

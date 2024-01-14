@@ -1,0 +1,26 @@
+001             (DEFPROP P1LMB                                                        PAGE 9
+002              (LAMBDA (Z)
+003               (MAPCAR (FUNCTION (LAMBDA (J)
+004                                         (PROG NIL
+005                                               (COND ((GET J (QUOTE SPECIAL))
+006                                                      (SETQ SPVARS (ADD J SPVARS))
+007                                                      (GO A))
+008                                                     ((MEMBER J BVARS)
+009                                                      (SETQ RNL
+010                                                            (CONS (CONS J (SETQ J (GENSYM)))
+011                                                                  RNL))))
+012                                               (PLOC J 0)
+013                                          A    (SETQ BVARS (ADD J BVARS))
+014                                               (RETURN J))))
+015                       Z))
+016              EXPR)
+017
+018             (DEFPROP P1LAM
+019                      (LAMBDA (Z RNL)
+020                              (PROG (TEM LL)
+021                                    (SETQ TEM (MAPCAR (FUNCTION P1) (CDR Z)))
+022                                    (SETQ LL (P1LMB (CADAR Z)))
+023                                    (SETQ CNT (ADD1 CNT))
+024                                    (RETURN (CONS (LIST (QUOTE LAMBDA) LL (P1 (CADDAR Z)))
+025                                            TEM))))
+026                      EXPR)

@@ -1,0 +1,55 @@
+001             (DEFPROP VARB                                                         PAGE 12
+002                      (LAMBDA (X) (PROG (Q)
+003                                        (COND ((MEMBER X BVARS) (RETURN NIL))
+004                                              ((GET X (QUOTE SPECIAL)) (GO A)))
+005                                        (PRINTTY (LIST X (QUOTE UNDECLARED)))
+006                                        (PUTPROP X T (QUOTE SPECIAL))
+007                                   A    (SETQ SPVARS (ADD X SPVARS))
+008                                        (SETQ BVARS (ADD X BVARS))
+009                                        (RETURN T)))
+010                      EXPR)
+011
+012             (DEFPROP LOAD1
+013                      (LAMBDA (ACNO VAR)
+014                              (PROG (Z OLDACC DATAORG DAC DOD)
+015                                    (REMOVE VAR)
+016                                    (SETQ Z (ILOC1 VAR ACNO))
+017                                    (SETQ OLDACC (CONTENTS ACNO))
+018                                    (SETQ DATAORG
+019                                          (COND ((NOT (NUMBERP Z)) NIL) (T (CONTENTS Z))))
+020                                    (SETQ DAC (DVP OLDACC))
+021                                    (SETQ DOD (DVP DATAORG))
+022                                    (COND ((EQ ACNO Z) (COND (DAC (CPUSH ACNO)))(RETURN NIL))
+023                                          ((AND (EQ Z 0) (NOT DOD) (NOT DAC)) (GO COMPOP))
+024                                          ((AND (NOT DOD)
+025                                                OLDACC
+026                                                (NUMBERP Z)
+027                                                (OR (LESSP Z 1)
+028                                                    (GREATERP Z HLAC)
+029                                                    (LESSP Z ACNO)))
+030                                           (GO EXCOMP))
+031                                          ((NOT DAC) (GO ACFREE))
+032                                          (T (GO PUSHAC)))
+033                               EXCOMP
+034                                    (CONT Z OLDACC)
+035                                    (OUT1 (QUOTE EXCH) ACNO Z)
+036                                    (GO T4)
+037                               PUSHAC
+038                                    (CPUSH ACNO)
+039                                    (SETQ Z (LOC VAR))
+040                               ACFREE
+041                                    (COND ((NOT (NUMBERP Z)) (GO T3)))
+042                                    (OUT1 (QUOTE MOVE) ACNO Z)
+043                                    (RETURN (CONT ACNO
+044                                                  (COND ((NULL (CDR DATAORG))
+045                                                         (CONS (CAR DATAORG) (QUOTE DUP))))))
+046                               COMPOP
+047                                    (OPOP ACNO)
+048                               T4   (RETURN (CONT ACNO ATAORG))
+049                               T3   (OUT1 (QUOTE MOVE) ACNO Z)
+050                                    (RETURN (CONT ACNO
+051                                                  (COND ((EQ (CAAR Z) (QUOTE QUOTE)) (CAR Z))
+052                                                        (T (LIST (CAR VAR))))))))
+053                      EXPR)
+054
+055             (DEFPROP LOC (LAMBDA (X) (ILOC1 X NIL)) EXPR)

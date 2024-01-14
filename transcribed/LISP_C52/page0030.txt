@@ -1,0 +1,57 @@
+001             (DEFPROP INIT                                                         PAGE 3
+002                      (LAMBDA NIL (SPECIAL SPVARS
+003                                           MACROS
+004                                           SPFL
+005                                           LOCVARS
+006                                           CLIST
+007                                           EFFS
+008                                           NACS
+009                                           LDLST
+010                                           SPLDLST
+011                                           LO
+012                                           HI
+013                                           NO
+014                                           ARGNO
+015                                           BVARS
+016                                           DATA
+017                                           RSL
+018                                           RSSL
+019                                           PRSSL
+020                                           CTAG
+021                                           VGO
+022                                           VGOL
+023                                           EXIT
+024                                           EXITN
+025                                           PVR
+026                                           LOUT
+027                                           LIS
+028                                           END
+029                                           G2
+030                                           SFLG
+031                                           SLOTLIST
+032                                           CNT
+033                                           GL
+034                                           PVRL
+035                                           PROGSW
+036                                           IVAR
+037                                           LSUBRF
+038                                           VL
+039                                           RLN
+040                                           P1SCNT
+041                                           P1STCNT
+042                                           P1LL
+043                                           HLAC P1SCV))
+044                      EXPR)
+045
+046             (DEFPROP FREEZE
+047                      (LAMBDA (X)
+048                              (PROG (Z)
+049                                    (SETQ Z SLOTLIST)
+050                               LP   (COND ((NULL Z) (RETURN NIL))
+051                                          ((EQ X (CAAR Z))
+052                                           (COND ((NULL (CDAR Z)) (RPLACA Z (CONS X CNT)))
+053                                                 ((EQ (CDAR Z) (QUOTE DUP))
+055                                                  (RPLACA Z NIL)))))
+056                                    (SETQ Z (CDR Z))
+057                                    (GO LP)))
+044                      EXPR)

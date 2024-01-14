@@ -1,0 +1,60 @@
+061                                    (SETQ RSL NIL)                                 PAGE 21.1
+062                                    (BOOL1 (CAAR EXP) G2 NIL)
+063                                    (SETQ H2 (COND ((AND RSL (NOT (ATOM RSL))) RSL)
+064                                                   (T (APPEND SLOTLIST NIL))))
+065                                    (SETQ H1 (APPEND SPLDLST NIL))
+066                                    (SETQ T1 (CADR EXP))
+067                               LP1  (COND ((NULL (CDR T1)) (GO L1)))
+068                                    (COMPE (CAR T1))
+069                                    (SETQ T1 (CDR T1))
+070                                    (GO LP1)
+071                               L1   (COND (EFFS (COMPE (CAR T1)))
+072                                          (T (LOAD1 AC (COMP (CAR T1)))))
+073                                    (CWORLD)
+074                                    (SETQ SPLDLST H1)
+075                                    (SETQ H1 SLOTLIST)
+076                                    (SETQ SLOTLIST H2)
+077                                    (SETQ TEM (EQUAL (CONTENTS AC) (QUOTE (QUOTE NIL))))
+078                                    (SETQ SLOTLIST H1)
+079                                    (SETQ T1 NIL)
+080                                    (COND (JSP (COND ((OR (CDR EXP)
+081                                                          (AND (NOT EFFS)
+082                                                               (NOT TEM)
+083                                                               (SETQ T1
+084                                                                     (GET G2 (QUOTE USED)))))
+085                                                      (OUTJ (QUOTE JRST) 0 G1))
+086                                                     (T (RESTORE IRSSL)))))
+087                                    (SETQ SLOTLIST H2)
+088                                    (OUTPUT G2)
+089                                    (GO D)
+090                              B    (SETQ T1 NIL)
+091                              D    (SETQ EXP (CDR EXP))
+092                                   (GO A)))
+093                      EXPR)
+094
+095             (DEFPROP SPECIAL
+096                      (LAMBDA (X) (PROG NIL
+097                                   L    (COND ((NULL X) (RETURN T)))
+098                                        (PUTPROP (CAR X) T (QUOTE SPECIAL))
+099                                        (SETQ X (CDR X))
+100                                        (GO L)))
+101                      FEXPR)
+102
+103             (DEFPROP CLEAR (LAMBDA NIL (PROG NIL (CSPLD) (CWORLD) (RETURN (CPVRL)))) EXPR)
+104
+105             (DEFPROP CLEAR1
+106                      (LAMBDA NIL (PROG NIL
+107                                        (CSPLD3 NIL)
+108                                        (CSPLD2 1 NIL)
+109                                        (CWORLD)
+110                                        (RETURN (CPVRL))))
+111                      EXPR)
+112
+113             (DEFPROP A HLRZ@ INST)
+114
+115             (DEFPROP D HRRZ@ INST)
+116
+117             (DEFPROP HRRZ@ HRRZ IMMED)
+118
+119             (DEFPROP HLRZ@ HLRZ IMMED)
+120

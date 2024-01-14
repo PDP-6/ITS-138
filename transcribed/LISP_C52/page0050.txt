@@ -1,0 +1,31 @@
+001             (DEFPROP CLRACS                                                       PAGE 5
+002                      (LAMBDA NIL (PROG (Z)
+003                                        (SETQ Z NACS)
+004                                        (CSPLD)
+005                                   A    (COND ((ZEROP Z) (RETURN NIL)))
+006                                        (CPUSH Z)
+007                                        (CONT Z NIL)
+008                                        (SETQ Z (SUB1 Z))
+009                                        (GO A)))
+010                      EXPR)
+011
+012             (DEFPROP OPUSH
+013                      (LAMBDA (L) (PROG NIL (OUT1 (QUOTE PUSH) (QUOTE P) L) (SPUSH)))
+014                      EXPR)
+015
+016             (DEFPROP OPUSHS
+017                      (LAMBDA (L)
+018                              (PROG NIL (OPUSH (LIST (QUOTE SPECIAL) L)) (CONT 0 (LIST L))))
+019                      EXPR)
+020
+021             (DEFPROP OPOP (LAMBDA (L) (PROG2 (OUT1 (QUOTE POP) (QUOTE P) L) (SPOP))) EXPR)
+022
+023             (DEFPROP LOCATE
+024                      (LAMBDA (X AC)
+025                              (PROG (Z)
+026                                    (SETQ Z (LOC X))
+027                               A    (COND ((NOT (NUMBERP Z)) NIL)
+028                                          ((GREATERP Z 0) (REMOVE X) (CPUSH Z) (RETURN Z)))
+029                                    (LOAD1 (SETQ Z AC) X)
+030                                    (GO A)))
+031                      EXPR)

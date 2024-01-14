@@ -1,0 +1,55 @@
+001             (DEFPROP BOOL4                                                        PAGE 19
+002                      (LAMBDA (EXP) (PROG (G)
+003                                          (COND ((EQ (CAR EXP) (QUOTE EQ))
+004                                                 (BOOL3 (CDR EXP) NIL NIL)
+005                                                 (GO L)))
+006                                          (PUTPROP (SETQ G (GENSYM)) T (QUOTE SET))
+007                                          (BOOL1 EXP G T)
+008                                          (COND ((NOT (GET G (QUOTE USED))) (CPUSH NO)))
+009                                          (COND ((NOT EFFS) (OUT1 (QUOTE TDZA) NO NO)))
+010                                          (OUTTAG G)
+011                                          (COND ((NOT EFFS) (OUT1 (QUOTE MOVEI) NO T)))))
+012                      EXPR)
+013
+014             (DEFPROP ITER
+015                      (LAMBDA (FN ARGS)
+016                              (COND ((NULL (CDR ARGS)) (P1 (CAR ARGS)))
+017                                    (T (LIST FN (P1 (CAR ARGS)) (ITER FN (CDR ARS))))))
+018                      EXPR)
+019
+020             (DEFPROP OUTJ
+021                      (LAMBDA (X Y Z)
+022                              (PROG NIL
+023                                    (CWORLD)
+024                                    (CSPLD2 1 NIL)
+025                                    (RST Z)
+026                                    (PUTPROP Z T (QUOTE USED))
+027                                    (COND ((EQUAL LOUT (GET Z (QUOTE PREVI)))
+028                                           (RETURN (SETQ LOUT (LIST X Y (LIST Z -1))))))
+029                                    (OUTPUT (LIST X Y Z))))
+030                      EXPR)
+031
+032             (DEFPROP ADR
+033                      (LAMBDA (X) (PROG (Z)
+034                                        (COND ((SETQ (ASSOC X GL)) (RETURN (CDR Z))))
+035                                        (PRINTTY (LIST (QUOTE UNDEFINED) (QUOTE TAG) X))
+036                                        (RETURN EXIT)))
+037                      EXPR)
+038
+039             (DEFPROP FREAC
+040                      (LAMBDA NIL (PROG (Z ZZ SW)
+041                                   L1   (SETQ ZZ 0)
+042                                        (SETQ Z SLOTLIST)
+043                                   L2   (SETQ ZZ (ADD1 ZZ))
+044                                        (COND ((GREATERP ZZ NACS)
+045                                               (COND (SW (CPUSH NACS) (RETURN NACS))
+046                                                     (T (SETQ SW T) (GO L1))))
+047                                              ((OR (NULL (CAR Z)) (AND SW (DVP (CAR Z))))
+048                                               (RETURN ZZ)))
+049                                        (SETQ Z (CDR Z))
+050                                        (GO L2)))
+051                      EXPR)
+052
+053             (DEFPROP OUTTAG
+054                      (LAMBDA (X) (COND ((GET X (QUOTE USED)) (CLRACS) (RST X) (OUTPUT X))))
+055                      EXPR)

@@ -1,0 +1,54 @@
+001             (DEFPROP CWORLD                                                       PAGE 4
+002                      (LAMBDA NIL (PROG (K)
+003                                        (SETQ K 0)
+004                                   A    (COND ((EQ K NACS) (RETURN NIL)))
+005                                        (CPUSH (SETQ K (ADD1 K)))
+006                                        (GO A)))
+007                      EXPR)
+008
+009             (DEFPROP COMP1 (LAMBDA (X ARGNO) (COMP X)) EXPR)
+010
+011             (DEFPROP COMP (LAMBDA (X) (COMPW X NIL)) EXPR)
+012
+013             (DEFPROP COMPE (LAMBDA (X) (REMOVE (COMPW X T))) EXPR)
+014
+015             (DEFPROP COMPW
+016                      (LAMBDA (X EFFS)
+017                              (PROG (Y)
+018                                    (COND ((ATOM X) (GO A))
+019                                          ((AND (ATOM (CAR X)) (GET (CAR X) (QUOTE OPEN)))
+020                                           (SETQ X (LIST (CONS (SETQ Y (GENSYM))
+021                                                               (CONS (CAR X)
+022                                                                     (COMP (CADR X))))))
+023                                           (SETQ SPLDLST (NCONC SPLDLST X))
+024                                           (SETQ Y (LIST Y))
+025                                           (GO B))
+026                                          (T (SETQ Y (COMPFUNC (CAR X) (CDR X) ARGNO))
+027                                             (GO B)))
+028                               A    (SETQ Y (CONS X (SETQ CNT (ADD1 CNT))))
+029                                    (COND ((SPECIALP X)
+030                                           (SETQ SPLDLST (NCONC SPLDLST (LIST Y)))))
+031                               B    (SETQ LDLST (CONS Y LDLST))
+032                                    (RETURN Y)))
+033                      EXPR)
+034
+035             (DEFPROP NACS (NIL . 5) VALUE)
+036
+037             (DEFPROP NACS1 (LAMBDA NIL (CDDDDR SLOTLIST)) EXPR)
+038
+039             (DEFPROP LOAD
+040                      (LAMBDA (X) (PROG (L HLAC)
+041                                        (SETQ HLAC (SETQ L (LENGTH X)))
+042                                   A    (COND ((ZEROP L) (RETURN NIL)))
+043                                        (LOAD1 L (CAR X))
+044                                        (SETQ X (CDR X))
+045                                        (SETQ L (SUB1 L))
+046                                        (GO A)))
+047                      EXPR)
+048
+049             (DEFPROP P1BUG
+050                      (LAMBDA (LO HI PTR)
+051                              (MAPC (FUNCTION (LAMBDA (X) (COND ((GREATERP (CDR X) LO)
+052                                                                 (RPLACD X HI)))))
+053                                    PTR))
+054                      EXPR)
