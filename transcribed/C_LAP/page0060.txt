@@ -1,0 +1,22 @@
+001                                                                                   PAGE 6
+002             (LAP GVAL SUBR) 
+003             (PUSH P 1) 
+004             (MOVEI 2 (QUOTE SYM)) 
+005             (CALL 2 (E GET)) 
+006             (JUMPN 1 G0545) 
+007             (MOVEI 2 (QUOTE UNDEF)) 
+008             (MOVE 1 0 P) 
+009             (CALL 2 (E GET)) 
+010             (MOVE 2 (SPECIAL LOC)) 
+011             (CALL 2 (E XCONS)) 
+012             (MOVEI 3 (QUOTE UNDEF)) 
+013             (MOVE 2 1) 
+014             (MOVE 1 0 P) 
+015             (CALL 3 (E PUTPROP)) 
+016             (MOVEI 1 (QUOTE 0)) 
+017             G0547 
+018             G0545 
+019             (SUB P (C 0 0 1 1)) 
+020             (POPJ P) 
+021             NIL 
+022             

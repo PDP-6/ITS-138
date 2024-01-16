@@ -1,0 +1,60 @@
+060                     ((EQ (CAR X) (QUOTE SPECIAL))                                 PAGE 1.1
+061                      (COND
+062                       ((NULL (GET (CADR X) (QUOTE VALUE)))
+063                        (PUTPROP (CADR X) (LIST NIL) (QUOTE VALUE))))
+064                      (MAKNUM (GET (CADR X) (QUOTE VALUE)) (QUOTE FIXNUM)))
+065                     ((EQ (CAR X) (QUOTE C))
+066                      (PROG (N CPTR)
+067                     (COND ((AND (EQ (CADR X) 0) (EQ (CADDR X) 0))
+068                             (COND ((AND (EQUAL (SETQ N (CADDDR X)) (QUOTE (QUOTE NIL)))
+069                                     (NULL (CDDDDR X))) (RETURN 70))
+070             
+071                     ((AND (NUMBERP N)  (EQ N (CADDDR (CDR X)))
+072                     (LESSP N 6) (NOT (MINUSP N))) (RETURN (PLUS N 70))))))
+073                            (GVAL GEN)
+074                            (SETQ N 0)
+075                            (SETQ CPTR CONLIST)
+076                       A    (COND
+077                             ((NULL (CDR CPTR)) (RPLACD CPTR (LIST (CDR X)))))
+078                            (COND ((EQUAL (CDR X) (CADR CPTR)) (RETURN N)))
+079                            (SETQ N (ADD1 N))
+080                            (SETQ CPTR (CDR CPTR))
+081                            (GO A)))
+082                     (T (PLUS (LAPEVAL (CAR X)) (LAPEVAL (CDR X))))))
+083             EXPR)
+084             
+085             (DEFPROP DEFSYM
+086              (LAMBDA (SYM VAL)
+087               (PROG (Z )
+088                     (COND ((SETQ Z (GET SYM (QUOTE UNDEF))) (GO PATCH)))
+089                A    (COND ((EQ (LENGTH (CDR SYM))2) (SETQ REMOB (CONS SYM REMOB))))
+090                (RETURN (PUTPROP SYM VAL (QUOTE SYM)))
+091                PATCH(COND ((NULL Z) (RPLACD SYM (CDDDR SYM)) (GO A)))
+092                     (RDEPOSIT (CAR Z)
+093              (PLUS (EXAMINE (PLUS BPORG (CAR Z)))  VAL))
+094                     (SETQ Z (CDR Z))
+095                     (GO PATCH)))
+096             EXPR)
+097             
+098             (DEFPROP GVAL
+099              (LAMBDA (SYM)
+100               (COND ((GET SYM (QUOTE SYM)))
+101                     (T (PUTPROP SYM
+102                                 (CONS LOC (GET SYM (QUOTE UNDEF)))
+103                                 (QUOTE UNDEF))
+104                        0)))
+105             EXPR)
+106             
+107             (DEFPROP OPS
+108              (LAMBDA (L)
+109               (PROG (REMOB)
+110                A    (COND ((NULL L) (RETURN T)))
+111                     (DEFSYM (CAR L)  (CADR L))
+112                     (SETQ L (CDDR L))
+113                     (GO A)))
+114             FEXPR)
+115             
+116             (OPS MOVE 200000000000 MOVEI 201000000000 MOVEM 202000000000 
+117             JRST 254000000000 CALL 
+118             74000000000 JCALL 75000000000 
+119             PUSHJ 260000000000 POPJ 263000000000 PUSH 261000000000 
