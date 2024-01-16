@@ -1,0 +1,3 @@
+001             (REMPROP (QUOTE LAP) (QUOTE FEXPR))                                   PAGE 7
+002             (MAPCAR (FUNCTION (LAMBDA (X) (REMPROP X (QUOTE EXPR))))(QUOTE
+003             (GWD LAPEVAL DEFSYM GVAL)))

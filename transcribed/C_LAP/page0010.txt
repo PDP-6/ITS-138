@@ -1,0 +1,59 @@
+001                                                                                   PAGE 1
+002
+003             (DEFPROP LAP
+004              (LAMBDA (SL)
+005               (PROG (LOC CONLIST GEN REMOB L )
+006                     (SETQ GEN (GENSYM))
+007                     (SETQ CONLIST (LIST NIL))
+008                     (SETQ LOC 0)
+009                A    (COND ((NULL (SETQ L (READ))) (GO END))
+010                           ((ATOM L) (DEFSYM L (PLUS BPORG LOC)) (GO A)))
+011              (GWD L)
+012                     (GO A)
+013                END  (DEFSYM GEN (PLUS BPORG LOC))
+014                EN1  (COND
+015                      ((NULL (SETQ CONLIST (CDR CONLIST)))
+016                      (EVAL (CONS (QUOTE REMOB) REMOB))
+017                     (PUTPROP (CAR SL)
+018             (COND ((EQ BPORG (PLUS BPORG 0))(SUB1 BPORG))
+019             (T  (CDDDR BPORG))) (CADR SL))
+020                       (RETURN (SETQ BPORG (PLUS BPORG LOC)))))
+021              (GWD (CAR CONLIST))
+022                     (GO EN1)))
+023             FEXPR)
+024             
+025             
+026             (DEFPROP GWD (LAMBDA (X) (PROG (FLD TEM)
+027             A   (COND ((NULL X) (RDEPOSIT  LOC  (APPLY (QUOTE PLUS)
+028                             FLD))  (RETURN (SETQ LOC (ADD1 LOC)))))
+029                     (SETQ TEM (LAPEVAL (CAR X)))
+030                     (SETQ FLD (CONS (COND ((NULL FLD) TEM)
+031                             ((NULL (CDR  FLD))      (LSH TEM 27))
+032                             ((NULL (CDDR FLD)) (BOOLE 1 TEM 777777))
+033                     ((LSH TEM 18.)))FLD))
+034                     (SETQ X (CDR X))
+035                     (GO A)))EXPR)
+036             
+037             (DEFPROP LAPEVAL
+038              (LAMBDA (X)
+039               (COND ((NUMBERP X) X)
+040                     ((ATOM X)
+041                      (COND ((GET X (QUOTE VALUE)) (MAKNUM X (QUOTE FIXNUM)))
+042                            (T (GVAL X))))
+043                     ((MEMBER (CAR X) (QUOTE (E QUOTE)))
+044                      (MAKNUM (COND ((OR (NOT (ATOM (SETQ X (CADR X))))
+045                                         (AND (NUMBERP X)
+046                                              (NOT (EQ (PLUS X 0) X))))
+047                                     (PROG (Y)
+048                                           (SETQ Y QLIST)
+049                                      A    (COND ((NULL Y)
+050                                                  (RETURN
+051                                                   (CAR
+052                                                    (SETQ QLIST
+053                                                          (CONS X QLIST)))))
+054                                                 ((EQUAL X (CAR Y))
+055                                                  (RETURN (CAR Y))))
+056                                           (SETQ Y (CDR Y))
+057                                           (GO A)))
+058                                    (T X))
+059                              (QUOTE FIXNUM)))

@@ -1,0 +1,22 @@
+061             (HRRZ@ 2 2)                                                           PAGE 2.1
+062             (HRRZ@ 2 2) 
+063             G0359 
+064             G0355 
+065             (HRRZ@ 3 -2 P) 
+066             (HLRZ@ 3 3) 
+067             (POP P 1) 
+068             (CALL 3 (E PUTPROP)) 
+069             (MOVE 2 (SPECIAL LOC)) 
+070             (MOVE 1 (SPECIAL BPORG)) 
+071             (CALL 2 (E *PLUS)) 
+072             (MOVEM 1 (SPECIAL BPORG)) 
+073             (JRST 0 G0333) 
+074             G0351 
+075             (HLRZ@ 1 (SPECIAL CONLIST)) 
+076             (CALL 1 (E GWD)) 
+077             (JRST 0 G0332) 
+078             G0333 
+079             (SUB P (C 0 0 2 2)) 
+080             (JRST 0 SPECSTR) 
+081             NIL 
+082             

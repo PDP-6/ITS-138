@@ -1,0 +1,51 @@
+LS
+
+
+
+   CCCCCCCCC
+   CCCCCCCCC
+   CCCCCCCCC
+CCC         CCC
+CCC         CCC
+CCC         CCC
+CCC
+CCC
+CCC
+CCC
+CCC
+CCC
+CCC
+CCC
+CCC
+CCC         CCC
+CCC         CCC
+CCC         CCC
+   CCCCCCCCC
+   CCCCCCCCC
+   CCCCCCCCC
+
+LS
+
+
+
+LLL                     AAAAAAAAA        PPPPPPPPPPPP
+LLL                     AAAAAAAAA        PPPPPPPPPPPP
+LLL                     AAAAAAAAA        PPPPPPPPPPPP
+LLL                  AAA         AAA     PPP         PPP
+LLL                  AAA         AAA     PPP         PPP
+LLL                  AAA         AAA     PPP         PPP
+LLL                  AAA         AAA     PPP         PPP
+LLL                  AAA         AAA     PPP         PPP
+LLL                  AAA         AAA     PPP         PPP
+LLL                  AAAAAAAAAAAAAAA     PPPPPPPPPPPP
+LLL                  AAAAAAAAAAAAAAA     PPPPPPPPPPPP
+LLL                  AAAAAAAAAAAAAAA     PPPPPPPPPPPP
+LLL                  AAA         AAA     PPP
+LLL                  AAA         AAA     PPP
+LLL                  AAA         AAA     PPP
+LLL                  AAA         AAA     PPP
+LLL                  AAA         AAA     PPP
+LLL                  AAA         AAA     PPP
+LLLLLLLLLLLLLLL      AAA         AAA     PPP
+LLLLLLLLLLLLLLL      AAA         AAA     PPP
+LLLLLLLLLLLLLLL      AAA         AAA     PPP

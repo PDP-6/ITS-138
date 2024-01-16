@@ -1,0 +1,9 @@
+181             (CALL 1 (E LAPEVAL))                                                  PAGE 4.3
+182             (POP P 2) 
+183             (CALL 2 (E *PLUS)) 
+184             G0507 
+185             G0403 
+186             (SUB P (C 0 0 1 1)) 
+187             (POPJ P) 
+188             NIL 
+189             
