@@ -25,6 +25,12 @@ fix() {
 
 make tabify >/dev/null 2>&1
 
-for i in transcribed/page????.txt; do
+if test -z "$1"; then
+    files=transcribed/page????.txt
+else
+    files=transcribed/"$1"/page????.txt
+fi
+
+for i in $files; do
     fix "$i"
 done
