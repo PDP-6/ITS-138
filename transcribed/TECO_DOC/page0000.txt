@@ -1,0 +1,51 @@
+HT2     WD      13:11:33        MARCH 13,1968
+
+
+
+TTTTTTTTTTTTTTT      EEEEEEEEEEEEEEE         CCCCCCCCC            OOOOOOOOO
+TTTTTTTTTTTTTTT      EEEEEEEEEEEEEEE         CCCCCCCCC            OOOOOOOOO
+TTTTTTTTTTTTTTT      EEEEEEEEEEEEEEE         CCCCCCCCC            OOOOOOOOO
+      TTT            EEE                  CCC         CCC      OOO         OOO
+      TTT            EEE                  CCC         CCC      OOO         OOO
+      TTT            EEE                  CCC         CCC      OOO         OOO
+      TTT            EEE                  CCC                  OOO         OOO
+      TTT            EEE                  CCC                  OOO         OOO
+      TTT            EEE                  CCC                  OOO         OOO
+      TTT            EEEEEEEEEEEE         CCC                  OOO         OOO
+      TTT            EEEEEEEEEEEE         CCC                  OOO         OOO
+      TTT            EEEEEEEEEEEE         CCC                  OOO         OOO
+      TTT            EEE                  CCC                  OOO         OOO
+      TTT            EEE                  CCC                  OOO         OOO
+      TTT            EEE                  CCC                  OOO         OOO
+      TTT            EEE                  CCC         CCC      OOO         OOO
+      TTT            EEE                  CCC         CCC      OOO         OOO
+      TTT            EEE                  CCC         CCC      OOO         OOO
+      TTT            EEEEEEEEEEEEEEE         CCCCCCCCC            OOOOOOOOO
+      TTT            EEEEEEEEEEEEEEE         CCCCCCCCC            OOOOOOOOO
+      TTT            EEEEEEEEEEEEEEE         CCCCCCCCC            OOOOOOOOO
+
+HT2     WD      13:11:35        MARCH 13,1968
+
+
+
+DDDDDDDDDDDD            OOOOOOOOO            CCCCCCCCC
+DDDDDDDDDDDD            OOOOOOOOO            CCCCCCCCC
+DDDDDDDDDDDD            OOOOOOOOO            CCCCCCCCC
+DDD         DDD      OOO         OOO      CCC         CCC
+DDD         DDD      OOO         OOO      CCC         CCC
+DDD         DDD      OOO         OOO      CCC         CCC
+DDD         DDD      OOO         OOO      CCC
+DDD         DDD      OOO         OOO      CCC
+DDD         DDD      OOO         OOO      CCC
+DDD         DDD      OOO         OOO      CCC
+DDD         DDD      OOO         OOO      CCC
+DDD         DDD      OOO         OOO      CCC
+DDD         DDD      OOO         OOO      CCC
+DDD         DDD      OOO         OOO      CCC
+DDD         DDD      OOO         OOO      CCC
+DDD         DDD      OOO         OOO      CCC         CCC
+DDD         DDD      OOO         OOO      CCC         CCC
+DDD         DDD      OOO         OOO      CCC         CCC
+DDDDDDDDDDDD            OOOOOOOOO            CCCCCCCCC
+DDDDDDDDDDDD            OOOOOOOOO            CCCCCCCCC
+DDDDDDDDDDDD            OOOOOOOOO            CCCCCCCCC
