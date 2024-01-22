@@ -1,0 +1,59 @@
+001                                                                                   PAGE 1
+002
+003             (DEFPROP DDT
+004                      (LAMBDA NIL
+005                              (PROG NIL A (TERPRI) A1 (SETQ ROF NIL))
+006                              B
+007                              (SETQ WRD (SETQ TIF (SETQ QF NIL))))
+008                      B1
+009                      (SETQ FLD 0)
+010                      B2
+011                      (SETQ MP NIL)
+012                      C
+013                      (SETQ SYL 0)
+014                      C1
+015                      (SETQ SYM NIL)
+016                      D
+017                      (SETQ CH (READCH))
+018                      (COND ((OR NUMBERP CH) (LETTERP CH)) (SETQ SYM (CONS CH SYM)) (GO D))
+019                      ((OR (NULL SYM)
+020                           (NOT (SETQ QF T))
+021                           (AND (NOT PTF) (NUMBERP (SETQ SYL (READLIST (REVERSE SYM)))))
+022                           (GO E))
+023                       ((SETQ TEM (GETL SYL NIL)) (SETQ SYL (MAKNUM SYL (QUOTE FIXNUM)))
+024                                                  (GO E))
+025                       ((SETQ SYL (GET SYL (QUOTE SYM))) (GO E)))
+026                      (PRIN1 (QUOTE J))
+027                      RET
+028                      (PRINC (QUOTE / / / ))
+029                      (GO B)
+030                      E
+031                      (COND ((EQ CH (QUOTE /.)) (SETQ SYL LOC)
+032                                                (SETQ QF (SETQ PTF T))
+033                                                (GO C1)))
+034                      (SETQ FLD (PLUS FLD (COND (MF (MINUS SYL)) (SYL))))
+035                      (COND ((EQ CH (QUOTE /-)) (SETQ MF T) (GO C))
+036                            ((EQ CH (QUOTE +)) (GO B2))
+037                            ((EQ CH (QUOTE /,))
+038                             (SETQ TIF ())
+039                             (SETQ WRD (PLUS WRD (LSH FLD 27) (BOOLE 1 -1000000 FLD)))
+040                             (GO B1)))
+041                     (SETQ FLD (PLUS FLD WRD))
+042                     (SETQ WRD
+043                           (COND (TIF (BOOLE 6 (BOOLE 1 1000000 WRD) (BOOLE 1 777777 FLD)))
+044                                 (FLD)))
+045                     (COND ((EQ CH (QUOTE / )) (SETQ TIF QF) (GO B1))
+046                           ((NOT QF) (SETQ WRD LWT)))
+047                     (COND ((NOT (SETQ TEM (ASSOC CH DTB))) (PRIN1 (QUOTE ?)) (GO RET)))
+048                     (GO (CDR TEM))
+049                     SLA
+050                     (COND (QF (SETQ LOC WRD)))
+051                     S1
+052                     (PRINC (QUOTE / / / ))
+053                     (PIN (SETQ LWT (EXAMINE (SETQ LOC WRD))))
+054                     (SETQ ROF T)
+055                     (GO RET)
+056                     LINEF
+057                     (DEPRA)
+058                     (SETQ LOC (ADD1 LOC))
+059                     LI1
