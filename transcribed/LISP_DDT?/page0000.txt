@@ -1,0 +1,51 @@
+LS
+
+
+
+LLL                     IIIIIIIII            SSSSSSSSS         PPPPPPPPPPPP
+LLL                     IIIIIIIII            SSSSSSSSS         PPPPPPPPPPPP
+LLL                     IIIIIIIII            SSSSSSSSS         PPPPPPPPPPPP
+LLL                        III            SSS         SSS      PPP         PPP
+LLL                        III            SSS         SSS      PPP         PPP
+LLL                        III            SSS         SSS      PPP         PPP
+LLL                        III            SSS                  PPP         PPP
+LLL                        III            SSS                  PPP         PPP
+LLL                        III            SSS                  PPP         PPP
+LLL                        III               SSSSSSSSS         PPPPPPPPPPPP
+LLL                        III               SSSSSSSSS         PPPPPPPPPPPP
+LLL                        III               SSSSSSSSS         PPPPPPPPPPPP
+LLL                        III                        SSS      PPP
+LLL                        III                        SSS      PPP
+LLL                        III                        SSS      PPP
+LLL                        III            SSS         SSS      PPP
+LLL                        III            SSS         SSS      PPP
+LLL                        III            SSS         SSS      PPP
+LLLLLLLLLLLLLLL         IIIIIIIII            SSSSSSSSS         PPP
+LLLLLLLLLLLLLLL         IIIIIIIII            SSSSSSSSS         PPP
+LLLLLLLLLLLLLLL         IIIIIIIII            SSSSSSSSS         PPP
+
+LS
+
+
+
+DDDDDDDDDDDD         DDDDDDDDDDDD         TTTTTTTTTTTTTTT         ?????????
+DDDDDDDDDDDD         DDDDDDDDDDDD         TTTTTTTTTTTTTTT         ?????????
+DDDDDDDDDDDD         DDDDDDDDDDDD         TTTTTTTTTTTTTTT         ?????????
+DDD         DDD      DDD         DDD            TTT            ???         ???
+DDD         DDD      DDD         DDD            TTT            ???         ???
+DDD         DDD      DDD         DDD            TTT            ???         ???
+DDD         DDD      DDD         DDD            TTT                     ???
+DDD         DDD      DDD         DDD            TTT                     ???
+DDD         DDD      DDD         DDD            TTT                     ???
+DDD         DDD      DDD         DDD            TTT                  ???
+DDD         DDD      DDD         DDD            TTT                  ???
+DDD         DDD      DDD         DDD            TTT                  ???
+DDD         DDD      DDD         DDD            TTT                  ???
+DDD         DDD      DDD         DDD            TTT                  ???
+DDD         DDD      DDD         DDD            TTT                  ???
+DDD         DDD      DDD         DDD            TTT
+DDD         DDD      DDD         DDD            TTT
+DDD         DDD      DDD         DDD            TTT
+DDDDDDDDDDDD         DDDDDDDDDDDD               TTT                  ???
+DDDDDDDDDDDD         DDDDDDDDDDDD               TTT                  ???
+DDDDDDDDDDDD         DDDDDDDDDDDD               TTT                  ???

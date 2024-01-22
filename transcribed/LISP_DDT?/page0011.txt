@@ -1,0 +1,49 @@
+060                     (SETQ WRD LOC)                                                PAGE 1.1
+061                     (TERPRI)
+062                     (PAD LOC)
+063                     (PRINC (QUOTE //))
+064                     (GO S1)
+065                     VAR
+066                     (DEPRA)
+067                     (SETQ LOC (SUB1 LOC))
+068                     (GO LI1)
+069                     TAB
+070                     (DEPRA)
+071                     (SETQ LOC (BOOLE 1 777777 WRD))
+072                     (GO L1)
+073                     EXC
+074                     (DEPRA)
+075                     (SETQ OC (LSH WRD -22))
+076                     (GO LI1)
+077                     EQSGN
+078                     (PRIN1 (SETQ LWT WRD))
+079                     (GO RET)
+080                     CARR
+081                     (DEPRA)
+082                     (SETQ LWT WRD)
+083                     (GO A1))
+084
+085             (DEFPROP SYMP
+086              (LAMBDA (X)
+087               (PROG (X Q)
+088                     (SETQ X (BOOLE 1 777777 X))
+089                     (MAPC
+090                      (FUNCTION
+091                       (LAMBDA (Z)
+092                        (MAPC
+093                         (FUNCTION (LAMBDA (ZZ)
+094                                           (COND ((AND (SETQ Q
+095                                                             (GETL ZZ (QUOTE (SUBR FSUBR))))
+096                                                       (EQUAL (CADR Q) (QUOTE FIXNUM))
+097                                                       X)
+098                                                  (SETQ Y ZZ)))))
+099                         Z)))
+100                      OBLIST)
+101                     (COND (Y (RETURN (PRIN1 Y))))))
+102              EXPR)
+103
+104             (DEFPROP DEPRA (LAMBDA NIL (COND ((AND ROF QF) (DEPOSIT LLOC WRD)))) EXPR)
+105             (UFILE LISP DDT)
+106
+107             %E$
+108             UNBOUND VARIABLE - EVAL
