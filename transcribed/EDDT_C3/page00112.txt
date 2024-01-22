@@ -1,0 +1,9 @@
+721                     ((AND (CDR A) (CDDR A) (CDDDR A))                             PAGE 1.12
+722                      (SETQ $XCH T)
+723                      (COND ((GET (CADR A) (CADDDR A)))
+724                       ((CADDR A)))))
+725                    (COND ($XCH (CADDDR A)))))
+726                  (A)))))
+727              EXPR)
+728
+729

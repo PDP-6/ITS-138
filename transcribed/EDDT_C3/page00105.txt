@@ -1,0 +1,60 @@
+301                 (COND ((GREATERP $B 0) (ARG 1))                                   PAGE 1.5
+302                  (0)))
+303                (SETQ $B
+304                 (COND ((NUMBERP $B) ($NB $B))
+305                  ($B)
+306                  (($NB 0))))
+307                (NCONC (GET (QUOTE $B) (QUOTE BREAK))
+308                 (LIST $NB))
+309                (PUTPROP (QUOTE $B)
+310                 (LIST (QUOTE BREAK)
+311                  $Y
+312                  (COND ((CDAR $K) (CADAR $K)))
+313                  $K
+314                  $D)
+315                 $NB)
+316                ($KI
+317                 (LIST (QUOTE $BREAK)
+318                  $NB
+319                  $B
+320                  (COND ((CDAR $K) (CADAR $K)))))))
+321              EXPR)
+322
+323
+324             (DEFPROP $NB
+325              (LAMBDA (A)
+326               (PROG ($NB)
+327                (SETQ $NB (INTERN ($SYM (QUOTE BK))))
+328                (GET $NB 1)
+329                (RETURN
+330                 (COND ((ZEROP $) $NB)
+331                  ((LIST (QUOTE GREATERP)
+332                    (LIST (QUOTE SETQ)
+333                     $NB
+334                     (LIST (QUOTE ADD1) $NB))
+335                    A))))))
+336              EXPR)
+337
+338
+339             (DEFPROP $BREAK
+340              (LAMBDA (KNZUG)
+341               (PROG (KSZRT $BREAK)
+342                (COND
+343                 ((SETQ KSZRT (EVAL (CADR KNSUG)))
+344                  (TERPRI)
+345                  (PRINC (QUOTE BREAK/ ))
+346                  (PRINC (CAR KNZUG))
+347                  ($BL)))
+348                (SETQ $BREAK (EVAL (CADDR KNZUG)))
+349                (COND
+350                 (KSZRT (TERPRI)
+351                  (PRINC (QUOTE EXIT/ VALUE/ ))
+352                  (PRINT $BREAK)
+353                  (PRINT (QUOTE BREAK))
+354                  ($BL)))
+355                (RETURN $BREAK)))
+356              FEXPR)
+357
+358
+359             (DEFPROP $BL
+360              (LAMBDA NIL

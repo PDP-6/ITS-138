@@ -1,0 +1,60 @@
+541                  (GO A)))))                                                       PAGE 1.9
+542              EXPR)
+543
+544
+545             (DEFPROP $PP1
+546              (LAMBDA (A N TAG)
+547               (COND ((FIT A N) ($PP3 A N TAG) T)
+548                ((PATOM A) ($PP3 A N TAG) NIL)
+549                (T ($SPACE N TAG)
+550                 (PRINC (QUOTE /())
+551                 ($PP2 A (ADD1 N))
+552                 NIL)))
+553              EXPR)
+554
+555
+556             (DEFPROP FIT
+557              (LAMBDA (A N)
+558               (COND
+559                ((GREATERP (PLUS N (FLATSIZE A)) LINEL1)
+560                 NIL)
+561                ((PATOM A) T)
+562                ((FINDL
+563                  (QUOTE
+564                   (LAMBDA PROG
+565                    PROG2
+566                    LABEL
+567                    COND))
+568                  A)
+569                 NIL)
+570                (T)))
+571              EXPR)
+572
+573
+574             (DEFPROP FINDL
+575              (LAMBDA (L B)
+576               (COND ((NULL L) NIL)
+577                ((PATOM L) (FIND L B))
+578                ((FIND (CAR L) B))
+579                ((FINDL (CDR L) B))))
+580              EXPR)
+581
+582
+583             (DEFPROP FIND
+584              (LAMBDA (A B)
+585               (COND ((EQUAL A B))
+586                ((PATOM B) NIL)
+587                ((FIND A (CAR B)))
+588                ((FIND A (CDR B)))))
+589              EXPR)
+590
+591
+592             (DEFPROP $PP2
+593              (LAMBDA (A N)
+594               (PROG (Q)
+595                (SETQ Q ($PP1 (CAR A) N NIL))
+596                A
+597                (SETQ A (CDR A))
+598                (COND
+599                 ((NULL A) (PRINC (QUOTE /)))
+600                  (RETURN NIL))

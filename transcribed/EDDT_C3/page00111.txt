@@ -1,0 +1,60 @@
+661                  ((AND (CDDR L) (CDDDR L)) (CADDDR L))))                          PAGE 1.11
+662                (SETQ LINEL 110)
+663                (SETQ LINEL1 55)
+664                (EVAL (CONS (QUOTE UREAD) L))
+665                (IOC Q)
+666                A
+667                (COND
+668                 ((NULL (ERRSET (SETQ L (READ NIL))))
+669                  (RETURN NIL))
+670                 (T (TERPRI)
+671                  (TERPRI)
+672                  ($PP1
+673                   (COND ($XCH ($XCH L))
+674                    (L))
+675                   0
+676                   T)
+677                  (GO A)))))
+678              FEXPR)
+679
+680
+681             (DEFPROP WFILE
+682              (LAMBDA (L)
+683               (PROG ($XCH)
+684                (EVAL
+685                 (LIST (QUOTE UWRITE) (CADR (CDDDDR L))))
+686                ($$T)
+687                ($$B)
+688                (IOC R)
+689                (EVAL
+690                 (LIST (QUOTE PFILE)
+691                  (CAR L)
+692                  (CADR L)
+693                  (CADDR L)
+694                  (COND
+695                  ((EQUAL (LENGTH L) 7) (CAR (LAST L))))))
+696                (IOC T)
+697                (EVAL
+698                 (LIST (QUOTE UFILE)
+699                  (CADDDR L)
+700                  (CADR (CDDDR L))))))
+701              FEXPR)
+702
+703
+704             (DEFPROP XFILE
+705              (LAMBDA (L)
+706               (EVAL
+707                (CONS (QUOTE WFILE)
+708                 (APPEND L (QUOTE ($XCH))))))
+709              FEXPR)
+710
+711
+712             (DEFPROP $XCH
+713              (LAMBDA (A)
+714               (PROG ($XCH)
+715                (RETURN
+716                 (COND ((PATOM A) A)
+717                  ((EQ (QUOTE DEFPROP) (CAR A))
+718                   (LIST (QUOTE DEFPROP)
+719                    (COND ((CDR A) (CADR A)))
+720                    (COND

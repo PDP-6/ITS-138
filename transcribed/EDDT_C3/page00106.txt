@@ -1,0 +1,60 @@
+361               (PROG ($QWSP)                                                       PAGE 1.6
+362                (TERPRI)
+363                A
+364                (ERRSET (SETQ $QWSP (READ)))
+365                (COND ((EQ $QWSP (QUOTE $P)) (RETURN NIL)))
+366                (ERRSET (ERRSET (PRINT (EVAL $QWSP))))
+367                (TERPRI)
+368                (GO A)))
+369              EXPR)
+370
+371
+372             (DEFPROP $$B
+373              (LAMBDA NIL
+374               (MAPC (FUNCTION $UB)
+375                (CDR (GET (QUOTE $B) (QUOTE BREAK)))))
+376              EXPR)
+377
+378
+379             (DEFPROP $UB
+380              (LAMBDA $NB
+381               (PROG ($UB)
+382                A
+383                (COND ((ZEROP $UB) (RETURN NIL))
+384                 (T (SETQ $UB (ARG $NB))
+385                  (SETQ $NB (SUB1 $NB))
+386                  (EQ (QUOTE BREAK)
+387                   (CAR (SETQ $$B (GET (QUOTE $B) $UB))))
+388                  (DELETE $UB
+389                   (GET (QUOTE $B) (QUOTE BREAK)))
+390                  (REMPROP (QUOTE $B) $UB)
+391                  ((LAMBDA ($UB $K $D)
+392                    (PROG2 ($KI $UB)
+393                     NIL))
+394                   (CADDR $$B)
+395                   (CADDDR $$B)
+396                   (CADR (CDDDR $$B)))))
+397                (GO A)))
+398              EXPR)
+399
+400
+401             (DEFPROP $TL
+402              (LAMBDA $L
+403               (PROG (LL L)
+404                (TERPRI)
+405                (PRINC (QUOTE TRACE/ ))
+406                (PRINC (QUOE $TRF))
+407                (SETQ L 1)
+408                A
+409                (COND ((GREATERP L $L))
+410                 (T (SETQ LL (APPEND LL (LIST (ARG L))))
+411                  (PRINT (ARG L))
+412                  (SETQ L (ADD1 L))
+413                  (GO A)))
+414                (PRINT (QUOTE VALUE))
+415                (PRINT
+416                 (SETQ L
+417                  (EVAL (CONS (QUOTE $TR) (QUOTEL LL)))))
+418                (RETURN L)))
+419              EXPR)
+420
