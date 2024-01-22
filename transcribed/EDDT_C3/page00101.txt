@@ -1,0 +1,60 @@
+061                (QUOTE TRACE))))                                                   PAGE 1.1
+062
+063
+064             (OR (GET (QUOTE $K) (QUOTE VALUE))
+065              (SETQ $K NIL))
+066
+067
+068             (PUTPROP (QUOTE PATOM)
+069              (SUB1 (GET (QUOTE ATOM) (QUOTE SUBR)))
+070              (QUOTE SUBR))
+071
+072
+073             (COND ((GET (QUOTE $B) (QUOTE VALUE)) NIL)
+074              ((SETQ $B (LIST NIL))))
+075
+076
+077             (DEFPROP TECO
+078              (LAMBDA NIL
+079               (PROG $$S $S1)
+080                C
+081                (ERRSET ($P))
+082                D
+083                (TERPRI)
+084                (ERRSET (SETQ $S (READ)))
+085                (COND
+086                 ((ERRSET
+087                   (COND ((EQ $S (QUOTE Q)) (RETURN NIL))
+088                    ((SETQ $S1 (ASSOC $S (CAR TECO)))
+089                     ((CDR $S1)))
+090                    ((SETQ $S1 (ASSOC $S (CADR TECO)))
+091                     ((CDR $S1)
+092                      (COND
+093                       ((EQUAL (SETQ $S (READ)) (QUOTE X))
+094                        (ERR))
+095                       ($S))))
+096                    ((AND (NOT (ATOM $S))
+097                      (SETQ $S1)
+098                       (COND ((ASSOC (CAR $S) (CAR TECO)))
+099                        ((ASSOC (CAR $S) (CADR TECO))))))
+100                     (EVAL
+101                      (CONS (CDR $S1) (QUOTEL (CDR $S)))))
+102                    (T (ERRSET (PRINT (EVAL $S))) (ERR))))
+103                  (GO C)))
+104                (GO D)))
+105              EXPR)
+106
+107
+108             (DEFPROP $Y
+109              (LAMBDA $S
+110               ((LAMBDA (A $U)
+111                 (PROG2
+112                  (SETQ $K
+113                   (LIST
+114                    (COND
+115                     ((NULL $U)
+116                      (COND
+117                       ((GETL A
+118                         (QUOTE (EXPR FEXPR MACRO))))
+119                       ((LIST NIL (CDR A)))))
+120                     ((EQUAL $U (QUOTE ATOM))

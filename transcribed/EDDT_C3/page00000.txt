@@ -1,0 +1,51 @@
+GS7     P       10:57:25        AUG 16,1968
+
+
+
+EEEEEEEEEEEEEEE      DDDDDDDDDDDD         DDDDDDDDDDDD         TTTTTTTTTTTTTTT
+EEEEEEEEEEEEEEE      DDDDDDDDDDDD         DDDDDDDDDDDD         TTTTTTTTTTTTTTT
+EEEEEEEEEEEEEEE      DDDDDDDDDDDD         DDDDDDDDDDDD         TTTTTTTTTTTTTTT
+EEE                  DDD         DDD      DDD         DDD            TTT
+EEE                  DDD         DDD      DDD         DDD            TTT
+EEE                  DDD         DDD      DDD         DDD            TTT
+EEE                  DDD         DDD      DDD         DDD            TTT
+EEE                  DDD         DDD      DDD         DDD            TTT
+EEE                  DDD         DDD      DDD         DDD            TTT
+EEEEEEEEEEEE         DDD         DDD      DDD         DDD            TTT
+EEEEEEEEEEEE         DDD         DDD      DDD         DDD            TTT
+EEEEEEEEEEEE         DDD         DDD      DDD         DDD            TTT
+EEE                  DDD         DDD      DDD         DDD            TTT
+EEE                  DDD         DDD      DDD         DDD            TTT
+EEE                  DDD         DDD      DDD         DDD            TTT
+EEE                  DDD         DDD      DDD         DDD            TTT
+EEE                  DDD         DDD      DDD         DDD            TTT
+EEE                  DDD         DDD      DDD         DDD            TTT
+EEEEEEEEEEEEEEE      DDDDDDDDDDDD         DDDDDDDDDDDD               TTT
+EEEEEEEEEEEEEEE      DDDDDDDDDDDD         DDDDDDDDDDDD               TTT
+EEEEEEEEEEEEEEE      DDDDDDDDDDDD         DDDDDDDDDDDD               TTT
+
+GS7     P       10:57:28        AUG 16,1968
+
+
+
+   CCCCCCCCC            333333333   
+   CCCCCCCCC            333333333   
+   CCCCCCCCC            333333333   
+CCC         CCC      333         333
+CCC         CCC      333         333
+CCC         CCC      333         333
+CCC                              333
+CCC                              333
+CCC                              333
+CCC                        333333
+CCC                        333333
+CCC                        333333
+CCC                              333
+CCC                              333
+CCC                              333
+CCC         CCC      333         333
+CCC         CCC      333         333
+CCC         CCC      333         333
+   CCCCCCCCC            333333333   
+   CCCCCCCCC            333333333   
+   CCCCCCCCC            333333333   

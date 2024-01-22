@@ -1,0 +1,60 @@
+181                                                                                   PAGE 1.3
+182             (DEFPROP $K
+183              (LAMBDA NIL
+184               (COND
+185                ($K
+186                 (COND
+187                  ((CDR $K)
+188                   (COND
+189                    ((CDAR $K)
+190                     (RPLACD (CAR $K) (CDDAR $K)))))
+191                  (($U) (RPLACA (CDAR $K) (CDADAR $K))
+192                   ($D))))))
+193              EXPR)
+194
+195
+196             (DEFPROP $IP
+197              (LAMBDA NIL
+198               ($KI (LIST (CADAR $K))))
+199              EXPR)
+200
+201
+202             (DEFPROP $DP
+203              (LAMBDA NIL
+204               (COND ((PATOM (CADAR $K)))
+205                ((MAPC (FUNCTION $I) (CADAR $K)) ($K))))
+206              EXPR)
+207
+208
+209             (DEFPROP $I
+210              (LAMBDA (A)
+211               (COND
+212                ((AND $K A)
+213                 (COND
+214                  ((CDR $K)
+215                   ((COND ((CDAR $K) (QUOTE RPLACD))
+216                     ((QUOTE NCONC)))
+217                    (CAR $K)
+218                    (CONS A (CDAR $K)))
+219                   ($R))
+220                  (($U)
+221                   (RPLACA (CDAR $K) (CONS A (CADAR $K)))
+222                   ($D)
+223                   ($R))))))
+224              EXPR)
+225
+226
+227             (DEFPROP $KI
+228              (LAMBDA (A)
+229               (PROG2 ($I A)
+230                 ($K)))
+231              EXPR)
+232
+233
+234             (DEFPROP $S
+235              (LAMBDA $S3
+236               ((LAMBDA (A $S $U $L)
+237                 (PROG NIL
+238                  A
+239                  (COND
+240                   ((SETQ $S3

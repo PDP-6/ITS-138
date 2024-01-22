@@ -1,0 +1,60 @@
+421                                                                                   PAGE 1.7
+422             (DEFPROP $TF
+423              (LAMBDA (L)
+424               (PROG (LL)
+425                (TERPRI)
+426                (PRINC (QUOTE TRACE/ ))
+427                (PRINC (QUOTE $TRF))
+428                (SETQ LL L)
+429                A
+430                (COND
+431                 (LL (PRINT (CAR LL))
+432                  (SETQ LL (CDR LL))
+433                  (GO A)))
+434                (PRINT (QUOTE VALUE))
+435                (PRINT
+436                 (SETQ L (EVAL (CONS (QUOTE $TR) L))))
+437                (RETURN L)))
+438              FEXPR)
+439
+440
+441             (DEFPROP $T
+442              (LAMBDA $L
+443               (PROG ($R $S $T $U)
+444                A
+445                (COND ((GREATERP $L 0))
+446                 ((RETURN NIL)))
+447                (SETQ $S (ARG $L))
+448                (SETQ $L (SUB1 $L))
+449                (COND
+450                 ((SETQ $U
+451                  (GETL $S
+452                   (QUOTE (EXPR SUBR LSUBR ARRAY MACRO))))
+453                  (SETQ $R
+454                   (GETL (QUOTE $TL) (QUOTE (EXPR)))))
+455                 ((SETQ $U
+456                   (GETL $S (QUOTE (FEXPR FSUBR))))
+457                  (SETQ $R
+458                   (GETL (QUOTE $TF) (QUOTE (FEXPR)))))
+459                 ((RETURN NIL)))
+460                (SETQ $T (INTERN ($SYM (QUOTE TRACE))))
+461                (NCONC (GET (QUOTE $T) (QUOTE TRACE))
+462                 (LIST
+463                  (LIST $S $T (CAR $R) (CAR $U) (CADR $U))))
+464                (PUTPROP $T (CADR $U) (CAR $U))
+465                (PUTPROP $S
+466                 (SUBST $S
+467                  (QUOTE $TRF)
+468                  (SUBST $T (QUOTE $TR) (CADR $R)))
+469                 (CAR $R))
+470                (GO A)))
+471              EXPR)
+472
+473
+474             (DEFPROP $P
+475              (LAMBDA NIL
+476               (PROG NIL
+477                (TYO 14)
+478                (PRINT $Y)
+479                (COND ((PATOM $K))
+480                 (T (TERPRI)

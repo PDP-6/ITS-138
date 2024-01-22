@@ -1,0 +1,60 @@
+481                  (PRIN1                                                           PAGE 1.8
+482                   (COND
+483                    ((CDR $K)
+484                     (CONS (CAAR $K)
+485                      (CONS (QUOTE I$$) (CDAR $K))))
+486                    ((CAR $K))))))))
+487              EXPR)
+488
+489
+490             (DEFPROP $$T
+491              (LAMBDA NIL
+492               (MAPC (FUNCTION $UT)
+493                (MAPCAR (FUNCTION CAR)
+494                 (CDR (GET (QUOTE $T) (QUOTE TRACE))))))
+495              EXPR)
+496
+497
+498             (DEFPROP $UT
+499              (LAMBDA $UT
+500               (PROG ($UB)
+501                A
+502                (COND ((ZEROP $UT) (RETURN NIL))
+503                 (T (SETQ SUB (ARG $UT))
+504                  (SETQ $UT (SUB1 $UT))
+505                  (SETQ $$T
+506                   (ASSOC $UB
+507                    (SETQ $T
+508                     (GET (QUOTE $T) (QUOTE TRACE)))))
+509                  (DELETE $$T $T)
+510                  (REMPROP $UB (CADDR $$T))
+511                  (PUTPROP $UB
+512                   (CADDR (CDDR $$T))
+513                   (CADDDR $$T))
+514                  (REMOB (CADR $$T))))
+515                (GO A)))
+516              EXPR)
+517
+518
+519             (DEFPROP $PP
+520              (LAMBDA B
+521               (PROG ($PP A C LINEL LINEL1)
+522                (SETQ C 0)
+523                (SETQ LINEL 110)
+524                (SETQ LINEL1 55)
+525                (TYO 14)
+526                A
+527                (COND ((EQUAL C B) (ERR))
+528                 ((SETQ C (ADD1 C)) (SETQ A (ARG C))
+529                  (TERPRI)
+530                  (TERPRI)
+531                  (AND
+532                   (SETQ $PP
+533                    (GETL A (QUOTE (EXPR FEXPR MACRO))))
+534                   ($PP1
+535                    (LIST (QUOTE DEFPROP)
+536                     A
+537                     (CADR $PP)
+538                     (CAR $PP))
+539                    0
+540                    T))

@@ -1,0 +1,60 @@
+601                 ((PATOM A) (TERPRI)                                               PAGE 1.10
+602                  ($SPACE N T)
+603                  (PRINC (QUOTE / /. / ))
+604                  (TERPRI)
+605                  ($PP1 A N NIL)
+606                  (RETURN NIL))
+607                 ((AND Q
+608                   (FIT (CAR A) (ADD1 (*DIF LINEL CHRCT))))
+609                  (PRINC (QUOTE / ))
+610                  ($PP3 (CAR A) (*DIF LINEL CHRCT) NIL))
+611                 (($PP1 (CAR A) N T)))
+612                (SETQ Q NIL)
+613                (GO A)))
+614              EXPR)
+615
+616
+617             (DEFPROP $PP3
+618              (LAMBDA (A N TAG)
+619               (PROG2 ($SPACE N TAG)
+620                (PRIN1 A)))
+621              EXPR)
+622
+623
+624             (DEFPROP $SPACE
+625              (LAMBDA (N TAG)
+626               (PROG NIL
+627                (COND (TAG)
+628                 ((RETURN NIL)))
+629                (TERPRI)
+630                A
+631                (COND
+632                 ((NOT
+633                   (GREATERP (PLUS (*DIF LINEL CHRCT) 10)
+634                    N))
+635                  (PRINC (QUOTE /	))
+636                  (GO A)))
+637                B
+638                (COND
+639                 ((NOT
+640                   (GREATERP (ADD1 (*DIF LINEL CHRCT)) N))
+641                  (PRINC (QUOTE / ))
+642                  (GO B)))))
+643              EXPR)
+644
+645
+646             (DEFPROP QUOTEL
+647              (LAMBDA ($S)
+648               (MAPCAR
+649                (FUNCTION
+650                 (LAMBDA ($S)
+651                  (LIST (QUOTE QUOTE) $S)))
+652                $S))
+653              EXPR)
+654
+655
+656             (DEFPROP PFILE
+657              (LAMBDA (L)
+658               (PROG (LINEL LINEL1 $XCH)
+659                (SETQ $XCH
+660                 (COND

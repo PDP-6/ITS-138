@@ -1,0 +1,60 @@
+001                                                                                   PAGE 1
+002
+003
+004             (DEFPROP DELETE
+005              (LAMBDA (A B)
+006               (PROG NIL
+007                A
+008                (COND
+009                 ((AND B
+010                   (CDR B)
+011                   (NOT (PATOM (CDR B)))
+012                   (EQUAL A (CADR B)))
+013                  (RPLACD B (CDDR B)))
+014                 ((SETQ B (CDR B)) (GO A)))))
+015              EXPR)
+016
+017
+018             (COND ((GET (QUOTE $Y) (QUOTE VALUE)))
+019              ((SETQ $Y NIL)))
+020
+021
+022             (COND
+023              ((NUMBERP (GET (QUOTE $SYM) (QUOTE VALUE))))
+024              ((SETQ $SYM 10)))
+025
+026
+027             (PROG2
+028              (SETQ TECO
+029               (LIST
+030                (QUOTE
+031                 ((D . $D) (R . $R)
+032                  (L . $L)
+033                  (U . $U)
+034                  (IP . $IP)
+035                  (DP . $DP)
+036                  (J . $J)
+037                  (B . $B)
+038                  ($$B . $$B)
+039                  ($$T . $$T)))
+040                (QUOTE
+041                 ((P . $PP) (I . $I)
+042                  (K . $K1)
+043                  (KI . $KI)
+044                  (S . $S)
+045                  (Y . $Y)
+046                  (UB . $UB)
+047                  (T . $T)
+048                  (UT . $UT)))))
+049              NIL)
+050
+051
+052             (COND ((GET (QUOTE $B) (QUOTE BREAK)))
+053              ((PUTPROP (QUOTE $B)
+054                (LIST NIL)
+055                (QUOTE BREAK))))
+056
+057
+058             (COND ((GET (QUOTE $T) (QUOTE TRACE)))
+059              ((PUTPROP (QUOTE $T)
+060                (LIST NIL)

@@ -1,0 +1,60 @@
+121                      (LIST NIL (CDR A)))                                          PAGE 1.2
+122                     ((SETQ $S (GET A $U)) (LIST $U $S))
+123                     (T (PRINT A)
+124                      (PRINC (QUOTE / NO/ ))
+125                      (PRINC $U)
+126                      (PRINC (QUOTE  PROPERTY))
+127                      (ERR)))))
+128                  (SETQ $Y (LIST A $U))
+129                  (SETQ $D NIL)
+130                  ($D)))
+131                (ARG 1)
+132                (COND ((EQ $S 2) (ARG 2))
+133                 (NIL))))
+134              EXPR)
+135
+136
+137             (DEFPROP $J
+138              (LAMBDA NIL
+139               ($Y (CAR $Y) (CADR $Y)))
+140              EXPR)
+141
+142
+143             (DEFPROP $R
+144              (LAMBDA NIL
+145               (COND ((PATOM (CADR $K)) NIL)
+146                ((SETQ $K (CONS (CDAR $K) $K)))))
+147              EXPR)
+148
+149
+150             (DEFPROP $D
+151              (LAMBDA NIL
+152               (COND
+153                ((OR (NULL (CDAR $K)) (PATOM (CADAR $K)))
+154                 NIL)
+155                ((SETQ $D (CONS $K $D))
+156                 (SETQ $K
+157                  (LIST (CONS (QUOTE ^$$) (CADAR $K)))))))
+158              EXPR)
+159
+160
+161             (DEFPROP $
+162              (LAMBDA NIL
+163               (COND ((CDR $K) (SETQ $K (CDR $K)))))
+164              EXPR)
+165
+166
+167             (DEFPROP $U
+168              (LAMBDA NIL
+169               (COND
+170                ($D (SETQ $K (CAR $D))
+171                 (SETQ $D (CDR $D))
+172                 1)))
+173              EXPR)
+174
+175
+176             (DEFPROP $K1
+177              (LAMBDA ($S)
+178               (COND ((EQUAL $S (QUOTE K)) ($K))))
+179              EXPR)
+180
