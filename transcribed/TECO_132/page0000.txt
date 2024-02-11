@@ -1,0 +1,51 @@
+DSK  SYSENG     SYSENG  01:26:31        JAN 22,1969
+
+
+
+TTTTTTTTTTTTTTT      EEEEEEEEEEEEEEE         CCCCCCCCC            OOOOOOOOO
+TTTTTTTTTTTTTTT      EEEEEEEEEEEEEEE         CCCCCCCCC            OOOOOOOOO
+TTTTTTTTTTTTTTT      EEEEEEEEEEEEEEE         CCCCCCCCC            OOOOOOOOO
+      TTT            EEE                  CCC         CCC      OOO         OOO
+      TTT            EEE                  CCC         CCC      OOO         OOO
+      TTT            EEE                  CCC         CCC      OOO         OOO
+      TTT            EEE                  CCC                  OOO         OOO
+      TTT            EEE                  CCC                  OOO         OOO
+      TTT            EEE                  CCC                  OOO         OOO
+      TTT            EEEEEEEEEEEE         CCC                  OOO         OOO
+      TTT            EEEEEEEEEEEE         CCC                  OOO         OOO
+      TTT            EEEEEEEEEEEE         CCC                  OOO         OOO
+      TTT            EEE                  CCC                  OOO         OOO
+      TTT            EEE                  CCC                  OOO         OOO
+      TTT            EEE                  CCC                  OOO         OOO
+      TTT            EEE                  CCC         CCC      OOO         OOO
+      TTT            EEE                  CCC         CCC      OOO         OOO
+      TTT            EEE                  CCC         CCC      OOO         OOO
+      TTT            EEEEEEEEEEEEEEE         CCCCCCCCC            OOOOOOOOO
+      TTT            EEEEEEEEEEEEEEE         CCCCCCCCC            OOOOOOOOO
+      TTT            EEEEEEEEEEEEEEE         CCCCCCCCC            OOOOOOOOO
+
+DSK  SYSENG     SYSENG  01:26:33        JAN 22,1969
+
+
+
+      111               333333333            222222222
+      111               333333333            222222222
+      111               333333333            222222222
+   111111            333         333      222         222
+   111111            333         333      222         222
+   111111            333         333      222         222
+      111                        333                  222
+      111                        333                  222
+      111                        333                  222
+      111                  333333                  222
+      111                  333333                  222
+      111                  333333                  222
+      111                        333            222
+      111                        333            222
+      111                        333            222
+      111            333         333         222
+      111            333         333         222
+      111            333         333         222
+   111111111            333333333         222222222222222
+   111111111            333333333         222222222222222
+   111111111            333333333         222222222222222
