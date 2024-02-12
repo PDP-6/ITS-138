@@ -1,5 +1,5 @@
 480                  (((LAMBDA (X)
-481                            (COND ((ATOM X)                                        PAGE 1.8
+481                            (COND ((ATOM X)                                          PAGE 1.8
 482                                   (Q ((($NOT FOUND$)))))
 483                                  (T (LIST X (LIST X)))))
 484                    (EVAL O)))))))
@@ -8,20 +8,20 @@
 487             (DEFPROP $FILE
 488              (LAMBDA (O I)
 489               ((LAMBDA (X Y)
-490                (COND ((ATOM X)
-491                       (PUTPROP X Y (COND (I) ($IND))))
-492                      ((PROG2 (RPLACA X (CAR Y))
-493                              Y
-494                              (RPLACD X (CDR Y))))))
-495               (COND (O) ($OB))
-496               (COND ($CURSOR) (CAAR (LAST $CURSOR)))))
+490                 (COND ((ATOM X)
+491                        (PUTPROP X Y (COND (I) ($IND))))
+492                       ((PROG2 (RPLACA X (CAR Y))
+493                               Y
+494                               (RPLACD X (CDR Y))))))
+495                (COND (O) ($OB))
+496                (COND ($CURSOR (CAAR (LAST $CURSOR))))))
 497              EXPR)
 498
 499             (DEFPROP $REMBREAK
 500              (LAMBDA (N)
 501               ((LAMBDA (L)
 502                 (COND (L (RPLACA (CAR (CADDR L))
-503                                    (CDDAAR (CADDR L)))
+503                                   (CDDAAR (CADDR L)))
 504                           (STORE ($LOCAR N) NIL)
 505                           (STORE ($CONDAR N) NIL)
 506                           T)))
@@ -39,8 +39,8 @@
 518                       (COND ((MINUSP (SETQ N (SUB1 N)))
 519                              (RETURN A))
 520                             ((GO LOOP)))))
-521               ((MAPC (FUNCTION $REMBREAK) X))))
-522              EXPR)
+521                ((MAPC (FUNCTION $REMBREAK) X))))
+522              FEXPR)
 523
 524             (DEFPROP $SETBREAK
 525              (LAMBDA (O I C N CND)
@@ -51,7 +51,7 @@
 530                     (RPLACA (RPLACA PROGL
 531                                     (CONS N
 532                                           (CAR PROGL)))
-533                             (CONS (Q S) (CAR PROGL)))
+533                             (CONS (Q $) (CAR PROGL)))
 534                     (STORE ($LOCAR N) (LIST I O C))
 535                     (STORE ($CONDAR N)
 536                            (COND ((NULL CND) T) (CND)))

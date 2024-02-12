@@ -1,8 +1,9 @@
-600                                (CADR L))
-601                               (T))))                                              PAGE 1.10
-602                      FEXPR)
+600                                 (CADR L))
+601                                (T))))                                               PAGE 1.10
+602                       FEXPR)
 603
-604             (DEFPROP $LISP
+604
+605             (DEFPROP $LISP
 606              (LAMBDA (NO)
 607               (PROG (EX)
 608                (PRINT (Q BREAK))
