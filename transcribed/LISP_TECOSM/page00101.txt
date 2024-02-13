@@ -52,7 +52,7 @@
 111                                   (AND (LESSP N CHRCT)
 112                                        (PRINC (/    (*DIF (LSH (*DIF LINEL N) -3) (LSH (*DIF LINEL CHRCT) -3))))
 113                                        (PRINC (/  (*DIF CHRCT N))))
-114                                   (AND (OR (LESSP (PLUS M -1 (FLATSIZE L)) CHRCT) (ATOM L)) (RETURN (PRINT1 L)))
+114                                   (AND (OR (LESSP (PLUS M -1 (FLATSIZE L)) CHRCT) (ATOM L)) (RETURN (PRIN1 L)))
 115                                   (SETQ F (EQ (CAR L) (QUOTE PROG)))
 116                                   (PRINC (QUOTE /())
 117                                          (ERRSET(AND (NOT(ATOM(CDR L)))
