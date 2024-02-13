@@ -1,5 +1,5 @@
 360             (DEFPROP $INSERT
-361              (LAMBDA (S C)                                                        PAGE 1.6
+361              (LAMBDA (S C)                                                          PAGE 1.6
 362               (COND
 363                ((NULL C)
 364                 ($RIGHT ($DOWN (LIST (LIST (LIST S))))))
@@ -44,10 +44,10 @@
 403              (LAMBDA (CMS C)
 404                      (COND ((NOT ($RIGHT C))
 405                           ($S1 CMS ($RIGHT ($UP C))))))
-406                      EXPR)
+406              EXPR)
 407
 408             (DEFPROP $SEARCH2
-409              (LAMBDA (CMS C)
+409              (LAMBDA (CMSC)
 410               (PROG ($C1)
 411                A    (COND ((SETQ C
 412                                  ($S1 CMS (SETQ $C1 C))))

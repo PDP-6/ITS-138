@@ -1,5 +1,5 @@
 300                                    (CAR ($CURLOC CUR)))
-301                            (CDR ($CURLOC CUR)))                                   PAGE 1.5
+301                            (CDR ($CURLOC CUR)))                                     PAGE 1.5
 302                    (RETURN C))
 303                   ((SETQ CUR ($LEFT C))
 304                    (RPLACD ($CURLOC CUR) NIL)
@@ -15,12 +15,12 @@
 314               (PROG (CUR)
 315                     (SETQ CUR $CURSOR)
 316                LOOP (COND ((AND (*GREAT (SETQ N
-317                                               (SUB1 N))
+317                                               (SUB 1 N))
 318                                         -1)
 319                                 (SETQ CUR (OP CUR)))
 320                            (SETQ $CURSOR CUR)
 321                            (GO LOOP)))
-322                      (RETURN ($CURLOC $CURSOR))))
+322                     (RETURN ($CURLOC $CURSOR))))
 323              EXPR)
 324
 325             (DEFPROP $R

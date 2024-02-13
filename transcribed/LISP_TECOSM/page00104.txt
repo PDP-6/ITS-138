@@ -1,5 +1,5 @@
 240                      MACRO)
-241                                                                                   PAGE 1.4
+241                                                                                     PAGE 1.4
 242             (DEFPROP $CUREXPR
 243                      (LAMBDA (L)
 244                              (CONS (Q CAAR) (CDR L)))
@@ -22,7 +22,7 @@
 261                (R S)
 262                (COND ((EQ (SETQ S
 263                                 ($CUREXPR ($CURCON C)))
-264                            (SETQ R ($CURLOC C)))
+264                           (SETQ R ($CURLOC C)))
 265                       (RETURN NIL)))
 266             LOOP
 267                (COND ((EQ ($CURCON S) R)

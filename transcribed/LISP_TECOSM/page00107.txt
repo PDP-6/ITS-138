@@ -1,12 +1,12 @@
 420             (DEFPROP $SEARCH1
-421              (LAMBDA ()                                                           PAGE 1.7
+421              (LAMBDA ()                                                             PAGE 1.7
 422               (PROG
 423                (CH CMS OP NAME CUR)
 424             S1 (SETQ NAME (SETQ OP NIL))
 425             S2 (SETQ CH (READCH))
 426                (COND ((EQ CH $AM) (GO SAM))
 427                      ((EQ CH $LP) (GO SLP))
-428                     ((EQ CH $RP) (GO SRP))
+428                      ((EQ CH $RP) (GO SRP))
 429                      ((EQ CH $SP) (GO SSP))
 430                      ((MEMQ CH (LIST $CR $LF)) (GO S3)))
 431                (SETQ NAME (CONS CH NAME))
@@ -28,10 +28,10 @@
 447                       (MCONS (READLIST (REVERSE NAME))
 448                              (Q $ATM)
 449                              CMS)))
-450                (AND (SETQ CUR ($SEARCH2 (REVERSE CMS)
-451                                        $CURSOR))
-452                     (SETQ $CURSOR CUR))
-453                (RETURN ($CURLOC $CURSOR))))
+450                 (AND (SETQ CUR ($SEARCH2 (REVERSE CMS)
+451                                         $CURSOR))
+452                      (SETQ $CURSOR CUR))
+453                 (RETURN ($CURLOC $CURSOR))))
 454              EXPR)
 455
 456             (DEFPROP $GL

@@ -1,13 +1,13 @@
 540             (DEFPROP $BREAK
-541              (LAMBDA ($E $AL)                                                     PAGE 1.9
+541              (LAMBDA ($E $AL)                                                       PAGE 1.9
 542               ((LAMBDA ($C)
-543                ((LAMBDA ($L $CN)
-544                         (COND ((EVAL $CN $AL)
-545                                ($LISP (CAR $E))
-546                                (CDR $E))))
-547                 ($LOCAR $C)
-548                 ($CONDAR $C)))
-549               (CAR $E)))
+543                 ((LAMBDA ($L $CN)
+544                          (COND ((EVAL $CN $AL)
+545                                 ($LISP (CAR $E))
+546                                 (CDR $E))))
+547                  ($LOCAR $C)
+548                  ($CONDAR $C)))
+549                (CAR $E)))
 550              EXPR)
 551
 552             (DEFPROP $
@@ -17,7 +17,7 @@
 556
 557             (DEFPROP $I
 558                      (LAMBDA (X) ($INSERT (CAR X)
-559                                           $CURSOR))
+559                                            $CURSOR))
 560                      FEXPR)
 561
 562             (DEFPROP $S
