@@ -1,5 +1,5 @@
 120                                               (PROG NIL
-121                                                     (ERRSET(SETQ Q               PAGE 1.2
+121                                                     (ERRSET(SETQ G               PAGE 1.2
 122                                                           (LESSP (MAXPAN (LAST L)
 123                                                                              (*DIF (PLUS (FLATSIZE (LAST L)) CHRCT)
 124                                                                  N)))
@@ -10,7 +10,7 @@
 129                                           (SETQ H (MEMQ (CAR L) (QUOTE (DEFPROP LABEL LAMBDA))))
 130                                           B
 131                                           (SPRINT (CAR L)
-132                                                   (COND ((SETQ Q (AND F (CAR L) (ATOM (CAR L)))) (PLUS N 5)) (N))
+132                                                   (COND ((SETQ G (AND F (CAR L) (ATOM (CAR L)))) (PLUS N 5)) (N))
 133                                                   (COND ((NULL (SETQ L (CDR L))) (ADD1 M)) ((ATOM L) (PLUS 4 M (FLAT
 134                                           (COND ((ATOM L) (AND L (PRINC (QUOTE / /./ )) (PRIN1 L)) (RETURN (PRINC (Q
 135                                           (COND (H (SETQ H NIL) (PRINC (QUOTE / )))
@@ -40,21 +40,21 @@
 159                                            (SETQ LINEL 120)
 160                                            (EVAL (CONS (QUOTE UREAD) L))
 161                                            (EVAL (CONS (QUOTE UWRITE) (AND (CDDR L) (LAST L))))
-162                                            (SETQ ^W (SETQ LINT 73))
+162                                            (SETQ ^W (SETQ LINCT 73))
 163                                            (IOC RQ)
 164                                       A    (COND ((LESSP (TURPRI)
 165                                                          (CAR(ERRSET(REMAINDER (PANMAX (SETQ G (CAR (OR (ERRSET (REA
 166                                                                                                   (RETURN (CONS (QUOT
 167                                                                                 CHRCT
 168                                                                                 0)
-169                                                                     74)
+169                                                                     74))))
 170                                                   (SETQ LINCT 73)
 171                                                   (TYO 14)
 172                                                   (SETQ CHRCT LINEL))
 173                                                  ((TURPRI)))
 174                                            (SPRINT G CHRCT 0)
 175                                            (GO A)))
-176                               EXPR)))(QUOTE EDIT)
+176                               FEXPR)))(QUOTE EDIT)
 177
 178
 179

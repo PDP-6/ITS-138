@@ -14,7 +14,7 @@
 493                              Y
 494                              (RPLACD X (CDR Y))))))
 495               (COND (O) ($OB))
-496               (COND ($CURSOR) (CAAR (LAST $CURSOR)))))
+496               (COND ($CURSOR (CAAR (LAST $CURSOR))))))
 497              EXPR)
 498
 499             (DEFPROP $REMBREAK
@@ -40,7 +40,7 @@
 519                              (RETURN A))
 520                             ((GO LOOP)))))
 521               ((MAPC (FUNCTION $REMBREAK) X))))
-522              EXPR)
+522              FEXPR)
 523
 524             (DEFPROP $SETBREAK
 525              (LAMBDA (O I C N CND)
@@ -51,7 +51,7 @@
 530                     (RPLACA (RPLACA PROGL
 531                                     (CONS N
 532                                           (CAR PROGL)))
-533                             (CONS (Q S) (CAR PROGL)))
+533                             (CONS (Q $) (CAR PROGL)))
 534                     (STORE ($LOCAR N) (LIST I O C))
 535                     (STORE ($CONDAR N)
 536                            (COND ((NULL CND) T) (CND)))

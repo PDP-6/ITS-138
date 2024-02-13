@@ -1,6 +1,6 @@
 001             (DEFPROP TRACE                                                        PAGE 1
 002               (LAMBDA (L)
-003                 (PROG (X X Y Z)
+003                 (PROG (X W Y Z)
 004                  B    (COND ((NULL L) (RETURN Y)))
 005                       (SETQ X (SETQ Z (CAR L)))
 006                       (SETQ L (CDR L))
@@ -28,7 +28,7 @@
 028                                           (QUOTE (/-B /-C))
 029                                           (LIST (SUBST W X (QUOTE PRINT))
 030                                                 (LIST (SUBST W X (QUOTE QUOTE))
-031                                                       (LIST QUOTE ENTERING) X))))
+031                                                       (LIST (QUOTE ENTERING) X))))
 032                                     (APPEND
 033                                      (SUBST
 034                                       W

@@ -1,5 +1,5 @@
 300                                    (CAR ($CURLOC CUR)))
-301                            (CDR ($CURLOC UR)))                                    PAGE 1.5
+301                            (CDR ($CURLOC CUR)))                                   PAGE 1.5
 302                    (RETURN C))
 303                   ((SETQ CUR ($LEFT C))
 304                    (RPLACD ($CURLOC CUR) NIL)

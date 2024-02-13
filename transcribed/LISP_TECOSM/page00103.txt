@@ -10,7 +10,7 @@
 189                       EXPR)
 190                       (SPECIAL
 191               $CURSOR $C1 $IND $OB
-192                $AM $VT $FF $CL  $LP $RP $SP $PT $H $CR
+192                $AM $VT $FF $SL  $LP $RP $SP $PT $H $CR
 193                $LF $CH $TB $RO $CO)))
 194
 195               (DEFPROP MCONS
