@@ -8,7 +8,7 @@
 008                      B1
 009                      (SETQ FLD 0)
 010                      B2
-011                      (SETQ MP NIL)
+011                      (SETQ MF NIL)
 012                      C
 013                      (SETQ SYL 0)
 014                      C1
@@ -23,7 +23,7 @@
 023                       ((SETQ TEM (GETL SYL NIL)) (SETQ SYL (MAKNUM SYL (QUOTE FIXNUM)))
 024                                                  (GO E))
 025                       ((SETQ SYL (GET SYL (QUOTE SYM))) (GO E)))
-026                      (PRIN1 (QUOTE J))
+026                      (PRIN1 (QUOTE U))
 027                      RET
 028                      (PRINC (QUOTE / / / ))
 029                      (GO B)
@@ -34,8 +34,8 @@
 034                      (SETQ FLD (PLUS FLD (COND (MF (MINUS SYL)) (SYL))))
 035                      (COND ((EQ CH (QUOTE /-)) (SETQ MF T) (GO C))
 036                            ((EQ CH (QUOTE +)) (GO B2))
-037                            ((EQ CH (QUOTE /,))
-038                             (SETQ TIF ())
+037                            ((EQ CH (QUOTE /.))
+038                             (SETQ TIF T)
 039                             (SETQ WRD (PLUS WRD (LSH FLD 27) (BOOLE 1 -1000000 FLD)))
 040                             (GO B1)))
 041                     (SETQ FLD (PLUS FLD WRD))

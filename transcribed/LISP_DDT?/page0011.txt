@@ -10,7 +10,7 @@
 069                     TAB
 070                     (DEPRA)
 071                     (SETQ LOC (BOOLE 1 777777 WRD))
-072                     (GO L1)
+072                     (GO LI1)
 073                     EXC
 074                     (DEPRA)
 075                     (SETQ OC (LSH WRD -22))
@@ -25,7 +25,7 @@
 084
 085             (DEFPROP SYMP
 086              (LAMBDA (X)
-087               (PROG (X Q)
+087               (PROG (Y Q)
 088                     (SETQ X (BOOLE 1 777777 X))
 089                     (MAPC
 090                      (FUNCTION
