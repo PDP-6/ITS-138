@@ -27,9 +27,9 @@
 087                                    (SETQ SLOTLIST H2)
 088                                    (OUTPUT G2)
 089                                    (GO D)
-090                              B    (SETQ T1 NIL)
-091                              D    (SETQ EXP (CDR EXP))
-092                                   (GO A)))
+090                               B    (SETQ T1 NIL)
+091                               D    (SETQ EXP (CDR EXP))
+092                                    (GO A)))
 093                      EXPR)
 094
 095             (DEFPROP SPECIAL

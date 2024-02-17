@@ -22,5 +22,5 @@
 022                                    (SETQ LL (P1LMB (CADAR Z)))
 023                                    (SETQ CNT (ADD1 CNT))
 024                                    (RETURN (CONS (LIST (QUOTE LAMBDA) LL (P1 (CADDAR Z)))
-025                                            TEM))))
+025                                                  TEM))))
 026                      EXPR)

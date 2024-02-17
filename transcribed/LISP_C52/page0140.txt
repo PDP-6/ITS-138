@@ -19,12 +19,12 @@
 019                                                (READLIST (CONS (QUOTE C)
 020                                                                (NCONC (REVERSE (CDR T4))
 021                                                                       (QUOTE (4))))))))
-022                            (GO RET)))
-023                L2   (OUT1 (GET (CADR T4) (QUOTE INST)) AC (CAR T4))
-024                     (SETQ T4 (CONS AC (CDDR T4)))
-025                     (GO L1)
-026                RET  (CONT AC (LIST (CAR ITEM)))
-027                     (RETURN AC)))
+022                           (GO RET)))
+023                L2  (OUT1 (GET (CADR T4) (QUOTE INST)) AC (CAR T4))
+024                    (SETQ T4 (CONS AC (CDDR T4)))
+025                    (GO L1)
+026                RET (CONT AC (LIST (CAR ITEM)))
+027                    (RETURN AC)))
 028              EXPR)
 029
 030             (DEFPROP CSTEP
