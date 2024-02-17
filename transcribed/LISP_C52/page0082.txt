@@ -53,5 +53,5 @@
 173                                                         (CONS (LIST (CADR X)) (CDDR X))))))
 174                                    (SETQ LL (P1LMB (SETQ Z (CADR X))))
 175                                    (COND ((GREATERP (LENGTH Z) NACS) (BARF TMA)))
-176                                    (RETURN (LIST (CAR X) LL (P1 (CADDR X))))))
+176                               B    (RETURN (LIST (CAR X) LL (P1 (CADDR X))))))
 177                      EXPR)

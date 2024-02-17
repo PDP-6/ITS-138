@@ -1,6 +1,6 @@
 181                                    (SETQ TEM (LMB (CADDR Y) NIL))                 PAGE 7.3
 182                                    (SETQ SFLG NIL)
-183                                    (COND ((EQUAL (CAR Y) (ADD1 CNT)) (CLEAR)))
+183                                    (COND ((EQUAL (CAR Y) (ADD1 CNT)) (CLEAR1)))
 184                                    (CPROG Y TEM)
 185                                    (GO RET2)
 186                               COMGO(CPVRL)

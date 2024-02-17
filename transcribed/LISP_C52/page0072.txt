@@ -17,7 +17,7 @@
 137                                                 (T (OUT1 (GET X (QUOTE INST))
 138                                                          (LOCATE (CAR Z) (FRAC1))
 139                                                          (LOC (CADR Z)))))
-140                                           (RETURN (CAR Z)))
+140                                           (RETURN (CADR Z)))
 141                                          ((NOT (EQ X (QUOTE CONS))) (GO T1))
 142                                          ((EQUAL (CAR Z) (QUOTE (QUOTE NIL)))
 143                                           (REMOVE (CAR Z))

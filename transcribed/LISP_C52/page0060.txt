@@ -7,7 +7,7 @@
 007                     (BARF RESTORE LOSSAGE)))
 008                A1   (SETQ C 0)
 009                A    (COND ((EQUAL (LENGTH X) (LENGTH SLOTLIST)) (RETURN (R1 C)))
-010                           ((DVP (SETQ R (CAR (NACS1)))) (GO CPP)))
+010                           ((DVP (SETQ R (CADR (NACS1)))) (GO CPP)))
 011                     (SETQ C (ADD1 C))
 012                     (SPOP)
 013                     (GO A)

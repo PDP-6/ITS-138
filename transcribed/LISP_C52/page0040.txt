@@ -40,7 +40,7 @@
 040                      (LAMBDA (X) (PROG (L HLAC)
 041                                        (SETQ HLAC (SETQ L (LENGTH X)))
 042                                   A    (COND ((ZEROP L) (RETURN NIL)))
-043                                        (LOAD1 L (CAR X))
+043                                        (LOAD 1 L (CAR X))
 044                                        (SETQ X (CDR X))
 045                                        (SETQ L (SUB1 L))
 046                                        (GO A)))

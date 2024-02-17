@@ -2,7 +2,7 @@
 002                      (LAMBDA (EXP F TAG)
 003                              (PROG (W X Y Z AC)
 004                                    (SETQ X (COMP (CAR EXP)))
-005                                    (SETQ Y (ILOC1 (SETQ X (COMP1 (CADR EXP) (FRAC1)))
+005                                    (SETQ Y (ILOC1 (SETQ Z (COMP1 (CADR EXP) (FRAC1)))
 006                                                   (FRAC1)))
 007                                    (SETQ W (ILOC1 X (FRAC1)))
 008                                    (COND ((AND (NUMBERP W) (LESSP 0 W)) (SETQ AC W)

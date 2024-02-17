@@ -53,7 +53,7 @@
 053                                    (SETQ VGO (GENSYM))
 054                                    (SETQ GL (CONS (CONS NIL EXIT)
 055                                                   (CONS (CONS NIL EXITN)
-056                                                         (CONS (CONS NI VGO) (CAR X)))))
+056                                                         (CONS (CONS NIL VGO) (CAR X)))))
 057                                    (SETQ Z (CADR X))
 058                               L1   (COND ((NULL Z) (GO L2))
 059                                          ((SPECIALP (CAR Z)))

@@ -3,7 +3,7 @@
 063                                    (SETQ H2 (COND ((AND RSL (NOT (ATOM RSL))) RSL)
 064                                                   (T (APPEND SLOTLIST NIL))))
 065                                    (SETQ H1 (APPEND SPLDLST NIL))
-066                                    (SETQ T1 (CADR EXP))
+066                                    (SETQ T1 (CDAR EXP))
 067                               LP1  (COND ((NULL (CDR T1)) (GO L1)))
 068                                    (COMPE (CAR T1))
 069                                    (SETQ T1 (CDR T1))

@@ -1,7 +1,7 @@
 001             (DEFPROP CPUSH                                                        PAGE 16
 002              (LAMBDA (X)
 003                      (PROG (Z ZZ ZZX LK)
-004                            (COND ((NULL (DVP (SETQ ZZX (CONTENTS X)))) (RETURN NILL))
+004                            (COND ((NULL (DVP (SETQ ZZX (CONTENTS X)))) (RETURN NIL))
 005                                  ((LESSP X 1) (GO NOSLOT1)))
 006                       A    (SETQ ZZ 0)
 007                            (SETQ Z (CDR (NACS1)))
