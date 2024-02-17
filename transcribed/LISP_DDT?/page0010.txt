@@ -38,22 +38,22 @@
 038                             (SETQ TIF T)
 039                             (SETQ WRD (PLUS WRD (LSH FLD 27) (BOOLE 1 -1000000 FLD)))
 040                             (GO B1)))
-041                     (SETQ FLD (PLUS FLD WRD))
-042                     (SETQ WRD
-043                           (COND (TIF (BOOLE 6 (BOOLE 1 1000000 WRD) (BOOLE 1 777777 FLD)))
-044                                 (FLD)))
-045                     (COND ((EQ CH (QUOTE / )) (SETQ TIF QF) (GO B1))
-046                           ((NOT QF) (SETQ WRD LWT)))
-047                     (COND ((NOT (SETQ TEM (ASSOC CH DTB))) (PRIN1 (QUOTE ?)) (GO RET)))
-048                     (GO (CDR TEM))
-049                     SLA
-050                     (COND (QF (SETQ LOC WRD)))
-051                     S1
-052                     (PRINC (QUOTE / / / ))
-053                     (PIN (SETQ LWT (EXAMINE (SETQ LOC WRD))))
-054                     (SETQ ROF T)
-055                     (GO RET)
-056                     LINEF
-057                     (DEPRA)
-058                     (SETQ LOC (ADD1 LOC))
-059                     LI1
+041                      (SETQ FLD (PLUS FLD WRD))
+042                      (SETQ WRD
+043                            (COND (TIF (BOOLE 6 (BOOLE 1 1000000 WRD) (BOOLE 1 777777 FLD)))
+044                                  (FLD)))
+045                      (COND ((EQ CH (QUOTE / )) (SETQ TIF QF) (GO B1))
+046                            ((NOT QF) (SETQ WRD LWT)))
+047                      (COND ((NOT (SETQ TEM (ASSOC CH DTB))) (PRIN1 (QUOTE ?)) (GO RET)))
+048                      (GO (CDR TEM))
+049                      SLA
+050                      (COND (QF (SETQ LOC WRD)))
+051                      S1
+052                      (PRINC (QUOTE / / / ))
+053                      (PIN (SETQ LWT (EXAMINE (SETQ LOC WRD))))
+054                      (SETQ ROF T)
+055                      (GO RET)
+056                      LINEF
+057                      (DEPRA)
+058                      (SETQ LOC (ADD1 LOC))
+059                      LI1

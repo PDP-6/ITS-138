@@ -1,27 +1,27 @@
-060                     (SETQ WRD LOC)                                                PAGE 1.1
-061                     (TERPRI)
-062                     (PAD LOC)
-063                     (PRINC (QUOTE //))
-064                     (GO S1)
-065                     VAR
-066                     (DEPRA)
-067                     (SETQ LOC (SUB1 LOC))
-068                     (GO LI1)
-069                     TAB
-070                     (DEPRA)
-071                     (SETQ LOC (BOOLE 1 777777 WRD))
-072                     (GO LI1)
-073                     EXC
-074                     (DEPRA)
-075                     (SETQ OC (LSH WRD -22))
-076                     (GO LI1)
-077                     EQSGN
-078                     (PRIN1 (SETQ LWT WRD))
-079                     (GO RET)
-080                     CARR
-081                     (DEPRA)
-082                     (SETQ LWT WRD)
-083                     (GO A1))
+060                      (SETQ WRD LOC)                                               PAGE 1.1
+061                      (TERPRI)
+062                      (PAD LOC)
+063                      (PRINC (QUOTE //))
+064                      (GO S1)
+065                      VAR
+066                      (DEPRA)
+067                      (SETQ LOC (SUB1 LOC))
+068                      (GO LI1)
+069                      TAB
+070                      (DEPRA)
+071                      (SETQ LOC (BOOLE 1 777777 WRD))
+072                      (GO LI1)
+073                      EXC
+074                      (DEPRA)
+075                      (SETQ OC (LSH WRD -22))
+076                      (GO LI1)
+077                      EQSGN
+078                      (PRIN1 (SETQ LWT WRD))
+079                      (GO RET)
+080                      CARR
+081                      (DEPRA)
+082                      (SETQ LWT WRD)
+083                      (GO A1))
 084
 085             (DEFPROP SYMP
 086              (LAMBDA (X)
