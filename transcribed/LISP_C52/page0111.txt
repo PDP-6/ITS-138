@@ -16,7 +16,7 @@
 076                                           (OUTPUT Z))
 077                                          ((AND (NULL (CDR X)) (EQ (CAAR X) (QUOTE RETURN)))
 078                                           (COND ((OR (NULL (CDAR X)) (NULL (CADAR X)))
-079                                                  (PUTPROP EXIT T (QUOTE USED))
+079                                                  (PUTPROP EXITN T (QUOTE USED))
 080                                                  (GO L4))
 081                                                 (T (LOAD1 PVR (COMP (CADAR X)))
 082                                                    (COND ((GET EXITN (QUOTE USED))

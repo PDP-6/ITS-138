@@ -6,7 +6,7 @@
 006                                          (PUTPROP (SETQ G (GENSYM)) T (QUOTE SET))
 007                                          (BOOL1 EXP G T)
 008                                          (COND ((NOT (GET G (QUOTE USED))) (CPUSH NO)))
-009                                          (COND ((NOT EFFS) (OUT1 (QUOTE TDZA) NO NO)))
+009                                     L    (COND ((NOT EFFS) (OUT1 (QUOTE TDZA) NO NO)))
 010                                          (OUTTAG G)
 011                                          (COND ((NOT EFFS) (OUT1 (QUOTE MOVEI) NO T)))))
 012                      EXPR)
@@ -14,7 +14,7 @@
 014             (DEFPROP ITER
 015                      (LAMBDA (FN ARGS)
 016                              (COND ((NULL (CDR ARGS)) (P1 (CAR ARGS)))
-017                                    (T (LIST FN (P1 (CAR ARGS)) (ITER FN (CDR ARS))))))
+017                                    (T (LIST FN (P1 (CAR ARGS)) (ITER FN (CDR ARGS))))))
 018                      EXPR)
 019
 020             (DEFPROP OUTJ
@@ -31,7 +31,7 @@
 031
 032             (DEFPROP ADR
 033                      (LAMBDA (X) (PROG (Z)
-034                                        (COND ((SETQ (ASSOC X GL)) (RETURN (CDR Z))))
+034                                        (COND ((SETQ Z (ASSOC X GL)) (RETURN (CDR Z))))
 035                                        (PRINTTY (LIST (QUOTE UNDEFINED) (QUOTE TAG) X))
 036                                        (RETURN EXIT)))
 037                      EXPR)

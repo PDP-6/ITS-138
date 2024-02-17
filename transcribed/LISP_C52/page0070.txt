@@ -37,7 +37,7 @@
 037                                                 (CONT 2 NIL)
 038                                                 (OUTPUT (QUOTE (PUSHJ P NUMVAL)))
 039                                                 (CONT 1 (SETQ TEM (LIST (GENSYM))))
-040                     (SETQ LDLST (COND TEM LDLST))
+040                     (SETQ LDLST (CONS TEM LDLST))
 041             ))
 042                                          (COMPE (CAR Y))
 043                                          (OUT1 (QUOTE DPB) (LOCATE TEM 1) 2)
@@ -45,7 +45,7 @@
 045
 046             (DEFPROP COMPFUNC
 047                      (LAMBDA (X Y NO)
-048                              (PROG (TEM ARGO Z FNARGS VALAC INST NARGS HOME T1 CAC FNLOC)
+048                              (PROG (TEM ARGNO Z FNARGS VALAC INST NARGS HOME T1 CAC FNLOC)
 049                                    (SETQ ARGNO NO)
 050                                    (SETQ VALAC 1)
 051                                    (COND ((AND (SETQ T1 (NOT (ATOM X)))

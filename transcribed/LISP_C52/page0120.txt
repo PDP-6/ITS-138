@@ -45,7 +45,7 @@
 045                                                         (CONS (CAR DATAORG) (QUOTE DUP))))))
 046                               COMPOP
 047                                    (OPOP ACNO)
-048                               T4   (RETURN (CONT ACNO ATAORG))
+048                               T4   (RETURN (CONT ACNO DATAORG))
 049                               T3   (OUT1 (QUOTE MOVE) ACNO Z)
 050                                    (RETURN (CONT ACNO
 051                                                  (COND ((EQ (CAAR Z) (QUOTE QUOTE)) (CAR Z))

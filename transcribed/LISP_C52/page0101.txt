@@ -42,7 +42,7 @@
 102                       EXPR)
 103
 104             (DEFPROP GFY
-105                      (LAMBDA (Y) (COND ((ATOM X) X) (T (COM2 (GENSYM) (QUOTE EXPR) X))))
+105                      (LAMBDA (X) (COND ((ATOM X) X) (T (COM2 (GENSYM) (QUOTE EXPR) X))))
 106                      EXPR)
 107
 108             (DEFPROP P1PSTP (LAMBDA NIL (COND ((ZEROP P1SCNT) (SETQ P1SCNT P1STCNT)))) EXPR)

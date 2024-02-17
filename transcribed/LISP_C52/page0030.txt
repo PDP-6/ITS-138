@@ -36,7 +36,7 @@
 036                                           IVAR
 037                                           LSUBRF
 038                                           VL
-039                                           RLN
+039                                           RNL
 040                                           P1SCNT
 041                                           P1STCNT
 042                                           P1LL
@@ -51,7 +51,7 @@
 051                                          ((EQ X (CAAR Z))
 052                                           (COND ((NULL (CDAR Z)) (RPLACA Z (CONS X CNT)))
 053                                                 ((EQ (CDAR Z) (QUOTE DUP))
-055                                                  (RPLACA Z NIL)))))
-056                                    (SETQ Z (CDR Z))
-057                                    (GO LP)))
-044                      EXPR)
+054                                                  (RPLACA Z NIL)))))
+055                                    (SETQ Z (CDR Z))
+056                                    (GO LP)))
+057                      EXPR)
