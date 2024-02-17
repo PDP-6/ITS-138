@@ -1,13 +1,13 @@
 001             (DEFPROP COMPILE                                                      PAGE 2
 002              (LAMBDA (L)
-003                (PROG (DATA)
-004                      (SETQ
-005                       DATA
-006                       (MAPCAR (FUNCTION (LAMBDA (J)
-007                                                 (COND ((SETQ DATA
-008                                                              (GETL J (QUOTE (EXPR FEXPR))))
-009                                                        (COM2 J (CAR DATA) (CADR DATA))))))
-010                               L))
+003               (PROG (DATA)
+004                     (SETQ
+005                      DATA
+006                      (MAPCAR (FUNCTION (LAMBDA (J)
+007                                                (COND ((SETQ DATA
+008                                                             (GETL J (QUOTE (EXPR FEXPR))))
+009                                                       (COM2 J (CAR DATA) (CADR DATA))))))
+010                              L))
 011                      (IOC TV)
 012                      (RETURN DATA)))
 013              FEXPR)
@@ -44,7 +44,7 @@
 044                                          ((AND (EQ (CAR DATA) (QUOTE DEFPROP))
 045                                                (SETQ X (ASSOC (SETQ FL (CADDDR DATA))
 046                                                               (QUOTE ((EXPR . *EXPR)
-047                                                                       (FEXPR . *FEXPR))))))
+047                                                                      (FEXPR . *FEXPR))))))
 048                                           (PUTPROP (CADR DATA) T (CDR X))
 049                                           (COM2 (SETQ X (CADR DATA)) FL (CADDR DATA))
 050                                           (PRINTTY X))

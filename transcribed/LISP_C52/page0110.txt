@@ -16,17 +16,17 @@
 016                                                                          GL))
 017                                                              Y)
 018                                                             (T (P1 Y))))))
-019                              (CDR X)))
-020                     (SETQ CNT (ADD1 CNT))
-021                     (COND ((NOT (ZEROP P1SCNT)) (P1BUG P1SCNT CNT TEM)))
-022                     (REMOVL (FUNCTION (LAMBDA (X)
-023                                               (PROG (Z)
-024                                                     (RETURN (COND ((SETQ Z
-025                                                                          (ASSOC X LOCVARS))
-026                                                                    (ZEROP (CDR Z))))))))
-027                             (QUOTE P1LL))
-028                     (SETQ CNT (ADD1 CNT))
-029                     (RETURN (LIST (QUOTE PROG) P1SCNT GL P1LL PR))))
+019                               (CDR X)))
+020                      (SETQ CNT (ADD1 CNT))
+021                      (COND ((NOT (ZEROP P1SCNT)) (P1BUG P1SCNT CNT TEM)))
+022                      (REMOVL (FUNCTION (LAMBDA (X)
+023                                                (PROG (Z)
+024                                                      (RETURN (COND ((SETQ Z
+025                                                                           (ASSOC X LOCVARS))
+026                                                                     (ZEROP (CDR Z))))))))
+027                              (QUOTE P1LL))
+028                      (SETQ CNT (ADD1 CNT))
+029                      (RETURN (LIST (QUOTE PROG) P1SCNT GL P1LL PR))))
 030              EXPR)
 031
 032             (DEFPROP OUTG

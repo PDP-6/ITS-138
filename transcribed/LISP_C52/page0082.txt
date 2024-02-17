@@ -3,7 +3,7 @@
 123                      (LAMBDA (DATA)
 124                              (REMOVL (FUNCTION (LAMBDA (L) (COND ((AND (NOT (ATOM (CDR L)))
 125                                                                        (NOT (ASSOC (CAR L)
-126                                                                             DATA)))
+126                                                                                    DATA)))
 127                                                                   (CSFUN L 1)
 128                                                                   NIL)
 129                                                                  (T NIL))))
@@ -13,7 +13,7 @@
 133             (DEFPROP CSPLD1
 134                      (LAMBDA NIL (REMOVL (FUNCTION (LAMBDA (L)
 135                                                            (COND ((NOT (ATOM (CDR L))) NIL)
-136                                                                   (T (CSPVAR L) T))))
+136                                                                  (T (CSPVAR L) T))))
 137                                          (QUOTE SPLDLST)))
 138                      EXPR)
 139

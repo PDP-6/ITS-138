@@ -40,8 +40,8 @@
 040
 041             (DEFPROP ASSOCR
 042                      (LAMBDA (X Y) (PROG NIL
-043                                     A    (COND ((NULL Y) (RETURN NIL))
-044                                                ((EQ X (CDAR Y)) (RETURN (CAR Y))))
-045                                          (SETQ Y (CDR Y))
-046                                          (GO A)))
+043                                     A     (COND ((NULL Y) (RETURN NIL))
+044                                                 ((EQ X (CDAR Y)) (RETURN (CAR Y))))
+045                                           (SETQ Y (CDR Y))
+046                                           (GO A)))
 047                      EXPR)

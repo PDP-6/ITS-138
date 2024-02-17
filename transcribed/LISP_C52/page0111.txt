@@ -44,7 +44,7 @@
 104                                        (COND ((NOT PROGSW) (RETURN NIL)))
 105                                        (SETQ PROGSW NIL)
 106                                   L    (COND ((NULL PVRL) (SETQ PRSSL (APPEND SLOTLIST NIL))
-107                                                           (RETURN NIL))
+107                                                          (RETURN NIL))
 108                                              ((NOT (ILOC (CONS (CAR PVRL) CNT)))
 109                                               (INITZ (CAR PVRL))))
 110                                        (SETQ PVRL (CDR PVRL))
